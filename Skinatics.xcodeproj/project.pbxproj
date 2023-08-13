@@ -16,6 +16,10 @@
 		0FBE1DB12A896A7D00E64231 /* SkinaticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1DB02A896A7D00E64231 /* SkinaticsTests.swift */; };
 		0FBE1DBB2A896A7E00E64231 /* SkinaticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1DBA2A896A7E00E64231 /* SkinaticsUITests.swift */; };
 		0FBE1DBD2A896A7E00E64231 /* SkinaticsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1DBC2A896A7E00E64231 /* SkinaticsUITestsLaunchTests.swift */; };
+		0FBE1DCA2A896F5E00E64231 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1DC92A896F5E00E64231 /* HomeView.swift */; };
+		0FBE1DCD2A896FAD00E64231 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1DCC2A896FAD00E64231 /* BottomTabBar.swift */; };
+		0FBE1DD52A89712D00E64231 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1DD42A89712D00E64231 /* APIService.swift */; };
+		0FBE1DD72A89715C00E64231 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1DD62A89715C00E64231 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1DBA2A896A7E00E64231 /* SkinaticsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsUITests.swift; sourceTree = "<group>"; };
 		0FBE1DBC2A896A7E00E64231 /* SkinaticsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0FBE1DC92A896F5E00E64231 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0FBE1DCC2A896FAD00E64231 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
+		0FBE1DD42A89712D00E64231 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		0FBE1DD62A89715C00E64231 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,10 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				0FBE1DD22A8970DA00E64231 /* Data */,
+				0FBE1DD12A8970BC00E64231 /* Services */,
+				0FBE1DCE2A896FC300E64231 /* Modules */,
+				0FBE1DCB2A896F6800E64231 /* UIComponents */,
 				0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */,
 				0FBE1D9C2A896A7C00E64231 /* ContentView.swift */,
 				0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */,
@@ -131,6 +143,54 @@
 				0FBE1DBC2A896A7E00E64231 /* SkinaticsUITestsLaunchTests.swift */,
 			);
 			path = SkinaticsUITests;
+			sourceTree = "<group>";
+		};
+		0FBE1DCB2A896F6800E64231 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0FBE1DCC2A896FAD00E64231 /* BottomTabBar.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		0FBE1DCE2A896FC300E64231 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0FBE1DCF2A89705400E64231 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0FBE1DCF2A89705400E64231 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0FBE1DC92A896F5E00E64231 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0FBE1DD12A8970BC00E64231 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0FBE1DD32A89711300E64231 /* APIService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0FBE1DD22A8970DA00E64231 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0FBE1DD62A89715C00E64231 /* data.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0FBE1DD32A89711300E64231 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				0FBE1DD42A89712D00E64231 /* APIService.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */,
+				0FBE1DD72A89715C00E64231 /* data.json in Resources */,
 				0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,9 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBE1DCD2A896FAD00E64231 /* BottomTabBar.swift in Sources */,
+				0FBE1DD52A89712D00E64231 /* APIService.swift in Sources */,
 				0FBE1DA42A896A7D00E64231 /* Persistence.swift in Sources */,
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
+				0FBE1DCA2A896F5E00E64231 /* HomeView.swift in Sources */,
 				0FBE1DA72A896A7D00E64231 /* Skinatics.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
