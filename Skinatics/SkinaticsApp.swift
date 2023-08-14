@@ -8,13 +8,10 @@
 import SwiftUI
 
 @main
-struct SkinaticsApp: App {
-    let persistenceController = PersistenceController.shared
-
+struct DemoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
