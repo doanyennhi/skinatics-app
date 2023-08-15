@@ -11,6 +11,7 @@
 		0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9C2A896A7C00E64231 /* ContentView.swift */; };
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
 		0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */; };
+		0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB62442A8B51C1008B19F1 /* Avenir.ttc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0FBE1DAC2A896A7D00E64231 /* SkinaticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FDB62442A8B51C1008B19F1 /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avenir.ttc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				0FDB62422A8B5182008B19F1 /* Resources */,
 				0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */,
 				0FBE1D9C2A896A7C00E64231 /* ContentView.swift */,
 				0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */,
@@ -100,6 +103,22 @@
 				0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0FDB62422A8B5182008B19F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB62432A8B5194008B19F1 /* fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0FDB62432A8B5194008B19F1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB62442A8B51C1008B19F1 /* Avenir.ttc */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +227,7 @@
 			files = (
 				0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */,
 				0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */,
+				0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

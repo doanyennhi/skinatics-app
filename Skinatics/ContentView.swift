@@ -12,11 +12,15 @@ struct ContentView: View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
-                .foregroundColor(.accentColor)
             Text("Hello, world!")
         }
         .padding()
+        .foregroundColor(Color("Light Green"))
+        .font(Font.custom("Avenir", size: 18))
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color("Floral White"))
     }
+        
 }
 
 struct ContentView_Previews: PreviewProvider {
