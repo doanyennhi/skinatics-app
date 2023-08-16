@@ -9,16 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-            Text("Hello, world!")
-        }
-        .padding()
-        .foregroundColor(Color("Light Green"))
-        .font(Font.custom("Avenir", size: 18))
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color("Floral White"))
+        SkinQuizView()
     }
         
 }

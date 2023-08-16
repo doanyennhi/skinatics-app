@@ -17,12 +17,18 @@ struct SkinQuizView: View {
                 .multilineTextAlignment(.center)
                 .bold().foregroundColor(Color("Dark Green"))
             
+            Spacer()
+            
             // Checklist for skin types
             ForEach(skinTypes, id: \.self) { skinType in
                 Checkbox(content: skinType)
             }
+            
+            Spacer()
+            PrimaryButton(title: "Next", action: {print("Hello")})
 
         }
+        .padding(.horizontal, 30)
         .font(Font.custom("Avenir", size: 18))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("Floral White"))
@@ -32,7 +38,7 @@ struct SkinQuizView: View {
 
 // Define each checkbox item
 struct Checkbox: View {
-    @State var isSelected = false
+    @State var isSelected: Bool = false
     var content: String
     
     var body: some View {
@@ -63,7 +69,7 @@ struct CustomCheckboxStyle: ToggleStyle {
             .background(configuration.isOn ? Color("Light Green").opacity(0.2) : .white)
         })
         .cornerRadius(15)
-        .padding(.horizontal, 50)
+        .shadow(color: .gray.opacity(0.2), radius: 10, x: 2, y: 4)
     }
 }
 

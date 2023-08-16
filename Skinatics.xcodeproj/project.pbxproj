@@ -13,6 +13,7 @@
 		0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */; };
 		0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB62442A8B51C1008B19F1 /* Avenir.ttc */; };
 		0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */; };
+		0FDB62522A8D026D008B19F1 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62512A8D026D008B19F1 /* PrimaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDB62442A8B51C1008B19F1 /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avenir.ttc; sourceTree = "<group>"; };
 		0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
+		0FDB62512A8D026D008B19F1 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				0FDB62502A8D0250008B19F1 /* UIComponents */,
 				0FDB62422A8B5182008B19F1 /* Resources */,
 				0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */,
 				0FBE1D9C2A896A7C00E64231 /* ContentView.swift */,
@@ -122,6 +125,14 @@
 				0FDB62442A8B51C1008B19F1 /* Avenir.ttc */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		0FDB62502A8D0250008B19F1 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB62512A8D026D008B19F1 /* PrimaryButton.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			files = (
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
+				0FDB62522A8D026D008B19F1 /* PrimaryButton.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
