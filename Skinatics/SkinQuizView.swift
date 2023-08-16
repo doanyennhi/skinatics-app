@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+var skinTypes: [String] = ["Dry", "Combination", "Oily", "Normal", "Sensitive", "Acne-prone"]
+
 struct SkinQuizView: View {
-    var skinTypes: [String] = ["Dry", "Combination", "Oily", "Normal", "Sensitive", "Acne-prone"]
+    // store selected values
+    @State var selectedTypes = Set<String>()
     
     var body: some View {
         VStack(alignment: .center) {
@@ -21,7 +24,16 @@ struct SkinQuizView: View {
             
             // Checklist for skin types
             ForEach(skinTypes, id: \.self) { skinType in
-                Checkbox(content: skinType)
+                Checkbox(content: skinType, isSelected: selectedTypes.contains(skinType)) {
+                    // add/ remove item when button is tapped
+                    // remove if item is already selected, otherwise add it
+                    if (selectedTypes.contains(skinType)) {
+                        selectedTypes.remove(skinType)
+                    } else {
+                        selectedTypes.insert(skinType)
+                    }
+                    print(selectedTypes)
+                }
             }
             
             Spacer()
@@ -38,22 +50,24 @@ struct SkinQuizView: View {
 
 // Define each checkbox item
 struct Checkbox: View {
-    @State var isSelected: Bool = false
     var content: String
+    @State var isSelected: Bool = false
+    var action: () -> Void
     
     var body: some View {
-        Toggle(isOn: $isSelected) {
-            Text(content)
-        }
-        .toggleStyle(CustomCheckboxStyle())
+        Toggle(content, isOn: $isSelected)
+            .toggleStyle(CustomCheckboxStyle(action: action))
     }
 }
 
 // Customize toggle style to look like checkbox
 struct CustomCheckboxStyle: ToggleStyle {
+    var action: () -> Void
+    
     func makeBody(configuration: Configuration) -> some View {
         Button(action: {
             configuration.isOn.toggle()
+            action()
         }, label: {
             HStack {
                 configuration.label
