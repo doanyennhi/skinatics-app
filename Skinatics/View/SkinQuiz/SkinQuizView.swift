@@ -15,10 +15,7 @@ struct SkinQuizView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Text("What's your skin type?").font(.largeTitle)
-                .padding(.horizontal, 20)
-                .multilineTextAlignment(.center)
-                .bold().foregroundColor(Color("Dark Green"))
+            ScreenTitle(title: "What's your skin type?")
             
             Spacer()
             
@@ -45,45 +42,6 @@ struct SkinQuizView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("Floral White"))
                 .foregroundColor(.black)
-    }
-}
-
-// Define each checkbox item
-struct Checkbox: View {
-    var content: String
-    @State var isSelected: Bool = false
-    var action: () -> Void
-    
-    var body: some View {
-        Toggle(content, isOn: $isSelected)
-            .toggleStyle(CustomCheckboxStyle(action: action))
-    }
-}
-
-// Customize toggle style to look like checkbox
-struct CustomCheckboxStyle: ToggleStyle {
-    var action: () -> Void
-    
-    func makeBody(configuration: Configuration) -> some View {
-        Button(action: {
-            configuration.isOn.toggle()
-            action()
-        }, label: {
-            HStack {
-                configuration.label
-                Spacer()
-                
-                Image(systemName: configuration.isOn ? "checkmark.circle.fill": "circle")
-                    .foregroundColor(configuration.isOn ? Color("Secondary Green") : .gray)
-                    .font(.system(size: 20))
-            }
-            .padding(25)
-            
-            // Highlight selected item
-            .background(configuration.isOn ? Color("Light Green").opacity(0.2) : .white)
-        })
-        .cornerRadius(15)
-        .shadow(color: .gray.opacity(0.2), radius: 10, x: 2, y: 4)
     }
 }
 
