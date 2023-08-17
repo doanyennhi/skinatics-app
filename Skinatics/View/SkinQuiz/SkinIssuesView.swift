@@ -17,7 +17,7 @@ struct SkinIssuesView: View {
             ScreenTitle(title: "What do you need help with?")
             
             List(skinIssues, id: \.self) { issue in
-                Checkbox(content: issue, isSelected: selectedIssues.contains(issue)) {
+                Checklist(content: issue, isSelected: selectedIssues.contains(issue)) {
                     if (selectedIssues.contains(issue)) {
                         selectedIssues.remove(issue)
                     } else {
@@ -28,6 +28,16 @@ struct SkinIssuesView: View {
                 .listRowBackground(Color("Floral White"))
             }
             .listStyle(.plain)
+           
+            
+            Button("Next", action: {})
+                .buttonStyle(PrimaryButtonStyle())
+            
+            Button(action: {
+                    print("sign up bin tapped")
+                }) {
+                    CancelButtonLabel()
+                }
         }
         .padding(.horizontal, 30)
         .font(Font.custom("Avenir", size: 18))

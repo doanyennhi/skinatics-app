@@ -13,11 +13,12 @@
 		0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */; };
 		0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB62442A8B51C1008B19F1 /* Avenir.ttc */; };
 		0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */; };
-		0FDB62522A8D026D008B19F1 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62512A8D026D008B19F1 /* PrimaryButton.swift */; };
+		0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62512A8D026D008B19F1 /* Buttons.swift */; };
 		0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62532A8E115E008B19F1 /* SkinIssuesView.swift */; };
 		0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */; };
 		0FDB625C2A8E1400008B19F1 /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625B2A8E1400008B19F1 /* Checkmark.swift */; };
 		0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */; };
+		0FDB62602A8E76AA008B19F1 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625F2A8E76AA008B19F1 /* Checklist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,11 +48,12 @@
 		0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDB62442A8B51C1008B19F1 /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avenir.ttc; sourceTree = "<group>"; };
 		0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
-		0FDB62512A8D026D008B19F1 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		0FDB62512A8D026D008B19F1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		0FDB62532A8E115E008B19F1 /* SkinIssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinIssuesView.swift; sourceTree = "<group>"; };
 		0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitle.swift; sourceTree = "<group>"; };
 		0FDB625B2A8E1400008B19F1 /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
 		0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		0FDB625F2A8E76AA008B19F1 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +140,7 @@
 		0FDB62502A8D0250008B19F1 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				0FDB62512A8D026D008B19F1 /* PrimaryButton.swift */,
+				0FDB62512A8D026D008B19F1 /* Buttons.swift */,
 				0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */,
 			);
 			path = UIComponents;
@@ -167,6 +169,7 @@
 			children = (
 				0FDB625B2A8E1400008B19F1 /* Checkmark.swift */,
 				0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */,
+				0FDB625F2A8E76AA008B19F1 /* Checklist.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -304,9 +307,10 @@
 			files = (
 				0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */,
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
+				0FDB62602A8E76AA008B19F1 /* Checklist.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */,
-				0FDB62522A8D026D008B19F1 /* PrimaryButton.swift in Sources */,
+				0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */,
 				0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
 				0FDB625C2A8E1400008B19F1 /* Checkmark.swift in Sources */,

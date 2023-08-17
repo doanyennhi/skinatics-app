@@ -11,6 +11,7 @@ struct Checkmark: View {
     @Binding var isChecked: Bool
     
     var body: some View {
+        // Show green tick mark if selected
         Image(systemName: isChecked ? "checkmark.circle.fill": "circle")
             .foregroundColor(isChecked ? Color("Secondary Green") : .gray)
             .font(.system(size: 20))

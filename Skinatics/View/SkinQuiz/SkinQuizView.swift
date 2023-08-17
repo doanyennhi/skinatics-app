@@ -34,7 +34,14 @@ struct SkinQuizView: View {
             }
             
             Spacer()
-            PrimaryButton(title: "Next", action: {print("Hello")})
+            Button("Next", action: {print("Hello")})
+                .buttonStyle(PrimaryButtonStyle())
+            
+            Button(action: {
+                    print("sign up bin tapped")
+                }) {
+                    CancelButtonLabel()
+                }
 
         }
         .padding(.horizontal, 30)
