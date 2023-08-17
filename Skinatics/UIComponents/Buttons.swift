@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CancelButtonLabel: View {
+struct CancelButton: View {
     
     var body: some View {
         Text("Back")
@@ -19,6 +19,20 @@ struct CancelButtonLabel: View {
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(Color("Secondary Green"), lineWidth: 2)
         )
+    }
+}
+
+struct NavigationButton: View {
+    var body: some View {
+        VStack {
+            Text("Next")
+        }
+        .font(.system(size: 20, weight: .bold))
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 20)
+        .foregroundColor(.white)
+        .background(Color("Secondary Green"))
+        .cornerRadius(15)
     }
 }
 
@@ -34,3 +48,10 @@ struct PrimaryButtonStyle: ButtonStyle {
             .cornerRadius(15)
         }
 }
+
+struct Buttons_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationButton()
+    }
+}
+
