@@ -26,7 +26,7 @@ struct CheckItem: View {
         .foregroundColor(isSelected ? Color("Secondary Green") : .black)
         .fontWeight(isSelected ? .bold : .regular)
         .padding(.vertical, 20)
-        
+        .contentShape(Rectangle())
         .onTapGesture {
             isSelected.toggle()
             action()
