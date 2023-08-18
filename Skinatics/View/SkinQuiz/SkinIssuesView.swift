@@ -7,34 +7,41 @@
 
 import SwiftUI
 
-var skinIssues: [String] = ["Blackheads", "Dark spots", "Enlarged pores", "Sun protection", "Under-eye circles", "Signs of Aging"]
+var skinIssues: [String] = ["Blackheads", "Dark spots", "Enlarged pores", "Sun protection", "Under-eye circles", "Signs of Aging", "Dullness", "Fine lines", "Acne", "Acne scars", "Redness"]
+
 
 struct SkinIssuesView: View {
+    // define grid structure
+    var twoColumnGrid: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
+    
     @State var selectedIssues = Set<String>()
     
     var body: some View {
         NavigationStack {
             VStack {
                 ScreenTitle(title: "What do you need help with?")
+                    .padding(.bottom, 5)
                 
-                List(skinIssues, id: \.self) { issue in
-                    Checklist(content: issue, isSelected: selectedIssues.contains(issue)) {
-                        if (selectedIssues.contains(issue)) {
-                            selectedIssues.remove(issue)
-                        } else {
-                            selectedIssues.insert(issue)
+                Text("Choose at least one of the following")
+                    .foregroundColor(Color("Secondary Green"))
+                    .padding(.bottom, 20)
+                
+                ScrollView(showsIndicators: false) {
+                    LazyVGrid(columns: twoColumnGrid) {
+                        ForEach(skinIssues, id: \.self) { issue in
+                            Checkbox(content: issue, isSelected: selectedIssues.contains(issue)) {
+                                toggleItem(list: &selectedIssues, item: issue)
+                                print(selectedIssues)
+                            }
                         }
-                        print(selectedIssues)
                     }
-                    .listRowBackground(Color("Floral White"))
+                    .padding(.vertical, 20)
                 }
-                .listStyle(.plain)
-                
-                
+                .verticalFadeOut()
+    
                 NavigationLink(destination: SkinConditionView()) {
                     NavigationButton()
                 }
-                
             }
             .padding(.horizontal, 30)
             .font(Font.custom("Avenir", size: 18))
@@ -45,6 +52,7 @@ struct SkinIssuesView: View {
         
     }
 }
+
 
 struct SkinIssuesView_Previews: PreviewProvider {
     static var previews: some View {

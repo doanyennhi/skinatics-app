@@ -30,19 +30,18 @@ struct CustomCheckboxStyle: ToggleStyle {
             action()
             print("selected \(configuration.isOn)")
         }, label: {
-            HStack {
+            VStack {
                 configuration.label
-                Spacer()
-                Checkmark(isChecked: configuration.$isOn)
             }
             .padding(20)
-            
+            .frame(maxWidth: .infinity, minHeight:100)
             // Highlight selected item
             .background(configuration.isOn ? Color("Light Green").opacity(0.2) : .white)
             .foregroundColor(.black)
         })
         .cornerRadius(15)
-        .shadow(color: .gray.opacity(0.2), radius: 10, x: 2, y: 4)
+        .padding(.bottom, 10)
+        .shadow(color: .gray.opacity(0.2), radius: 5, x: 2, y: 4)
     }
 }
 

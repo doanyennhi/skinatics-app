@@ -10,7 +10,6 @@ import SwiftUI
 var skinTypes: [String] = ["Dry", "Combination", "Oily", "Normal", "Sensitive", "Acne-prone"]
 
 struct SkinQuizView: View {
-    
     // store selected values
     @State var selectedTypes = Set<String>()
     
@@ -19,23 +18,16 @@ struct SkinQuizView: View {
             VStack(alignment: .center) {
                 ScreenTitle(title: "What's your skin type?")
                 
-                Spacer()
-                
                 // Checklist for skin types
-                ForEach(skinTypes, id: \.self) { skinType in
-                    Checkbox(content: skinType, isSelected: selectedTypes.contains(skinType)) {
-                        // add/ remove item when button is tapped
-                        // remove if item is already selected, otherwise add it
-                        if (selectedTypes.contains(skinType)) {
-                            selectedTypes.remove(skinType)
-                        } else {
-                            selectedTypes.insert(skinType)
+               
+                    List(skinTypes, id: \.self) { skinType in
+                        Checklist(content: skinType, isSelected: selectedTypes.contains(skinType)) {
+                            toggleItem(list: &selectedTypes, item: skinType)
+                            print(selectedTypes)
                         }
-                        print(selectedTypes)
-                    }
+                        .listRowBackground(Color("Floral White"))
                 }
-                
-                Spacer()
+                    .listStyle(.plain)
                 
                 NavigationLink(destination: SkinIssuesView()) {
                     NavigationButton()

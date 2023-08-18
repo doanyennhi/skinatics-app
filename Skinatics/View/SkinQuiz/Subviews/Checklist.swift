@@ -22,9 +22,10 @@ struct Checklist: View {
             Checkmark(isChecked: $isSelected)
         }
         // Highlight selected item
+        .font(Font.custom("Avenir", size: 20))
         .foregroundColor(isSelected ? Color("Secondary Green") : .black)
         .fontWeight(isSelected ? .bold : .regular)
-        .padding(.vertical, 10)
+        .padding(.vertical, 20)
         
         .onTapGesture {
             isSelected.toggle()

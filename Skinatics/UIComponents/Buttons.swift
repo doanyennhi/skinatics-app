@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Style for text to look like cancel button
 struct CancelButton: View {
     
     var body: some View {
@@ -22,20 +23,22 @@ struct CancelButton: View {
     }
 }
 
+// Style for text to look like primary button
 struct NavigationButton: View {
     var body: some View {
         VStack {
             Text("Next")
         }
+        .padding(.vertical, 20)
         .font(.system(size: 20, weight: .bold))
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 20)
         .foregroundColor(.white)
         .background(Color("Secondary Green"))
         .cornerRadius(15)
     }
 }
 
+// Custom style for primary button
 struct PrimaryButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
