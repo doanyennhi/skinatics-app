@@ -11,10 +11,6 @@ var skinIssues: [String] = ["Blackheads", "Dark spots", "Enlarged pores", "Sun p
 
 
 struct SkinIssuesView: View {
-    // define grid structure
-    var twoColumnGrid: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
-    
-    @State var selectedIssues = Set<String>()
     
     var body: some View {
         NavigationStack {
@@ -22,34 +18,23 @@ struct SkinIssuesView: View {
                 ScreenTitle(title: "What do you need help with?")
                     .padding(.bottom, 5)
                 
-                Text("Choose at least one of the following")
+                Text("Choose one or more skin concerns you want to treat")
                     .foregroundColor(Color("Secondary Green"))
                     .padding(.bottom, 20)
                 
-                ScrollView(showsIndicators: false) {
-                    LazyVGrid(columns: twoColumnGrid) {
-                        ForEach(skinIssues, id: \.self) { issue in
-                            Checkbox(content: issue, isSelected: selectedIssues.contains(issue)) {
-                                toggleItem(list: &selectedIssues, item: issue)
-                                print(selectedIssues)
-                            }
-                        }
-                    }
-                    .padding(.vertical, 20)
-                }
-                .verticalFadeOut()
+                OptionGrid(options: skinIssues)
     
                 NavigationLink(destination: SkinConditionView()) {
-                    NavigationButton()
+                   Text("Next")
                 }
+                .buttonStyle(PrimaryButtonStyle())
             }
+            
             .padding(.horizontal, 30)
             .font(Font.custom("Avenir", size: 18))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Floral White"))
-            .foregroundColor(.black)
         }
-        
     }
 }
 

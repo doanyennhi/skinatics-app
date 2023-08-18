@@ -7,9 +7,25 @@
 
 import SwiftUI
 
+var conditions: [String] = ["Acne", "Rosacea", "Eczema", "Rash", "Melasma", "Hives", "Psoriasis", "Dermatitis"]
+
 struct SkinConditionView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                ScreenTitle(title: "Any skin conditions?")
+                    .padding(.bottom, 5)
+                
+                OptionGrid(options: conditions)
+                Button("Submit", action: {})
+                    .buttonStyle(PrimaryButtonStyle())
+            }
+            
+            .padding(.horizontal, 30)
+            .font(Font.custom("Avenir", size: 18))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("Floral White"))
+        }
     }
 }
 

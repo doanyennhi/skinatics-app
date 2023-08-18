@@ -9,7 +9,7 @@ import SwiftUI
 
 
 // Checklist item for skin quiz
-struct Checklist: View {
+struct CheckItem: View {
     var content: String
     @State var isSelected: Bool = false
     var action: () -> Void
@@ -33,9 +33,3 @@ struct Checklist: View {
         }
     }
 }
-
-//struct Checklist_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Checklist()
-//    }
-//}

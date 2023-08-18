@@ -23,21 +23,6 @@ struct CancelButton: View {
     }
 }
 
-// Style for text to look like primary button
-struct NavigationButton: View {
-    var body: some View {
-        VStack {
-            Text("Next")
-        }
-        .padding(.vertical, 20)
-        .font(.system(size: 20, weight: .bold))
-        .frame(maxWidth: .infinity)
-        .foregroundColor(.white)
-        .background(Color("Secondary Green"))
-        .cornerRadius(15)
-    }
-}
-
 // Custom style for primary button
 struct PrimaryButtonStyle: ButtonStyle {
     
@@ -50,11 +35,5 @@ struct PrimaryButtonStyle: ButtonStyle {
             .background(Color("Secondary Green"))
             .cornerRadius(15)
         }
-}
-
-struct Buttons_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationButton()
-    }
 }
 

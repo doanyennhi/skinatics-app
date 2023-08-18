@@ -18,10 +18,11 @@
 		0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */; };
 		0FDB625C2A8E1400008B19F1 /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625B2A8E1400008B19F1 /* Checkmark.swift */; };
 		0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */; };
-		0FDB62602A8E76AA008B19F1 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625F2A8E76AA008B19F1 /* Checklist.swift */; };
+		0FDB62602A8E76AA008B19F1 /* CheckItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625F2A8E76AA008B19F1 /* CheckItem.swift */; };
 		0FDB62662A8E98BD008B19F1 /* SkinConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62652A8E98BD008B19F1 /* SkinConditionView.swift */; };
 		0FDB62692A8F68DE008B19F1 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62682A8F68DE008B19F1 /* View+Extensions.swift */; };
 		0FDB626C2A8F6B4C008B19F1 /* SetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB626B2A8F6B4C008B19F1 /* SetHelper.swift */; };
+		0FDB626E2A8FC38C008B19F1 /* OptionGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB626D2A8FC38C008B19F1 /* OptionGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +57,11 @@
 		0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitle.swift; sourceTree = "<group>"; };
 		0FDB625B2A8E1400008B19F1 /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
 		0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
-		0FDB625F2A8E76AA008B19F1 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		0FDB625F2A8E76AA008B19F1 /* CheckItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItem.swift; sourceTree = "<group>"; };
 		0FDB62652A8E98BD008B19F1 /* SkinConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionView.swift; sourceTree = "<group>"; };
 		0FDB62682A8F68DE008B19F1 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		0FDB626B2A8F6B4C008B19F1 /* SetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHelper.swift; sourceTree = "<group>"; };
+		0FDB626D2A8FC38C008B19F1 /* OptionGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +180,8 @@
 			children = (
 				0FDB625B2A8E1400008B19F1 /* Checkmark.swift */,
 				0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */,
-				0FDB625F2A8E76AA008B19F1 /* Checklist.swift */,
+				0FDB625F2A8E76AA008B19F1 /* CheckItem.swift */,
+				0FDB626D2A8FC38C008B19F1 /* OptionGrid.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -334,13 +337,14 @@
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
 				0FDB626C2A8F6B4C008B19F1 /* SetHelper.swift in Sources */,
 				0FDB62692A8F68DE008B19F1 /* View+Extensions.swift in Sources */,
-				0FDB62602A8E76AA008B19F1 /* Checklist.swift in Sources */,
+				0FDB62602A8E76AA008B19F1 /* CheckItem.swift in Sources */,
 				0FDB62662A8E98BD008B19F1 /* SkinConditionView.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */,
 				0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */,
 				0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
+				0FDB626E2A8FC38C008B19F1 /* OptionGrid.swift in Sources */,
 				0FDB625C2A8E1400008B19F1 /* Checkmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
