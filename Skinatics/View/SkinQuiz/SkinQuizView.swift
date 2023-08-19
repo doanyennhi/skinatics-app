@@ -33,7 +33,7 @@ struct SkinQuizView: View {
                 }
                     .listStyle(.plain)
                 
-                    NavigationLink(destination: SkinIssuesView()) {
+                    NavigationLink(destination: SkinIssuesView(selectedTypes: selectedTypes)) {
                         Text("Next")
                     }
                     .buttonStyle(PrimaryButtonStyle())

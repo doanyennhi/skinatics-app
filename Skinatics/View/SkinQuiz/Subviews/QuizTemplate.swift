@@ -10,24 +10,30 @@ import SwiftUI
 struct QuizTemplate<Content: View>: View {
     var twoColumnGrid: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     
-    @State var show = false
+    var title: String
+    var subheading: String
+    @State var show: Bool = false
     var options: [String]
-    @State var selected: Set<String>
+    @Binding var selected: Set<String>
     var screen: Content
+    var btnText: String
+    var selectionOptional: Bool
     
     var body: some View {
         NavigationStack {
             VStack {
-                ScreenTitle(title: "What do you need help with?")
+                ScreenTitle(title: title)
                     .padding(.bottom, 5)
-
-                Text("Choose one or more skin concerns you want to treat")
+             
+                Text(subheading)
                     .foregroundColor(Color("Secondary Green"))
                     .padding(.bottom, 20)
-                
-                Text(show ? "Please select at least one item" : "")
-                    .foregroundColor(.red)
-                    .padding(.top, 5)
+            
+                    show ?
+                        Text("Please select at least one item")
+                            .foregroundColor(.red)
+                            .padding(.top, 5)
+                     : nil
 
                 ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: twoColumnGrid) {
@@ -45,30 +51,22 @@ struct QuizTemplate<Content: View>: View {
                 NavigationLink {
                     screen
                 } label: {
-                    Text("Next")
+                    Text(btnText)
                 }
-                .disabled(selected.isEmpty)
+                .disabled(selectionOptional ? false : selected.isEmpty)
                 .buttonStyle(PrimaryButtonStyle())
-                .simultaneousGesture(TapGesture().onEnded {
-                    if selected.isEmpty {
-                        show = true
-                    } else {
-                        show = false
-                    }
+                .simultaneousGesture(
+                    TapGesture().onEnded {
+                        print(selected)
+                        if !selectionOptional {
+                            if selected.isEmpty {
+                                show = true
+                            } else {
+                                show = false
+                            }
+                        }
                 })
 
-//                NavigationLink(destination: SkinConditionView(selectedIssues: selected)) {
-//                   Text("Next")
-//                }
-//                .buttonStyle(PrimaryButtonStyle())
-//                .disabled(selected.isEmpty)
-//                .simultaneousGesture(TapGesture().onEnded {
-//                    if selected.isEmpty {
-//                        show = true
-//                    } else {
-//                        show = false
-//                    }
-//                })
             }
 
             .padding(.horizontal, 30)

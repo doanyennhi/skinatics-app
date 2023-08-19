@@ -11,37 +11,34 @@ var conditions: [String] = ["Acne", "Rosacea", "Eczema", "Rash", "Melasma", "Hiv
 
 struct SkinConditionView: View {
     @State var selected = Set<String>()
+    var selectedTypes: Set<String>
     @State var selectedIssues: Set<String>
     var twoColumnGrid: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
+        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: $selected, screen: NewView(selectedTypes: selectedTypes, selectedIssues: selectedIssues, selectedConditions: selected), btnText: "Submit", selectionOptional: true)
+    }
+}
+
+struct NewView: View {
+    var selectedTypes: Set<String>
+    var selectedIssues: Set<String>
+    var selectedConditions: Set<String>
+    
+    var body: some View {
+        Text("Skin types")
+        List([String](selectedTypes), id: \.self) { item in
+            Text(item)
+        }
         
-        NavigationStack {
-            VStack {
-                ScreenTitle(title: "Any skin conditions?")
-                    .padding(.bottom, 5)
-
-                ScrollView(showsIndicators: false) {
-                    LazyVGrid(columns: twoColumnGrid) {
-                        ForEach(conditions, id: \.self) { item in
-                            Checkbox(content: item, isSelected: selected.contains(item)) {
-                                toggleItem(list: &selected, item: item)
-                                print(selected)
-                            }
-                        }
-                    }
-                    .padding(.vertical, 20)
-                }
-                .verticalFadeOut()
-                
-                Button("Submit", action: {print(selectedIssues)})
-                    .buttonStyle(PrimaryButtonStyle())
-            }
-
-            .padding(.horizontal, 30)
-            .font(Font.custom("Avenir", size: 18))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("Floral White"))
+        Text("Skin issues")
+        List([String](selectedIssues), id: \.self) { item in
+            Text(item)
+        }
+        
+        Text("Skin conditions")
+        List([String](selectedConditions), id: \.self) { item in
+            Text(item)
         }
     }
 }
