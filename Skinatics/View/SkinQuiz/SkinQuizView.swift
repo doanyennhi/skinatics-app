@@ -9,6 +9,7 @@ import SwiftUI
 
 var skinTypes: [String] = ["Dry", "Combination", "Oily", "Normal", "Sensitive", "Acne-prone"]
 
+// First screen of quiz
 struct SkinQuizView: View {
     // store selected values
     @State var selectedTypes = Set<String>()
@@ -23,10 +24,9 @@ struct SkinQuizView: View {
                     .padding(.top, 5)
                 
                 // Checklist for skin types
-               
                     List(skinTypes, id: \.self) { skinType in
                         CheckItem(content: skinType, isSelected: selectedTypes.contains(skinType)) {
-                            toggleItem(list: &selectedTypes, item: skinType)
+                            toggleItem(set: &selectedTypes, item: skinType)
                             print(selectedTypes)
                         }
                         .listRowBackground(Color("Floral White"))

@@ -16,7 +16,6 @@
 		0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62512A8D026D008B19F1 /* Buttons.swift */; };
 		0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62532A8E115E008B19F1 /* SkinIssuesView.swift */; };
 		0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */; };
-		0FDB625C2A8E1400008B19F1 /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625B2A8E1400008B19F1 /* Checkmark.swift */; };
 		0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */; };
 		0FDB62602A8E76AA008B19F1 /* CheckItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625F2A8E76AA008B19F1 /* CheckItem.swift */; };
 		0FDB62662A8E98BD008B19F1 /* SkinConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62652A8E98BD008B19F1 /* SkinConditionView.swift */; };
@@ -55,7 +54,6 @@
 		0FDB62512A8D026D008B19F1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		0FDB62532A8E115E008B19F1 /* SkinIssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinIssuesView.swift; sourceTree = "<group>"; };
 		0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitle.swift; sourceTree = "<group>"; };
-		0FDB625B2A8E1400008B19F1 /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
 		0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		0FDB625F2A8E76AA008B19F1 /* CheckItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItem.swift; sourceTree = "<group>"; };
 		0FDB62652A8E98BD008B19F1 /* SkinConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionView.swift; sourceTree = "<group>"; };
@@ -89,9 +87,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F4061E72A94AC3800746054 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0FBE1D8E2A896A7C00E64231 = {
 			isa = PBXGroup;
 			children = (
+				0F4061E72A94AC3800746054 /* Model */,
 				0FBE1D992A896A7C00E64231 /* Skinatics */,
 				0FBE1D982A896A7C00E64231 /* Products */,
 			);
@@ -110,6 +116,8 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				0FDB626A2A8F6ACF008B19F1 /* Helper */,
+				0FDB62672A8F686C008B19F1 /* Extension */,
 				0FDB62552A8E1180008B19F1 /* View */,
 				0FDB62502A8D0250008B19F1 /* UIComponents */,
 				0FDB62422A8B5182008B19F1 /* Resources */,
@@ -157,7 +165,6 @@
 		0FDB62552A8E1180008B19F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0FDB62672A8F686C008B19F1 /* Extension */,
 				0FDB62592A8E1373008B19F1 /* SkinQuiz */,
 			);
 			path = View;
@@ -166,7 +173,6 @@
 		0FDB62592A8E1373008B19F1 /* SkinQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				0FDB626A2A8F6ACF008B19F1 /* Helper */,
 				0FDB625A2A8E13F0008B19F1 /* Subviews */,
 				0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */,
 				0FDB62532A8E115E008B19F1 /* SkinIssuesView.swift */,
@@ -178,7 +184,6 @@
 		0FDB625A2A8E13F0008B19F1 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				0FDB625B2A8E1400008B19F1 /* Checkmark.swift */,
 				0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */,
 				0FDB625F2A8E76AA008B19F1 /* CheckItem.swift */,
 				0FDB62712A9011E5008B19F1 /* QuizTemplate.swift */,
@@ -345,7 +350,6 @@
 				0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */,
 				0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
-				0FDB625C2A8E1400008B19F1 /* Checkmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

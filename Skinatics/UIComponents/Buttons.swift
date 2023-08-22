@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Style for text to look like cancel button
+/// Define cancel button
 struct CancelButton: View {
     
     var body: some View {
@@ -23,7 +23,7 @@ struct CancelButton: View {
     }
 }
 
-// Custom style for primary button
+/// Define custom style for primary button
 struct PrimaryButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {

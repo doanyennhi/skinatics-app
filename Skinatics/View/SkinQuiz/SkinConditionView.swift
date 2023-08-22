@@ -9,12 +9,13 @@ import SwiftUI
 
 var conditions: [String] = ["Acne", "Rosacea", "Eczema", "Rash", "Melasma", "Hives", "Psoriasis", "Dermatitis"]
 
+// Third screen of quiz
 struct SkinConditionView: View {
     @State var selected = Set<String>()
+    // user's selected options in previous screens
     var selectedTypes: Set<String>
     @State var selectedIssues: Set<String>
-    var twoColumnGrid: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
-    
+ 
     var body: some View {
         QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: $selected, screen: NewView(selectedTypes: selectedTypes, selectedIssues: selectedIssues, selectedConditions: selected), btnText: "Submit", selectionOptional: true)
     }
@@ -43,8 +44,8 @@ struct NewView: View {
     }
 }
 
-//struct SkinConditionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SkinConditionView()
-//    }
-//}
+struct SkinConditionView_Previews: PreviewProvider {
+    static var previews: some View {
+        SkinConditionView(selected: Set<String>(), selectedTypes: Set<String>(), selectedIssues: Set<String>())
+    }
+}

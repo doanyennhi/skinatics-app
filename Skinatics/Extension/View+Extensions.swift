@@ -8,28 +8,29 @@
 import SwiftUI
 
 extension View {
-    // Fade out a view at its top and bottom
-    func verticalFadeOut(fadeLength: CGFloat=50) -> some View {
+    
+    /// Fade out a view at its top and bottom
+    /// @fadeHeight: height of the fade/ blurry effect
+    func verticalFadeOut(fadeHeight: CGFloat) -> some View {
         return mask(
             VStack(spacing: 0) {
-
-                // Gradient at top
+                // fade at top
                 LinearGradient(gradient:
                    Gradient(
-                       colors: [Color.black.opacity(0), Color.black]),
+                       colors: [.black.opacity(0), .black]),
                        startPoint: .top, endPoint: .bottom
                    )
-                   .frame(height: fadeLength)
+                   .frame(height: fadeHeight)
                 
                 Rectangle().fill(Color.black)
                 
-                // Gradient at bottom
+                // fade at bottom
                 LinearGradient(gradient:
                    Gradient(
-                       colors: [Color.black.opacity(0), Color.black]),
+                       colors: [.black.opacity(0), .black]),
                        startPoint: .bottom, endPoint: .top
                    )
-                   .frame(height: fadeLength)
+                   .frame(height: fadeHeight)
             }
         )
     }

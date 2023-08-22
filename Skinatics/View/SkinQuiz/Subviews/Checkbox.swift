@@ -11,7 +11,7 @@ import SwiftUI
 struct Checkbox: View {
     var content: String
     @State var isSelected: Bool = false
-    var action: () -> Void
+    var action: () -> Void      // action performed when tapped
 
     
     var body: some View {
@@ -28,14 +28,13 @@ struct CustomCheckboxStyle: ToggleStyle {
         Button(action: {
             configuration.isOn.toggle()
             action()
-            print("selected \(configuration.isOn)")
         }, label: {
             VStack {
                 configuration.label
             }
             .padding(20)
             .frame(maxWidth: .infinity, minHeight:100)
-            // Highlight selected item
+            // Selected item is highlighted
             .background(configuration.isOn ? Color("Light Green").opacity(0.2) : .white)
             .foregroundColor(.black)
         })

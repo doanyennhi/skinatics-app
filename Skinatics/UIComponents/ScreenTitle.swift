@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Define heading of screen
 struct ScreenTitle: View {
     var title: String
     
