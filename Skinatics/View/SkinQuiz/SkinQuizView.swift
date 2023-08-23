@@ -33,20 +33,19 @@ struct SkinQuizView: View {
                 }
                     .listStyle(.plain)
                 
-                    NavigationLink(destination: SkinIssuesView(selectedTypes: selectedTypes)) {
-                        Text("Next")
+                NavigationLink(destination: SkinIssuesView(selectedTypes: selectedTypes)) {
+                    Text("Next")
+                }
+                .buttonStyle(PrimaryButtonStyle())
+                .disabled(selectedTypes.isEmpty)
+                .simultaneousGesture(TapGesture().onEnded {
+                    print(selectedTypes.isEmpty)
+                    if selectedTypes.isEmpty {
+                        show = true
+                    } else {
+                        show = false
                     }
-                    .buttonStyle(PrimaryButtonStyle())
-                    .disabled(selectedTypes.isEmpty)
-                    .simultaneousGesture(TapGesture().onEnded {
-                        print(selectedTypes.isEmpty)
-                        if selectedTypes.isEmpty {
-                            show = true
-                        } else {
-                            show = false
-                        }
-                    })
-    
+                })
             }
             .padding(.horizontal, 30)
             .font(Font.custom("Avenir", size: 18))

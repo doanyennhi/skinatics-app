@@ -9,12 +9,17 @@ import SwiftUI
 
 /// Define heading of screen
 struct ScreenTitle: View {
-    var title: String
+    private var title: String
+    
+    init(title: String) {
+        self.title = title
+    }
     
     var body: some View {
         Text(title)
             .font(.largeTitle)
             .padding(.horizontal, 20)
+            .padding(.bottom, 10)
             .multilineTextAlignment(.center)
             .bold().foregroundColor(Color("Dark Green"))
     }

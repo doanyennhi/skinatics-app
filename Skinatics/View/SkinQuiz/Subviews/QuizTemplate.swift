@@ -26,11 +26,7 @@ struct QuizTemplate<Content: View>: View {
         NavigationStack {
             VStack {
                 ScreenTitle(title: title)
-                    .padding(.bottom, 5)
-             
-                Text(subheading)
-                    .foregroundColor(Color("Secondary Green"))
-                    .padding(.bottom, 20)
+                Subheading(subheading: subheading)
             
                     show ?
                         Text("Please select at least one item")
