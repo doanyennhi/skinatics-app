@@ -1,5 +1,5 @@
 //
-//  SignUpView.swift
+//  LoginView.swift
 //  Skinatics
 //
 //  Created by Nhii on 24/8/2023.
@@ -7,40 +7,43 @@
 
 import SwiftUI
 
-struct SignUpView: View {
-    @State private var name: String = ""
+struct LoginView: View {
     @State private var email: String = ""
     @State private var pwd: String = ""
-    @State private var confirmPwd: String = ""
     
     var body: some View {
         NavigationStack {
             VStack {
-                ScreenTitle(title: "Sign Up")
-                Subheading(subheading: "Create an account to start your skincare journey")
+                ScreenTitle(title: "Welcome back!")
+                Subheading(subheading: "Please sign into your account")
                     .padding(.bottom, 30)
                 
-                TextField("Name", text: $name)
-                    .textFieldStyle(CustomTextFieldStyle())
                 TextField("Email", text: $email)
                     .textFieldStyle(CustomTextFieldStyle())
                 SecureField("Password", text: $pwd)
                     .textFieldStyle(CustomTextFieldStyle())
-                SecureField("Confirm password", text: $confirmPwd)
-                    .textFieldStyle(CustomTextFieldStyle())
-                    .padding(.bottom, 60)
                 
-                NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true)) {
-                    Text("Sign Up")
+                NavigationLink(destination: EmptyView()) {
+                    Text("Forgot password?")
+                        .underline()
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.bottom, 60)
+                
+                
+                NavigationLink(destination: SkinQuizView()
+                    .navigationBarBackButtonHidden(true)) {
+                    Text("Sign In")
                 }
                 .buttonStyle(PrimaryButtonStyle())
                 .padding(.bottom, 20)
+
                 
                 HStack {
-                    Text("Already have an account?")
-                    NavigationLink(destination: LoginView()
+                    Text("Don't have an account?")
+                    NavigationLink(destination: SignUpView()
                         .navigationBarBackButtonHidden(true)) {
-                        Text("Login")
+                        Text("Sign Up")
                             .bold()
                             .underline()
                     }
@@ -54,8 +57,8 @@ struct SignUpView: View {
     }
 }
 
-struct SignUpView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        LoginView()
     }
 }

@@ -13,7 +13,7 @@ struct CustomTextFieldStyle: TextFieldStyle {
             .padding()
             .background(Color("White"))
             .cornerRadius(15)
-            .shadow(color: .gray.opacity(0.2), radius: 10, x: 2, y: 5)
+            .shadow(color: .gray.opacity(0.2), radius: 10, x: 2, y: 2)
             .padding(.bottom, 10)
        }
 }
