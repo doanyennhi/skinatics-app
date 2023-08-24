@@ -10,6 +10,22 @@ import SwiftUI
 struct LoginView: View {
     @State private var email: String = ""
     @State private var pwd: String = ""
+    @State private var showNextView = false
+    @State private var isLoading = false
+    @State var showError = false
+    
+    func isLogin() async -> Bool {
+        try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
+        
+                for user in users {
+                    if user.email == email && user.password == pwd {
+                        print("Login success")
+                        return true
+                    }
+                }
+                print("Unsuccess")
+        return false
+    }
     
     var body: some View {
         NavigationStack {
@@ -31,23 +47,34 @@ struct LoginView: View {
                 .padding(.bottom, 60)
                 
                 
-                NavigationLink(destination: SkinQuizView()
-                    .navigationBarBackButtonHidden(true)) {
-                    Text("Sign In")
-                }
+                Button (action: {
+                    isLoading = true
+                    Task {
+                        showNextView = await isLogin()
+                        isLoading = false
+                    }
+                }, label: {
+                    if isLoading {
+                        ProgressView()
+                            .tint(Color("White"))
+                    } else {
+                        Text("Sign In")
+                    }
+                })
                 .buttonStyle(PrimaryButtonStyle())
-                .padding(.bottom, 20)
+                .disabled(isLoading)
+                .navigationDestination(isPresented: $showNextView, destination: {SkinQuizView().navigationBarBackButtonHidden()})
 
                 
-                HStack {
-                    Text("Don't have an account?")
-                    NavigationLink(destination: SignUpView()
-                        .navigationBarBackButtonHidden(true)) {
+            HStack {
+                Text("Don't have an account?")
+                NavigationLink(destination: SignUpView()
+                    .navigationBarBackButtonHidden(true)) {
                         Text("Sign Up")
                             .bold()
                             .underline()
                     }
-                }
+            }
             }
             .padding(.horizontal, 30)
             .font(Font.custom("Avenir", size: 18))

@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+var users = [User(name: "Itoshi Rin", email: "rin0909@gmail.com", password: "123Rin", skinTypes: [], skinIssues: [], skinConditions: []), User(name: "Itoshi Sae", email: "sae10@gmail.com", password: "1010Sae", skinTypes: ["Dry"], skinIssues: ["Dark spots", "Redness"], skinConditions: [])]
+
 struct SignUpView: View {
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var pwd: String = ""
     @State private var confirmPwd: String = ""
+    @State var user: User = User()
     
     var body: some View {
         NavigationStack {
@@ -35,6 +38,12 @@ struct SignUpView: View {
                 }
                 .buttonStyle(PrimaryButtonStyle())
                 .padding(.bottom, 20)
+                .simultaneousGesture(
+                    TapGesture().onEnded {
+                        user.name = name
+                        user.email = email
+                        user.password = pwd
+                })
                 
                 HStack {
                     Text("Already have an account?")

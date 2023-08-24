@@ -11,6 +11,7 @@
 		0F4061EE2A96682B00746054 /* Subheading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061ED2A96682B00746054 /* Subheading.swift */; };
 		0F4061F02A96738F00746054 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EF2A96738F00746054 /* CustomTextField.swift */; };
 		0F4061F32A967C3100746054 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F22A967C3100746054 /* LoginView.swift */; };
+		0F4061F52A974FDC00746054 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F42A974FDC00746054 /* User.swift */; };
 		0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */; };
 		0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9C2A896A7C00E64231 /* ContentView.swift */; };
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		0F4061ED2A96682B00746054 /* Subheading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subheading.swift; sourceTree = "<group>"; };
 		0F4061EF2A96738F00746054 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0F4061F22A967C3100746054 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0F4061F42A974FDC00746054 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0FBE1D972A896A7C00E64231 /* Skinatics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skinatics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsApp.swift; sourceTree = "<group>"; };
 		0FBE1D9C2A896A7C00E64231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		0F4061E72A94AC3800746054 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F4061F42A974FDC00746054 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				0FDB62602A8E76AA008B19F1 /* CheckItem.swift in Sources */,
 				0FDB62662A8E98BD008B19F1 /* SkinConditionView.swift in Sources */,
 				0F4061F02A96738F00746054 /* CustomTextField.swift in Sources */,
+				0F4061F52A974FDC00746054 /* User.swift in Sources */,
 				0FDB62722A9011E5008B19F1 /* QuizTemplate.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */,
