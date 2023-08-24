@@ -13,17 +13,16 @@ var skinIssues: [String] = ["Blackheads", "Dark spots", "Enlarged pores", "Sun p
 struct SkinIssuesView: View {
     @State var show = false
     @State var selected = Set<String>()
-    // user's selected options in previous screen
-    var selectedTypes: Set<String>
+    @State var user: User
     
     var body: some View {
-        QuizTemplate(title: "What do you need help with?", subheading: "Choose one or more skin concerns you want to treat", options: skinIssues, selected: $selected, screen: SkinConditionView(selectedTypes: selectedTypes, selectedIssues: selected), btnText: "Next", selectionOptional: false)
+        QuizTemplate(title: "What do you need help with?", subheading: "Choose one or more skin concerns you want to treat", options: skinIssues, selected: $selected, screen: SkinConditionView(user: user), btnText: "Next", selectionOptional: false, action: {user.skinIssues = selected})
     }
 }
 
 
 struct SkinIssuesView_Previews: PreviewProvider {
     static var previews: some View {
-        SkinIssuesView(selected: Set<String>(), selectedTypes: Set<String>())
+        SkinIssuesView(selected: Set<String>(), user: User())
     }
 }

@@ -18,9 +18,10 @@ struct QuizTemplate<Content: View>: View {
     @State var show: Bool = false    //  track if error text should be displayed
     var options: [String]            // quiz options
     @Binding var selected: Set<String>     // user's selection in quiz
-    var screen: Content       // screen to navigate to
+    var screen: Content              // screen to navigate to
     var btnText: String
-    var selectionOptional: Bool    // state if this quiz section is optional
+    var selectionOptional: Bool     // state if this quiz section is optional
+    var action: () -> Void
     
     var body: some View {
         NavigationStack {
@@ -65,6 +66,7 @@ struct QuizTemplate<Content: View>: View {
                                 show = false
                             }
                         }
+                        action()
                 })
             }
             .padding(.horizontal, 30)

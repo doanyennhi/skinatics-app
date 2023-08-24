@@ -14,6 +14,7 @@ struct SkinQuizView: View {
     // store selected values
     @State var selectedTypes = Set<String>()
     @State var show: Bool = false
+    @State var user: User
     
     var body: some View {
         NavigationStack {
@@ -33,17 +34,17 @@ struct SkinQuizView: View {
                 }
                     .listStyle(.plain)
                 
-                NavigationLink(destination: SkinIssuesView(selectedTypes: selectedTypes)) {
+                NavigationLink(destination: SkinIssuesView(user: user)) {
                     Text("Next")
                 }
                 .buttonStyle(PrimaryButtonStyle())
                 .disabled(selectedTypes.isEmpty)
                 .simultaneousGesture(TapGesture().onEnded {
-                    print(selectedTypes.isEmpty)
                     if selectedTypes.isEmpty {
                         show = true
                     } else {
                         show = false
+                        user.skinTypes = selectedTypes
                     }
                 })
             }
@@ -59,6 +60,6 @@ struct SkinQuizView: View {
 
 struct SkinQuizView_Previews: PreviewProvider {
     static var previews: some View {
-        SkinQuizView()
+        SkinQuizView(user: User())
     }
 }

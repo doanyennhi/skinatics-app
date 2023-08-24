@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State private var currentUser: User = User()
     @State private var email: String = ""
     @State private var pwd: String = ""
     @State private var showNextView = false
@@ -20,10 +21,12 @@ struct LoginView: View {
                 for user in users {
                     if user.email == email && user.password == pwd {
                         print("Login success")
+                        currentUser = user
                         return true
                     }
                 }
-                print("Unsuccess")
+        showError = true
+        print("Unsuccess")
         return false
     }
     
@@ -33,6 +36,12 @@ struct LoginView: View {
                 ScreenTitle(title: "Welcome back!")
                 Subheading(subheading: "Please sign into your account")
                     .padding(.bottom, 30)
+                
+                showError ?
+                    Text("Your email or password is incorrect. Please try again.")
+                        .foregroundColor(.red)
+                        .padding(.bottom, 20)
+                 : nil
                 
                 TextField("Email", text: $email)
                     .textFieldStyle(CustomTextFieldStyle())
@@ -63,8 +72,13 @@ struct LoginView: View {
                 })
                 .buttonStyle(PrimaryButtonStyle())
                 .disabled(isLoading)
-                .navigationDestination(isPresented: $showNextView, destination: {SkinQuizView().navigationBarBackButtonHidden()})
-
+                .navigationDestination(isPresented: $showNextView, destination: {
+                    if currentUser.skinTypes.isEmpty || currentUser.skinIssues.isEmpty {
+                        SkinQuizView(user: currentUser).navigationBarBackButtonHidden()
+                    } else {
+                        NewView(user: currentUser).navigationBarBackButtonHidden()
+                    }
+                })
                 
             HStack {
                 Text("Don't have an account?")

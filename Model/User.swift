@@ -12,11 +12,11 @@ struct User: Identifiable {
     private var _name: String
     private var _email: String
     private var _password: String
-    private var _skinTypes: [String]
-    private var _skinIssues: [String]
-    private var _skinConditions: [String]
+    private var _skinTypes: Set<String>
+    private var _skinIssues: Set<String>
+    private var _skinConditions: Set<String>
     
-    init(name: String, email: String, password: String, skinTypes: [String], skinIssues: [String], skinConditions: [String]) {
+    init(name: String, email: String, password: String, skinTypes: Set<String>, skinIssues: Set<String>, skinConditions: Set<String>) {
         self._name = name
         self._email = email
         self._password = password
@@ -56,7 +56,7 @@ struct User: Identifiable {
             }
         }
     
-    public var skinTypes: [String] {
+    public var skinTypes: Set<String> {
             get {
                 return self._skinTypes;
             }
@@ -65,7 +65,7 @@ struct User: Identifiable {
             }
         }
     
-    public var skinIssues: [String] {
+    public var skinIssues: Set<String> {
             get {
                 return self._skinIssues;
             }
@@ -74,7 +74,7 @@ struct User: Identifiable {
             }
         }
     
-    public var skinConditions: [String] {
+    public var skinConditions: Set<String> {
             get {
                 return self._skinConditions;
             }
