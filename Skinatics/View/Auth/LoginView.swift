@@ -8,26 +8,34 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     @State private var currentUser: User = User()
     @State private var email: String = ""
     @State private var pwd: String = ""
     @State private var showNextView = false
     @State private var isLoading = false
     @State var showError = false
+    @State var showEmptyWarning = false
     
     func isLogin() async -> Bool {
-        try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
-        
-                for user in users {
-                    if user.email == email && user.password == pwd {
-                        print("Login success")
-                        currentUser = user
-                        return true
-                    }
+        if isTextEmpty(text: email) || isTextEmpty(text: pwd) {
+            showEmptyWarning = true
+            return false
+        } else {
+            showEmptyWarning = false
+            try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
+            
+            for user in users {
+                if user.email == email && user.password == pwd {
+                    print("Login success")
+                    currentUser = user
+                    return true
                 }
-        showError = true
-        print("Unsuccess")
-        return false
+            }
+            showError = true
+            print("Unsuccess")
+            return false
+        }
     }
     
     var body: some View {
@@ -37,17 +45,16 @@ struct LoginView: View {
                 Subheading(subheading: "Please sign into your account")
                     .padding(.bottom, 30)
                 
-                showError ?
-                    Text("Your email or password is incorrect. Please try again.")
-                        .foregroundColor(.red)
-                        .padding(.bottom, 20)
-                 : nil
+                ErrorText(show: $showError, text: "Your email or password is incorrect. Please try again.")
+                
+                ErrorText(show: $showEmptyWarning, text: "Please fill in all the fields.")
                 
                 TextField("Email", text: $email)
                     .textFieldStyle(CustomTextFieldStyle())
+                    
                 SecureField("Password", text: $pwd)
                     .textFieldStyle(CustomTextFieldStyle())
-                
+    
                 NavigationLink(destination: EmptyView()) {
                     Text("Forgot password?")
                         .underline()
@@ -58,10 +65,10 @@ struct LoginView: View {
                 
                 Button (action: {
                     isLoading = true
-                    Task {
-                        showNextView = await isLogin()
-                        isLoading = false
-                    }
+                        Task {
+                            showNextView = await isLogin()
+                            isLoading = false
+                        }
                 }, label: {
                     if isLoading {
                         ProgressView()

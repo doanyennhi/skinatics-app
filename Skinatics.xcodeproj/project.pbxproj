@@ -12,6 +12,9 @@
 		0F4061F02A96738F00746054 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EF2A96738F00746054 /* CustomTextField.swift */; };
 		0F4061F32A967C3100746054 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F22A967C3100746054 /* LoginView.swift */; };
 		0F4061F52A974FDC00746054 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F42A974FDC00746054 /* User.swift */; };
+		0F4061F92A97D53500746054 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F82A97D53500746054 /* AuthTextField.swift */; };
+		0F4061FB2A97D5F800746054 /* ErrorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061FA2A97D5F800746054 /* ErrorText.swift */; };
+		0F4061FD2A97D97E00746054 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061FC2A97D97E00746054 /* Validation.swift */; };
 		0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */; };
 		0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9C2A896A7C00E64231 /* ContentView.swift */; };
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
@@ -52,6 +55,9 @@
 		0F4061EF2A96738F00746054 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0F4061F22A967C3100746054 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0F4061F42A974FDC00746054 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F4061F82A97D53500746054 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		0F4061FA2A97D5F800746054 /* ErrorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
+		0F4061FC2A97D97E00746054 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		0FBE1D972A896A7C00E64231 /* Skinatics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skinatics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsApp.swift; sourceTree = "<group>"; };
 		0FBE1D9C2A896A7C00E64231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 			children = (
 				0F4061EB2A9667E700746054 /* SignUpView.swift */,
 				0F4061F22A967C3100746054 /* LoginView.swift */,
+				0F4061F82A97D53500746054 /* AuthTextField.swift */,
+				0F4061FC2A97D97E00746054 /* Validation.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -180,6 +188,7 @@
 				0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */,
 				0F4061ED2A96682B00746054 /* Subheading.swift */,
 				0F4061EF2A96738F00746054 /* CustomTextField.swift */,
+				0F4061FA2A97D5F800746054 /* ErrorText.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -362,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */,
+				0F4061FD2A97D97E00746054 /* Validation.swift in Sources */,
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
 				0FDB626C2A8F6B4C008B19F1 /* SetHelper.swift in Sources */,
 				0FDB62692A8F68DE008B19F1 /* View+Extensions.swift in Sources */,
@@ -375,7 +385,9 @@
 				0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */,
 				0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */,
 				0F4061EE2A96682B00746054 /* Subheading.swift in Sources */,
+				0F4061FB2A97D5F800746054 /* ErrorText.swift in Sources */,
 				0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */,
+				0F4061F92A97D53500746054 /* AuthTextField.swift in Sources */,
 				0F4061F32A967C3100746054 /* LoginView.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
 			);
