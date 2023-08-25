@@ -137,7 +137,6 @@
 		0FBE1D8E2A896A7C00E64231 = {
 			isa = PBXGroup;
 			children = (
-				0F4061E72A94AC3800746054 /* Model */,
 				0FBE1D992A896A7C00E64231 /* Skinatics */,
 				0FBE1D982A896A7C00E64231 /* Products */,
 			);
@@ -156,6 +155,7 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				0F4061E72A94AC3800746054 /* Model */,
 				0FDB626A2A8F6ACF008B19F1 /* Helper */,
 				0FDB62672A8F686C008B19F1 /* Extension */,
 				0FDB62552A8E1180008B19F1 /* View */,

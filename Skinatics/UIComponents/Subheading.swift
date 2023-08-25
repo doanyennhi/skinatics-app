@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Define common subheading/ subtitle used in screen
 struct Subheading: View {
     private var subheading: String
     
@@ -18,6 +19,7 @@ struct Subheading: View {
         Text(subheading)
             .foregroundColor(Color("Secondary Green"))
             .padding(.bottom, 20)
+            .multilineTextAlignment(.center)
     }
 }
 

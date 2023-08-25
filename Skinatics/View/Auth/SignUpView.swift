@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Add comments
 var users = [User(name: "Itoshi Rin", email: "rin0909@gmail.com", password: "123Rin", skinTypes: [], skinIssues: [], skinConditions: []), User(name: "Itoshi Sae", email: "sae10@gmail.com", password: "1010Sae", skinTypes: ["Dry"], skinIssues: ["Dark spots", "Redness"], skinConditions: [])]
 
 

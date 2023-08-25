@@ -9,7 +9,7 @@ import SwiftUI
 
 var skinIssues: [String] = ["Blackheads", "Dark spots", "Enlarged pores", "Sun protection", "Under-eye circles", "Signs of Aging", "Dullness", "Fine lines", "Acne", "Acne scars", "Redness"]
 
-// Second screen of quiz
+// Second quiz, quiz on skin issues
 struct SkinIssuesView: View {
     @State var show = false
     @State var selected = Set<String>()

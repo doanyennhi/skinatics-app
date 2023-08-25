@@ -9,7 +9,7 @@ import SwiftUI
 
 var skinTypes: [String] = ["Dry", "Combination", "Oily", "Normal", "Sensitive", "Acne-prone"]
 
-// First screen of quiz
+// First quiz, quiz on skin types
 struct SkinQuizView: View {
     // store selected values
     @State var selectedTypes = Set<String>()
@@ -20,9 +20,7 @@ struct SkinQuizView: View {
         NavigationStack {
             VStack(alignment: .center) {
                 ScreenTitle(title: "What's your skin type?")
-                Text(show ? "Please select at least one item" : "")
-                    .foregroundColor(.red)
-                    .padding(.top, 5)
+                ErrorText(show: $show, text: "Please select at least one item")
                 
                 // Checklist for skin types
                     List(skinTypes, id: \.self) { skinType in
@@ -38,8 +36,10 @@ struct SkinQuizView: View {
                     Text("Next")
                 }
                 .buttonStyle(PrimaryButtonStyle())
+                // prevent navigation if no options selected
                 .disabled(selectedTypes.isEmpty)
                 .simultaneousGesture(TapGesture().onEnded {
+                    // show error message if no options selected
                     if selectedTypes.isEmpty {
                         show = true
                     } else {

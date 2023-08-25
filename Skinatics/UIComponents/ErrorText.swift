@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Define a custom text to show an error message
 struct ErrorText: View {
     @Binding var show: Bool
     var text: String

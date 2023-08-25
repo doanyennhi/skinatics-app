@@ -23,17 +23,14 @@ struct QuizTemplate<Content: View>: View {
     var selectionOptional: Bool     // state if this quiz section is optional
     var action: () -> Void
     
+    // TODO: add more comments
     var body: some View {
         NavigationStack {
             VStack {
                 ScreenTitle(title: title)
                 Subheading(subheading: subheading)
-            
-                    show ?
-                        Text("Please select at least one item")
-                            .foregroundColor(.red)
-                            .padding(.top, 5)
-                     : nil
+                
+                ErrorText(show: $show, text: "Please select at least one item")
 
                 // options displayed in 2 columns
                 ScrollView(showsIndicators: false) {
@@ -76,9 +73,3 @@ struct QuizTemplate<Content: View>: View {
         }
     }
 }
-
-//struct QuizTemplate_Previews: PreviewProvider {
-//    static var previews: some View {
-//        QuizTemplate()
-//    }
-//}

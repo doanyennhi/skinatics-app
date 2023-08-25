@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Define model for user account
 struct User: Identifiable {
     var id = UUID()
     private var _name: String
@@ -29,6 +30,7 @@ struct User: Identifiable {
         self.init(name: "", email: "", password: "", skinTypes: [], skinIssues: [], skinConditions: [])
     }
     
+    // getters & setters
     public var name: String {
             get {
                 return self._name;

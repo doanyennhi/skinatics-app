@@ -12,7 +12,7 @@ import SwiftUI
 struct CheckItem: View {
     var content: String
     @State var isSelected: Bool = false
-    var action: () -> Void
+    var action: () -> Void       // action performed when item is tapped
 
     var body: some View {
         HStack {
@@ -27,6 +27,7 @@ struct CheckItem: View {
         .font(Font.custom("Avenir", size: 20))
         .foregroundColor(isSelected ? Color("Secondary Green") : Color("Black"))
         .fontWeight(isSelected ? .bold : .regular)
+        
         .padding(.vertical, 20)
         .contentShape(Rectangle())
         .onTapGesture {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Add comments
 struct LoginView: View {
     
     @State private var currentUser: User = User()
@@ -83,7 +84,7 @@ struct LoginView: View {
                     if currentUser.skinTypes.isEmpty || currentUser.skinIssues.isEmpty {
                         SkinQuizView(user: currentUser).navigationBarBackButtonHidden()
                     } else {
-                        NewView(user: currentUser).navigationBarBackButtonHidden()
+                       HomeView().navigationBarBackButtonHidden()
                     }
                 })
                 

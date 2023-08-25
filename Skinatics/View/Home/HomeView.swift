@@ -27,13 +27,9 @@ struct HomeView: View {
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                Text("Hey Jane!")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(Color("Dark Green"))
+                ScreenTitle(title: "Hey Jane")
                 
-                Text("We have some recommendations for you.")
-                    .foregroundStyle(Color("AccentColor"))
+                Subheading(subheading: "We have some recommendations for you.")
             }
             .padding(.bottom, 20)
             ScrollView {

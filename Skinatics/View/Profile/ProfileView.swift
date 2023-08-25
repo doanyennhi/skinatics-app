@@ -36,7 +36,7 @@ struct ProfileView: View {
         }
         .padding(40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Floral white"))
+        .background(Color("Floral White"))
     }
 }
 

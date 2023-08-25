@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: add comments
 func isTextEmpty(text: String) -> Bool {
     return text == ""
 }

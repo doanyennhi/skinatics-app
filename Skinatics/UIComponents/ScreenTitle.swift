@@ -18,8 +18,7 @@ struct ScreenTitle: View {
     var body: some View {
         Text(title)
             .font(.largeTitle)
-            .padding(.horizontal, 20)
-            .padding(.bottom, 10)
+            .padding(.vertical, 10)
             .multilineTextAlignment(.center)
             .bold().foregroundColor(Color("Dark Green"))
     }
