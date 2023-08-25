@@ -12,12 +12,13 @@ let screenWidth = screenSize.width
 
 struct StartUpView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             StartUpLayout {
                 Image("logo-white")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: screenWidth)
+                    .padding(.bottom, 10)
                 Text("Skinatics")
                     .font(.largeTitle)
                     .bold()
@@ -32,6 +33,7 @@ struct StartUpView: View {
                     }
                     .buttonStyle(SecondaryButtonStyle())
                     .padding(.horizontal, 20)
+                    .padding(.bottom, 10)
                     NavigationLink(destination: LoginView()) {
                         Text("Log In")
                     }
@@ -65,7 +67,7 @@ struct StartUpView: View {
             guard !subviews.isEmpty else { return }
             
             let subviewSizes = subviews.map { $0.sizeThatFits(.unspecified) }
-            let allHeights = subviewSizes.map { $0.height }
+            _ = subviewSizes.map { $0.height }
             
             var y = bounds.midY
             

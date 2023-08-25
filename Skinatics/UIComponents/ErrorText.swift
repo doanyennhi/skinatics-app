@@ -19,9 +19,3 @@ struct ErrorText: View {
          : nil
     }
 }
-
-//struct ErrorText_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ErrorText(text: "Error")
-//    }
-//}

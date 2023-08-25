@@ -9,6 +9,7 @@ import SwiftUI
 
 var users = [User(name: "Itoshi Rin", email: "rin0909@gmail.com", password: "123Rin", skinTypes: [], skinIssues: [], skinConditions: []), User(name: "Itoshi Sae", email: "sae10@gmail.com", password: "1010Sae", skinTypes: ["Dry"], skinIssues: ["Dark spots", "Redness"], skinConditions: [])]
 
+
 struct SignUpView: View {
     @State private var name: String = ""
     @State private var email: String = ""
@@ -16,21 +17,26 @@ struct SignUpView: View {
     @State private var showNextView = false
     @State private var isLoading = false
     @State var showEmptyWarning = false
+    @State var showInvalidEmail = false
     @State private var confirmPwd: String = ""
-    var isPasswordSame: Binding<Bool> { Binding (
+    @State var user: User = User()
+
+    var isPasswordDifferent: Binding<Bool> { Binding (
         get: {!confirmPassword(pwd: pwd, confirmPwd: confirmPwd)},
         set: {_ in }
         )
     }
-    @State var user: User = User()
-    
+
     func isSignUp() async -> Bool {
-        showEmptyWarning = false
-        
         if isTextEmpty(text: email) || isTextEmpty(text: pwd) || isTextEmpty(text: name) || isTextEmpty(text: confirmPwd) {
             showEmptyWarning = true
             return false
-        }
+        } else { showEmptyWarning = false }
+        
+        if !validateEmail(email: email) {
+            showInvalidEmail = true
+            return false
+        } else { showInvalidEmail = false }
             
         if !confirmPassword(pwd: pwd, confirmPwd: confirmPwd) {
             return false
@@ -56,16 +62,21 @@ struct SignUpView: View {
                 
                 TextField("Name", text: $name)
                     .textFieldStyle(CustomTextFieldStyle())
-                TextField("Email", text: $email)
-                    .textFieldStyle(CustomTextFieldStyle())
+                VStack {
+                    ErrorText(show: $showInvalidEmail, text: "Invalid email address")
+                    TextField("Email", text: $email)
+                        .textFieldStyle(CustomTextFieldStyle())
+                }
+                
                 SecureField("Password", text: $pwd)
                     .textFieldStyle(CustomTextFieldStyle())
                 
-                ErrorText(show: isPasswordSame, text: "Password does not match")
-                
-                SecureField("Confirm password", text: $confirmPwd)
-                    .textFieldStyle(CustomTextFieldStyle())
-                    .padding(.bottom, 60)
+                VStack {
+                    ErrorText(show: isPasswordDifferent, text: "Password does not match")
+                    SecureField("Confirm password", text: $confirmPwd)
+                        .textFieldStyle(CustomTextFieldStyle())
+                }
+                .padding(.bottom, 60)
                 
                 Button (action: {
                     isLoading = true
@@ -86,19 +97,6 @@ struct SignUpView: View {
                 .navigationDestination(isPresented: $showNextView, destination: {
                     LoginView().navigationBarBackButtonHidden()
                 })
-                
-//                NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true)) {
-//                    Text("Sign Up")
-//                }
-//                .buttonStyle(PrimaryButtonStyle())
-//                .padding(.bottom, 20)
-//                .simultaneousGesture(
-//                    TapGesture().onEnded {
-//                        user.name = name
-//                        user.email = email
-//                        user.password = pwd
-//                        users.append(user)
-//                })
                 
                 HStack {
                     Text("Already have an account?")
