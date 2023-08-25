@@ -12,6 +12,7 @@ let screenWidth = screenSize.width
 
 struct StartUpView: View {
     var body: some View {
+        NavigationView {
             StartUpLayout {
                 Image("logo-white")
                     .resizable()
@@ -40,6 +41,7 @@ struct StartUpView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Dark Green"))
+        }
     }
     
     struct StartUpView_Previews: PreviewProvider {
