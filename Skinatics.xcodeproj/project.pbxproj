@@ -29,6 +29,7 @@
 		0FDB62722A9011E5008B19F1 /* QuizTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62712A9011E5008B19F1 /* QuizTemplate.swift */; };
 		497B857B2A98651600F90871 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857A2A98651600F90871 /* HomeView.swift */; };
 		497B857D2A9865A200F90871 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857C2A9865A200F90871 /* ProductCardView.swift */; };
+		497B85802A98676C00F90871 /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857F2A98676C00F90871 /* StartUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		0FDB62712A9011E5008B19F1 /* QuizTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTemplate.swift; sourceTree = "<group>"; };
 		497B857A2A98651600F90871 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		497B857C2A9865A200F90871 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		497B857F2A98676C00F90871 /* StartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		0FDB62552A8E1180008B19F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				497B857E2A98675800F90871 /* StartUp */,
 				497B85792A98650600F90871 /* Home */,
 				0F4061EA2A9667CA00746054 /* Auth */,
 				0FDB62592A8E1373008B19F1 /* SkinQuiz */,
@@ -242,6 +245,14 @@
 				497B857C2A9865A200F90871 /* ProductCardView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		497B857E2A98675800F90871 /* StartUp */ = {
+			isa = PBXGroup;
+			children = (
+				497B857F2A98676C00F90871 /* StartUpView.swift */,
+			);
+			path = StartUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +396,7 @@
 				0F4061F52A974FDC00746054 /* User.swift in Sources */,
 				0FDB62722A9011E5008B19F1 /* QuizTemplate.swift in Sources */,
 				497B857B2A98651600F90871 /* HomeView.swift in Sources */,
+				497B85802A98676C00F90871 /* StartUpView.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */,
 				0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */,
