@@ -9,35 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        // StartUpView()
+        StartUpView()
         // SkinQuizView()
-        TabView {
-            HomeView()
-                .tabItem() {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
-            SearchView()
-                .tabItem() {
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
-                }
-            CameraView()
-                .tabItem() {
-                    Image(systemName: "camera.fill")
-                    Text("Camera")
-                }
-            RoutineView()
-                .tabItem() {
-                    Image(systemName: "list.bullet")
-                    Text("Routine")
-                }
-            ProfileView()
-                .tabItem() {
-                    Image(systemName: "person.circle.fill")
-                    Text("Profile")
-                }
-        }
+//        TabView {
+//            HomeView()
+//                .tabItem() {
+//                    Image(systemName: "house.fill")
+//                    Text("Home")
+//                }
+//            SearchView()
+//                .tabItem() {
+//                    Image(systemName: "magnifyingglass")
+//                    Text("Search")
+//                }
+//            CameraView()
+//                .tabItem() {
+//                    Image(systemName: "camera.fill")
+//                    Text("Camera")
+//                }
+//            RoutineView()
+//                .tabItem() {
+//                    Image(systemName: "list.bullet")
+//                    Text("Routine")
+//                }
+//            ProfileView()
+//                .tabItem() {
+//                    Image(systemName: "person.circle.fill")
+//                    Text("Profile")
+//                }
+//        }
     }
         
 }
