@@ -34,6 +34,7 @@
 		497B85872A986E1000F90871 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B85862A986E1000F90871 /* CameraView.swift */; };
 		497B85892A986E1900F90871 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B85882A986E1900F90871 /* SearchView.swift */; };
 		497B858C2A986E8D00F90871 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B858B2A986E8D00F90871 /* ProfileView.swift */; };
+		497B858E2A9870FB00F90871 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B858D2A9870FB00F90871 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		497B85862A986E1000F90871 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		497B85882A986E1900F90871 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		497B858B2A986E8D00F90871 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		497B858D2A9870FB00F90871 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				497B858B2A986E8D00F90871 /* ProfileView.swift */,
+				497B858D2A9870FB00F90871 /* EditProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				497B85892A986E1900F90871 /* SearchView.swift in Sources */,
 				0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */,
+				497B858E2A9870FB00F90871 /* EditProfileView.swift in Sources */,
 				0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */,
 				497B858C2A986E8D00F90871 /* ProfileView.swift in Sources */,
 				0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */,
