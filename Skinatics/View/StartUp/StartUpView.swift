@@ -12,7 +12,34 @@ let screenWidth = screenSize.width
 
 struct StartUpView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            StartUpLayout {
+                Image("logo-white")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: screenWidth)
+                Text("Skinatics")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(.vertical, 20)
+                Text("Your on-the-go skincare assistant.")
+                    .foregroundColor(.white)
+                    .padding(.bottom, 60)
+                VStack {
+                    NavigationLink(destination: SignUpView()) {
+                        Text("Sign Up")
+                    }
+                    .buttonStyle(SecondaryButtonStyle())
+                    .padding(.horizontal, 20)
+                    NavigationLink(destination: LoginView()) {
+                        Text("Log In")
+                    }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .padding(.horizontal, 20)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("Dark Green"))
     }
     
     struct StartUpView_Previews: PreviewProvider {
