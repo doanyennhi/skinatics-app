@@ -37,3 +37,15 @@ struct PrimaryButtonStyle: ButtonStyle {
         }
 }
 
+/// Custom style for secondary button
+struct SecondaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        .font(.system(size: 20, weight: .bold))
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 20)
+        .foregroundColor(.black)
+        .background(Color("Beige"))
+        .cornerRadius(15)
+    }
+}
