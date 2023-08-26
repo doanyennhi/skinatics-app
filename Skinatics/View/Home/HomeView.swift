@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// struct to create Product objects
 struct Product: Identifiable {
     var id = UUID().uuidString
     var image: String
@@ -14,6 +15,7 @@ struct Product: Identifiable {
     var product: String
 }
 
+// array of Product objects
 var products: [Product] = [
     Product(image: "cerave-hydrating-foaming-oil-cleanser", brand: "CeraVe", product: "Hydrating Foaming Oil Cleanser"),
     Product(image: "the-ordinary-hyaluronic-acid", brand: "The Ordinary.", product: "Hyaluronic Acid 2% + B5"),
@@ -26,15 +28,19 @@ var products: [Product] = [
 struct HomeView: View {
     var body: some View {
         VStack {
+            // stack for top introductory text
             VStack(alignment: .leading) {
-                ScreenTitle(title: "Hey Jane")
+                ScreenTitle(title: "Hey Jane") // FIXME: change to user's name
                 
                 Subheading(subheading: "We have some recommendations for you.")
             }
             .padding(.bottom, 20)
+            
             ScrollView {
+                // list of recommended products using ProductCardView
                 VStack(alignment: .leading) {
                     ForEach(products) {
+                        // iterating through products array to produce view for each product
                         product in ProductCardView(image: product.image, brand: product.brand, product: product.product)
                 }
                     .padding(.horizontal, 25)
@@ -42,7 +48,6 @@ struct HomeView: View {
             }
 
                 }
-            
         }
         .padding(.top, 40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
