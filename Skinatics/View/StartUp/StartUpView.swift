@@ -33,7 +33,7 @@ struct StartUpView: View {
                     }
                     .buttonStyle(SecondaryButtonStyle())
                     .padding(.horizontal, 20)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 5)
                     NavigationLink(destination: LoginView()) {
                         Text("Log In")
                     }
