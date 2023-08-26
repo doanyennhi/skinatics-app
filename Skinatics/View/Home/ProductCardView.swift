@@ -7,25 +7,26 @@
 
 import SwiftUI
 
+// view used for each product listed in HomeView
 struct ProductCardView: View {
-    
     var image: String
     var brand: String
     var product: String
     
+    // intended layout: product image sits on left, product info on right
     var body: some View {
         HStack(alignment: .center) {
-            Image(image)
+            Image(image) // product image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100)
                 .padding(.all, 20)
             VStack(alignment: .leading) {
-                Text(brand)
+                Text(brand) // product brand
                     .foregroundColor(Color("Dark Green"))
                     .padding(.bottom, 1)
                     .font(.subheadline)
-                Text(product)
+                Text(product) // product name
                     .font(.subheadline)
                     .foregroundColor(.accentColor)
                     .bold()
@@ -35,7 +36,7 @@ struct ProductCardView: View {
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .background(.white)
-        .modifier(CardModifier())
+        .modifier(CardModifier()) // apply CardModifier styling
     }
 }
 
@@ -45,6 +46,7 @@ struct ProductCardView_Previews: PreviewProvider {
     }
 }
 
+// styling for product card
 struct CardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
