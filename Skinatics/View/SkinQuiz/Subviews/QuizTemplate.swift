@@ -21,9 +21,9 @@ struct QuizTemplate<Content: View>: View {
     var screen: Content              // screen to navigate to
     var btnText: String
     var selectionOptional: Bool     // state if this quiz section is optional
-    var action: () -> Void
+    var action: () -> Void          // action when button is tapped
     
-    // TODO: add more comments
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -32,7 +32,7 @@ struct QuizTemplate<Content: View>: View {
                 
                 ErrorText(show: $show, text: "Please select at least one item")
 
-                // options displayed in 2 columns
+                // options displayed as checkboxes in 2 columns
                 ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: twoColumnGrid) {
                         ForEach(options, id: \.self) { item in
@@ -51,11 +51,13 @@ struct QuizTemplate<Content: View>: View {
                 } label: {
                     Text(btnText)
                 }
+                // if quiz is required, disable navigation if no options selected
                 .disabled(selectionOptional ? false : selected.isEmpty)
                 .buttonStyle(PrimaryButtonStyle())
                 .simultaneousGesture(
                     TapGesture().onEnded {
                         print(selected)
+                        // show error message if quiz is required & no options selected
                         if !selectionOptional {
                             if selected.isEmpty {
                                 show = true

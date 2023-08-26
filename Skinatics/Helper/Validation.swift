@@ -7,20 +7,30 @@
 
 import Foundation
 
-// TODO: add comments
+/// Validate if text field is empty
+/// @text: text to validate
+/// return true if empty string, false otherwise
 func isTextEmpty(text: String) -> Bool {
     return text == ""
 }
 
+/// Validate if password and confirm password strings are identical
+/// @pwd: password
+/// @confirmPwd: confirm password
+/// return true if  identical, false otherwise
 func confirmPassword(pwd: String, confirmPwd: String) -> Bool {
     return pwd == confirmPwd
 }
 
+/// Validate email address
+/// @email: Email address string
+/// return true if valid email, false otherwise
 func validateEmail(email: String) -> Bool {
     let emailValidator = try? NSDataDetector(
       types: NSTextCheckingResult.CheckingType.link.rawValue
     )
 
+    // define range of the email string
     let rangeOfValidatedEmail = NSRange(
         email.startIndex..<email.endIndex,
       in: email
@@ -32,6 +42,7 @@ func validateEmail(email: String) -> Bool {
       range: rangeOfValidatedEmail
     )
     
+    // Ensure only 1 match is returned
     guard matches?.count == 1 else {
       return false
     }
@@ -40,6 +51,7 @@ func validateEmail(email: String) -> Bool {
       return false
     }
 
+    // Check if string is recognized as actual email address
     guard firstMatch?.url?.scheme == "mailto" else {
       return false
     }

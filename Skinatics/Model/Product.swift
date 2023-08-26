@@ -6,10 +6,11 @@
 //
 
 import Foundation
-//
-//struct Product: Identifiable {
-//    var id = UUID().uuidString
-//    var image: String
-//    var brand: String
-//    var product: String
-//}
+
+/// Define model for Product
+struct Product: Identifiable {
+    var id = UUID().uuidString
+    var image: String
+    var brand: String
+    var product: String
+}

@@ -11,7 +11,7 @@ import SwiftUI
 struct CancelButton: View {
     
     var body: some View {
-        Text("Back")
+        Text("Cancel")
             .font(.system(size: 20, weight: .bold))
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)

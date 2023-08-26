@@ -36,7 +36,7 @@ struct ProductCardView: View {
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .background(.white)
-        .modifier(CardModifier()) // apply CardModifier styling
+        .modifier(CardModifier())   // apply CardModifier styling
     }
 }
 

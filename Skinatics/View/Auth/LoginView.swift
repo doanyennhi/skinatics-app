@@ -13,12 +13,19 @@ struct LoginView: View {
     @State private var currentUser: User = User()
     @State private var email: String = ""
     @State private var pwd: String = ""
+    
+    // check if app should navigate to next screen
     @State private var showNextView = false
+    // check if funtion is running
     @State private var isLoading = false
-    @State var showError = false
+    
+    // track display of error messages
+    @State var showError = false   
     @State var showEmptyWarning = false
     
+    // Return true if login successful, false otherwise
     func isLogin() async -> Bool {
+        // show error if any fields are empty
         if isTextEmpty(text: email) || isTextEmpty(text: pwd) {
             showEmptyWarning = true
             return false
@@ -26,6 +33,7 @@ struct LoginView: View {
             showEmptyWarning = false
             try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
             
+            // check if email and password entered match with any existing users
             for user in users {
                 if user.email == email && user.password == pwd {
                     print("Login success")
@@ -33,6 +41,7 @@ struct LoginView: View {
                     return true
                 }
             }
+            // show error if not match
             showError = true
             print("Unsuccess")
             return false
@@ -46,6 +55,7 @@ struct LoginView: View {
                 Subheading(subheading: "Please sign into your account")
                     .padding(.bottom, 30)
                 
+                // Error message and login fields
                 ErrorText(show: $showError, text: "Your email or password is incorrect. Please try again.")
                 
                 ErrorText(show: $showEmptyWarning, text: "Please fill in all the fields.")
@@ -56,6 +66,7 @@ struct LoginView: View {
                 SecureField("Password", text: $pwd)
                     .textFieldStyle(CustomTextFieldStyle())
     
+                // Forgot password link
                 NavigationLink(destination: EmptyView()) {
                     Text("Forgot password?")
                         .underline()
@@ -63,10 +74,12 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding(.bottom, 60)
                 
-                
+                // disable when run login function
                 Button (action: {
+                    // start running function
                     isLoading = true
                         Task {
+                            // navigate if login successful
                             showNextView = await isLogin()
                             isLoading = false
                         }
@@ -80,11 +93,12 @@ struct LoginView: View {
                 })
                 .buttonStyle(PrimaryButtonStyle())
                 .disabled(isLoading)
+                // go to skin quiz if user has not completed it, go to Home otherwise
                 .navigationDestination(isPresented: $showNextView, destination: {
                     if currentUser.skinTypes.isEmpty || currentUser.skinIssues.isEmpty {
                         SkinQuizView(user: currentUser).navigationBarBackButtonHidden()
                     } else {
-                       HomeView().navigationBarBackButtonHidden()
+                        HomeView(user: currentUser).navigationBarBackButtonHidden()
                     }
                 })
                 

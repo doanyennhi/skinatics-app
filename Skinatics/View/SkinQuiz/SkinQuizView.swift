@@ -7,14 +7,16 @@
 
 import SwiftUI
 
+// skin type options
 var skinTypes: [String] = ["Dry", "Combination", "Oily", "Normal", "Sensitive", "Acne-prone"]
 
 // First quiz, quiz on skin types
 struct SkinQuizView: View {
     // store selected values
     @State var selectedTypes = Set<String>()
+    // track if display error message
     @State var show: Bool = false
-    @State var user: User
+    @State var user: User      // current user
     
     var body: some View {
         NavigationStack {
@@ -44,6 +46,7 @@ struct SkinQuizView: View {
                         show = true
                     } else {
                         show = false
+                        // add selected options to user data
                         user.skinTypes = selectedTypes
                     }
                 })

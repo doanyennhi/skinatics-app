@@ -36,3 +36,9 @@ struct CheckItem: View {
         }
     }
 }
+
+struct CheckItem_Previews: PreviewProvider {
+    static var previews: some View {
+        CheckItem(content: "Itoshi Rin", action: {})
+    }
+}

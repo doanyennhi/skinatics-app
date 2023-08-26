@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-// struct to create Product objects
-struct Product: Identifiable {
-    var id = UUID().uuidString
-    var image: String
-    var brand: String
-    var product: String
-}
-
 // array of Product objects
 var products: [Product] = [
     Product(image: "cerave-hydrating-foaming-oil-cleanser", brand: "CeraVe", product: "Hydrating Foaming Oil Cleanser"),
@@ -26,37 +18,46 @@ var products: [Product] = [
 ]
 
 struct HomeView: View {
+    var user: User
+    
     var body: some View {
-        VStack {
-            // stack for top introductory text
-            VStack(alignment: .leading) {
-                ScreenTitle(title: "Hey Jane") // FIXME: change to user's name
+        NavigationStack {
+            VStack {
+                // stack for top introductory text
+                HStack {
+                    ScreenTitle(title: "Hi \(user.name)")
+                    Spacer()
+                    Image(systemName: "person.circle.fill")
+                        .font(.system(size: 50))
+                }
+                .padding(.bottom, 40)
+                .padding(.horizontal, 10)
                 
                 Subheading(subheading: "We have some recommendations for you.")
-            }
-            .padding(.bottom, 20)
-            
-            ScrollView {
-                // list of recommended products using ProductCardView
-                VStack(alignment: .leading) {
-                    ForEach(products) {
-                        // iterating through products array to produce view for each product
-                        product in ProductCardView(image: product.image, brand: product.brand, product: product.product)
+                    .padding(.bottom, 20)
+                
+                ScrollView {
+                    // list of recommended products using ProductCardView
+                    VStack(alignment: .leading) {
+                        ForEach(products) {
+                            // iterating through products array to produce view for each product
+                            product in ProductCardView(image: product.image, brand: product.brand, product: product.product)
+                        }
+                        .padding(.horizontal, 10)
+                    }
+                    
                 }
-                    .padding(.horizontal, 25)
-                    .padding(.top, 10)
             }
-
-                }
+            .padding(.top, 10)
+            .padding(.horizontal, 20)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("Floral White"))
         }
-        .padding(.top, 40)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Floral White"))
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(user: users[1])
     }
 }
