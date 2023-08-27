@@ -17,7 +17,7 @@ struct ScreenTitle: View {
     
     var body: some View {
         Text(title)
-            .font(.largeTitle)
+            .font(Font.custom("Avenir", size: 32))
             .padding(.vertical, 10)
             .bold().foregroundColor(Color("Dark Green"))
     }

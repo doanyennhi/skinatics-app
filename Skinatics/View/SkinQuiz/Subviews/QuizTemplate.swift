@@ -69,10 +69,7 @@ struct QuizTemplate<Content: View>: View {
                         action()
                 })
             }
-            .padding(.horizontal, 30)
-            .font(Font.custom("Avenir", size: 18))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("Floral White"))
+            .modifier(ScreenModifier())
         }
     }
 }

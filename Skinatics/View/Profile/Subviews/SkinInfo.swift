@@ -16,7 +16,7 @@ struct SkinInfo: View {
         VStack(alignment: .leading, spacing: 10) {
             // title of info
             Text(title)
-                .font(.title3)
+                .font(Font.custom("Avenir", size: 22))
                 .italic()
                 .padding(.top, 20)
 
@@ -30,7 +30,6 @@ struct SkinInfo: View {
             } else {
                 // display if no info
                 Text("No options selected")
-
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

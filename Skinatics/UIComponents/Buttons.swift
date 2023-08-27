@@ -12,7 +12,8 @@ struct CancelButton: View {
     
     var body: some View {
         Text("Cancel")
-            .font(.system(size: 20, weight: .bold))
+            .font(Font.custom("Avenir", size: 22))
+            .bold()
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
             .foregroundColor(Color("Secondary Green"))
@@ -28,7 +29,8 @@ struct PrimaryButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
             configuration.label
-            .font(.system(size: 20, weight: .bold))
+            .font(Font.custom("Avenir", size: 22))
+            .bold()
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
             .foregroundColor(.white)
@@ -41,11 +43,12 @@ struct PrimaryButtonStyle: ButtonStyle {
 struct SecondaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-        .font(.system(size: 20, weight: .bold))
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 20)
-        .foregroundColor(.black)
-        .background(Color("Beige"))
-        .cornerRadius(15)
+            .font(Font.custom("Avenir", size: 22))
+            .bold()
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 20)
+            .foregroundColor(.black)
+            .background(Color("Beige"))
+            .cornerRadius(15)
     }
 }

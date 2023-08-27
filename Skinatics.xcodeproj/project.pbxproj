@@ -35,6 +35,7 @@
 		0FF5297A2A9B374E002461C8 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF529792A9B374E002461C8 /* SectionTitle.swift */; };
 		0FF5297C2A9B388E002461C8 /* InfoCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */; };
 		0FF5297E2A9B3DE0002461C8 /* SkinInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */; };
+		0FF529812A9B7820002461C8 /* ScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF529802A9B7820002461C8 /* ScreenModifier.swift */; };
 		497B857B2A98651600F90871 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857A2A98651600F90871 /* HomeView.swift */; };
 		497B857D2A9865A200F90871 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857C2A9865A200F90871 /* ProductCardView.swift */; };
 		497B85802A98676C00F90871 /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857F2A98676C00F90871 /* StartUpView.swift */; };
@@ -89,6 +90,8 @@
 		0FF529792A9B374E002461C8 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCapsule.swift; sourceTree = "<group>"; };
 		0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinInfo.swift; sourceTree = "<group>"; };
+		0FF5297F2A9B7529002461C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0FF529802A9B7820002461C8 /* ScreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenModifier.swift; sourceTree = "<group>"; };
 		497B857A2A98651600F90871 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		497B857C2A9865A200F90871 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		497B857F2A98676C00F90871 /* StartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpView.swift; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				0FF5297F2A9B7529002461C8 /* Info.plist */,
 				0F4061E72A94AC3800746054 /* Model */,
 				0FDB626A2A8F6ACF008B19F1 /* Helper */,
 				0FDB62672A8F686C008B19F1 /* Extension */,
@@ -213,6 +217,7 @@
 				0F4061ED2A96682B00746054 /* Subheading.swift */,
 				0F4061EF2A96738F00746054 /* CustomTextField.swift */,
 				0F4061FA2A97D5F800746054 /* ErrorText.swift */,
+				0FF529802A9B7820002461C8 /* ScreenModifier.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				0FF5297A2A9B374E002461C8 /* SectionTitle.swift in Sources */,
 				0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */,
 				0F4061F32A967C3100746054 /* LoginView.swift in Sources */,
+				0FF529812A9B7820002461C8 /* ScreenModifier.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +617,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Skinatics/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Skinatics/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -639,6 +646,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Skinatics/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Skinatics/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

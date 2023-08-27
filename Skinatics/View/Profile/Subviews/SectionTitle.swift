@@ -15,7 +15,7 @@ struct SectionTitle: View {
         Text(title)
             .foregroundColor(Color("Dark Green"))
             .bold()
-            .font(.title2)
+            .font(Font.custom("Avenir", size: 24))
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

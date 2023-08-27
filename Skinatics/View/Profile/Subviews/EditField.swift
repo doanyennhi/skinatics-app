@@ -31,7 +31,7 @@ struct EditField: View {
                     .disabled(!isEditing)
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
-                    .font(.system(size: 20))
+                    .font(Font.custom("Avenir", size: 20))
                 
                 // toggle between allow and disable for editing
                 Text(isEditing ? "Done" : "Edit")

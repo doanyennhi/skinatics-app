@@ -39,11 +39,11 @@ struct HomeView: View {
                             .frame(width: 90)
                     }
                 }
-                .padding(.bottom, 40)
+                .padding(.bottom, 10)
                 .padding(.horizontal, 10)
                 
                 Subheading(subheading: "We have some recommendations for you.")
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 10)
                 
                 ScrollView {
                     // list of recommended products using ProductCardView
@@ -52,15 +52,12 @@ struct HomeView: View {
                             // iterating through products array to produce view for each product
                             product in ProductCardView(image: product.image, brand: product.brand, product: product.product)
                         }
-                        .padding(.horizontal, 10)
+                        .padding(.horizontal, 5)
                     }
                     
                 }
             }
-            .padding(.top, 10)
-            .padding(.horizontal, 20)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("Floral White"))
+            .modifier(ScreenModifier())
         }
     }
 }
