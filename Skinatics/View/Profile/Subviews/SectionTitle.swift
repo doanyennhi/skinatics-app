@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Define title of section
 struct SectionTitle: View {
     var title: String
     

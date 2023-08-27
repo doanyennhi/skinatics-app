@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Define info displayed in capsule style
 struct InfoCapsule: View {
     var text: String
     

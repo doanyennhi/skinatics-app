@@ -19,7 +19,6 @@ struct ScreenTitle: View {
         Text(title)
             .font(.largeTitle)
             .padding(.vertical, 10)
-            .multilineTextAlignment(.center)
             .bold().foregroundColor(Color("Dark Green"))
     }
 }

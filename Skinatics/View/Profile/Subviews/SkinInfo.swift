@@ -7,17 +7,20 @@
 
 import SwiftUI
 
+// Display all skin options selected by user
 struct SkinInfo: View {
     var title: String
     var items: [String]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
+            // title of info
             Text(title)
                 .font(.title3)
                 .italic()
                 .padding(.top, 20)
 
+            // list of skin info
             if !items.isEmpty {
                 HStack {
                     ForEach(items, id: \.self) {item in
@@ -25,6 +28,7 @@ struct SkinInfo: View {
                     }
                 }
             } else {
+                // display if no info
                 Text("No options selected")
 
             }

@@ -29,10 +29,15 @@ struct HomeView: View {
             VStack {
                 // stack for top introductory text
                 HStack {
-                    ScreenTitle(title: "Hi \(user.name)")
+                    ScreenTitle(title: "Hi \n\(user.name)")
                     Spacer()
-                    Image(systemName: "person.circle.fill")
-                        .font(.system(size: 50))
+                    NavigationLink(destination: ProfileView(user).navigationBarBackButtonHidden(true)) {
+                        Image("profile")
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .frame(width: 90)
+                    }
                 }
                 .padding(.bottom, 40)
                 .padding(.horizontal, 10)
