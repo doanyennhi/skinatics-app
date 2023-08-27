@@ -18,7 +18,11 @@ var products: [Product] = [
 ]
 
 struct HomeView: View {
-    var user: User
+    private var user: User
+    
+    init(user: User) {
+        self.user = user
+    }
     
     var body: some View {
         NavigationStack {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// skin condition options
 var conditions: [String] = ["Acne", "Rosacea", "Eczema", "Rash", "Melasma", "Hives", "Psoriasis", "Dermatitis"]
 
 // Third quiz, quiz on skin conditions

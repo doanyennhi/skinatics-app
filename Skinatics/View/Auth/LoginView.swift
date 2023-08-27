@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// TODO: Add comments
 struct LoginView: View {
     
     @State private var currentUser: User = User()
@@ -20,13 +19,13 @@ struct LoginView: View {
     @State private var isLoading = false
     
     // track display of error messages
-    @State var showError = false   
-    @State var showEmptyWarning = false
+    @State private var showError = false
+    @State private var showEmptyWarning = false
     
     // Return true if login successful, false otherwise
     func isLogin() async -> Bool {
         // show error if any fields are empty
-        if isTextEmpty(text: email) || isTextEmpty(text: pwd) {
+        if email.isEmpty || pwd.isEmpty {
             showEmptyWarning = true
             return false
         } else {

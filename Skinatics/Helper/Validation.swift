@@ -7,13 +7,6 @@
 
 import Foundation
 
-/// Validate if text field is empty
-/// @text: text to validate
-/// return true if empty string, false otherwise
-func isTextEmpty(text: String) -> Bool {
-    return text == ""
-}
-
 /// Validate if password and confirm password strings are identical
 /// @pwd: password
 /// @confirmPwd: confirm password

@@ -35,7 +35,7 @@ struct SignUpView: View {
     /// Return true if pass all conditions, false otherwise
     func isSignUp() async -> Bool {
         // show error message for empty fields
-        if isTextEmpty(text: email) || isTextEmpty(text: pwd) || isTextEmpty(text: name) || isTextEmpty(text: confirmPwd) {
+        if email.isEmpty || pwd.isEmpty || name.isEmpty || confirmPwd.isEmpty {
             showEmptyWarning = true
             return false
         } else { showEmptyWarning = false }
