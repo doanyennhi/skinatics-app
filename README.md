@@ -19,6 +19,10 @@ Skinatics is an iOS application with the purpose of helping users find skincare 
 - Users can create a day and night skincare routine to follow for a seamless experience - users will not forget what product is next in their routine!
 - Harness the power of AI to see if products users are using are in fact improving their skin.
   - Users take a selfie and skin analysis results are shown, comparing from previous analyses.
+
+
+## Example
+![Quiz on skin issues](Examples/quiz2.png)
     
  
 ## Project Structure
