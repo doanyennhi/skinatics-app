@@ -1,5 +1,7 @@
 # Skinatics
 
+
+
 Skinatics is an iOS application with the purpose of helping users find skincare products to help with their skin concerns. In other words, an "on-the-go skincare assistant".
 
 ## Features
@@ -13,5 +15,5 @@ Skinatics is an iOS application with the purpose of helping users find skincare 
  
 ## Team Members
 
-Yen Nhi Doan (s3880599)
-Marielle Louisse Lopez (s3922406)
+- Yen Nhi Doan (s3880599)
+- Marielle Louisse Lopez (s3922406)
