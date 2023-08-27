@@ -9,30 +9,43 @@ import SwiftUI
 
 /// Profile screen to show user info
 struct ProfileView: View {
-    // user info
+    // Current user
     @State private var user: User
-    @State private var name: String
-    @State private var email: String
     
     init(_ user: User) {
         _user = State(initialValue: user)
-        _name = State(initialValue: user.name)
-        _email = State(initialValue: user.email)
     }
     
     var body: some View {
-        VStack {
-            ScreenTitle(title: "My Profile")
-            // avatar
-            Image("profile")
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 150)
-                .padding(.bottom, 60)
-            
-            EditField(title: "Name", text: name)
-            EditField(title: "Email", text: email)
+        ScrollView(showsIndicators: false) {
+            VStack {
+                ScreenTitle(title: "My Profile")
+                // Avatar
+                Image("profile")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .frame(width: 150)
+                    .padding(.bottom, 60)
+                
+                // User info
+                EditField(title: "Name", text: user.name)
+                EditField(title: "Email", text: user.email)
+                
+                // Skin Info
+                HStack {
+                    SectionTitle(title: "My Skin")
+                    Text("Edit")
+                        .foregroundColor(.accentColor)
+                        .fontWeight(.semibold)
+                }
+                SkinInfo(title: "Skin Type", items: Array(user.skinTypes))
+                
+                SkinInfo(title: "Skin Conditions", items: Array(user.skinConditions))
+                
+                SkinInfo(title: "I Need Help With...", items: Array(user.skinIssues))
+            }
+            .padding(.vertical)
         }
         .padding(.horizontal, 30)
         .font(Font.custom("Avenir", size: 18))

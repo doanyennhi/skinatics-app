@@ -22,11 +22,8 @@ struct EditField: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .foregroundColor(.accentColor)
-                .bold()
-                .font(.title2)
+        VStack {
+            SectionTitle(title: title)
             
             HStack {
                 // info field
