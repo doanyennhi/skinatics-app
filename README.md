@@ -5,6 +5,7 @@
 Skinatics is an iOS application with the purpose of helping users find skincare products to help with their skin concerns. In other words, an "on-the-go skincare assistant".
 
 Github: https://github.com/rmit-iPSE-s2-2023/a1-s3880599
+Miro board: https://miro.com/app/board/uXjVMsQ-Yjo=/?share_link_id=799000964148
 
 ## Team Members
 
