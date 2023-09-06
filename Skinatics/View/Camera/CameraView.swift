@@ -34,7 +34,7 @@ struct CameraView: View {
             .buttonStyle(PrimaryButtonStyle())
         }
         .modifier(ScreenModifier())
-        .fullScreenCover(isPresented: $showCamera, content: { Camera(photo: $currentPhoto, sourceType: .photoLibrary) })
+        .fullScreenCover(isPresented: $showCamera, content: { Camera(photo: $currentPhoto, sourceType: .camera) })
     }
 }
 
