@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let stores = [Store(image: "sephora", name: "Sephora Melbourne Central", address: "Shop 103/211 La Trobe St, Melbourne VIC 3000"), Store(image: "mecca", name: "Mecca Melbourne Central", address: "Ground Level, 211 La Trobe St, Melbourne VIC 3000"),  Store(image: "kimbao", name: "Kim Bao Beauty", address: "183-185 Elizabeth St, Melbourne VIC 3000")]
+
 struct ProductDetailView: View {
     private var product: Product
     
@@ -16,7 +18,7 @@ struct ProductDetailView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 15) {
+            VStack(alignment: .leading, spacing: 20) {
                 Image(product.image)
                     .resizable()
                     .scaledToFit()
@@ -49,6 +51,15 @@ struct ProductDetailView: View {
                     .font(Font.custom("Avenir", size: 20))
                     .bold()
                     .padding(.vertical, 5)
+                
+                ScrollView(.horizontal) {
+                    HStack(alignment: .top, spacing: 30) {
+                        ForEach(stores) { store in
+                            StoreCard(store: store)
+                        }
+                    }
+                    .padding(.bottom, 10)
+                }
             }
         }
         .modifier(ScreenModifier())
