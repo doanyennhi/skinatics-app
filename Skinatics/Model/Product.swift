@@ -9,8 +9,10 @@ import Foundation
 
 /// Define model for Product
 struct Product: Identifiable {
-    var id = UUID().uuidString
+    var id = UUID()
     var image: String
     var brand: String
     var product: String
+    var rating: Float
+    var desc: String
 }
