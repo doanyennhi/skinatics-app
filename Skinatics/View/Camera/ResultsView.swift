@@ -34,7 +34,7 @@ struct ResultsView: View {
                 
                 Text("Analysis")
                     .foregroundColor(Color("Dark Green"))
-                    .font(Font.custom("Avenir", size: 22))
+                    .font(Font.custom("Avenir", size: 24))
                     .bold()
                     .padding(.vertical, 10)
                 

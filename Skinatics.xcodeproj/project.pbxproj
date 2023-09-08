@@ -41,6 +41,8 @@
 		0FF271962AA8CA1C0092FD3C /* StoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271952AA8CA1C0092FD3C /* StoreCard.swift */; };
 		0FF271982AA8CE9D0092FD3C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271972AA8CE9D0092FD3C /* Store.swift */; };
 		0FF2719B2AAA53740092FD3C /* ResultSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2719A2AAA53740092FD3C /* ResultSection.swift */; };
+		0FF2719E2AAB1C110092FD3C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2719D2AAB1C110092FD3C /* TabBarItem.swift */; };
+		0FF271A02AAB1E2A0092FD3C /* TopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2719F2AAB1E2A0092FD3C /* TopTabBar.swift */; };
 		0FF5297A2A9B374E002461C8 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF529792A9B374E002461C8 /* SectionTitle.swift */; };
 		0FF5297C2A9B388E002461C8 /* InfoCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */; };
 		0FF5297E2A9B3DE0002461C8 /* SkinInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */; };
@@ -105,6 +107,8 @@
 		0FF271952AA8CA1C0092FD3C /* StoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCard.swift; sourceTree = "<group>"; };
 		0FF271972AA8CE9D0092FD3C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		0FF2719A2AAA53740092FD3C /* ResultSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSection.swift; sourceTree = "<group>"; };
+		0FF2719D2AAB1C110092FD3C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		0FF2719F2AAB1E2A0092FD3C /* TopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.swift; sourceTree = "<group>"; };
 		0FF529792A9B374E002461C8 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCapsule.swift; sourceTree = "<group>"; };
 		0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinInfo.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 		0FDB62502A8D0250008B19F1 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				0FF2719C2AAB1C010092FD3C /* Navigation */,
 				0FDB62512A8D026D008B19F1 /* Buttons.swift */,
 				0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */,
 				0F4061ED2A96682B00746054 /* Subheading.swift */,
@@ -329,6 +334,23 @@
 				0FF2719A2AAA53740092FD3C /* ResultSection.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		0FF2719C2AAB1C010092FD3C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				0FF271A12AAB1E3B0092FD3C /* TopTab */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		0FF271A12AAB1E3B0092FD3C /* TopTab */ = {
+			isa = PBXGroup;
+			children = (
+				0FF2719F2AAB1E2A0092FD3C /* TopTabBar.swift */,
+				0FF2719D2AAB1C110092FD3C /* TabBarItem.swift */,
+			);
+			path = TopTab;
 			sourceTree = "<group>";
 		};
 		0FF529782A9B3722002461C8 /* Subviews */ = {
@@ -499,6 +521,7 @@
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
 				0FDB626C2A8F6B4C008B19F1 /* SetHelper.swift in Sources */,
 				0FF5297C2A9B388E002461C8 /* InfoCapsule.swift in Sources */,
+				0FF2719E2AAB1C110092FD3C /* TabBarItem.swift in Sources */,
 				0FDB62692A8F68DE008B19F1 /* View+Extensions.swift in Sources */,
 				0FDB62602A8E76AA008B19F1 /* CheckItem.swift in Sources */,
 				0FDB62662A8E98BD008B19F1 /* SkinConditionView.swift in Sources */,
@@ -506,6 +529,7 @@
 				0FF2718B2AA859930092FD3C /* IngredientDictView.swift in Sources */,
 				0FF5297E2A9B3DE0002461C8 /* SkinInfo.swift in Sources */,
 				0F4061F52A974FDC00746054 /* User.swift in Sources */,
+				0FF271A02AAB1E2A0092FD3C /* TopTabBar.swift in Sources */,
 				0FF271912AA8715E0092FD3C /* ResultsView.swift in Sources */,
 				0FDB62722A9011E5008B19F1 /* QuizTemplate.swift in Sources */,
 				497B857B2A98651600F90871 /* HomeView.swift in Sources */,

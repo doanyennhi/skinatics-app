@@ -17,52 +17,55 @@ struct ProductDetailView: View {
     }
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 20) {
-                Image(product.image)
-                    .resizable()
-                    .scaledToFit()
-                
-                HStack(alignment: .firstTextBaseline) {
-                    Text(product.brand)
+        NavigationStack {
+            ScrollView(showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 20) {
+                    Image(product.image)
+                        .resizable()
+                        .scaledToFit()
+                    
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(product.brand)
+                            .foregroundColor(.accentColor)
+                            .font(Font.custom("Avenir", size: 20))
+                            .fontWeight(.semibold)
+                        
+                        Spacer()
+                        Text(String(product.rating))
+                            .foregroundColor(.accentColor)
+                            .underline()
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.accentColor)
+                    }
+                    
+                    Text(product.product)
+                        .foregroundColor(Color("Dark Green"))
+                        .font(Font.custom("Avenir", size: 24))
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .multilineTextAlignment(.center)
+                        
+                    TopTabBar(tabItems: ["Details", "Reviews", "Ingredients"], tabSelected: 0)
+                    Text(product.desc)
+                    
+                    Text("Stores nearby with this product")
                         .foregroundColor(.accentColor)
                         .font(Font.custom("Avenir", size: 20))
-                        .fontWeight(.semibold)
+                        .bold()
+                        .padding(.vertical, 5)
                     
-                    Spacer()
-                    Text(String(product.rating))
-                        .foregroundColor(.accentColor)
-                        .underline()
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.accentColor)
-                }
-                
-                Text(product.product)
-                    .foregroundColor(Color("Dark Green"))
-                    .font(Font.custom("Avenir", size: 24))
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .multilineTextAlignment(.center)
-                
-                Text(product.desc)
-                
-                Text("Stores nearby with this product")
-                    .foregroundColor(.accentColor)
-                    .font(Font.custom("Avenir", size: 20))
-                    .bold()
-                    .padding(.vertical, 5)
-                
-                ScrollView(.horizontal) {
-                    HStack(alignment: .top, spacing: 30) {
-                        ForEach(stores) { store in
-                            StoreCard(store: store)
+                    ScrollView(.horizontal) {
+                        HStack(alignment: .top, spacing: 30) {
+                            ForEach(stores) { store in
+                                StoreCard(store: store)
+                            }
                         }
+                        .padding(.bottom, 10)
                     }
-                    .padding(.bottom, 10)
                 }
             }
+            .modifier(ScreenModifier())
         }
-        .modifier(ScreenModifier())
     }
 }
 
