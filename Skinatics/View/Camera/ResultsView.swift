@@ -7,7 +7,16 @@
 
 import SwiftUI
 
+struct Result: Hashable {
+    var section: String
+    var score: Int
+    var color: Color
+}
+
 struct ResultsView: View {
+    var resultItems: [Result]
+    var twoColumnGrid: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
+    
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
@@ -17,7 +26,20 @@ struct ResultsView: View {
                     .font(Font.custom("Avenir", size: 16))
                     .underline()
                 
+            
                 VStack {
+                    LazyVGrid(columns: twoColumnGrid, spacing: 20) {
+                        ForEach(resultItems, id: \.self) { item in
+                            VStack(spacing: 5) {
+                                Gauge(value: Double(item.score), in: 0...100) {
+                                    Text("\(item.score)")
+                                }
+                                .tint(item.color)
+                                .gaugeStyle(.accessoryCircularCapacity)
+                                Text(item.section)
+                            }
+                        }
+                    }
                     HStack {
                         Text("Overall")
                         Spacer()
@@ -29,8 +51,10 @@ struct ResultsView: View {
                     .padding()
                     .background(Color("Dark Green"))
                     .clipShape(Capsule())
-                    .padding(.vertical, 20)
+                    .padding(.top, 20)
                 }
+                .padding(.vertical, 20)
+                
                 
                 Text("Analysis")
                     .foregroundColor(Color("Dark Green"))
@@ -63,6 +87,6 @@ struct ResultsView: View {
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsView()
+        ResultsView(resultItems: [Result(section: "Radiance", score: 50, color: Color("Bronze")), Result(section: "Lines", score: 85, color: .accentColor), Result(section: "Hydration", score: 85, color: .accentColor), Result(section: "Texture", score: 75, color: Color("Yellow Green"))])
     }
 }
