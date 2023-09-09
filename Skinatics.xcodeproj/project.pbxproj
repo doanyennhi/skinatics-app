@@ -43,6 +43,8 @@
 		0FF2719B2AAA53740092FD3C /* ResultSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2719A2AAA53740092FD3C /* ResultSection.swift */; };
 		0FF2719E2AAB1C110092FD3C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2719D2AAB1C110092FD3C /* TabBarItem.swift */; };
 		0FF271A02AAB1E2A0092FD3C /* TopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2719F2AAB1E2A0092FD3C /* TopTabBar.swift */; };
+		0FF271A52AACA9430092FD3C /* ReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271A42AACA9430092FD3C /* ReviewList.swift */; };
+		0FF271A82AACA9DC0092FD3C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271A72AACA9DC0092FD3C /* Review.swift */; };
 		0FF5297A2A9B374E002461C8 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF529792A9B374E002461C8 /* SectionTitle.swift */; };
 		0FF5297C2A9B388E002461C8 /* InfoCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */; };
 		0FF5297E2A9B3DE0002461C8 /* SkinInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */; };
@@ -109,6 +111,8 @@
 		0FF2719A2AAA53740092FD3C /* ResultSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSection.swift; sourceTree = "<group>"; };
 		0FF2719D2AAB1C110092FD3C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		0FF2719F2AAB1E2A0092FD3C /* TopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.swift; sourceTree = "<group>"; };
+		0FF271A42AACA9430092FD3C /* ReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewList.swift; sourceTree = "<group>"; };
+		0FF271A72AACA9DC0092FD3C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		0FF529792A9B374E002461C8 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCapsule.swift; sourceTree = "<group>"; };
 		0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinInfo.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				0F4061FE2A9A8D8E00746054 /* Product.swift */,
 				0FF2718C2AA859E20092FD3C /* Ingredient.swift */,
 				0FF271972AA8CE9D0092FD3C /* Store.swift */,
+				0FF271A72AACA9DC0092FD3C /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,8 +327,8 @@
 		0FF271922AA871D10092FD3C /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				0FF271A62AACA9590092FD3C /* Subview */,
 				0FF271932AA871E50092FD3C /* ProductDetailView.swift */,
-				0FF271952AA8CA1C0092FD3C /* StoreCard.swift */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -351,6 +356,15 @@
 				0FF2719D2AAB1C110092FD3C /* TabBarItem.swift */,
 			);
 			path = TopTab;
+			sourceTree = "<group>";
+		};
+		0FF271A62AACA9590092FD3C /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				0FF271A42AACA9430092FD3C /* ReviewList.swift */,
+				0FF271952AA8CA1C0092FD3C /* StoreCard.swift */,
+			);
+			path = Subview;
 			sourceTree = "<group>";
 		};
 		0FF529782A9B3722002461C8 /* Subviews */ = {
@@ -532,8 +546,10 @@
 				0FF271A02AAB1E2A0092FD3C /* TopTabBar.swift in Sources */,
 				0FF271912AA8715E0092FD3C /* ResultsView.swift in Sources */,
 				0FDB62722A9011E5008B19F1 /* QuizTemplate.swift in Sources */,
+				0FF271A52AACA9430092FD3C /* ReviewList.swift in Sources */,
 				497B857B2A98651600F90871 /* HomeView.swift in Sources */,
 				497B85802A98676C00F90871 /* StartUpView.swift in Sources */,
+				0FF271A82AACA9DC0092FD3C /* Review.swift in Sources */,
 				0F4061FF2A9A8D8E00746054 /* Product.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */,

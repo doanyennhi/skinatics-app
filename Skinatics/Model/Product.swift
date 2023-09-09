@@ -13,7 +13,7 @@ struct Product: Identifiable {
     var image: String
     var brand: String
     var product: String
-    var rating: Float
+    var rating: Double
     var desc: String
     var ingredients: String
 }

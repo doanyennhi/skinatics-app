@@ -14,7 +14,7 @@ struct TabBarItem: View {
     var body: some View {
         VStack(spacing: 5) {
             Text(item)
-                .font(.custom("Avenir", size: isSelected ? 18 : 16))
+                .font(.custom("Avenir", size: isSelected ? 20 : 18))
                 .fontWeight(isSelected ? .semibold : .regular)
                 .foregroundColor(.accentColor)
             

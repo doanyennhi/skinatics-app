@@ -27,17 +27,15 @@ struct ProductDetailView: View {
                     
                     HStack(alignment: .firstTextBaseline) {
                         Text(product.brand)
-                            .foregroundColor(.accentColor)
                             .font(Font.custom("Avenir", size: 20))
                             .fontWeight(.semibold)
                         
                         Spacer()
                         Text(String(product.rating))
-                            .foregroundColor(.accentColor)
                             .underline()
                         Image(systemName: "star.fill")
-                            .foregroundColor(.accentColor)
                     }
+                    .foregroundColor(.accentColor)
                     
                     Text(product.product)
                         .foregroundColor(Color("Dark Green"))
@@ -47,17 +45,17 @@ struct ProductDetailView: View {
                         .multilineTextAlignment(.center)
                         
                     TopTabBar(tabItems: ["Details", "Reviews","Ingredients"], tabSelected: $productTabSelected)
-                        .padding(.vertical, 5)
+                        .padding(.vertical, 15)
                     
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: 10) {
                         switch productTabSelected {
                         case 0:
                             Text(product.desc)
                         case 1:
-                            Text("Reviews")
+                            ReviewList(reviews: reviews)
                         case 2:
                             Text(product.ingredients)
-                            NavigationLink(destination: IngredientDictView(ingredients: []), label: {
+                            NavigationLink(destination: IngredientDictView(ingredients: ingredients), label: {
                                 Text("Benefits of main ingredients")
                                     .underline()
                                 Image(systemName: "chevron.right")
