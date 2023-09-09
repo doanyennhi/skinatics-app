@@ -11,6 +11,7 @@ let stores = [Store(image: "sephora", name: "Sephora Melbourne Central", address
 
 struct ProductDetailView: View {
     private var product: Product
+    @State var productTabSelected: Int = 0
     
     init(product: Product) {
         self.product = product
@@ -45,14 +46,31 @@ struct ProductDetailView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .multilineTextAlignment(.center)
                         
-                    TopTabBar(tabItems: ["Details", "Reviews", "Ingredients"], tabSelected: 0)
-                    Text(product.desc)
+                    TopTabBar(tabItems: ["Details", "Reviews","Ingredients"], tabSelected: $productTabSelected)
+                        .padding(.vertical, 5)
+                    
+                    VStack(alignment: .leading, spacing: 20) {
+                        switch productTabSelected {
+                        case 0:
+                            Text(product.desc)
+                        case 1:
+                            Text("Reviews")
+                        case 2:
+                            Text(product.ingredients)
+                            NavigationLink(destination: IngredientDictView(ingredients: []), label: {
+                                Text("Benefits of main ingredients")
+                                    .underline()
+                                Image(systemName: "chevron.right")
+                            })
+                        default: EmptyView()
+                        }
+                    }
+                    .padding(.bottom, 20)
                     
                     Text("Stores nearby with this product")
                         .foregroundColor(.accentColor)
                         .font(Font.custom("Avenir", size: 20))
                         .bold()
-                        .padding(.vertical, 5)
                     
                     ScrollView(.horizontal) {
                         HStack(alignment: .top, spacing: 30) {

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct TopTabBar: View {
     var tabItems: [String]
-    @State var tabSelected: Int
+    @Binding var tabSelected: Int
     
     private func onTabSelected(index: Int) {
-        withAnimation {tabSelected = index}
+        tabSelected = index
     }
     
     var body: some View {
@@ -29,6 +29,6 @@ struct TopTabBar: View {
 
 struct TopTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TopTabBar(tabItems: ["Details", "Reviews", "Ingredients"], tabSelected: 0)
+        TopTabBar(tabItems: ["Details", "Reviews", "Ingredients"], tabSelected: .constant(0))
     }
 }

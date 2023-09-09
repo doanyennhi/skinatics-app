@@ -15,4 +15,5 @@ struct Product: Identifiable {
     var product: String
     var rating: Float
     var desc: String
+    var ingredients: String
 }

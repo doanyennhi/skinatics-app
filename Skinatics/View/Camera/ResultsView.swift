@@ -36,7 +36,14 @@ struct ResultsView: View {
                                 }
                                 .tint(item.color)
                                 .gaugeStyle(.accessoryCircularCapacity)
-                                Text(item.section)
+                                
+                                HStack(alignment: .top, spacing: 2) {
+                                    Text(item.section)
+                                    Button(action: {}) {
+                                        Image(systemName: "info.circle")
+                                            .font(.system(size: 12))
+                                    }
+                                }
                             }
                         }
                     }
