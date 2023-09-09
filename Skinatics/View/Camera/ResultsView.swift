@@ -7,25 +7,25 @@
 
 import SwiftUI
 
+
 struct Result: Hashable {
     var section: String
     var score: Int
     var color: Color
 }
 
+let results = [Result(section: "Radiance", score: 50, color: Color("Bronze")), Result(section: "Lines", score: 85, color: .accentColor), Result(section: "Hydration", score: 85, color: .accentColor), Result(section: "Texture", score: 75, color: Color("Yellow Green"))]
+
 struct ResultsView: View {
     var resultItems: [Result]
     var twoColumnGrid: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
+    @State private var showSheet = false
+    //@State private var infoSheetSelected: String = "Radiance"
     
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 ScreenTitle(title: "Today's Results")
-                Text("What's this?")
-                    .foregroundColor(Color("Grey"))
-                    .font(Font.custom("Avenir", size: 16))
-                    .underline()
-                
             
                 VStack {
                     LazyVGrid(columns: twoColumnGrid, spacing: 20) {
@@ -36,10 +36,14 @@ struct ResultsView: View {
                                 }
                                 .tint(item.color)
                                 .gaugeStyle(.accessoryCircularCapacity)
+                                .sheet(isPresented: $showSheet, content: {
+                                    InfoSheetView(section: item.section)})
                                 
                                 HStack(alignment: .top, spacing: 2) {
                                     Text(item.section)
-                                    Button(action: {}) {
+                                    Button(action: {
+                                        showSheet = true
+                                    }) {
                                         Image(systemName: "info.circle")
                                             .font(.system(size: 12))
                                     }
@@ -51,11 +55,12 @@ struct ResultsView: View {
                         Text("Overall")
                         Spacer()
                         Text("74")
-                            .font(Font.custom("Avenir", size: 20))
+                            .font(Font.custom("Avenir", size: 30))
                     }
                     .foregroundColor(Color("White"))
                     .bold()
-                    .padding()
+                    .padding(.vertical, 15)
+                    .padding(.horizontal, 25)
                     .background(Color("Dark Green"))
                     .clipShape(Capsule())
                     .padding(.top, 20)
@@ -78,7 +83,6 @@ struct ResultsView: View {
                     
                     ResultSection(heading: "Lines", content: "We can see that there are no visible lines on your skin, great job preventing lines.")
                 }
-                .padding(.bottom, 30)
                 
                 NavigationLink(destination: CameraView()) {
                     Text("Exit")
@@ -94,6 +98,6 @@ struct ResultsView: View {
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsView(resultItems: [Result(section: "Radiance", score: 50, color: Color("Bronze")), Result(section: "Lines", score: 85, color: .accentColor), Result(section: "Hydration", score: 85, color: .accentColor), Result(section: "Texture", score: 75, color: Color("Yellow Green"))])
+        ResultsView(resultItems: results)
     }
 }
