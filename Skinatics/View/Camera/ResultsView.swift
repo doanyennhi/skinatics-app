@@ -20,7 +20,7 @@ struct ResultsView: View {
     var resultItems: [Result]
     var twoColumnGrid: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     @State private var showSheet = false
-    //@State private var infoSheetSelected: String = "Radiance"
+    @State private var infoSheetSelected: String = ""
     
     var body: some View {
         NavigationStack {
@@ -36,12 +36,11 @@ struct ResultsView: View {
                                 }
                                 .tint(item.color)
                                 .gaugeStyle(.accessoryCircularCapacity)
-                                .sheet(isPresented: $showSheet, content: {
-                                    InfoSheetView(section: item.section)})
                                 
                                 HStack(alignment: .top, spacing: 2) {
                                     Text(item.section)
                                     Button(action: {
+                                        infoSheetSelected = item.section
                                         showSheet = true
                                     }) {
                                         Image(systemName: "info.circle")
@@ -49,6 +48,10 @@ struct ResultsView: View {
                                     }
                                 }
                             }
+                            .sheet(isPresented: $showSheet, content: {
+                                InfoSheetView(section: $infoSheetSelected)
+                                    .presentationDetents([.medium, .large])
+                            })
                         }
                     }
                     HStack {

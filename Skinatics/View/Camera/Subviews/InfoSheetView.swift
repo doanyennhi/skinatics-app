@@ -24,11 +24,8 @@ let resultInfo = [
 ]
 
 struct InfoSheetView: View {
-    var section: String
-    var yay: Void {
-        print(section)
-    }
-    
+    @Binding var section: String
+
     var body: some View {
         VStack {
             ForEach(resultInfo, id: \.self) { info in
@@ -47,6 +44,6 @@ struct InfoSheetView: View {
 
 struct InfoSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoSheetView(section: "Hydration")
+        InfoSheetView(section: .constant("Hydration"))
     }
 }
