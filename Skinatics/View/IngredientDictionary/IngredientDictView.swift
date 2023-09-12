@@ -18,7 +18,7 @@ struct IngredientDictView: View {
     
     var body: some View {
         VStack {
-            ScreenTitle(title: "Ingredient Dictionary")
+            Text("Ingredient Dictionary").largeTitle()
             ScrollView {
                 ForEach(ingredients) { ingredient in
                     IngredientCard(ingredient: ingredient)

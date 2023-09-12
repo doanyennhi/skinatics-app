@@ -17,7 +17,6 @@ struct CameraView: View {
                 .resizable()
                 .scaledToFill()
                 .frame(minWidth: 0, maxWidth: .infinity)
-                .edgesIgnoringSafeArea(.all)
             
             Button(action: {
                 print("Scanning")
@@ -33,8 +32,11 @@ struct CameraView: View {
             })
             .buttonStyle(PrimaryButtonStyle())
         }
+        .padding(.bottom, 20)
         .modifier(ScreenModifier())
-        .fullScreenCover(isPresented: $showCamera, content: { Camera(photo: $currentPhoto, sourceType: .camera) })
+        .fullScreenCover(isPresented: $showCamera, content: { Camera(photo: $currentPhoto, sourceType: .camera)
+                .ignoresSafeArea()
+        })
     }
 }
 

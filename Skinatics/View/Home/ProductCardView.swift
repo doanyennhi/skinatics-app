@@ -25,15 +25,15 @@ struct ProductCardView: View {
                 Text(brand) // product brand
                     .foregroundColor(Color("Dark Green"))
                     .padding(.bottom, 1)
+                    .font(Font.custom("Avenir", size: 16, relativeTo: .body))
                 Text(product) // product name
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color("Secondary Green"))
                     .bold()
+                    .lineLimit(3)
             }
             .padding(.trailing, 20)
             Spacer()
         }
-        .font(Font.custom("Avenir", size: 16))
-        .frame(maxWidth: .infinity, alignment: .center)
         .background(.white)
         .modifier(CardModifier())   // apply CardModifier styling
     }

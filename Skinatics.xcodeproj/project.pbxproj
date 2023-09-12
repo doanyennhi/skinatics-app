@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F34D37F2AB05D2700A095BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D37E2AB05D2700A095BB /* MainView.swift */; };
 		0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EB2A9667E700746054 /* SignUpView.swift */; };
-		0F4061EE2A96682B00746054 /* Subheading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061ED2A96682B00746054 /* Subheading.swift */; };
 		0F4061F02A96738F00746054 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EF2A96738F00746054 /* CustomTextField.swift */; };
 		0F4061F32A967C3100746054 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F22A967C3100746054 /* LoginView.swift */; };
 		0F4061F52A974FDC00746054 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F42A974FDC00746054 /* User.swift */; };
@@ -25,7 +25,7 @@
 		0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */; };
 		0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62512A8D026D008B19F1 /* Buttons.swift */; };
 		0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62532A8E115E008B19F1 /* SkinIssuesView.swift */; };
-		0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */; };
+		0FDB62582A8E124D008B19F1 /* Text+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62572A8E124D008B19F1 /* Text+Extensions.swift */; };
 		0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */; };
 		0FDB62602A8E76AA008B19F1 /* CheckItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB625F2A8E76AA008B19F1 /* CheckItem.swift */; };
 		0FDB62662A8E98BD008B19F1 /* SkinConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62652A8E98BD008B19F1 /* SkinConditionView.swift */; };
@@ -46,7 +46,6 @@
 		0FF271A52AACA9430092FD3C /* ReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271A42AACA9430092FD3C /* ReviewList.swift */; };
 		0FF271A82AACA9DC0092FD3C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271A72AACA9DC0092FD3C /* Review.swift */; };
 		0FF271AA2AACD6390092FD3C /* InfoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271A92AACD6390092FD3C /* InfoSheetView.swift */; };
-		0FF5297A2A9B374E002461C8 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF529792A9B374E002461C8 /* SectionTitle.swift */; };
 		0FF5297C2A9B388E002461C8 /* InfoCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */; };
 		0FF5297E2A9B3DE0002461C8 /* SkinInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */; };
 		0FF529812A9B7820002461C8 /* ScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF529802A9B7820002461C8 /* ScreenModifier.swift */; };
@@ -73,8 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F34D37E2AB05D2700A095BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0F4061EB2A9667E700746054 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		0F4061ED2A96682B00746054 /* Subheading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subheading.swift; sourceTree = "<group>"; };
 		0F4061EF2A96738F00746054 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0F4061F22A967C3100746054 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0F4061F42A974FDC00746054 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -94,7 +93,7 @@
 		0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
 		0FDB62512A8D026D008B19F1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		0FDB62532A8E115E008B19F1 /* SkinIssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinIssuesView.swift; sourceTree = "<group>"; };
-		0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitle.swift; sourceTree = "<group>"; };
+		0FDB62572A8E124D008B19F1 /* Text+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extensions.swift"; sourceTree = "<group>"; };
 		0FDB625D2A8E14E1008B19F1 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		0FDB625F2A8E76AA008B19F1 /* CheckItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItem.swift; sourceTree = "<group>"; };
 		0FDB62652A8E98BD008B19F1 /* SkinConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionView.swift; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 		0FF271A42AACA9430092FD3C /* ReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewList.swift; sourceTree = "<group>"; };
 		0FF271A72AACA9DC0092FD3C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		0FF271A92AACD6390092FD3C /* InfoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheetView.swift; sourceTree = "<group>"; };
-		0FF529792A9B374E002461C8 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCapsule.swift; sourceTree = "<group>"; };
 		0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinInfo.swift; sourceTree = "<group>"; };
 		0FF5297F2A9B7529002461C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -212,6 +210,7 @@
 				0FBE1D9C2A896A7C00E64231 /* ContentView.swift */,
 				0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */,
 				0FBE1DA02A896A7D00E64231 /* Preview Content */,
+				0F34D37E2AB05D2700A095BB /* MainView.swift */,
 			);
 			path = Skinatics;
 			sourceTree = "<group>";
@@ -245,8 +244,7 @@
 			children = (
 				0FF2719C2AAB1C010092FD3C /* Navigation */,
 				0FDB62512A8D026D008B19F1 /* Buttons.swift */,
-				0FDB62572A8E124D008B19F1 /* ScreenTitle.swift */,
-				0F4061ED2A96682B00746054 /* Subheading.swift */,
+				0FDB62572A8E124D008B19F1 /* Text+Extensions.swift */,
 				0F4061EF2A96738F00746054 /* CustomTextField.swift */,
 				0F4061FA2A97D5F800746054 /* ErrorText.swift */,
 				0FF529802A9B7820002461C8 /* ScreenModifier.swift */,
@@ -374,7 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				0F4062032A9B2C0300746054 /* EditField.swift */,
-				0FF529792A9B374E002461C8 /* SectionTitle.swift */,
 				0FF5297B2A9B388E002461C8 /* InfoCapsule.swift */,
 				0FF5297D2A9B3DE0002461C8 /* SkinInfo.swift */,
 			);
@@ -558,15 +555,14 @@
 				0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */,
 				0FF2718D2AA859E20092FD3C /* Ingredient.swift in Sources */,
 				0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */,
+				0F34D37F2AB05D2700A095BB /* MainView.swift in Sources */,
 				0F4062022A9B1F3600746054 /* ProfileView.swift in Sources */,
 				0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */,
-				0F4061EE2A96682B00746054 /* Subheading.swift in Sources */,
 				0F4061FB2A97D5F800746054 /* ErrorText.swift in Sources */,
 				0FF271962AA8CA1C0092FD3C /* StoreCard.swift in Sources */,
 				497B857D2A9865A200F90871 /* ProductCardView.swift in Sources */,
 				0FF2719B2AAA53740092FD3C /* ResultSection.swift in Sources */,
-				0FF5297A2A9B374E002461C8 /* SectionTitle.swift in Sources */,
-				0FDB62582A8E124D008B19F1 /* ScreenTitle.swift in Sources */,
+				0FDB62582A8E124D008B19F1 /* Text+Extensions.swift in Sources */,
 				0F4061F32A967C3100746054 /* LoginView.swift in Sources */,
 				0FF271982AA8CE9D0092FD3C /* Store.swift in Sources */,
 				0FF271AA2AACD6390092FD3C /* InfoSheetView.swift in Sources */,
@@ -727,6 +723,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Skinatics/Preview Content\"";
+				DEVELOPMENT_TEAM = 474XL8PUH3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skinatics/Info.plist;
@@ -756,6 +753,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Skinatics/Preview Content\"";
+				DEVELOPMENT_TEAM = 474XL8PUH3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skinatics/Info.plist;

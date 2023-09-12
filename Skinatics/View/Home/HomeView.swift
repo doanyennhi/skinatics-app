@@ -34,7 +34,7 @@ struct HomeView: View {
             VStack {
                 // stack for top introductory text
                 HStack {
-                    ScreenTitle(title: "Hi \n\(user.name)")
+                    Text("Hi \n\(user.name)").largeTitle()
                     Spacer()
                     NavigationLink(destination: ProfileView(user).navigationBarBackButtonHidden(true)) {
                         Image("profile")
@@ -47,7 +47,8 @@ struct HomeView: View {
                 .padding(.bottom, 10)
                 .padding(.horizontal, 10)
                 
-                Subheading(subheading: "We have some recommendations for you.")
+                Text("We have some recommendations for you.")
+                    .subheading()
                     .padding(.bottom, 10)
                 
                 ScrollView {
@@ -55,11 +56,15 @@ struct HomeView: View {
                     VStack(alignment: .leading) {
                         ForEach(products) {
                             // iterating through products array to produce view for each product
-                            product in ProductCardView(image: product.image, brand: product.brand, product: product.product)
+                            product in
+                            NavigationLink(destination: ProductDetailView(product: product)) {
+                                ProductCardView(image: product.image, brand: product.brand, product: product.product)
+                                    .multilineTextAlignment(.leading)
+                            }
                         }
                         .padding(.horizontal, 5)
                     }
-                    
+                    .padding(.bottom, 30)
                 }
             }
             .modifier(ScreenModifier())

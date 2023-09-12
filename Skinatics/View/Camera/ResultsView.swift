@@ -14,7 +14,7 @@ struct Result: Hashable {
     var color: Color
 }
 
-let results = [Result(section: "Radiance", score: 50, color: Color("Bronze")), Result(section: "Lines", score: 85, color: .accentColor), Result(section: "Hydration", score: 85, color: .accentColor), Result(section: "Texture", score: 75, color: Color("Yellow Green"))]
+let results = [Result(section: "Radiance", score: 50, color: Color("Bronze")), Result(section: "Lines", score: 85, color: Color("Secondary Green")), Result(section: "Hydration", score: 85, color: Color("Secondary Green")), Result(section: "Texture", score: 75, color: Color("Yellow Green"))]
 
 struct ResultsView: View {
     var resultItems: [Result]
@@ -25,7 +25,7 @@ struct ResultsView: View {
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                ScreenTitle(title: "Today's Results")
+                Text("Today's Results").largeTitle()
             
                 VStack {
                     LazyVGrid(columns: twoColumnGrid, spacing: 20) {
@@ -71,10 +71,7 @@ struct ResultsView: View {
                 .padding(.vertical, 20)
                 
                 
-                Text("Analysis")
-                    .foregroundColor(Color("Dark Green"))
-                    .font(Font.custom("Avenir", size: 24))
-                    .bold()
+                Text("Analysis").title()
                     .padding(.vertical, 10)
                 
                 VStack(alignment: .leading, spacing: 25) {

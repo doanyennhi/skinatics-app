@@ -20,14 +20,14 @@ struct ProductDetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(spacing: 20) {
                     Image(product.image)
                         .resizable()
                         .scaledToFit()
                     
                     HStack(alignment: .firstTextBaseline) {
                         Text(product.brand)
-                            .font(Font.custom("Avenir", size: 20))
+                            .title2()
                             .fontWeight(.semibold)
                         
                         Spacer()
@@ -35,13 +35,10 @@ struct ProductDetailView: View {
                             .underline()
                         Image(systemName: "star.fill")
                     }
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color("Secondary Green"))
                     
                     Text(product.product)
-                        .foregroundColor(Color("Dark Green"))
-                        .font(Font.custom("Avenir", size: 24))
-                        .bold()
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .title()
                         .multilineTextAlignment(.center)
                         
                     TopTabBar(tabItems: ["Details", "Reviews","Ingredients"], tabSelected: $productTabSelected)
@@ -66,9 +63,9 @@ struct ProductDetailView: View {
                     .padding(.bottom, 20)
                     
                     Text("Stores nearby with this product")
-                        .foregroundColor(.accentColor)
-                        .font(Font.custom("Avenir", size: 20))
+                        .title2()
                         .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     
                     ScrollView(.horizontal) {
                         HStack(alignment: .top, spacing: 30) {

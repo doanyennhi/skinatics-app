@@ -22,8 +22,8 @@ struct EditField: View {
     }
     
     var body: some View {
-        VStack {
-            SectionTitle(title: title)
+        VStack(alignment: .leading) {
+            Text(title).title()
             
             HStack {
                 // info field
@@ -31,11 +31,11 @@ struct EditField: View {
                     .disabled(!isEditing)
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
-                    .font(Font.custom("Avenir", size: 20))
                 
                 // toggle between allow and disable for editing
                 Text(isEditing ? "Done" : "Edit")
-                    .foregroundColor(.accentColor)
+                    .font(Font.custom("Avenir", size: 16))
+                    .foregroundColor(Color("Secondary Green"))
                     .fontWeight(.semibold)
                     .onTapGesture {
                         // show error message if text empty

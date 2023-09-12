@@ -17,7 +17,7 @@ struct InfoCapsule: View {
                 .foregroundColor(Color("White"))
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
-                .background(Capsule()).foregroundColor(Color.accentColor)
+                .background(Capsule()).foregroundColor(Color("Secondary Green"))
                 .font(Font.custom("Avenir", size: 18))
         }
     }

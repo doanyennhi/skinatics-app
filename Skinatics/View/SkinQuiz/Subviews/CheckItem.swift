@@ -21,10 +21,8 @@ struct CheckItem: View {
             // Show green tick mark if selected
             Image(systemName: isSelected ? "checkmark.circle.fill": "circle")
                 .foregroundColor(isSelected ? Color("Secondary Green") : .gray)
-                .font(.system(size: 20))
         }
         // Highlight selected item
-        .font(Font.custom("Avenir", size: 20))
         .foregroundColor(isSelected ? Color("Secondary Green") : Color("Black"))
         .fontWeight(isSelected ? .bold : .regular)
         

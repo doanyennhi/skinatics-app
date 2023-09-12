@@ -14,13 +14,13 @@ struct TabBarItem: View {
     var body: some View {
         VStack(spacing: 5) {
             Text(item)
-                .font(.custom("Avenir", size: isSelected ? 20 : 18))
+                .font(.custom("Avenir", size: isSelected ? 20 : 18, relativeTo: .title2))
                 .fontWeight(isSelected ? .semibold : .regular)
-                .foregroundColor(.accentColor)
+                .foregroundColor(Color("Secondary Green"))
             
             Divider()
                 .frame(height: isSelected ? 2 : 1)
-                .overlay(isSelected ? .accentColor : Color.clear)
+                .overlay(isSelected ? Color("Secondary Green") : Color.clear)
         }
     }
 }

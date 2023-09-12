@@ -19,7 +19,7 @@ struct ProfileView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                ScreenTitle(title: "My Profile")
+                Text("My Profile").largeTitle()
                 // Avatar
                 Image("profile")
                     .resizable()
@@ -31,12 +31,15 @@ struct ProfileView: View {
                 // User info
                 EditField(title: "Name", text: user.name)
                 EditField(title: "Email", text: user.email)
+
                 
                 // Skin Info
                 HStack {
-                    SectionTitle(title: "My Skin")
+                    Text("My Skin").title()
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Edit")
-                        .foregroundColor(.accentColor)
+                        .font(Font.custom("Avenir", size: 16))
+                        .foregroundColor(Color("Secondary Green"))
                         .fontWeight(.semibold)
                 }
                 SkinInfo(title: "Skin Type", items: Array(user.skinTypes))

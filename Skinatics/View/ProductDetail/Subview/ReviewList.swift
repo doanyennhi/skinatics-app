@@ -22,7 +22,6 @@ struct ReviewList: View {
                             .bold()
                         Text("\(review.rating, specifier: "%.1f")")
                         Image(systemName: "star.fill")
-                            .font(.system(size: 14))
                     }
                     .foregroundColor(Color("Dark Green"))
                     Text(review.comment)
@@ -30,7 +29,7 @@ struct ReviewList: View {
             }
             Text("View More")
                 .underline()
-                .foregroundColor(.accentColor)
+                .foregroundColor(Color("Secondary Green"))
                 .frame(maxWidth: .infinity, alignment: .center)
         }
     }

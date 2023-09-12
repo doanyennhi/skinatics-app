@@ -17,10 +17,8 @@ struct IngredientCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(ingredient.name)
+                .title()
                 .padding(.bottom, 5)
-                .font(Font.custom("Avenir", size: 24))
-                .bold()
-                .foregroundColor(Color("Dark Green"))
             Text(ingredient.description)
         }
         .padding(20)

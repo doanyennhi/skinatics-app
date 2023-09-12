@@ -25,11 +25,10 @@ struct StoreCard: View {
 
             Text(store.name)
                 .foregroundColor(Color("Dark Green"))
-                .font(Font.custom("Avenir", size: 18))
                 .bold()
             Text(store.address)
                 .foregroundColor(Color("Grey"))
-                .font(Font.custom("Avenir", size: 16))
+                .font(Font.custom("Avenir", size: 16, relativeTo: .body))
         }
         .frame(width: 150)
     }

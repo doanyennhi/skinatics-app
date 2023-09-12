@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct DemoApp: App {
+struct SkinaticsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -14,8 +14,7 @@ struct ResultSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(heading)
-                .foregroundColor(.accentColor)
-                .font(Font.custom("Avenir", size: 20))
+                .title2()
                 .fontWeight(.semibold)
             .italic()
             

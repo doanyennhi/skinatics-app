@@ -27,9 +27,9 @@ struct QuizTemplate<Content: View>: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ScreenTitle(title: title)
+                Text(title).largeTitle()
                     .multilineTextAlignment(.center)
-                Subheading(subheading: subheading)
+                Text(subheading).subheading()
                 
                 ErrorText(show: $show, text: "Please select at least one item")
 

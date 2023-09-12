@@ -50,8 +50,9 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ScreenTitle(title: "Welcome back!")
-                Subheading(subheading: "Please sign into your account")
+                Text("Welcome back!").largeTitle()
+                Text("Please sign into your account")
+                    .subheading()
                     .padding(.bottom, 30)
                 
                 // Error message and login fields

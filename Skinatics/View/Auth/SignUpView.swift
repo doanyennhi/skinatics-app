@@ -63,68 +63,74 @@ struct SignUpView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                ScreenTitle(title: "Sign Up")
-                Subheading(subheading: "Create an account to start your skincare journey")
-                    .padding(.bottom, 30)
-                
-                // Error messages and fields for sign up
-                ErrorText(show: $showEmptyWarning, text: "Please fill in all the fields.")
-                
-                TextField("Name", text: $name)
-                    .textFieldStyle(CustomTextFieldStyle())
-                
-                VStack {
-                    ErrorText(show: $showInvalidEmail, text: "Invalid email address")
-                    TextField("Email", text: $email)
-                        .textFieldStyle(CustomTextFieldStyle())
-                }
-                
-                SecureField("Password", text: $pwd)
-                    .textFieldStyle(CustomTextFieldStyle())
-                
-                VStack {
-                    ErrorText(show: isPasswordDifferent, text: "Password does not match")
-                    SecureField("Confirm password", text: $confirmPwd)
-                        .textFieldStyle(CustomTextFieldStyle())
-                }
-                .padding(.bottom, 60)
-                
-                // disable navigation when loading
-                Button (action: {
-                    // loading to run sign up function
-                    isLoading = true
-                        Task {
-                            // navigate to next screen if sign up successful
-                            showNextView = await isSignUp()
-                            isLoading = false
+        GeometryReader { geometry in
+            NavigationStack {
+                ScrollView {
+                    VStack {
+                        Text("Sign Up").largeTitle()
+                        Text("Create an account to start your skincare journey")
+                            .subheading()
+                            .padding(.bottom, 30)
+                        
+                        // Error messages and fields for sign up
+                        ErrorText(show: $showEmptyWarning, text: "Please fill in all the fields.")
+                        
+                        TextField("Name", text: $name)
+                            .textFieldStyle(CustomTextFieldStyle())
+                        
+                        VStack {
+                            ErrorText(show: $showInvalidEmail, text: "Invalid email address")
+                            TextField("Email", text: $email)
+                                .textFieldStyle(CustomTextFieldStyle())
+                        }
+                        
+                        SecureField("Password", text: $pwd)
+                            .textFieldStyle(CustomTextFieldStyle())
+                        
+                        VStack {
+                            ErrorText(show: isPasswordDifferent, text: "Password does not match")
+                            SecureField("Confirm password", text: $confirmPwd)
+                                .textFieldStyle(CustomTextFieldStyle())
+                        }
+                        .padding(.bottom, 60)
+                        
+                        // disable navigation when loading
+                        Button (action: {
+                            // loading to run sign up function
+                            isLoading = true
+                                Task {
+                                    // navigate to next screen if sign up successful
+                                    showNextView = await isSignUp()
+                                    isLoading = false
+                            }
+                        }, label: {
+                            if isLoading {
+                                ProgressView()
+                                    .tint(Color("White"))
+                            } else {
+                                Text("Sign Up")
+                            }
+                        })
+                        .buttonStyle(PrimaryButtonStyle())
+                        .disabled(isLoading)
+                        .navigationDestination(isPresented: $showNextView, destination: {
+                            LoginView().navigationBarBackButtonHidden()
+                        })
+                        
+                        HStack {
+                            Text("Already have an account?")
+                            NavigationLink(destination: LoginView()
+                                .navigationBarBackButtonHidden(true)) {
+                                Text("Login")
+                                    .bold()
+                                    .underline()
+                            }
+                        }
                     }
-                }, label: {
-                    if isLoading {
-                        ProgressView()
-                            .tint(Color("White"))
-                    } else {
-                        Text("Sign Up")
-                    }
-                })
-                .buttonStyle(PrimaryButtonStyle())
-                .disabled(isLoading)
-                .navigationDestination(isPresented: $showNextView, destination: {
-                    LoginView().navigationBarBackButtonHidden()
-                })
-                
-                HStack {
-                    Text("Already have an account?")
-                    NavigationLink(destination: LoginView()
-                        .navigationBarBackButtonHidden(true)) {
-                        Text("Login")
-                            .bold()
-                            .underline()
-                    }
+                    .frame(minHeight: geometry.size.height)
                 }
+                .modifier(ScreenModifier())
             }
-            .modifier(ScreenModifier())
         }
     }
 }
