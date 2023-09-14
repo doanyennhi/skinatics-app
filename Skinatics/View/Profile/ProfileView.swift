@@ -17,41 +17,41 @@ struct ProfileView: View {
     }
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack {
-                Text("My Profile").largeTitle()
-                // Avatar
-                Image("profile")
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 150)
-                    .padding(.bottom, 60)
-                
-                // User info
-                EditField(title: "Name", text: user.name)
-                EditField(title: "Email", text: user.email)
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    Text("My Profile").largeTitle(multilineCenter: true)
+                    // Avatar
+                    Image("profile")
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(width: 150)
+                        .padding(.bottom, 60)
+                    
+                    // User info
+                    EditField(title: "Name", text: user.name)
+                    EditField(title: "Email", text: user.email)
 
-                
-                // Skin Info
-                HStack {
-                    Text("My Skin").title()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Edit")
-                        .font(Font.custom("Avenir", size: 16))
-                        .foregroundColor(Color("Secondary Green"))
-                        .fontWeight(.semibold)
+                    
+                    // Skin Info
+                    HStack {
+                        Text("My Skin").title()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Edit")
+                            .font(Font.custom("Avenir", size: 16))
+                            .foregroundColor(Color("Secondary Green"))
+                            .fontWeight(.semibold)
+                    }
+                    SkinInfo(title: "Skin Type", items: Array(user.skinTypes))
+                    
+                    SkinInfo(title: "Skin Conditions", items: Array(user.skinConditions))
+                    
+                    SkinInfo(title: "I Need Help With...", items: Array(user.skinIssues))
                 }
-                SkinInfo(title: "Skin Type", items: Array(user.skinTypes))
-                
-                SkinInfo(title: "Skin Conditions", items: Array(user.skinConditions))
-                
-                SkinInfo(title: "I Need Help With...", items: Array(user.skinIssues))
+                .padding(.vertical)
             }
-            .padding(.vertical)
+            .modifier(ScreenModifier())
         }
-        .modifier(ScreenModifier())
-    }
 }
 
 struct ProfileView_Previews: PreviewProvider {

@@ -34,7 +34,7 @@ struct ProductCardView: View {
             .padding(.trailing, 20)
             Spacer()
         }
-        .background(.white)
+        .background(Color("White"))
         .modifier(CardModifier())   // apply CardModifier styling
     }
 }

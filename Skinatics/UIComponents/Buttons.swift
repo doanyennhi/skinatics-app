@@ -32,7 +32,7 @@ struct PrimaryButtonStyle: ButtonStyle {
             .bold()
             .frame(maxWidth: .infinity)
             .padding(.vertical, 15)
-            .foregroundColor(.white)
+            .foregroundColor(Color("White"))
             .background(Color("Secondary Green"))
             .cornerRadius(15)
         }

@@ -42,7 +42,7 @@ struct StartUpView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("Dark Green"))
+            .background(Color(red: 0.204, green: 0.306, blue: 0.255))
         }
     }
     

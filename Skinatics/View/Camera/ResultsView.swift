@@ -25,7 +25,7 @@ struct ResultsView: View {
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                Text("Today's Results").largeTitle()
+                Text("Today's Results").largeTitle(multilineCenter: true)
             
                 VStack {
                     LazyVGrid(columns: twoColumnGrid, spacing: 20) {

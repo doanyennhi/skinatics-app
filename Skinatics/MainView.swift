@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct MainView: View {
     var user: User
     

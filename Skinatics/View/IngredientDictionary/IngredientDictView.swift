@@ -18,14 +18,14 @@ struct IngredientDictView: View {
     
     var body: some View {
         VStack {
-            Text("Ingredient Dictionary").largeTitle()
+            Text("Ingredient Dictionary").largeTitle(multilineCenter: true)
             ScrollView {
                 ForEach(ingredients) { ingredient in
                     IngredientCard(ingredient: ingredient)
                 }
             }
             .padding(.vertical, 20)
-            .verticalFadeOut(fadeHeight: 50)
+            .verticalFadeOut(topHeight: 50, bottomHeight: 50)
         }
         .modifier(ScreenModifier())
     }

@@ -8,11 +8,12 @@
 import SwiftUI
 
 extension Text {
-    func largeTitle() -> some View {
+    func largeTitle(multilineCenter: Bool) -> some View {
         self
             .font(Font.custom("Avenir", size: 32))
             .padding(.vertical, 10)
             .fontWeight(.black).foregroundColor(Color("Dark Green"))
+            .multilineTextAlignment(multilineCenter ? .center : .leading)
     }
     
     func title() -> some View {

@@ -38,12 +38,12 @@ struct CustomCheckboxStyle: ToggleStyle {
             .frame(maxWidth: .infinity, minHeight:100)
             
             // Selected item is highlighted
-            .background(configuration.isOn ? Color("Light Green").opacity(0.2) : .white)
-            .foregroundColor(.black)
+            .background(configuration.isOn ? Color(red: 0.478, green: 0.753, blue: 0.549).opacity(0.4) : Color("White"))
+            .foregroundColor(Color("Black"))
         })
         .cornerRadius(15)
         .padding(.bottom, 10)
-        .shadow(color: .gray.opacity(0.2), radius: 5, x: 2, y: 4)
+        .shadow(color: Color("Black").opacity(0.1), radius: 5, x: 2, y: 4)
     }
 }
 

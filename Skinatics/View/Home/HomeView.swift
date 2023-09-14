@@ -34,7 +34,7 @@ struct HomeView: View {
             VStack {
                 // stack for top introductory text
                 HStack {
-                    Text("Hi \n\(user.name)").largeTitle()
+                    Text("Hi \n\(user.name)").largeTitle(multilineCenter: false)
                     Spacer()
                     NavigationLink(destination: ProfileView(user).navigationBarBackButtonHidden(true)) {
                         Image("profile")

@@ -67,7 +67,7 @@ struct SignUpView: View {
             NavigationStack {
                 ScrollView {
                     VStack {
-                        Text("Sign Up").largeTitle()
+                        Text("Sign Up").largeTitle(multilineCenter: true)
                         Text("Create an account to start your skincare journey")
                             .subheading()
                             .padding(.bottom, 30)
@@ -127,6 +127,7 @@ struct SignUpView: View {
                             }
                         }
                     }
+                    .fixedSize(horizontal: false, vertical: true)
                     .frame(minHeight: geometry.size.height)
                 }
                 .modifier(ScreenModifier())

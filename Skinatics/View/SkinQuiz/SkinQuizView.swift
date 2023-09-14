@@ -21,8 +21,7 @@ struct SkinQuizView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .center) {
-                Text("What's your skin type?").largeTitle()
-                    .multilineTextAlignment(.center)
+                Text("What's your skin type?").largeTitle(multilineCenter: true)
                 ErrorText(show: $show, text: "Please select at least one item")
                 
                 // Checklist for skin types

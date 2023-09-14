@@ -22,9 +22,9 @@ struct IngredientCard: View {
             Text(ingredient.description)
         }
         .padding(20)
-        .background(.white)
+        .background(Color("White"))
         .cornerRadius(15)
-        .shadow(color: .gray.opacity(0.2), radius: 10, x: 2, y: 2)
+        .shadow(color: .black.opacity(0.1), radius: 5, x: 2, y: 2)
         .padding(.bottom, 10)
     }
 }

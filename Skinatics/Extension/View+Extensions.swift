@@ -11,7 +11,7 @@ extension View {
     
     /// Fade out a view at its top and bottom
     /// @fadeHeight: height of the fade/ blurry effect
-    func verticalFadeOut(fadeHeight: CGFloat) -> some View {
+    func verticalFadeOut(topHeight: CGFloat, bottomHeight: CGFloat) -> some View {
         return mask(
             VStack(spacing: 0) {
                 // fade at top
@@ -20,7 +20,7 @@ extension View {
                        colors: [.black.opacity(0), .black]),
                        startPoint: .top, endPoint: .bottom
                    )
-                   .frame(height: fadeHeight)
+                   .frame(height: topHeight)
                 
                 Rectangle().fill(Color.black)
                 
@@ -30,7 +30,7 @@ extension View {
                        colors: [.black.opacity(0), .black]),
                        startPoint: .bottom, endPoint: .top
                    )
-                   .frame(height: fadeHeight)
+                   .frame(height: bottomHeight)
             }
         )
     }

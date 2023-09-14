@@ -50,7 +50,7 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Welcome back!").largeTitle()
+                Text("Welcome back!").largeTitle(multilineCenter: true)
                 Text("Please sign into your account")
                     .subheading()
                     .padding(.bottom, 30)
@@ -62,10 +62,10 @@ struct LoginView: View {
                 
                 TextField("Email", text: $email)
                     .textFieldStyle(CustomTextFieldStyle())
-                    
+                
                 SecureField("Password", text: $pwd)
                     .textFieldStyle(CustomTextFieldStyle())
-    
+                
                 // Forgot password link
                 NavigationLink(destination: EmptyView()) {
                     Text("Forgot password?")
@@ -78,11 +78,11 @@ struct LoginView: View {
                 Button (action: {
                     // start running function
                     isLoading = true
-                        Task {
-                            // navigate if login successful
-                            showNextView = await isLogin()
-                            isLoading = false
-                        }
+                    Task {
+                        // navigate if login successful
+                        showNextView = await isLogin()
+                        isLoading = false
+                    }
                 }, label: {
                     if isLoading {
                         ProgressView()
@@ -98,20 +98,22 @@ struct LoginView: View {
                     if currentUser.skinTypes.isEmpty || currentUser.skinIssues.isEmpty {
                         SkinQuizView(user: currentUser).navigationBarBackButtonHidden()
                     } else {
-                        HomeView(user: currentUser).navigationBarBackButtonHidden()
+                        MainView(user: currentUser).navigationBarBackButtonHidden()
                     }
                 })
                 
-            HStack {
-                Text("Don't have an account?")
-                NavigationLink(destination: SignUpView()
-                    .navigationBarBackButtonHidden(true)) {
-                        Text("Sign Up")
-                            .bold()
-                            .underline()
-                    }
+                HStack {
+                    Text("Don't have an account?")
+                        .font(Font.custom("Avenir", size: 16, relativeTo: .body))
+                    NavigationLink(destination: SignUpView()
+                        .navigationBarBackButtonHidden(true)) {
+                            Text("Sign Up")
+                                .bold()
+                                .underline()
+                        }
+                }
             }
-            }
+            .fixedSize(horizontal: false, vertical: true)
             .modifier(ScreenModifier())
         }
     }

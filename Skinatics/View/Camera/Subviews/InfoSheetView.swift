@@ -30,7 +30,7 @@ struct InfoSheetView: View {
         VStack {
             ForEach(resultInfo, id: \.self) { info in
                 if section == info.section {
-                    Text(info.section).largeTitle()
+                    Text(info.section).largeTitle(multilineCenter: true)
                     Image(systemName: info.icon)
                         .font(.system(size: 50))
                         .padding(.bottom, 20)

@@ -25,51 +25,60 @@ struct QuizTemplate<Content: View>: View {
     
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text(title).largeTitle()
-                    .multilineTextAlignment(.center)
-                Text(subheading).subheading()
-                
-                ErrorText(show: $show, text: "Please select at least one item")
-
-                // options displayed as checkboxes in 2 columns
+        GeometryReader { geometry in 
+            NavigationStack {
                 ScrollView(showsIndicators: false) {
-                    LazyVGrid(columns: twoColumnGrid) {
-                        ForEach(options, id: \.self) { item in
-                            Checkbox(content: item, isSelected: selected.contains(item)) {
-                                toggleItem(set: &selected, item: item)
+                    VStack {
+                        Text(title).largeTitle(multilineCenter: true)
+                        Text(subheading).subheading()
+                        
+                        ErrorText(show: $show, text: "Please select at least one item")
+
+                        // options displayed as checkboxes in 2 columns
+                            LazyVGrid(columns: twoColumnGrid) {
+                                ForEach(options, id: \.self) { item in
+                                    Checkbox(content: item, isSelected: selected.contains(item)) {
+                                        toggleItem(set: &selected, item: item)
+                                        print(selected)
+                                    }
+                                }
+                            }
+                            .padding(.vertical, 20)
+                        
+                        NavigationLink {
+                            screen
+                        } label: {
+                            Text(btnText)
+                        }
+                        .padding(.bottom, 20)
+                        // if quiz is required, disable navigation if no options selected
+                        .disabled(selectionOptional ? false : selected.isEmpty)
+                        .buttonStyle(PrimaryButtonStyle())
+                        .simultaneousGesture(
+                            TapGesture().onEnded {
                                 print(selected)
-                            }
-                        }
+                                // show error message if quiz is required & no options selected
+                                if !selectionOptional {
+                                    if selected.isEmpty {
+                                        show = true
+                                    } else {
+                                        show = false
+                                    }
+                                }
+                                action()
+                        })
                     }
-                    .padding(.vertical, 20)
+                    .frame(minHeight: geometry.size.height)
                 }
-                .verticalFadeOut(fadeHeight: 50)
-                
-                NavigationLink {
-                    screen
-                } label: {
-                    Text(btnText)
-                }
-                // if quiz is required, disable navigation if no options selected
-                .disabled(selectionOptional ? false : selected.isEmpty)
-                .buttonStyle(PrimaryButtonStyle())
-                .simultaneousGesture(
-                    TapGesture().onEnded {
-                        print(selected)
-                        // show error message if quiz is required & no options selected
-                        if !selectionOptional {
-                            if selected.isEmpty {
-                                show = true
-                            } else {
-                                show = false
-                            }
-                        }
-                        action()
-                })
+                .verticalFadeOut(topHeight: 30, bottomHeight: 20)
+                .modifier(ScreenModifier())
             }
-            .modifier(ScreenModifier())
         }
+    }
+}
+
+struct QuizTemplate_Previews: PreviewProvider {
+    static var previews: some View {
+        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: .constant(Set<String>()), screen: MainView(user: users[1]).navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {})
     }
 }
