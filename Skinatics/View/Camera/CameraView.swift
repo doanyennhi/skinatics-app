@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CameraView: View {
     @State var showCamera: Bool = false
+    @State var showScannerDialog: Bool = false
+    var scannerType: ScannerType?
     @State var currentPhoto = UIImage()
     
     var body: some View {
@@ -18,11 +20,21 @@ struct CameraView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(minWidth: 0, maxWidth: .infinity)
-                NavigationLink(destination: ScannerView()) {
+                
+                Button(action: {
+                    showScannerDialog = true
+                }, label: {
                     Text("Scanner")
+                })
+                .confirmationDialog("Choose a scanner type", isPresented: $showScannerDialog) {
+                    NavigationLink(destination: ScannerView(scannerType: .text)) {
+                        Text("Scan ingredient")
+                    }
+                    NavigationLink(destination: ScannerView(scannerType: .barcode)) {
+                        Text("Scan product barcode")
+                    }
                 }
                 .buttonStyle(SecondaryButtonStyle())
-            
                 
                 Button(action: {
                     showCamera = true

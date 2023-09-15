@@ -18,7 +18,7 @@ struct ScannerView: View {
     @State var scannerType: ScannerType
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Scanner(startScanning: $startScanning, recognizedItem: $scannedItem, scannerType: $scannerType)
     
             VStack(alignment: .leading, spacing: 10) {
