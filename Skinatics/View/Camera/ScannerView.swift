@@ -8,23 +8,39 @@
 import SwiftUI
 import VisionKit
 
+enum ScannerType: String {
+    case text, barcode
+}
+
 struct ScannerView: View {
     @State var startScanning = false
-    @State var scannedItems: [RecognizedItem] = []
-    @State var value: String = ""
+    @State var scannedItem: String = ""
+    @State var scannerType: ScannerType
     
     var body: some View {
         VStack {
-            Scanner(startScanning: $startScanning, recognizedItems: $scannedItems)
-            
-            ForEach(scannedItems) { item in
-                switch item {
-                case .barcode(let barcode):
-                    Text(barcode.payloadStringValue ?? "Unknown payload")
-                default:
-                    Text("")
-                }
+            Scanner(startScanning: $startScanning, recognizedItem: $scannedItem, scannerType: $scannerType)
+    
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Use the scanner camera to tap on the information you would like to scan").bold()
+                Text(scannedItem == "" ? "No item has been scanned" : "Found the following item: ")
+                Text(scannedItem)
+                Button(action: {}, label: {
+                    HStack {
+                        Text("Search")
+                        Image(systemName: "magnifyingglass")
+                    }
+                    .padding(10)
+                })
+                .background(Color.accentColor)
+                .foregroundColor(Color("White"))
+                .bold()
+                .cornerRadius(15)
+                .frame(maxWidth: .infinity, alignment: .center)
             }
+            .padding([.top, .horizontal], 20)
+            .font(Font.custom("Avenir", size: 18, relativeTo: .body))
+            .background(Color("Floral White"))
         }
         .task {
             if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
@@ -38,12 +54,17 @@ struct ScannerView: View {
 
 struct Scanner: UIViewControllerRepresentable {
     @Binding var startScanning: Bool
-    @Binding var recognizedItems: [RecognizedItem]
+    @Binding var recognizedItem: String
+    @Binding var scannerType: ScannerType
+    var dataType: DataScannerViewController.RecognizedDataType {
+        return scannerType == .text ? .text() : .barcode()
+    }
     
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let controller = DataScannerViewController(
-            recognizedDataTypes: [.barcode()],
+            recognizedDataTypes: [dataType],
             qualityLevel: .accurate,
+            isHighFrameRateTrackingEnabled: false,
             isHighlightingEnabled: true
         )
         controller.delegate = context.coordinator
@@ -53,6 +74,7 @@ struct Scanner: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
         if startScanning {
             try? uiViewController.startScanning()
+            print(dataType)
         } else {
             uiViewController.stopScanning()
         }
@@ -71,18 +93,20 @@ struct Scanner: UIViewControllerRepresentable {
         
         func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
             UINotificationFeedbackGenerator().notificationOccurred(.success)
-            parent.recognizedItems.append(item)
-        }
-        
-        func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
-            parent.recognizedItems.append(contentsOf: addedItems)
+            switch item {
+            case .text(let text):
+                parent.recognizedItem = text.transcript
+            case .barcode(let barcode):
+                parent.recognizedItem = barcode.payloadStringValue ?? "Unknown payload"
+            default:
+                parent.recognizedItem = ""
+            }
         }
     }
 }
 
 struct ScannerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScannerView()
+        ScannerView(scannerType: .barcode)
     }
 }
