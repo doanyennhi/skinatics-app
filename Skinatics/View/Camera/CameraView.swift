@@ -12,31 +12,31 @@ struct CameraView: View {
     @State var currentPhoto = UIImage()
     
     var body: some View {
-        VStack {
-            Image(uiImage: currentPhoto)
-                .resizable()
-                .scaledToFill()
-                .frame(minWidth: 0, maxWidth: .infinity)
+        NavigationStack {
+            VStack {
+                Image(uiImage: currentPhoto)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                NavigationLink(destination: ScannerView()) {
+                    Text("Scanner")
+                }
+                .buttonStyle(SecondaryButtonStyle())
             
-            Button(action: {
-                print("Scanning")
-            }, label: {
-                Text("Scan barcode")
-            })
-            .buttonStyle(SecondaryButtonStyle())
-            
-            Button(action: {
-                showCamera = true
-            }, label: {
-                Text("Take skin photo")
-            })
-            .buttonStyle(PrimaryButtonStyle())
-        }
-        .padding(.bottom, 20)
-        .modifier(ScreenModifier())
-        .fullScreenCover(isPresented: $showCamera, content: { Camera(photo: $currentPhoto, sourceType: .camera)
-                .ignoresSafeArea()
+                
+                Button(action: {
+                    showCamera = true
+                }, label: {
+                    Text("Take skin photo")
+                })
+                .buttonStyle(PrimaryButtonStyle())
+            }
+            .padding(.bottom, 20)
+            .modifier(ScreenModifier())
+            .fullScreenCover(isPresented: $showCamera, content: { Camera(photo: $currentPhoto, sourceType: .camera)
+                    .ignoresSafeArea()
         })
+        }
     }
 }
 
@@ -47,14 +47,14 @@ struct Camera: UIViewControllerRepresentable {
     
     var sourceType: UIImagePickerController.SourceType = .camera
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<Camera>) -> UIImagePickerController {
+    func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.sourceType = sourceType
         picker.delegate = context.coordinator
         return picker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<Camera>) { }
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) { }
     
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F34D37F2AB05D2700A095BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D37E2AB05D2700A095BB /* MainView.swift */; };
+		0F34D3812AB37D9100A095BB /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D3802AB37D9100A095BB /* ScannerView.swift */; };
 		0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EB2A9667E700746054 /* SignUpView.swift */; };
 		0F4061F02A96738F00746054 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EF2A96738F00746054 /* CustomTextField.swift */; };
 		0F4061F32A967C3100746054 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F22A967C3100746054 /* LoginView.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		0F34D37E2AB05D2700A095BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0F34D3802AB37D9100A095BB /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		0F4061EB2A9667E700746054 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		0F4061EF2A96738F00746054 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0F4061F22A967C3100746054 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				0FF271992AAA535C0092FD3C /* Subviews */,
 				0FF271872AA720070092FD3C /* CameraView.swift */,
 				0FF271902AA8715E0092FD3C /* ResultsView.swift */,
+				0F34D3802AB37D9100A095BB /* ScannerView.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				0FF2718F2AA85AF70092FD3C /* IngredientCard.swift in Sources */,
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
 				0FDB626C2A8F6B4C008B19F1 /* SetHelper.swift in Sources */,
+				0F34D3812AB37D9100A095BB /* ScannerView.swift in Sources */,
 				0FF5297C2A9B388E002461C8 /* InfoCapsule.swift in Sources */,
 				0FF2719E2AAB1C110092FD3C /* TabBarItem.swift in Sources */,
 				0FDB62692A8F68DE008B19F1 /* View+Extensions.swift in Sources */,

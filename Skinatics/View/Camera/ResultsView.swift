@@ -50,7 +50,7 @@ struct ResultsView: View {
                             }
                             .sheet(isPresented: $showSheet, content: {
                                 InfoSheetView(section: $infoSheetSelected)
-                                    .presentationDetents([.medium, .large])
+                                    .presentationDragIndicator(.visible)
                             })
                         }
                     }
