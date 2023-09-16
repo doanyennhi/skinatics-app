@@ -53,8 +53,9 @@
 		497B857B2A98651600F90871 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857A2A98651600F90871 /* HomeView.swift */; };
 		497B857D2A9865A200F90871 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857C2A9865A200F90871 /* ProductCardView.swift */; };
 		497B85802A98676C00F90871 /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857F2A98676C00F90871 /* StartUpView.swift */; };
-		49AE657D2AB42B7D00B595AB /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE657C2AB42B7D00B595AB /* Cell.swift */; };
-		49AE657F2AB42FC000B595AB /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE657E2AB42FC000B595AB /* CustomCorners.swift */; };
+		49AE65922AB5063500B595AB /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE65912AB5063500B595AB /* CarouselCell.swift */; };
+		49AE65952AB506B600B595AB /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE65942AB506B600B595AB /* Carousel.swift */; };
+		49AE65972AB50EF600B595AB /* SnapCarouselHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE65962AB50EF600B595AB /* SnapCarouselHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,8 +126,9 @@
 		497B857A2A98651600F90871 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		497B857C2A9865A200F90871 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		497B857F2A98676C00F90871 /* StartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpView.swift; sourceTree = "<group>"; };
-		49AE657C2AB42B7D00B595AB /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		49AE657E2AB42FC000B595AB /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		49AE65912AB5063500B595AB /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		49AE65942AB506B600B595AB /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		49AE65962AB50EF600B595AB /* SnapCarouselHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarouselHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +164,7 @@
 				0FF2718C2AA859E20092FD3C /* Ingredient.swift */,
 				0FF271972AA8CE9D0092FD3C /* Store.swift */,
 				0FF271A72AACA9DC0092FD3C /* Review.swift */,
-				49AE657C2AB42B7D00B595AB /* Cell.swift */,
+				49AE65912AB5063500B595AB /* CarouselCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +310,7 @@
 			children = (
 				0F4061FC2A97D97E00746054 /* Validation.swift */,
 				0FDB626B2A8F6B4C008B19F1 /* SetHelper.swift */,
+				49AE65962AB50EF600B595AB /* SnapCarouselHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -389,9 +392,9 @@
 		497B85792A98650600F90871 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				49AE65932AB5069100B595AB /* Carousel */,
 				497B857A2A98651600F90871 /* HomeView.swift */,
 				497B857C2A9865A200F90871 /* ProductCardView.swift */,
-				49AE657E2AB42FC000B595AB /* CustomCorners.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -402,6 +405,14 @@
 				497B857F2A98676C00F90871 /* StartUpView.swift */,
 			);
 			path = StartUp;
+			sourceTree = "<group>";
+		};
+		49AE65932AB5069100B595AB /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				49AE65942AB506B600B595AB /* Carousel.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +557,7 @@
 				0F34D3812AB37D9100A095BB /* ScannerView.swift in Sources */,
 				0FF5297C2A9B388E002461C8 /* InfoCapsule.swift in Sources */,
 				0FF2719E2AAB1C110092FD3C /* TabBarItem.swift in Sources */,
+				49AE65972AB50EF600B595AB /* SnapCarouselHelper.swift in Sources */,
 				0FDB62692A8F68DE008B19F1 /* View+Extensions.swift in Sources */,
 				0FDB62602A8E76AA008B19F1 /* CheckItem.swift in Sources */,
 				0FDB62662A8E98BD008B19F1 /* SkinConditionView.swift in Sources */,
@@ -554,7 +566,6 @@
 				0FF5297E2A9B3DE0002461C8 /* SkinInfo.swift in Sources */,
 				0F4061F52A974FDC00746054 /* User.swift in Sources */,
 				0FF271A02AAB1E2A0092FD3C /* TopTabBar.swift in Sources */,
-				49AE657F2AB42FC000B595AB /* CustomCorners.swift in Sources */,
 				0FF271912AA8715E0092FD3C /* ResultsView.swift in Sources */,
 				0FDB62722A9011E5008B19F1 /* QuizTemplate.swift in Sources */,
 				0FF271A52AACA9430092FD3C /* ReviewList.swift in Sources */,
@@ -569,15 +580,16 @@
 				0F34D37F2AB05D2700A095BB /* MainView.swift in Sources */,
 				0F4062022A9B1F3600746054 /* ProfileView.swift in Sources */,
 				0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */,
+				49AE65952AB506B600B595AB /* Carousel.swift in Sources */,
 				0F4061FB2A97D5F800746054 /* ErrorText.swift in Sources */,
 				0FF271962AA8CA1C0092FD3C /* StoreCard.swift in Sources */,
+				49AE65922AB5063500B595AB /* CarouselCell.swift in Sources */,
 				497B857D2A9865A200F90871 /* ProductCardView.swift in Sources */,
 				0FF2719B2AAA53740092FD3C /* ResultSection.swift in Sources */,
 				0FDB62582A8E124D008B19F1 /* Text+Extensions.swift in Sources */,
 				0F4061F32A967C3100746054 /* LoginView.swift in Sources */,
 				0FF271982AA8CE9D0092FD3C /* Store.swift in Sources */,
 				0FF271AA2AACD6390092FD3C /* InfoSheetView.swift in Sources */,
-				49AE657D2AB42B7D00B595AB /* Cell.swift in Sources */,
 				0FF529812A9B7820002461C8 /* ScreenModifier.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
 			);
