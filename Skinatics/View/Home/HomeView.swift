@@ -24,9 +24,9 @@ var products: [Product] = [
 
 struct HomeView: View {
     private var user: User
-    @State var cells: [Cell] = sampleCells
-    @State var currentIndex: Int = 0
-    @State var currentCell: Cell = sampleCells.first!
+    @State private var index = 0
+    var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
+    var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
     
     init(user: User) {
         self.user = user
@@ -50,131 +50,67 @@ struct HomeView: View {
                 .padding(.bottom, 10)
                 .padding(.horizontal, 10)
                 
+                // stack for carousel
                 VStack {
-                    CarouselCellScroller()
-                }
-                .frame(height:250)
-                
-                TabView {
-                    ForEach(cells) { cell in
-                        CellCardView(cell: cell)
-                            .offsetX { value in
-                                if currentIndex == getIndex(cell: cell) {
-                                    
-                                }
-                                if value == 0 && currentIndex != getIndex(cell: cell) {
-                                    withAnimation(.easeInOut(duration: 0.6)) {
-                                        currentIndex = getIndex(cell: cell)
-                                        currentCell = cells[currentIndex]
-                                    }
-                                }
-                            }
+                    TabView(selection: $index) {
+                        ForEach((0..<3), id: \.self) { index in
+                            Card(title: cardTitles[index], icon: cardIcons[index])
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    
+                    // carousel indicators
+                    HStack(spacing: 7) {
+                        ForEach((0..<3), id: \.self) { index in
+                            Circle()
+                                .fill(index == self.index ? Color("AccentColor") : Color("Light Grey"))
+                                .frame(width: 7, height: 7)
+                        }
                     }
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
+                .frame(height: 150)
+                .padding(.bottom, 15)
                 
-//                Text("We have some recommendations for you.")
-//                    .subheading()
-//                    .padding(.bottom, 10)
-//
-//                ScrollView {
-//                    // list of recommended products using ProductCardView
-//                    VStack(alignment: .leading) {
-//                        ForEach(products) {
-//                            // iterating through products array to produce view for each product
-//                            product in
-//                            NavigationLink(destination: ProductDetailView(product: product)) {
-//                                ProductCardView(image: product.image, brand: product.brand, product: product.product)
-//                                    .multilineTextAlignment(.leading)
-//                            }
-//                        }
-//                        .padding(.horizontal, 5)
-//                    }
-//                    .padding(.bottom, 30)
-//                }
+                ScrollView {
+                    // carousel for recommended products
+                    VStack {
+                        Text("Recommended for you")
+                            .title()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 20) {
+                                ForEach(products) { product in
+                                    RecommendedCard(product: product)
+                                }
+                                
+                            }
+                        }
+                    }
+                    .padding(.bottom, 25)
+                    .padding(.top, 10)
+                    
+                    // product of the day
+                    VStack {
+                        Text("Product of the day")
+                            .title()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Image("the-ordinary-hyaluronic-acid")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                            .padding(.bottom, 15)
+                        Text(products[1].desc)
+                    }
+                }
+                
             }
             .modifier(ScreenModifier())
         }
-    }
-    
-    func getIndex(cell: Cell) -> Int {
-        return cells.firstIndex { _cell in
-            return _cell.id == cell.id
-        } ?? 0
-    }
-    
-    @ViewBuilder
-    func CellCardView(cell: Cell) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(cell.cellTitle)
-                .title()
-            ScrollView {
-                Text(cell.description)
-                HStack {
-                    Text("See more details")
-                        .subheading()
-                        .underline()
-                }
-                .padding(.top, 10)
-            }
-            .padding(.top, 10)
-
-        }
-        .padding(.top, 10)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background {
-            CustomCorners(corners: [.bottomLeft, .bottomRight], radius: 25)
-                .fill(Color("Floral White"))
-        }
-    }
-    
-    @ViewBuilder
-    func CarouselCellScroller() -> some View {
-        GeometryReader { proxy in
-            let size = proxy.size
-            
-            LazyHStack(spacing: 20) {
-                ForEach($cells) { $cell in
-                    HStack(spacing: 0) {
-                        Image(cell.cellImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 170, height: 180)
-                            .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                            .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 0)
-                    }
-                }
-            }
-            .offset(x: CGFloat(currentIndex) * -size.width)
-        }
-        .frame(height: 180)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(user: users[1])
-    }
-}
-
-extension View {
-    func offsetX(completion: @escaping (CGFloat) -> ()) -> some View {
-        self
-            .overlay {
-                GeometryReader{ proxy in
-                    Color.clear
-                        .preference(key: OffsetXkey.self, value: proxy.frame(in: .global).minX)
-                        .onPreferenceChange(OffsetXkey.self) { value in
-                            completion(value)
-                        }
-                }
-            }
-    }
-}
-
-struct OffsetXkey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
     }
 }
