@@ -72,6 +72,7 @@ struct Camera: UIViewControllerRepresentable {
         Coordinator(parent: self)
     }
     
+    // coordinate/ perform all camera-related actions
     final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         var parent: Camera
         

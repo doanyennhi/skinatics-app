@@ -86,6 +86,7 @@
 		0F4061FE2A9A8D8E00746054 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		0F4062012A9B1F3600746054 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0F4062032A9B2C0300746054 /* EditField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditField.swift; sourceTree = "<group>"; };
+		0FABD7B42AB770080082DE61 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		0FBE1D972A896A7C00E64231 /* Skinatics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skinatics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsApp.swift; sourceTree = "<group>"; };
 		0FBE1D9C2A896A7C00E64231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -218,6 +219,7 @@
 				0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */,
 				0FBE1DA02A896A7D00E64231 /* Preview Content */,
 				0F34D37E2AB05D2700A095BB /* MainView.swift */,
+				0FABD7B42AB770080082DE61 /* Config.xcconfig */,
 			);
 			path = Skinatics;
 			sourceTree = "<group>";
