@@ -24,6 +24,9 @@ var products: [Product] = [
 
 struct HomeView: View {
     private var user: User
+    @State private var index = 0
+    var cardTitles: [String] = ["Take your quiz again", "Do your morning  routine", "Do another skin analysis"]
+    var cardIcons: [String] = ["arrow.triangle.2.circlepath", "sun.max", "faceid"]
     
     init(user: User) {
         self.user = user
@@ -46,7 +49,31 @@ struct HomeView: View {
                 }
                 .padding(.bottom, 10)
                 .padding(.horizontal, 10)
-                Carousel()
+                
+                // stack for carousel
+                VStack {
+                    TabView(selection: $index) {
+                        ForEach((0..<3), id: \.self) { index in
+                            Card(title: cardTitles[index], icon: cardIcons[index])
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    // carousel indicators
+                    HStack(spacing: 10) {
+                        ForEach((0..<3), id: \.self) { index in
+                            Circle()
+                                .fill(index == self.index ? Color("AccentColor") : Color("Light Grey"))
+                                .frame(width: 10, height: 10)
+                        }
+                    }
+                }
+                
+                VStack {
+                    Text("Recommended for you")
+                        .title()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                
             }
             .modifier(ScreenModifier())
         }
