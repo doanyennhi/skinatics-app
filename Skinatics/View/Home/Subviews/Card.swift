@@ -28,7 +28,7 @@ struct Card: View {
                     .foregroundColor(.white)
                     .bold()
             }
-            .padding(.horizontal, 50)
+            .padding(.horizontal, 45)
         }
     }
 }

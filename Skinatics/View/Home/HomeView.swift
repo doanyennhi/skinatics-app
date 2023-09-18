@@ -25,8 +25,8 @@ var products: [Product] = [
 struct HomeView: View {
     private var user: User
     @State private var index = 0
-    var cardTitles: [String] = ["Take your quiz again", "Do your morning  routine", "Do another skin analysis"]
-    var cardIcons: [String] = ["arrow.triangle.2.circlepath", "sun.max", "faceid"]
+    var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
+    var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
     
     init(user: User) {
         self.user = user
@@ -58,27 +58,48 @@ struct HomeView: View {
                         }
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    
                     // carousel indicators
-                    HStack(spacing: 10) {
+                    HStack(spacing: 7) {
                         ForEach((0..<3), id: \.self) { index in
                             Circle()
                                 .fill(index == self.index ? Color("AccentColor") : Color("Light Grey"))
-                                .frame(width: 10, height: 10)
+                                .frame(width: 7, height: 7)
                         }
                     }
                 }
+                .frame(height: 150)
+                .padding(.bottom, 15)
                 
-                VStack {
-                    Text("Recommended for you")
-                        .title()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 20) {
-                            ForEach(products) { product in
-                                RecommendedCard(product: product)
+                ScrollView {
+                    // carousel for recommended products
+                    VStack {
+                        Text("Recommended for you")
+                            .title()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 20) {
+                                ForEach(products) { product in
+                                    RecommendedCard(product: product)
+                                }
+                                
                             }
-                            
                         }
+                    }
+                    .padding(.bottom, 25)
+                    .padding(.top, 10)
+                    
+                    // product of the day
+                    VStack {
+                        Text("Product of the day")
+                            .title()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Image("the-ordinary-hyaluronic-acid")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                            .padding(.bottom, 15)
+                        Text(products[1].desc)
                     }
                 }
                 
