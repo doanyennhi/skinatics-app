@@ -32,6 +32,6 @@ struct ProductAttributes: Codable {
     }
 }
 
-struct ProductData: Codable {
+struct ProductList: Codable {
     var data: [Product]
 }

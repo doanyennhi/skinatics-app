@@ -21,37 +21,37 @@ struct ProductDetailView: View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
-                    Image(product.image)
+                    Image(product.attributes.imageUrls[0])
                         .resizable()
                         .scaledToFit()
                     
                     HStack(alignment: .firstTextBaseline) {
-                        Text(product.brand)
+                        Text("CeraVe")
                             .title2()
                             .fontWeight(.semibold)
                         
                         Spacer()
-                        Text(String(product.rating))
+                        Text("\(product.attributes.rating.formatted())")
                             .underline()
                         Image(systemName: "star.fill")
                     }
                     .foregroundColor(Color("Secondary Green"))
                     
-                    Text(product.product)
+                    Text(product.attributes.name)
                         .title()
                         .multilineTextAlignment(.center)
                         
-                    TopTabBar(tabItems: ["Details", "Reviews","Ingredients"], tabSelected: $productTabSelected)
+                    TopTabBar(tabItems: ["Details", "Benefits","Ingredients"], tabSelected: $productTabSelected)
                         .padding(.vertical, 15)
                     
                     VStack(alignment: .leading, spacing: 10) {
                         switch productTabSelected {
                         case 0:
-                            Text(product.desc)
+                            Text(product.attributes.description)
                         case 1:
-                            ReviewList(reviews: reviews)
+                            Text(product.attributes.benefits)
                         case 2:
-                            Text(product.ingredients)
+                            Text(product.attributes.ingredients)
                             NavigationLink(destination: IngredientDictView(ingredients: ingredients), label: {
                                 Text("Benefits of main ingredients")
                                     .underline()
@@ -84,6 +84,6 @@ struct ProductDetailView: View {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView(product: products[0])
+        ProductDetailView(product: productsList[0])
     }
 }

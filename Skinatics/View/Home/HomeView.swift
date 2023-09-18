@@ -8,18 +8,18 @@
 import SwiftUI
 
 // array of Product objects
-var products: [Product] = [
-    Product(image: "cerave-hydrating-foaming-oil-cleanser", brand: "CeraVe", product: "Hydrating Foaming Oil Cleanser", rating: 4.8, desc: "Developed with dermatologists, CeraVe Hydrating Foaming Oil Cleanser gently cleanses and replenishes the skin’s moisture levels for all day hydration. The ultra-mild foaming texture provides a gentle approach to cleansing, without drying out the skin. The transformation of oil to foam when lathered on the skin effectively removes excess dirt and impurities, without stripping the skin moisture barrier, an ideal squalane cleanser formula for those with dry or sensitive skin.", ingredients: "AQUA/WATER, GLYCERIN, PEG-200 HYDROGENATED GLYCERYL PALMATE, COCO-BETAINE, DISODIUM COCOYL GLUTAMATE, PEG-120 METHYL GLUCOSE DIOLEATE, POLYSORBATE 20, PEG-7 GLYCERYL COCOATE, SQUALANE, CERAMIDE NP, CERAMIDE AP, CERAMIDE EOP, CARBOMER, TRIETHYL CITRATE, SODIUM CHLORIDE, SODIUM HYDROXIDE, SODIUM COCOYL GLUTAMATE, SODIUM BENZOATE, SODIUM LAUROYL LACTYLATE, SODIUM HYALURONATE, CHOLESTEROL, CITRIC ACID, CAPRYLOYL GLYCINE, HYDROXYACETOPHENONE, CAPRYLYL GLYCOL, CAPRYLIC/ CAPRIC TRIGLYCERIDE, TRISODIUM ETHYLENEDIAMINE DISUCCINATE, PHYTOSPHINGOSINE, XANTHAN GUM, BENZOIC ACID, PEG-150 PENTAERYTHRITYL TETRASTEARATE, PPG-5-CETETH-20, PEG-6 CAPRYLIC/CAPRIC GLYCERIDE"),
+var productsList: [Product] = [
+    Product(id: "0", attributes: ProductAttributes(name: "Hydrating Foaming Oil Cleanser", rating: 4.8, description: "Developed with dermatologists, CeraVe Hydrating Foaming Oil Cleanser gently cleanses and replenishes the skin’s moisture levels for all day hydration. The ultra-mild foaming texture provides a gentle approach to cleansing, without drying out the skin. The transformation of oil to foam when lathered on the skin effectively removes excess dirt and impurities, without stripping the skin moisture barrier, an ideal squalane cleanser formula for those with dry or sensitive skin.", ingredients: "AQUA/WATER, GLYCERIN, PEG-200 HYDROGENATED GLYCERYL PALMATE, COCO-BETAINE, DISODIUM COCOYL GLUTAMATE, PEG-120 METHYL GLUCOSE DIOLEATE, POLYSORBATE 20, PEG-7 GLYCERYL COCOATE, SQUALANE, CERAMIDE NP, CERAMIDE AP, CERAMIDE EOP, CARBOMER, TRIETHYL CITRATE, SODIUM CHLORIDE, SODIUM HYDROXIDE, SODIUM COCOYL GLUTAMATE, SODIUM BENZOATE, SODIUM LAUROYL LACTYLATE, SODIUM HYALURONATE, CHOLESTEROL, CITRIC ACID, CAPRYLOYL GLYCINE, HYDROXYACETOPHENONE, CAPRYLYL GLYCOL, CAPRYLIC/ CAPRIC TRIGLYCERIDE, TRISODIUM ETHYLENEDIAMINE DISUCCINATE, PHYTOSPHINGOSINE, XANTHAN GUM, BENZOIC ACID, PEG-150 PENTAERYTHRITYL TETRASTEARATE, PPG-5-CETETH-20, PEG-6 CAPRYLIC/CAPRIC GLYCERIDE", benefits: "Yay", imageUrls: ["cerave-hydrating-foaming-oil-cleanser"])),
     
-    Product(image: "the-ordinary-hyaluronic-acid", brand: "The Ordinary.", product: "Hyaluronic Acid 2% + B5", rating: 3.5, desc: "Hyaluronic Acid 2% + B5 is a water-based formula combining low-, medium- and high-molecular-weight hyaluronic acid molecules and a next-generation HA crosspolymer to support hydration to multiple layers of your skin. It also targets the appearance of wrinkles and textural irregularities. Plus, it uses pro-vitamin B5 to enhance hydration at the outer layers, resulting in smoother, plumper skin.", ingredients: "Aqua (Water), Sodium Hyaluronate, Pentylene Glycol, Propanediol, Sodium Hyaluronate Crosspolymer, Panthenol, Ahnfeltia Concinna Extract, Glycerin, Trisodium Ethylenediamine Disuccinate, Citric Acid, Isoceteth-20, Ethoxydiglycol, Ethylhexylglycerin, Hexylene Glycol, 1,2-Hexanediol, Phenoxyethanol, Caprylyl Glycol"),
+    Product(id: "1", attributes: ProductAttributes(name: "Hyaluronic Acid 2% + B5", rating: 3.5, description: "Hyaluronic Acid 2% + B5 is a water-based formula combining low-, medium- and high-molecular-weight hyaluronic acid molecules and a next-generation HA crosspolymer to support hydration to multiple layers of your skin. It also targets the appearance of wrinkles and textural irregularities. Plus, it uses pro-vitamin B5 to enhance hydration at the outer layers, resulting in smoother, plumper skin.", ingredients: "Aqua (Water), Sodium Hyaluronate, Pentylene Glycol, Propanediol, Sodium Hyaluronate Crosspolymer, Panthenol, Ahnfeltia Concinna Extract, Glycerin, Trisodium Ethylenediamine Disuccinate, Citric Acid, Isoceteth-20, Ethoxydiglycol, Ethylhexylglycerin, Hexylene Glycol, 1,2-Hexanediol, Phenoxyethanol, Caprylyl Glycol", benefits: "Yay", imageUrls: ["the-ordinary-hyaluronic-acid"])),
     
-    Product(image: "paulas-choice-bha-liquid-exfoliant", brand: "Paula's Choice", product: "2% BHA Liquid Exfoliant", rating: 4.1, desc: "Our #1 product worldwide + cult favorite, this clinically proven gentle leave-on exfoliant with salicylic acid quickly unclogs pores, smooths wrinkles & evens skin tone.", ingredients: "Methylpropanediol⁠, Salicylic Acid⁠, Green Tea⁠, BHA (Beta Hydroxy Acid)⁠, Water⁠, Methylpropanediol⁠, Butylene Glycol⁠, Salicylic Acid⁠, Polysorbate 20⁠, Camellia Oleifera⁠, Sodium Hydroxide⁠, Tetrasodium EDTA⁠"),
+    Product(id: "2", attributes: ProductAttributes(name: "2% BHA Liquid Exfoliant", rating: 4.1, description: "Our #1 product worldwide + cult favorite, this clinically proven gentle leave-on exfoliant with salicylic acid quickly unclogs pores, smooths wrinkles & evens skin tone.", ingredients: "Methylpropanediol⁠, Salicylic Acid⁠, Green Tea⁠, BHA (Beta Hydroxy Acid)⁠, Water⁠, Methylpropanediol⁠, Butylene Glycol⁠, Salicylic Acid⁠, Polysorbate 20⁠, Camellia Oleifera⁠, Sodium Hydroxide⁠, Tetrasodium EDTA⁠", benefits: "Yay", imageUrls: ["paulas-choice-bha-liquid-exfoliant"])),
     
-    Product(image: "cetaphil-gentle-skin-cleanser", brand: "Cetaphil", product: "Gentle Skin Cleanser", rating: 3.1, desc: "This creamy formula is clinically proven to provide continuous hydration to protect against dryness. Formula that gently yet effectively removes dirt, makeup and impurities.", ingredients: "Aqua, Glycerin, Cetearyl Alcohol, Panthenol, Niacinamide, Pantolactone, Xanthan Gum, Sodium Cocoyl Isethionate, Sodium Benzoate,  Citric Acid"),
+    Product(id: "3", attributes: ProductAttributes(name: "Gentle Skin Cleanser", rating: 3.1, description: "This creamy formula is clinically proven to provide continuous hydration to protect against dryness. Formula that gently yet effectively removes dirt, makeup and impurities.", ingredients: "Aqua, Glycerin, Cetearyl Alcohol, Panthenol, Niacinamide, Pantolactone, Xanthan Gum, Sodium Cocoyl Isethionate, Sodium Benzoate,  Citric Acid", benefits: "Yay", imageUrls: ["cetaphil-gentle-skin-cleanser"])),
     
-    Product(image: "clinique-moisture-surge-broad-spectrum-spf-28-sheer-hydrator", brand: "Clinique", product: "Moisture Surge Broad Spectrum SPF 28 Sheer Hydrator", rating: 2.9, desc: "A cloud-like cream that delivers the hydration you love from Moisture Surge™, as well as sheer sun protection for every skin tone.", ingredients: "Avobenzone 3.0%, Homosalate 7.0%, Octinoxate 7.0%, Octisalate 4.5%, Water/Aqua/Eau, Butylene Glycol, Ethylhexyl Methoxycrylene, Butyloctyl Salicylate, Dextrin Palmitate, Polymethylsilsesquioxane, Glycerin, Lactobacillus Ferment Lysate, Aloe Barbadensis Leaf Polysaccharides, Sodium Hyaluronate, Caffeine, Sodium Polyaspartate, 7-Dehydrocholesterol, Caprylyl Glycol, Acrylates Copolymer, Sorbitol, Dimethicone, Polyglyceryl-2 Stearate, Sucrose, Saccharide Isomerate, Hydroxyethyl Urea, PPG-8-Ceteth-20, Sorbeth-30 Tetraisostearate, Glyceryl Stearate, Sorbitan Sesquiisostearate, Potassium Hydroxide, Carbomer, Dipropylene Glycol, Dehydroxanthan Gum, Stearyl Alcohol, Sodium Polyacryloyldimethyl Taurate, Hexylene Glycol, Acrylates/Beheneth-25 Methacrylate Copolymer, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Tocopheryl Acetate, BHT, Disodium EDTA, Sodium Citrate, Citric Acid, Potassium Sorbate, Sodium Benzoate, Phenoxyethanol, Red 4 (CI 14700)."),
+    Product(id: "4", attributes: ProductAttributes(name: "Moisture Surge Broad Spectrum SPF 28 Sheer Hydrator", rating: 2.9, description: "A cloud-like cream that delivers the hydration you love from Moisture Surge™, as well as sheer sun protection for every skin tone.", ingredients: "Avobenzone 3.0%, Homosalate 7.0%, Octinoxate 7.0%, Octisalate 4.5%, Water/Aqua/Eau, Butylene Glycol, Ethylhexyl Methoxycrylene, Butyloctyl Salicylate, Dextrin Palmitate, Polymethylsilsesquioxane, Glycerin, Lactobacillus Ferment Lysate, Aloe Barbadensis Leaf Polysaccharides, Sodium Hyaluronate, Caffeine, Sodium Polyaspartate, 7-Dehydrocholesterol, Caprylyl Glycol, Acrylates Copolymer, Sorbitol, Dimethicone, Polyglyceryl-2 Stearate, Sucrose, Saccharide Isomerate, Hydroxyethyl Urea, PPG-8-Ceteth-20, Sorbeth-30 Tetraisostearate, Glyceryl Stearate, Sorbitan Sesquiisostearate, Potassium Hydroxide, Carbomer, Dipropylene Glycol, Dehydroxanthan Gum, Stearyl Alcohol, Sodium Polyacryloyldimethyl Taurate, Hexylene Glycol, Acrylates/Beheneth-25 Methacrylate Copolymer, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Tocopheryl Acetate, BHT, Disodium EDTA, Sodium Citrate, Citric Acid, Potassium Sorbate, Sodium Benzoate, Phenoxyethanol, Red 4 (CI 14700).", benefits: "Yay", imageUrls: ["clinique-moisture-surge-broad-spectrum-spf-28-sheer-hydrator"])),
     
-    Product(image: "olay-vitamin-c-peptide-24-brightening-eye-cream", brand: "Olay", product: "Vitamin C + Peptide 24 Brightening Eye Cream", rating: 5.0, desc: "Eye moisturizer that hydrates to brighten the delicate skin around your eyes.", ingredients: "WATER, GLYCERIN, DIMETHICONE, NIACINAMIDE*, PROPYLENE GLYCOL, BUTYLENE GLYCOL, 3-O-ETHYL ASCORBIC ACID**, PALMITOYL PENTAPEPTIDE-4***, PANTHENOL, ETHYLHEXYLGLYCERIN, HYDROXYACETOPHENONE, DIMETHICONOL, C13-14 ISOPARAFFIN, POLYSORBATE 20, LAURETH-4, LAURETH-7, DISODIUM EDTA, TAPIOCA STARCH, POLYACRYLAMIDE, ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER, AMINOMETHYL PROPANOL, POLYMETHYLSILSESQUIOXANE, PHENOXYETHANOL *Vitamin B3 , **Vitamin C, ***Peptides")
+    Product(id: "5", attributes: ProductAttributes(name: "Vitamin C + Peptide 24 Brightening Eye Cream", rating: 5.0, description: "Eye moisturizer that hydrates to brighten the delicate skin around your eyes.", ingredients: "WATER, GLYCERIN, DIMETHICONE, NIACINAMIDE*, PROPYLENE GLYCOL, BUTYLENE GLYCOL, 3-O-ETHYL ASCORBIC ACID**, PALMITOYL PENTAPEPTIDE-4***, PANTHENOL, ETHYLHEXYLGLYCERIN, HYDROXYACETOPHENONE, DIMETHICONOL, C13-14 ISOPARAFFIN, POLYSORBATE 20, LAURETH-4, LAURETH-7, DISODIUM EDTA, TAPIOCA STARCH, POLYACRYLAMIDE, ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER, AMINOMETHYL PROPANOL, POLYMETHYLSILSESQUIOXANE, PHENOXYETHANOL *Vitamin B3 , **Vitamin C, ***Peptides", benefits: "Yay", imageUrls: ["olay-vitamin-c-peptide-24-brightening-eye-cream"])),
 ]
 
 struct HomeView: View {
@@ -27,9 +27,51 @@ struct HomeView: View {
     @State private var index = 0
     var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
     var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
+    @State var products = productsList
+    @State var isLoading = false
     
     init(user: User) {
         self.user = user
+    }
+    
+    func getProducts() async {
+        //construct the networking URL
+        let url = URL(string: "https://sephora.p.rapidapi.com/products/v2/list?number=1&size=10&country=AU&language=en-AU&root_category=skincare")!
+        
+        guard let apiKey = InfoPlistHandler.getValue(key: "API_KEY") as? String else {
+            return
+        }
+        guard let apiHost = InfoPlistHandler.getValue(key: "API_HOST") as? String else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        // set request header
+        request.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
+        request.setValue(apiHost, forHTTPHeaderField: "X-RapidAPI-Host")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let res = response as? HTTPURLResponse else { return }
+            guard let data = data else { return }
+            
+            do {
+                // get error message if request unsuccessful
+                if (400...499).contains(res.statusCode) {
+                    let decodedData = try JSONDecoder().decode(Error.self, from: data)
+                    print(decodedData)
+                } else {
+                    // decode data
+                    let decodedData = try JSONDecoder().decode(ProductList.self, from: data)
+                    
+                    // send task back to main thread
+                    DispatchQueue.main.async {
+                        self.products = decodedData.data
+                    }
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
     }
     
     var body: some View {
@@ -78,11 +120,13 @@ struct HomeView: View {
                             .title()
                             .frame(maxWidth: .infinity, alignment: .leading)
                         ScrollView(.horizontal) {
-                            HStack(spacing: 20) {
+                            if !isLoading {                         HStack(spacing: 20) {
                                 ForEach(products) { product in
                                     RecommendedCard(product: product)
                                 }
-                                
+                            }
+                            } else {
+                                ProgressView()
                             }
                         }
                     }
@@ -94,17 +138,22 @@ struct HomeView: View {
                         Text("Product of the day")
                             .title()
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Image("the-ordinary-hyaluronic-acid")
+                        Image(products[1].attributes.imageUrls[0])
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                             .padding(.bottom, 15)
-                        Text(products[1].desc)
+                        Text(products[1].attributes.description)
                     }
                 }
                 
             }
             .modifier(ScreenModifier())
+            .task {
+                isLoading = true
+                // await getProducts()
+                isLoading = false
+            }
         }
     }
 }

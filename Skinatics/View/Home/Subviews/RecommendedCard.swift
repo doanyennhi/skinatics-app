@@ -9,7 +9,7 @@ import SwiftUI
 
 // view used for each recommended product listed in HomeView
 struct RecommendedCard: View {
-    var product: Product = products[1]
+    var product: Product = productsList[1]
     
     var body: some View {
         VStack(alignment: .leading) {
