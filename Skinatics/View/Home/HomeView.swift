@@ -72,6 +72,14 @@ struct HomeView: View {
                     Text("Recommended for you")
                         .title()
                         .frame(maxWidth: .infinity, alignment: .leading)
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 20) {
+                            ForEach(products) { product in
+                                RecommendedCard(product: product)
+                            }
+                            
+                        }
+                    }
                 }
                 
             }
