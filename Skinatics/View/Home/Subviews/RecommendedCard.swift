@@ -13,11 +13,22 @@ struct RecommendedCard: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(product.attributes.imageUrls[0])
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 175)
-                .padding(.bottom, 5)
+            AsyncImage(url: URL(string: product.attributes.imageUrls[0])) { phase in
+                if let img = phase.image {
+                    img.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 175)
+                        .padding(.bottom, 5)
+                } else if phase.error != nil {
+                    Image("placeholder")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 175)
+                        .padding(.bottom, 5)
+                } else {
+                    ProgressView()
+                }
+            }
             VStack(alignment: .leading) {
                 Text("Brand")
                     .foregroundColor(Color("Dark Green"))

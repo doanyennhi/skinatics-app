@@ -24,7 +24,8 @@ var productsList: [Product] = [
 
 struct HomeView: View {
     private var user: User
-    @State private var index = 0
+    @State private var index = 0       // banner item index
+    // banner cards' content
     var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
     var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
     @State var products = productsList
@@ -35,7 +36,7 @@ struct HomeView: View {
     }
     
     func getProducts() async {
-        //construct the networking URL
+        // API endpoint
         let url = URL(string: "https://sephora.p.rapidapi.com/products/v2/list?number=1&size=10&country=AU&language=en-AU&root_category=skincare")!
         
         guard let apiKey = InfoPlistHandler.getValue(key: "API_KEY") as? String else {
@@ -151,7 +152,7 @@ struct HomeView: View {
             .modifier(ScreenModifier())
             .task {
                 isLoading = true
-                // await getProducts()
+                //await getProducts()
                 isLoading = false
             }
         }
