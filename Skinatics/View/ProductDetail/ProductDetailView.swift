@@ -21,9 +21,20 @@ struct ProductDetailView: View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
-                    Image(product.attributes.imageUrls[0])
-                        .resizable()
-                        .scaledToFit()
+                    AsyncImage(url: URL(string: product.attributes.imageUrls[0])) { phase in
+                        if let img = phase.image {
+                            img.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                        } else if phase.error != nil {
+                            Image("placeholder")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                        } else {
+                            ProgressView()
+                        }
+                    }
                     
                     HStack(alignment: .firstTextBaseline) {
                         Text("CeraVe")

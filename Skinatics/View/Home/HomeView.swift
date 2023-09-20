@@ -28,8 +28,8 @@ struct HomeView: View {
     // banner cards' content
     var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
     var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
-    @State var products = productsList
-    @State var productOfTheDay: Product?
+    @State var products: [Product] = productsList
+    @State var productOfTheDay: Product? = productsList.randomElement()
     @State var isLoading = false
     
     init(user: User) {
@@ -51,6 +51,7 @@ struct HomeView: View {
         // set request header
         request.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
         request.setValue(apiHost, forHTTPHeaderField: "X-RapidAPI-Host")
+        print(request.allHTTPHeaderFields ?? "")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let res = response as? HTTPURLResponse else { return }
@@ -68,6 +69,7 @@ struct HomeView: View {
                     // send task back to main thread
                     DispatchQueue.main.async {
                         self.products = decodedData.data
+                        self.productOfTheDay = products.randomElement()
                     }
                 }
             } catch {
@@ -114,46 +116,45 @@ struct HomeView: View {
                 .frame(height: 150)
                 .padding(.bottom, 15)
                 
-                    // carousel for recommended products
-                    VStack {
-                        Text("Recommended for you")
-                            .title()
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        ScrollView(.horizontal) {
-                            if !isLoading {                         LazyHStack(spacing: 20) {
-                                ForEach(products) { product in
-                                    RecommendedCard(product: product)
-                                }
-                            }
-                            .padding(.bottom)
-                            } else {
-                                ProgressView()
+                // carousel for recommended products
+                VStack {
+                    Text("Recommended for you")
+                        .title()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    ScrollView(.horizontal) {
+                        if !isLoading {                         LazyHStack(spacing: 20) {
+                            ForEach(products) { product in
+                                RecommendedCard(product: product)
                             }
                         }
-                    }
-                    .padding(.bottom, 25)
-                    .padding(.top, 10)
-                    
-                    // product of the day
-                    VStack {
-                        Text("Product of the day")
-                            .title()
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        if let product = productOfTheDay {
-                            ProductOfTheDay(product: product)
+                        .padding(.bottom)
                         } else {
                             ProgressView()
                         }
                     }
+                }
+                .padding(.bottom, 25)
+                .padding(.top, 10)
+                
+                // product of the day
+                VStack {
+                    Text("Product of the day")
+                        .title()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    if let product = productOfTheDay {
+                        ProductOfTheDay(product: product)
+                    } else {
+                        ProgressView()
+                    }
+                }
             }
             .modifier(ScreenModifier())
-            .task {
-                isLoading = true
-                //await getProducts()
-                productOfTheDay = products.randomElement()
-                isLoading = false
-            }
+        }
+        .task {
+            isLoading = true
+            // await getProducts()
+            isLoading = false
         }
     }
 }

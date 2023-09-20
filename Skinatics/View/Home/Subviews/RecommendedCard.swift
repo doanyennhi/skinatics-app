@@ -12,37 +12,41 @@ struct RecommendedCard: View {
     var product: Product = productsList[1]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: product.attributes.imageUrls[0])) { phase in
-                if let img = phase.image {
-                    img.resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 175)
-                        .padding(.bottom, 5)
-                } else if phase.error != nil {
-                    Image("placeholder")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 175)
-                        .padding(.bottom, 5)
-                } else {
-                    ProgressView()
-                }
-            }
+        NavigationLink(destination: ProductDetailView(product: product)) {
             VStack(alignment: .leading) {
-                Text("Brand")
-                    .font(Font.custom("Avenir", size: 16, relativeTo: .body))
-                Text(product.attributes.name)
-                    .foregroundColor(Color("AccentColor"))
-                    .bold()
-                    .lineLimit(3)
+                AsyncImage(url: URL(string: product.attributes.imageUrls[0])) { phase in
+                    if let img = phase.image {
+                        img.resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 175)
+                            .padding(.bottom, 5)
+                    } else if phase.error != nil {
+                        Image("placeholder")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 175)
+                            .padding(.bottom, 5)
+                    } else {
+                        ProgressView()
+                    }
+                }
+                VStack(alignment: .leading) {
+                    Text("Brand")
+                        .font(Font.custom("Avenir", size: 16, relativeTo: .body))
+                        .foregroundColor(Color("Black"))
+                    Text(product.attributes.name)
+                        .foregroundColor(Color("AccentColor"))
+                        .bold()
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(3)
+                }
+                .padding(.horizontal, 15)
+                .padding(.bottom, 5)
+                Spacer()
             }
-            .padding(.horizontal, 15)
-            .padding(.bottom, 5)
-            Spacer()
+            .background(.white)
+            .modifier(CardModifier())
         }
-        .background(.white)
-        .modifier(CardModifier())
     }
 }
 
