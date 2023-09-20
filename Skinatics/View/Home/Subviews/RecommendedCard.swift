@@ -31,8 +31,6 @@ struct RecommendedCard: View {
             }
             VStack(alignment: .leading) {
                 Text("Brand")
-                    .foregroundColor(Color("Dark Green"))
-                    // .padding(.bottom, 1)
                     .font(Font.custom("Avenir", size: 16, relativeTo: .body))
                 Text(product.attributes.name)
                     .foregroundColor(Color("AccentColor"))
@@ -53,7 +51,6 @@ struct CardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .cornerRadius(15)
-            //.shadow(color: Color.black.opacity(0.2), radius: 7, x: 2, y: 0)
             .frame(width: 175, height: 300)
     }
 }

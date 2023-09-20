@@ -29,6 +29,7 @@ struct HomeView: View {
     var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
     var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
     @State var products = productsList
+    @State var productOfTheDay: Product?
     @State var isLoading = false
     
     init(user: User) {
@@ -77,7 +78,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView(showsIndicators: false) {
                 // stack for top introductory text
                 HStack {
                     Text("Hi, \n\(user.name)").largeTitle(multilineCenter: false)
@@ -97,10 +98,9 @@ struct HomeView: View {
                 VStack {
                     TabView(selection: $index) {
                         ForEach((0..<3), id: \.self) { index in
-                            Card(title: cardTitles[index], icon: cardIcons[index])
+                            BannerItem(title: cardTitles[index], icon: cardIcons[index])
                         }
-                    }
-                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                     
                     // carousel indicators
                     HStack(spacing: 7) {
@@ -114,18 +114,18 @@ struct HomeView: View {
                 .frame(height: 150)
                 .padding(.bottom, 15)
                 
-                ScrollView {
                     // carousel for recommended products
                     VStack {
                         Text("Recommended for you")
                             .title()
                             .frame(maxWidth: .infinity, alignment: .leading)
                         ScrollView(.horizontal) {
-                            if !isLoading {                         HStack(spacing: 20) {
+                            if !isLoading {                         LazyHStack(spacing: 20) {
                                 ForEach(products) { product in
                                     RecommendedCard(product: product)
                                 }
                             }
+                            .padding(.bottom)
                             } else {
                                 ProgressView()
                             }
@@ -139,20 +139,19 @@ struct HomeView: View {
                         Text("Product of the day")
                             .title()
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Image(products[1].attributes.imageUrls[0])
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                            .padding(.bottom, 15)
-                        Text(products[1].attributes.description)
+                        
+                        if let product = productOfTheDay {
+                            ProductOfTheDay(product: product)
+                        } else {
+                            ProgressView()
+                        }
                     }
-                }
-                
             }
             .modifier(ScreenModifier())
             .task {
                 isLoading = true
                 //await getProducts()
+                productOfTheDay = products.randomElement()
                 isLoading = false
             }
         }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Card: View {
+struct BannerItem: View {
     var title: String = "Hello world!"
     var icon: String = "arrow.triangle.2.circlepath"
     
@@ -35,6 +35,6 @@ struct Card: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card()
+        BannerItem()
     }
 }
