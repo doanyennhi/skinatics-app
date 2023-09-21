@@ -12,9 +12,10 @@ struct ProductsView: View {
     
     var body: some View {
         List(products) { product in
-            // need to adjust Product model to house brand name
-            Text(product.attributes.name)
+            ListedProduct(productBrand: "Brand", productImage: product.attributes.imageUrls[0], productName: product.attributes.name)
+                .listRowBackground(Color("Floral White"))
         }
+        .listStyle(.plain)
         .scrollContentBackground(.hidden)
     }
 }

@@ -15,6 +15,7 @@ struct SearchView: View {
         NavigationStack {
             TopTabBar(tabItems: ["Ingredients", "Products"], tabSelected: $tabSelected)
                 .padding(.vertical, 15)
+                .background(Color("Floral White"))
             
             VStack {
                 switch tabSelected {
@@ -25,8 +26,10 @@ struct SearchView: View {
                 default: EmptyView()
                 }
             }
+            .background(Color("Floral White"))
         }
         .searchable(text: $searchText, prompt: "Search")
+        .modifier(ScreenModifier())
     }
 }
 

@@ -16,7 +16,9 @@ struct IngredientsView: View {
     var body: some View {
         List(ingredients) { ingredient in
             Text(ingredient.name)
+                .listRowBackground(Color("Floral White"))
         }
+        .listStyle(.plain)
         .scrollContentBackground(.hidden)
     }
 }
