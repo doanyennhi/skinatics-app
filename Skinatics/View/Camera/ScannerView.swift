@@ -16,6 +16,47 @@ struct ScannerView: View {
     @State var startScanning = false
     @State var scannedItem: String = ""
     @State var scannerType: ScannerType
+    @State private var productId = ""
+    
+    func getData() {
+        // API endpoint
+        let url = URL(string: "https://sephora.p.rapidapi.com/products/v2/search-by-barcode?upcs=\(scannedItem)&country=AU&language=en-AU")!
+        
+        guard let apiKey = InfoPlistHandler.getValue(key: "API_KEY") as? String else {
+            return
+        }
+        guard let apiHost = InfoPlistHandler.getValue(key: "API_HOST") as? String else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        // set request header
+        request.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
+        request.setValue(apiHost, forHTTPHeaderField: "X-RapidAPI-Host")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let res = response as? HTTPURLResponse else { return }
+            guard let data = data else { return }
+            
+            do {
+                // get error message if request unsuccessful
+                if (400...499).contains(res.statusCode) {
+                    let decodedData = try JSONDecoder().decode(Error.self, from: data)
+                    print(decodedData)
+                } else {
+                    // decode data
+                    let decodedData = try JSONDecoder().decode(ProductSearch.self, from: data)
+                    
+                    // send task back to main thread
+                    DispatchQueue.main.async {
+                        self.productId = decodedData.data.attributes.productId
+                    }
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -25,13 +66,12 @@ struct ScannerView: View {
                 Text("Use the scanner camera to tap on the information you would like to scan").bold()
                 Text(scannedItem == "" ? "No item has been scanned" : "Found the following item: ")
                 Text(scannedItem)
-                Button(action: {}, label: {
-                    HStack {
-                        Text("Search")
-                        Image(systemName: "magnifyingglass")
-                    }
-                    .padding(10)
-                })
+                
+                NavigationLink(destination: ProductDetailView(product: productsList[1])) {
+                    Text("Search")
+                    Image(systemName: "magnifyingglass")
+                }
+                .padding(10)
                 .background(Color.accentColor)
                 .foregroundColor(Color("White"))
                 .bold()

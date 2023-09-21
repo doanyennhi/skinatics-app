@@ -28,7 +28,6 @@ struct MainView: View {
         // set request header
         request.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
         request.setValue(apiHost, forHTTPHeaderField: "X-RapidAPI-Host")
-        print(request.allHTTPHeaderFields ?? "")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let res = response as? HTTPURLResponse else { return }
@@ -41,7 +40,7 @@ struct MainView: View {
                     print(decodedData)
                 } else {
                     // decode data
-                    let decodedData = try JSONDecoder().decode(ProductList.self, from: data)
+                    let decodedData = try JSONDecoder().decode(ProductsList.self, from: data)
                     
                     // send task back to main thread
                     DispatchQueue.main.async {
