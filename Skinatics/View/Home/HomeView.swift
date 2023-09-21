@@ -23,60 +23,14 @@ var productsList: [Product] = [
 ]
 
 struct HomeView: View {
-    private var user: User
+    var user: User
     @State private var index = 0       // banner item index
     // banner cards' content
     var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
     var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
-    @State var products: [Product] = productsList
-    @State var productOfTheDay: Product? = productsList.randomElement()
-    @State var isLoading = false
-    
-    init(user: User) {
-        self.user = user
-    }
-    
-    func getProducts() async {
-        // API endpoint
-        let url = URL(string: "https://sephora.p.rapidapi.com/products/v2/list?number=1&size=10&country=AU&language=en-AU&root_category=skincare")!
-        
-        guard let apiKey = InfoPlistHandler.getValue(key: "API_KEY") as? String else {
-            return
-        }
-        guard let apiHost = InfoPlistHandler.getValue(key: "API_HOST") as? String else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        // set request header
-        request.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
-        request.setValue(apiHost, forHTTPHeaderField: "X-RapidAPI-Host")
-        print(request.allHTTPHeaderFields ?? "")
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let res = response as? HTTPURLResponse else { return }
-            guard let data = data else { return }
-            
-            do {
-                // get error message if request unsuccessful
-                if (400...499).contains(res.statusCode) {
-                    let decodedData = try JSONDecoder().decode(Error.self, from: data)
-                    print(decodedData)
-                } else {
-                    // decode data
-                    let decodedData = try JSONDecoder().decode(ProductList.self, from: data)
-                    
-                    // send task back to main thread
-                    DispatchQueue.main.async {
-                        self.products = decodedData.data
-                        self.productOfTheDay = products.randomElement()
-                    }
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
+    @Binding var products: [Product]
+    var productOfTheDay: Product?
+    @Binding var isLoading: Bool
     
     var body: some View {
         NavigationStack {
@@ -121,17 +75,24 @@ struct HomeView: View {
                     Text("Recommended for you")
                         .title()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    ScrollView(.horizontal) {
-                        if !isLoading {                         LazyHStack(spacing: 20) {
-                            ForEach(products) { product in
-                                RecommendedCard(product: product)
+                    
+                        if !isLoading {
+                            if products.isEmpty {
+                                Text("We cannot find any products")
+                                    .padding()
+                            } else {
+                                ScrollView(.horizontal) {
+                                    LazyHStack(spacing: 20) {
+                                        ForEach(products) { product in
+                                            RecommendedCard(product: product)
+                                        }
+                                    }
+                                    .padding(.bottom)
+                                }
                             }
-                        }
-                        .padding(.bottom)
                         } else {
                             ProgressView()
                         }
-                    }
                 }
                 .padding(.bottom, 25)
                 .padding(.top, 10)
@@ -142,8 +103,13 @@ struct HomeView: View {
                         .title()
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    if let product = productOfTheDay {
-                        ProductOfTheDay(product: product)
+                    if !isLoading {
+                        if let product = productOfTheDay {
+                            ProductOfTheDay(product: product)
+                        } else {
+                            Text("No product for today")
+                                .padding()
+                        }
                     } else {
                         ProgressView()
                     }
@@ -151,16 +117,11 @@ struct HomeView: View {
             }
             .modifier(ScreenModifier())
         }
-        .task {
-            isLoading = true
-            // await getProducts()
-            isLoading = false
-        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(user: users[1])
+        HomeView(user: users[1], products: .constant(productsList), isLoading: .constant(false))
     }
 }
