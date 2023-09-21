@@ -21,6 +21,7 @@
 		0FABD8062AB8A5050082DE61 /* InfoPlistHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABD8052AB8A5050082DE61 /* InfoPlistHandler.swift */; };
 		0FABD8082AB8D3510082DE61 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABD8072AB8D3510082DE61 /* Error.swift */; };
 		0FABD80C2ABB685D0082DE61 /* ProductOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABD80B2ABB685D0082DE61 /* ProductOfTheDay.swift */; };
+		0FB0B00E2ABC80F500B808A9 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0B00D2ABC80F500B808A9 /* ProductDetail.swift */; };
 		0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */; };
 		0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9C2A896A7C00E64231 /* ContentView.swift */; };
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
@@ -60,7 +61,6 @@
 		49985F4C2ABBD97A00446C62 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F4B2ABBD97A00446C62 /* SearchView.swift */; };
 		49985F4F2ABBDB7200446C62 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F4E2ABBDB7200446C62 /* IngredientsView.swift */; };
 		49985F512ABBDBD400446C62 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F502ABBDBD400446C62 /* ProductsView.swift */; };
-		49985F532ABBF7EF00446C62 /* ListedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F522ABBF7EF00446C62 /* ListedProduct.swift */; };
 		49AE659A2AB80B3300B595AB /* BannerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE65992AB80B3300B595AB /* BannerItem.swift */; };
 		49AE659C2AB8151900B595AB /* RecommendedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE659B2AB8151900B595AB /* RecommendedCard.swift */; };
 /* End PBXBuildFile section */
@@ -94,9 +94,11 @@
 		0F4061FE2A9A8D8E00746054 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		0F4062012A9B1F3600746054 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0F4062032A9B2C0300746054 /* EditField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditField.swift; sourceTree = "<group>"; };
+		0FABD8042AB891C90082DE61 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		0FABD8052AB8A5050082DE61 /* InfoPlistHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPlistHandler.swift; sourceTree = "<group>"; };
 		0FABD8072AB8D3510082DE61 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		0FABD80B2ABB685D0082DE61 /* ProductOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOfTheDay.swift; sourceTree = "<group>"; };
+		0FB0B00D2ABC80F500B808A9 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		0FBE1D972A896A7C00E64231 /* Skinatics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skinatics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsApp.swift; sourceTree = "<group>"; };
 		0FBE1D9C2A896A7C00E64231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				0FF271972AA8CE9D0092FD3C /* Store.swift */,
 				0FF271A72AACA9DC0092FD3C /* Review.swift */,
 				0FABD8072AB8D3510082DE61 /* Error.swift */,
+				0FB0B00D2ABC80F500B808A9 /* ProductDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F4062042A9B2C0300746054 /* EditField.swift in Sources */,
+				0FB0B00E2ABC80F500B808A9 /* ProductDetail.swift in Sources */,
 				0FF271942AA871E50092FD3C /* ProductDetailView.swift in Sources */,
 				0FABD80C2ABB685D0082DE61 /* ProductOfTheDay.swift in Sources */,
 				0FABD8082AB8D3510082DE61 /* Error.swift in Sources */,
@@ -631,7 +635,6 @@
 				497B857B2A98651600F90871 /* HomeView.swift in Sources */,
 				497B85802A98676C00F90871 /* StartUpView.swift in Sources */,
 				0FF271A82AACA9DC0092FD3C /* Review.swift in Sources */,
-				49985F532ABBF7EF00446C62 /* ListedProduct.swift in Sources */,
 				0F4061FF2A9A8D8E00746054 /* Product.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */,
@@ -689,7 +692,7 @@
 /* Begin XCBuildConfiguration section */
 		0FBE1DBE2A896A7E00E64231 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49985F542ABBFEAE00446C62 /* Config.xcconfig */;
+			baseConfigurationReference = 0FABD8042AB891C90082DE61 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -750,7 +753,7 @@
 		};
 		0FBE1DBF2A896A7E00E64231 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49985F542ABBFEAE00446C62 /* Config.xcconfig */;
+			baseConfigurationReference = 0FABD8042AB891C90082DE61 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -811,7 +814,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Skinatics/Preview Content\"";
-				DEVELOPMENT_TEAM = CK2AJ9TGG4;
+				DEVELOPMENT_TEAM = 474XL8PUH3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skinatics/Info.plist;
@@ -841,7 +844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Skinatics/Preview Content\"";
-				DEVELOPMENT_TEAM = CK2AJ9TGG4;
+				DEVELOPMENT_TEAM = 474XL8PUH3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skinatics/Info.plist;

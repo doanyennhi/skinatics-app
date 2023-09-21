@@ -21,6 +21,7 @@ struct ProductAttributes: Codable {
     var ingredients: String
     var benefits: String
     var imageUrls: [String]
+    var brand: String?
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -29,9 +30,10 @@ struct ProductAttributes: Codable {
         case ingredients
         case benefits
         case imageUrls = "image-urls"
+        case brand = "brand-name"
     }
 }
 
-struct ProductList: Codable {
+struct ProductsList: Codable {
     var data: [Product]
 }

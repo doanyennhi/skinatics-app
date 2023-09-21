@@ -14,40 +14,105 @@ enum ScannerType: String {
 
 struct ScannerView: View {
     @State var startScanning = false
-    @State var scannedItem: String = ""
+    @State var scannedItem: String = "602004138200"
     @State var scannerType: ScannerType
+    @State private var productId = ""
+    @State var isLoading = false
+    @State var showNextView = false
+    
+    func getData() async {
+        // API endpoint
+        isLoading = true
+        let url = URL(string: "https://sephora.p.rapidapi.com/products/v2/search-by-barcode?upcs=\(scannedItem)&country=AU&language=en-AU")!
+        
+        guard let apiKey = InfoPlistHandler.getValue(key: "API_KEY") as? String else {
+            return
+        }
+        guard let apiHost = InfoPlistHandler.getValue(key: "API_HOST") as? String else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        // set request header
+        request.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
+        request.setValue(apiHost, forHTTPHeaderField: "X-RapidAPI-Host")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let res = response as? HTTPURLResponse else { return }
+            guard let data = data else { return }
+            
+            do {
+                // get error message if request unsuccessful
+                if (400...499).contains(res.statusCode) {
+                    let decodedData = try JSONDecoder().decode(Error.self, from: data)
+                    print(decodedData)
+                } else {
+                    // decode data
+                    let decodedData = try JSONDecoder().decode(ProductSearch.self, from: data)
+                    
+                    // send task back to main thread
+                    DispatchQueue.main.async {
+                        self.productId = decodedData.data.attributes.productId
+                        print(productId)
+                        showNextView = !productId.isEmpty
+                        isLoading = false
+                        
+                    }
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
+    }
     
     var body: some View {
-        VStack(spacing: 0) {
-            Scanner(startScanning: $startScanning, recognizedItem: $scannedItem, scannerType: $scannerType)
-    
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Use the scanner camera to tap on the information you would like to scan").bold()
-                Text(scannedItem == "" ? "No item has been scanned" : "Found the following item: ")
-                Text(scannedItem)
-                Button(action: {}, label: {
-                    HStack {
-                        Text("Search")
-                        Image(systemName: "magnifyingglass")
-                    }
+        NavigationStack {
+            VStack(spacing: 0) {
+                Scanner(startScanning: $startScanning, recognizedItem: $scannedItem, scannerType: $scannerType)
+        
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Use the scanner camera to tap on the information you would like to scan").bold()
+                    Text(scannedItem == "" ? "No item has been scanned" : "Found the following item: ")
+                    Text(scannedItem)
+                    
+                    Button (action: {
+                        // start running function
+                        Task {
+                            //await getData()
+                        }
+                    }, label: {
+                        if isLoading {
+                            ProgressView()
+                                .tint(Color("White"))
+                        } else {
+                            HStack {
+                                Text("Search")
+                                Image(systemName: "magnifyingglass")
+                            }
+                        }
+                    })
+                    .disabled(isLoading)
+                    // go to skin quiz if user has not completed it, go to Home otherwise
+                    .navigationDestination(isPresented: $showNextView, destination: {
+                        ProductDetailView(product: productsList[1])})
                     .padding(10)
-                })
-                .background(Color.accentColor)
-                .foregroundColor(Color("White"))
-                .bold()
-                .cornerRadius(15)
-                .frame(maxWidth: .infinity, alignment: .center)
+                    .background(Color.accentColor)
+                    .foregroundColor(Color("White"))
+                    .bold()
+                    .cornerRadius(15)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                }
+                .padding([.top, .horizontal], 20)
+                .font(Font.custom("Avenir", size: 18, relativeTo: .body))
+                .background(Color("Floral White"))
             }
-            .padding([.top, .horizontal], 20)
-            .font(Font.custom("Avenir", size: 18, relativeTo: .body))
-            .background(Color("Floral White"))
+            .task {
+                if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
+                    startScanning = true
+                } else {
+                    print("Not supported or available")
+                }
         }
-        .task {
-            if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
-                startScanning = true
-            } else {
-                print("Not supported or available")
-            }
         }
     }
 }
