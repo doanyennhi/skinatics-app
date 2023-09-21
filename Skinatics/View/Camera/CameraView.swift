@@ -47,7 +47,7 @@ struct CameraView: View {
             .modifier(ScreenModifier())
             .fullScreenCover(isPresented: $showCamera, content: { Camera(photo: $currentPhoto, sourceType: .camera)
                     .ignoresSafeArea()
-        })
+            })
         }
     }
 }
