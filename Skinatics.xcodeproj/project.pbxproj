@@ -61,6 +61,7 @@
 		49985F4C2ABBD97A00446C62 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F4B2ABBD97A00446C62 /* SearchView.swift */; };
 		49985F4F2ABBDB7200446C62 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F4E2ABBDB7200446C62 /* IngredientsView.swift */; };
 		49985F512ABBDBD400446C62 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F502ABBDBD400446C62 /* ProductsView.swift */; };
+		49985F572ABC9A7600446C62 /* ListedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F562ABC9A7600446C62 /* ListedProduct.swift */; };
 		49AE659A2AB80B3300B595AB /* BannerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE65992AB80B3300B595AB /* BannerItem.swift */; };
 		49AE659C2AB8151900B595AB /* RecommendedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE659B2AB8151900B595AB /* RecommendedCard.swift */; };
 /* End PBXBuildFile section */
@@ -142,8 +143,8 @@
 		49985F4B2ABBD97A00446C62 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		49985F4E2ABBDB7200446C62 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
 		49985F502ABBDBD400446C62 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
-		49985F522ABBF7EF00446C62 /* ListedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedProduct.swift; sourceTree = "<group>"; };
 		49985F542ABBFEAE00446C62 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		49985F562ABC9A7600446C62 /* ListedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedProduct.swift; sourceTree = "<group>"; };
 		49AE65992AB80B3300B595AB /* BannerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerItem.swift; sourceTree = "<group>"; };
 		49AE659B2AB8151900B595AB /* RecommendedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +211,7 @@
 			children = (
 				0FBE1D992A896A7C00E64231 /* Skinatics */,
 				0FBE1D982A896A7C00E64231 /* Products */,
+				49985F552ABC99DF00446C62 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -458,9 +460,17 @@
 			children = (
 				49985F502ABBDBD400446C62 /* ProductsView.swift */,
 				49985F4E2ABBDB7200446C62 /* IngredientsView.swift */,
-				49985F522ABBF7EF00446C62 /* ListedProduct.swift */,
+				49985F562ABC9A7600446C62 /* ListedProduct.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		49985F552ABC99DF00446C62 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				0FABD8042AB891C90082DE61 /* Config.xcconfig */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		49AE65982AB80AD000B595AB /* Subviews */ = {
@@ -612,6 +622,7 @@
 				49985F4F2ABBDB7200446C62 /* IngredientsView.swift in Sources */,
 				0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */,
 				0F4061FD2A97D97E00746054 /* Validation.swift in Sources */,
+				49985F572ABC9A7600446C62 /* ListedProduct.swift in Sources */,
 				0FF271882AA720070092FD3C /* CameraView.swift in Sources */,
 				0FF2718F2AA85AF70092FD3C /* IngredientCard.swift in Sources */,
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
@@ -692,7 +703,7 @@
 /* Begin XCBuildConfiguration section */
 		0FBE1DBE2A896A7E00E64231 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FABD8042AB891C90082DE61 /* Config.xcconfig */;
+			baseConfigurationReference = 49985F542ABBFEAE00446C62 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -753,7 +764,7 @@
 		};
 		0FBE1DBF2A896A7E00E64231 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FABD8042AB891C90082DE61 /* Config.xcconfig */;
+			baseConfigurationReference = 49985F542ABBFEAE00446C62 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
