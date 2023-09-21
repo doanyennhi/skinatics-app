@@ -55,9 +55,8 @@
 		0FF529812A9B7820002461C8 /* ScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF529802A9B7820002461C8 /* ScreenModifier.swift */; };
 		497B857B2A98651600F90871 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857A2A98651600F90871 /* HomeView.swift */; };
 		497B85802A98676C00F90871 /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B857F2A98676C00F90871 /* StartUpView.swift */; };
-		498BC5802ABB4C050084D9E5 /* MorningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BC57F2ABB4C050084D9E5 /* MorningView.swift */; };
-		498BC5822ABB50250084D9E5 /* NightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BC5812ABB50250084D9E5 /* NightView.swift */; };
 		498BC5852ABB51DF0084D9E5 /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BC5842ABB51DF0084D9E5 /* CheckListItem.swift */; };
+		49985F492ABBD4F400446C62 /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F482ABBD4F400446C62 /* RoutineView.swift */; };
 		49AE659A2AB80B3300B595AB /* BannerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE65992AB80B3300B595AB /* BannerItem.swift */; };
 		49AE659C2AB8151900B595AB /* RecommendedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE659B2AB8151900B595AB /* RecommendedCard.swift */; };
 /* End PBXBuildFile section */
@@ -133,9 +132,8 @@
 		0FF529802A9B7820002461C8 /* ScreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenModifier.swift; sourceTree = "<group>"; };
 		497B857A2A98651600F90871 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		497B857F2A98676C00F90871 /* StartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpView.swift; sourceTree = "<group>"; };
-		498BC57F2ABB4C050084D9E5 /* MorningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningView.swift; sourceTree = "<group>"; };
-		498BC5812ABB50250084D9E5 /* NightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightView.swift; sourceTree = "<group>"; };
 		498BC5842ABB51DF0084D9E5 /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
+		49985F482ABBD4F400446C62 /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
 		49AE65992AB80B3300B595AB /* BannerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerItem.swift; sourceTree = "<group>"; };
 		49AE659B2AB8151900B595AB /* RecommendedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -421,8 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				498BC5832ABB51CD0084D9E5 /* Subviews */,
-				498BC57F2ABB4C050084D9E5 /* MorningView.swift */,
-				498BC5812ABB50250084D9E5 /* NightView.swift */,
+				49985F482ABBD4F400446C62 /* RoutineView.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -592,9 +589,9 @@
 				0FF2719E2AAB1C110092FD3C /* TabBarItem.swift in Sources */,
 				0FDB62692A8F68DE008B19F1 /* View+Extensions.swift in Sources */,
 				0FDB62602A8E76AA008B19F1 /* CheckItem.swift in Sources */,
-				498BC5802ABB4C050084D9E5 /* MorningView.swift in Sources */,
 				0FDB62662A8E98BD008B19F1 /* SkinConditionView.swift in Sources */,
 				0F4061F02A96738F00746054 /* CustomTextField.swift in Sources */,
+				49985F492ABBD4F400446C62 /* RoutineView.swift in Sources */,
 				0FF2718B2AA859930092FD3C /* IngredientDictView.swift in Sources */,
 				0FF5297E2A9B3DE0002461C8 /* SkinInfo.swift in Sources */,
 				0F4061F52A974FDC00746054 /* User.swift in Sources */,
@@ -608,7 +605,6 @@
 				0F4061FF2A9A8D8E00746054 /* Product.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */,
-				498BC5822ABB50250084D9E5 /* NightView.swift in Sources */,
 				0FF2718D2AA859E20092FD3C /* Ingredient.swift in Sources */,
 				0FDB62542A8E115E008B19F1 /* SkinIssuesView.swift in Sources */,
 				0F34D37F2AB05D2700A095BB /* MainView.swift in Sources */,
@@ -661,7 +657,6 @@
 /* Begin XCBuildConfiguration section */
 		0FBE1DBE2A896A7E00E64231 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FABD8042AB891C90082DE61 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -722,7 +717,6 @@
 		};
 		0FBE1DBF2A896A7E00E64231 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FABD8042AB891C90082DE61 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
