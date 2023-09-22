@@ -28,7 +28,7 @@ struct HomeView: View {
     // banner cards' content
     var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
     var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
-    @Binding var products: [Product]
+    @Binding var products: [Product]?
     @Binding var isLoading: Bool
     
     var body: some View {
@@ -76,18 +76,23 @@ struct HomeView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                         if !isLoading {
-                            if products.isEmpty {
-                                Text("We cannot find any products")
-                                    .padding()
-                            } else {
-                                ScrollView(.horizontal) {
-                                    LazyHStack(spacing: 20) {
-                                        ForEach(products) { product in
-                                            RecommendedCard(product: product)
+                            if let productList = products {
+                                if productList.isEmpty {
+                                    Text("We cannot find any products")
+                                        .padding(.vertical)
+                                } else {
+                                    ScrollView(.horizontal) {
+                                        LazyHStack(spacing: 20) {
+                                            ForEach(productList) { product in
+                                                RecommendedCard(product: product)
+                                            }
                                         }
+                                        .padding(.bottom)
                                     }
-                                    .padding(.bottom)
                                 }
+                            } else {
+                                Text("There was an error finding the products. Please visit again later.")
+                                    .padding(.vertical)
                             }
                         } else {
                             ProgressView()
@@ -103,11 +108,11 @@ struct HomeView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     if !isLoading {
-                        if let product = products.randomElement() {
+                        if let product = products?.randomElement() {
                             ProductOfTheDay(product: product)
                         } else {
                             Text("No product for today")
-                                .padding()
+                                .padding(.vertical)
                         }
                     } else {
                         ProgressView()

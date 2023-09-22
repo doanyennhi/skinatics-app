@@ -67,7 +67,7 @@ struct ScannerView: View {
                     Button (action: {
                         // start running function
                         Task {
-                            await getData()
+                            // await getData()
                         }
                     }, label: {
                         if isLoading {

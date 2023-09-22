@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     var user: User
-    @State private var products: [Product] = []
+    @State private var products: [Product]?
     @State var isLoading = false
     
     func getProducts() async {
@@ -27,6 +27,7 @@ struct MainView: View {
                 if (400...499).contains(res.statusCode) {
                     let decodedData = try JSONDecoder().decode(Error.self, from: data)
                     print(decodedData)
+                    self.products = nil
                 } else {
                     // decode data
                     let decodedData = try JSONDecoder().decode(ProductsList.self, from: data)
@@ -38,6 +39,7 @@ struct MainView: View {
                 }
             } catch {
                 print(error.localizedDescription)
+                self.products = nil
             }
         }.resume()
     }
@@ -60,9 +62,11 @@ struct MainView: View {
                 })
         }
         .task {
-            isLoading = true
-            // await getProducts()
-            isLoading = false
+            if products == nil {
+                isLoading = true
+                // await getProducts()
+                isLoading = false
+            }
         }
     }
 }
