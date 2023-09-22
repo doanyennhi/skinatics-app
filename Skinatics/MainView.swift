@@ -14,20 +14,9 @@ struct MainView: View {
     @State var isLoading = false
     
     func getProducts() async {
-        // API endpoint
-        let url = URL(string: "https://sephora.p.rapidapi.com/products/v2/list?number=1&size=10&country=AU&language=en-AU&root_category=skincare")!
-        
-        guard let apiKey = InfoPlistHandler.getValue(key: "API_KEY") as? String else {
+        guard let request = setRequestHeader(link: "https://sephora.p.rapidapi.com/products/v2/list?number=1&size=10&country=AU&language=en-AU&root_category=skincare") else {
             return
         }
-        guard let apiHost = InfoPlistHandler.getValue(key: "API_HOST") as? String else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        // set request header
-        request.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
-        request.setValue(apiHost, forHTTPHeaderField: "X-RapidAPI-Host")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let res = response as? HTTPURLResponse else { return }

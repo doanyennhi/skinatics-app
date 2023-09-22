@@ -12,7 +12,7 @@ struct RecommendedCard: View {
     var product: Product = productsList[1]
     
     var body: some View {
-        NavigationLink(destination: ProductDetailView(product: product)) {
+        NavigationLink(destination: ProductDetailView(product: product, productId: product.id)) {
             VStack(alignment: .leading) {
                 AsyncImage(url: URL(string: product.attributes.imageUrls[0])) { phase in
                     if let img = phase.image {

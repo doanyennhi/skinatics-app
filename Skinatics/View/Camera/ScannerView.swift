@@ -21,21 +21,8 @@ struct ScannerView: View {
     @State var showNextView = false
     
     func getData() async {
-        // API endpoint
         isLoading = true
-        let url = URL(string: "https://sephora.p.rapidapi.com/products/v2/search-by-barcode?upcs=\(scannedItem)&country=AU&language=en-AU")!
-        
-        guard let apiKey = InfoPlistHandler.getValue(key: "API_KEY") as? String else {
-            return
-        }
-        guard let apiHost = InfoPlistHandler.getValue(key: "API_HOST") as? String else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        // set request header
-        request.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
-        request.setValue(apiHost, forHTTPHeaderField: "X-RapidAPI-Host")
+        guard let request = setRequestHeader(link: "https://sephora.p.rapidapi.com/products/v2/search-by-barcode?upcs=\(scannedItem)&country=AU&language=en-AU") else { return }
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let res = response as? HTTPURLResponse else { return }
@@ -56,7 +43,6 @@ struct ScannerView: View {
                         print(productId)
                         showNextView = !productId.isEmpty
                         isLoading = false
-                        
                     }
                 }
             } catch {
@@ -94,7 +80,7 @@ struct ScannerView: View {
                     .disabled(isLoading)
                     // go to skin quiz if user has not completed it, go to Home otherwise
                     .navigationDestination(isPresented: $showNextView, destination: {
-                        ProductDetailView(product: productsList[1])})
+                        ProductDetailView(product: productsList[1], productId: productId)})
                     .padding(10)
                     .background(Color.accentColor)
                     .foregroundColor(Color("White"))

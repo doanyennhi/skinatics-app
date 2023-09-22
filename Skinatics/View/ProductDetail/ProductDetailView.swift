@@ -10,11 +10,13 @@ import SwiftUI
 let stores = [Store(image: "sephora", name: "Sephora Melbourne Central", address: "Shop 103/211 La Trobe St, Melbourne VIC 3000"), Store(image: "mecca", name: "Mecca Melbourne Central", address: "Ground Level, 211 La Trobe St, Melbourne VIC 3000"),  Store(image: "kimbao", name: "Kim Bao Beauty", address: "183-185 Elizabeth St, Melbourne VIC 3000")]
 
 struct ProductDetailView: View {
-    private var product: Product
+    @State private var product: Product
+    private var productId: String
     @State var productTabSelected: Int = 0
     
-    init(product: Product) {
+    init(product: Product, productId: String) {
         self.product = product
+        self.productId = productId
     }
     
     var body: some View {
@@ -95,6 +97,6 @@ struct ProductDetailView: View {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView(product: productsList[0])
+        ProductDetailView(product: productsList[0], productId: "")
     }
 }

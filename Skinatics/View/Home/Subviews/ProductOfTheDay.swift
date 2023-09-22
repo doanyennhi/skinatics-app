@@ -30,7 +30,7 @@ struct ProductOfTheDay: View {
                 .title2().bold()
                 .multilineTextAlignment(.center)
             Text(product.attributes.description)
-            NavigationLink(destination: ProductDetailView(product: product)) {
+            NavigationLink(destination: ProductDetailView(product: product, productId: product.id)) {
                 Text("View More").underline()
             }
         }
