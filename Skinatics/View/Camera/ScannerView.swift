@@ -8,10 +8,6 @@
 import SwiftUI
 import VisionKit
 
-enum ScannerType: String {
-    case text, barcode
-}
-
 struct ScannerView: View {
     @State var startScanning = false
     @State var scannedItem: String = "602004138200"

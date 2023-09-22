@@ -51,7 +51,7 @@ struct MainView: View {
                     Label("Home", systemImage: "house")
                 })
             
-            CameraView()
+            SkinPhotoView()
                 .tabItem({
                     Label("Camera", systemImage: "camera.circle.fill")
                 })

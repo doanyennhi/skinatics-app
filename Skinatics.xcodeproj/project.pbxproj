@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F10D9C92ABE1AC5005C9FA0 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */; };
+		0F10D9CB2ABE201D005C9FA0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */; };
 		0F34D37F2AB05D2700A095BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D37E2AB05D2700A095BB /* MainView.swift */; };
 		0F34D3812AB37D9100A095BB /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D3802AB37D9100A095BB /* ScannerView.swift */; };
 		0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EB2A9667E700746054 /* SignUpView.swift */; };
@@ -40,7 +42,7 @@
 		0FDB62692A8F68DE008B19F1 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62682A8F68DE008B19F1 /* View+Extensions.swift */; };
 		0FDB626C2A8F6B4C008B19F1 /* SetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB626B2A8F6B4C008B19F1 /* SetHelper.swift */; };
 		0FDB62722A9011E5008B19F1 /* QuizTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62712A9011E5008B19F1 /* QuizTemplate.swift */; };
-		0FF271882AA720070092FD3C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271872AA720070092FD3C /* CameraView.swift */; };
+		0FF271882AA720070092FD3C /* SkinPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF271872AA720070092FD3C /* SkinPhotoView.swift */; };
 		0FF2718B2AA859930092FD3C /* IngredientDictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2718A2AA859930092FD3C /* IngredientDictView.swift */; };
 		0FF2718D2AA859E20092FD3C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2718C2AA859E20092FD3C /* Ingredient.swift */; };
 		0FF2718F2AA85AF70092FD3C /* IngredientCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2718E2AA85AF70092FD3C /* IngredientCard.swift */; };
@@ -87,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		0F34D37E2AB05D2700A095BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0F34D3802AB37D9100A095BB /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		0F4061EB2A9667E700746054 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -124,7 +128,7 @@
 		0FDB62682A8F68DE008B19F1 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		0FDB626B2A8F6B4C008B19F1 /* SetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHelper.swift; sourceTree = "<group>"; };
 		0FDB62712A9011E5008B19F1 /* QuizTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTemplate.swift; sourceTree = "<group>"; };
-		0FF271872AA720070092FD3C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		0FF271872AA720070092FD3C /* SkinPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPhotoView.swift; sourceTree = "<group>"; };
 		0FF2718A2AA859930092FD3C /* IngredientDictView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDictView.swift; sourceTree = "<group>"; };
 		0FF2718C2AA859E20092FD3C /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		0FF2718E2AA85AF70092FD3C /* IngredientCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCard.swift; sourceTree = "<group>"; };
@@ -180,6 +184,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F10D9C72ABE1AB2005C9FA0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0F4061E72A94AC3800746054 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +246,7 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				0F10D9C72ABE1AB2005C9FA0 /* ViewModel */,
 				0FF5297F2A9B7529002461C8 /* Info.plist */,
 				0F4061E72A94AC3800746054 /* Model */,
 				0FDB626A2A8F6ACF008B19F1 /* Helper */,
@@ -351,9 +364,10 @@
 			isa = PBXGroup;
 			children = (
 				0FF271992AAA535C0092FD3C /* Subviews */,
-				0FF271872AA720070092FD3C /* CameraView.swift */,
+				0FF271872AA720070092FD3C /* SkinPhotoView.swift */,
 				0FF271902AA8715E0092FD3C /* ResultsView.swift */,
 				0F34D3802AB37D9100A095BB /* ScannerView.swift */,
+				0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -634,7 +648,7 @@
 				0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */,
 				0F4061FD2A97D97E00746054 /* Validation.swift in Sources */,
 				49985F572ABC9A7600446C62 /* ListedProduct.swift in Sources */,
-				0FF271882AA720070092FD3C /* CameraView.swift in Sources */,
+				0FF271882AA720070092FD3C /* SkinPhotoView.swift in Sources */,
 				0FF2718F2AA85AF70092FD3C /* IngredientCard.swift in Sources */,
 				0F933F112ABDCB2300861EFE /* String+Extensions.swift in Sources */,
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
@@ -676,10 +690,12 @@
 				0F4061F32A967C3100746054 /* LoginView.swift in Sources */,
 				0FF271982AA8CE9D0092FD3C /* Store.swift in Sources */,
 				0FF271AA2AACD6390092FD3C /* InfoSheetView.swift in Sources */,
+				0F10D9C92ABE1AC5005C9FA0 /* CameraViewModel.swift in Sources */,
 				0FF529812A9B7820002461C8 /* ScreenModifier.swift in Sources */,
 				49AE659C2AB8151900B595AB /* RecommendedCard.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
 				498BC5852ABB51DF0084D9E5 /* CheckListItem.swift in Sources */,
+				0F10D9CB2ABE201D005C9FA0 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -84,7 +84,7 @@ struct ResultsView: View {
                     ResultSection(heading: "Lines", content: "We can see that there are no visible lines on your skin, great job preventing lines.")
                 }
                 
-                NavigationLink(destination: CameraView()) {
+                NavigationLink(destination: SkinPhotoView()) {
                     Text("Exit")
                 }
                 .buttonStyle(PrimaryButtonStyle())
