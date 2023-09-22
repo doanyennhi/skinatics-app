@@ -16,6 +16,7 @@ struct ScannerView: View {
     @State var isLoading = false
     @State var showNextView = false
     @State var showAlert = false
+    @StateObject private var viewModel = ScannerViewModel()
     
     func getData() async {
         isLoading = true
@@ -53,7 +54,7 @@ struct ScannerView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                Scanner(startScanning: $startScanning, recognizedItem: $scannedItem, scannerType: $scannerType)
+                Scanner(startScanning: $startScanning, recognizedItem: $scannedItem, dataType: viewModel.dataType)
                 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Use the scanner camera to tap on the information you would like to scan").bold()
@@ -99,65 +100,14 @@ struct ScannerView: View {
                 Text("There is an error why searching for the item. Please try again.")
             })
             .task {
+                viewModel.requestAccessStatus()
+                print(viewModel.accessStatus)
                 if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
                     startScanning = true
                 } else {
                     print("Not supported or available")
                 }
         }
-        }
-    }
-}
-
-struct Scanner: UIViewControllerRepresentable {
-    @Binding var startScanning: Bool
-    @Binding var recognizedItem: String
-    @Binding var scannerType: ScannerType
-    var dataType: DataScannerViewController.RecognizedDataType {
-        return scannerType == .text ? .text() : .barcode()
-    }
-    
-    func makeUIViewController(context: Context) -> DataScannerViewController {
-        let controller = DataScannerViewController(
-            recognizedDataTypes: [dataType],
-            qualityLevel: .accurate,
-            isHighFrameRateTrackingEnabled: false,
-            isHighlightingEnabled: true
-        )
-        controller.delegate = context.coordinator
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
-        if startScanning {
-            try? uiViewController.startScanning()
-            print(dataType)
-        } else {
-            uiViewController.stopScanning()
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(parent: self)
-    }
-    
-    final class Coordinator: NSObject, DataScannerViewControllerDelegate {
-        var parent: Scanner
-        
-        init(parent: Scanner) {
-            self.parent = parent
-        }
-        
-        func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
-            switch item {
-            case .text(let text):
-                parent.recognizedItem = text.transcript
-            case .barcode(let barcode):
-                parent.recognizedItem = barcode.payloadStringValue ?? "Unknown payload"
-            default:
-                parent.recognizedItem = ""
-            }
         }
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F10D9C92ABE1AC5005C9FA0 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */; };
 		0F10D9CB2ABE201D005C9FA0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */; };
+		0F10D9CD2ABE2EAF005C9FA0 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CC2ABE2EAF005C9FA0 /* ScannerViewModel.swift */; };
+		0F10D9CF2ABE3736005C9FA0 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CE2ABE3736005C9FA0 /* Scanner.swift */; };
 		0F34D37F2AB05D2700A095BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D37E2AB05D2700A095BB /* MainView.swift */; };
 		0F34D3812AB37D9100A095BB /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D3802AB37D9100A095BB /* ScannerView.swift */; };
 		0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EB2A9667E700746054 /* SignUpView.swift */; };
@@ -91,6 +93,8 @@
 /* Begin PBXFileReference section */
 		0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		0F10D9CC2ABE2EAF005C9FA0 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		0F10D9CE2ABE3736005C9FA0 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		0F34D37E2AB05D2700A095BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0F34D3802AB37D9100A095BB /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		0F4061EB2A9667E700746054 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */,
+				0F10D9CC2ABE2EAF005C9FA0 /* ScannerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 				0FF271902AA8715E0092FD3C /* ResultsView.swift */,
 				0F34D3802AB37D9100A095BB /* ScannerView.swift */,
 				0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */,
+				0F10D9CE2ABE3736005C9FA0 /* Scanner.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -681,6 +687,7 @@
 				0F4062022A9B1F3600746054 /* ProfileView.swift in Sources */,
 				0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */,
 				0F4061FB2A97D5F800746054 /* ErrorText.swift in Sources */,
+				0F10D9CF2ABE3736005C9FA0 /* Scanner.swift in Sources */,
 				0FF271962AA8CA1C0092FD3C /* StoreCard.swift in Sources */,
 				49985F512ABBDBD400446C62 /* ProductsView.swift in Sources */,
 				0FABD8062AB8A5050082DE61 /* InfoPlistHandler.swift in Sources */,
@@ -692,6 +699,7 @@
 				0FF271AA2AACD6390092FD3C /* InfoSheetView.swift in Sources */,
 				0F10D9C92ABE1AC5005C9FA0 /* CameraViewModel.swift in Sources */,
 				0FF529812A9B7820002461C8 /* ScreenModifier.swift in Sources */,
+				0F10D9CD2ABE2EAF005C9FA0 /* ScannerViewModel.swift in Sources */,
 				49AE659C2AB8151900B595AB /* RecommendedCard.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
 				498BC5852ABB51DF0084D9E5 /* CheckListItem.swift in Sources */,

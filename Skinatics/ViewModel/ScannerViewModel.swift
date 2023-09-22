@@ -1,5 +1,5 @@
 //
-//  CameraViewModel.swift
+//  ScannerViewModel.swift
 //  Skinatics
 //
 //  Created by Nhii on 23/9/2023.
@@ -7,19 +7,30 @@
 
 import Foundation
 import UIKit
+import VisionKit
 import AVFoundation
 
-enum CameraAccessStatus {
-    case noCameraAccess
+enum ScannerType: String {
+    case text, barcode
+}
+
+enum ScannerAccessStatus {
     case noCameraAvailable
-    case cameraAvailable
+    case noCameraAccess
+    case noScannerAvailable
+    case scannerAvailable
     case notDetermined
 }
 
 @MainActor
-final class CameraViewModel: ObservableObject {
+final class ScannerViewModel: ObservableObject {
     
-    @Published var accessStatus: CameraAccessStatus = .notDetermined
+    @Published var scannerType: ScannerType = .text
+    @Published var accessStatus: ScannerAccessStatus = .notDetermined
+    
+    var dataType: DataScannerViewController.RecognizedDataType {
+        return scannerType == .text ? .text() : .barcode()
+    }
     
     func requestAccessStatus() {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
@@ -34,14 +45,14 @@ final class CameraViewModel: ObservableObject {
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
                 if granted {
-                    self.accessStatus = .cameraAvailable
+                    self.accessStatus = DataScannerViewController.isAvailable && DataScannerViewController.isSupported ? .scannerAvailable : .noScannerAvailable
                 } else {
                     self.accessStatus = .noCameraAccess
                 }
             })
             
         case .authorized:
-            accessStatus = .cameraAvailable
+            accessStatus = DataScannerViewController.isAvailable && DataScannerViewController.isSupported ? .scannerAvailable : .noScannerAvailable
             
         @unknown default:
             return
