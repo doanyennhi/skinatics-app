@@ -80,7 +80,7 @@ struct ScannerView: View {
                     .disabled(isLoading)
                     // go to skin quiz if user has not completed it, go to Home otherwise
                     .navigationDestination(isPresented: $showNextView, destination: {
-                        ProductDetailView(product: productsList[1], productId: productId)})
+                        ProductDetailView(productId: productId)})
                     .padding(10)
                     .background(Color.accentColor)
                     .foregroundColor(Color("White"))

@@ -15,7 +15,7 @@
 		0F4061F52A974FDC00746054 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061F42A974FDC00746054 /* User.swift */; };
 		0F4061FB2A97D5F800746054 /* ErrorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061FA2A97D5F800746054 /* ErrorText.swift */; };
 		0F4061FD2A97D97E00746054 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061FC2A97D97E00746054 /* Validation.swift */; };
-		0F4061FF2A9A8D8E00746054 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061FE2A9A8D8E00746054 /* Product.swift */; };
+		0F4061FF2A9A8D8E00746054 /* ProductsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061FE2A9A8D8E00746054 /* ProductsList.swift */; };
 		0F4062022A9B1F3600746054 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4062012A9B1F3600746054 /* ProfileView.swift */; };
 		0F4062042A9B2C0300746054 /* EditField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4062032A9B2C0300746054 /* EditField.swift */; };
 		0FA4203D2ABCBE0000858738 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4203C2ABCBE0000858738 /* APIHelper.swift */; };
@@ -93,7 +93,7 @@
 		0F4061F42A974FDC00746054 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F4061FA2A97D5F800746054 /* ErrorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
 		0F4061FC2A97D97E00746054 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		0F4061FE2A9A8D8E00746054 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		0F4061FE2A9A8D8E00746054 /* ProductsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsList.swift; sourceTree = "<group>"; };
 		0F4062012A9B1F3600746054 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0F4062032A9B2C0300746054 /* EditField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditField.swift; sourceTree = "<group>"; };
 		0FA4203C2ABCBE0000858738 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				0F4061F42A974FDC00746054 /* User.swift */,
-				0F4061FE2A9A8D8E00746054 /* Product.swift */,
+				0F4061FE2A9A8D8E00746054 /* ProductsList.swift */,
 				0FF2718C2AA859E20092FD3C /* Ingredient.swift */,
 				0FF271972AA8CE9D0092FD3C /* Store.swift */,
 				0FF271A72AACA9DC0092FD3C /* Review.swift */,
@@ -650,7 +650,7 @@
 				497B857B2A98651600F90871 /* HomeView.swift in Sources */,
 				497B85802A98676C00F90871 /* StartUpView.swift in Sources */,
 				0FF271A82AACA9DC0092FD3C /* Review.swift in Sources */,
-				0F4061FF2A9A8D8E00746054 /* Product.swift in Sources */,
+				0F4061FF2A9A8D8E00746054 /* ProductsList.swift in Sources */,
 				0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */,
 				0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */,
 				0FF2718D2AA859E20092FD3C /* Ingredient.swift in Sources */,

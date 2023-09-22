@@ -7,7 +7,11 @@
 
 import Foundation
 
-/// Define model for Product
+/// Define models when calling API to fetch list of all products
+struct ProductsList: Codable {
+    var data: [Product]
+}
+
 struct Product: Identifiable, Codable {
     var id: String
     var attributes: ProductAttributes
@@ -32,8 +36,4 @@ struct ProductAttributes: Codable {
         case imageUrls = "image-urls"
         case brand = "brand-name"
     }
-}
-
-struct ProductsList: Codable {
-    var data: [Product]
 }
