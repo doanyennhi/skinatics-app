@@ -19,6 +19,7 @@ struct ScannerView: View {
     @State private var productId = ""
     @State var isLoading = false
     @State var showNextView = false
+    @State var showAlert = false
     
     func getData() async {
         isLoading = true
@@ -33,6 +34,8 @@ struct ScannerView: View {
                 if (400...499).contains(res.statusCode) {
                     let decodedData = try JSONDecoder().decode(Error.self, from: data)
                     print(decodedData)
+                    isLoading = false
+                    showAlert = true
                 } else {
                     // decode data
                     let decodedData = try JSONDecoder().decode(ProductSearch.self, from: data)
@@ -55,7 +58,7 @@ struct ScannerView: View {
         NavigationStack {
             VStack(spacing: 0) {
                 Scanner(startScanning: $startScanning, recognizedItem: $scannedItem, scannerType: $scannerType)
-        
+                
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Use the scanner camera to tap on the information you would like to scan").bold()
                     Text(scannedItem == "" ? "No item has been scanned" : "Found the following item: ")
@@ -64,7 +67,7 @@ struct ScannerView: View {
                     Button (action: {
                         // start running function
                         Task {
-                            //await getData()
+                            await getData()
                         }
                     }, label: {
                         if isLoading {
@@ -92,6 +95,13 @@ struct ScannerView: View {
                 .font(Font.custom("Avenir", size: 18, relativeTo: .body))
                 .background(Color("Floral White"))
             }
+            .alert("Error", isPresented: $showAlert, actions: {
+                Button("OK", role: .cancel) {
+                    showNextView = false
+                }
+            }, message: {
+                Text("There is an error why searching for the item. Please try again.")
+            })
             .task {
                 if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
                     startScanning = true
