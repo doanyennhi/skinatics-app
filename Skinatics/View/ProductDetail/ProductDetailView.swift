@@ -136,7 +136,7 @@ struct ProductDetailView: View {
                 }
                 .modifier(ScreenModifier())
                 .task {
-                    await getProduct()
+                    // await getProduct()
                 }
             }
         }
