@@ -30,8 +30,11 @@ struct RecommendedCard: View {
                         ProgressView()
                     }
                 }
-                VStack(alignment: .leading) {
-                    Text("Brand")
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack(alignment: .firstTextBaseline, spacing: 5) {
+                        Text("\(product.attributes.rating.formatted())")
+                        Image(systemName: "star.fill")
+                    }
                         .font(Font.custom("Avenir", size: 16, relativeTo: .body))
                         .foregroundColor(Color("Black"))
                     Text(product.attributes.name)
@@ -44,7 +47,7 @@ struct RecommendedCard: View {
                 .padding(.bottom, 5)
                 Spacer()
             }
-            .background(.white)
+            .background(Color("White"))
             .modifier(CardModifier())
         }
     }

@@ -29,7 +29,6 @@ struct HomeView: View {
     var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
     var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
     @Binding var products: [Product]
-    var productOfTheDay: Product?
     @Binding var isLoading: Bool
     
     var body: some View {
@@ -104,7 +103,7 @@ struct HomeView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     if !isLoading {
-                        if let product = productOfTheDay {
+                        if let product = products.randomElement() {
                             ProductOfTheDay(product: product)
                         } else {
                             Text("No product for today")

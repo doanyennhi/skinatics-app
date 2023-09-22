@@ -77,7 +77,7 @@ struct ProductDetailView: View {
                                 }
                                 
                                 HStack(alignment: .firstTextBaseline) {
-                                    Text("CeraVe")
+                                    Text(product.attributes.brand ?? "")
                                         .title2()
                                         .fontWeight(.semibold)
                                     
@@ -98,11 +98,11 @@ struct ProductDetailView: View {
                                 VStack(alignment: .leading, spacing: 10) {
                                     switch productTabSelected {
                                     case 0:
-                                        Text(product.attributes.description)
+                                        Text(product.attributes.description.stripHTML())
                                     case 1:
-                                        Text(product.attributes.benefits)
+                                        Text(product.attributes.benefits.stripHTML())
                                     case 2:
-                                        Text(product.attributes.ingredients)
+                                        Text(product.attributes.ingredients.stripHTML())
                                         NavigationLink(destination: IngredientDictView(ingredients: ingredients), label: {
                                             Text("Benefits of main ingredients")
                                                 .underline()
@@ -136,7 +136,7 @@ struct ProductDetailView: View {
                 }
                 .modifier(ScreenModifier())
                 .task {
-                    //await getProduct()
+                    await getProduct()
                 }
             }
         }
