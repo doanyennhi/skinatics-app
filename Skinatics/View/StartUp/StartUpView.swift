@@ -6,49 +6,71 @@
 //
 
 import SwiftUI
+import Auth0
 
 let screenSize: CGRect = UIScreen.main.bounds
 let screenWidth = screenSize.width
 
 struct StartUpView: View {
-    var body: some View {
-        NavigationStack {
-            StartUpLayout {
-                Image("logo-white") // logo
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: screenWidth)
-                    .padding(.bottom, 10)
-                Text("Skinatics") // app name
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.vertical, 20)
-                Text("Your on-the-go skincare assistant.") // app description
-                    .foregroundColor(.white)
-                    .padding(.bottom, 60)
-                VStack { // sign up and log in buttons
-                    NavigationLink(destination: SignUpView()) {
-                        Text("Sign Up")
-                    }
-                    .buttonStyle(SecondaryButtonStyle())
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 5)
-                    NavigationLink(destination: LoginView()) {
-                        Text("Log In")
-                    }
-                    .buttonStyle(PrimaryButtonStyle())
-                    .padding(.horizontal, 20)
+    @Binding var isAuthenticated: Bool
+    
+    private func login() {
+        Auth0
+        // initiates Universal Login
+              .webAuth()
+        // show login dialog
+              .start { result in // 3
+                switch result {
+                  // 4
+                  case .failure(let error):
+                    print("Failed with: \(error)")
+                  // 5
+                case .success(_):
+                    self.isAuthenticated = true
                 }
+              }
+    }
+    
+    var body: some View {
+            NavigationStack {
+                StartUpLayout {
+                    Image("logo-white") // logo
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: screenWidth)
+                        .padding(.bottom, 10)
+                    Text("Skinatics") // app name
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(.vertical, 20)
+                    Text("Your on-the-go skincare assistant.") // app description
+                        .foregroundColor(.white)
+                        .padding(.bottom, 60)
+                    VStack { // sign up and log in buttons
+                        NavigationLink(destination: SignUpView()) {
+                            Text("Sign Up")
+                        }
+                        .buttonStyle(SecondaryButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 5)
+                        
+                        Button("Log In") {
+                            login()
+                        }
+                        .buttonStyle(PrimaryButtonStyle())
+                        .padding(.horizontal, 20)
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                // background color remain constant
+                .background(Color(red: 0.204, green: 0.306, blue: 0.255))
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(red: 0.204, green: 0.306, blue: 0.255))
-        }
     }
     
     struct StartUpView_Previews: PreviewProvider {
         static var previews: some View {
-            StartUpView()
+            StartUpView(isAuthenticated: .constant(false))
         }
     }
     

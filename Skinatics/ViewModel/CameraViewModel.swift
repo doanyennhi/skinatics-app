@@ -22,29 +22,31 @@ final class CameraViewModel: ObservableObject {
     @Published var accessStatus: CameraAccessStatus = .notDetermined
     
     func requestAccessStatus() {
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            accessStatus = .noCameraAvailable
-            return
-        }
-        
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .restricted, .denied:
-            accessStatus = .noCameraAccess
+        DispatchQueue.main.async {
+            guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                self.accessStatus = .noCameraAvailable
+                return
+            }
             
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-                if granted {
-                    self.accessStatus = .cameraAvailable
-                } else {
-                    self.accessStatus = .noCameraAccess
-                }
-            })
-            
-        case .authorized:
-            accessStatus = .cameraAvailable
-            
-        @unknown default:
-            return
+            switch AVCaptureDevice.authorizationStatus(for: .video) {
+            case .restricted, .denied:
+                self.accessStatus = .noCameraAccess
+                
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+                    if granted {
+                        self.accessStatus = .cameraAvailable
+                    } else {
+                        self.accessStatus = .noCameraAccess
+                    }
+                })
+                
+            case .authorized:
+                self.accessStatus = .cameraAvailable
+                
+            @unknown default:
+                return
+            }
         }
     }
 }

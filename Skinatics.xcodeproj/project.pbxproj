@@ -11,6 +11,7 @@
 		0F10D9CB2ABE201D005C9FA0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */; };
 		0F10D9CD2ABE2EAF005C9FA0 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CC2ABE2EAF005C9FA0 /* ScannerViewModel.swift */; };
 		0F10D9CF2ABE3736005C9FA0 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CE2ABE3736005C9FA0 /* Scanner.swift */; };
+		0F10D9D22ABF6237005C9FA0 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 0F10D9D12ABF6237005C9FA0 /* Auth0 */; };
 		0F34D37F2AB05D2700A095BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D37E2AB05D2700A095BB /* MainView.swift */; };
 		0F34D3812AB37D9100A095BB /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34D3802AB37D9100A095BB /* ScannerView.swift */; };
 		0F4061EC2A9667E700746054 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061EB2A9667E700746054 /* SignUpView.swift */; };
@@ -22,6 +23,7 @@
 		0F4061FF2A9A8D8E00746054 /* ProductsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4061FE2A9A8D8E00746054 /* ProductsList.swift */; };
 		0F4062022A9B1F3600746054 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4062012A9B1F3600746054 /* ProfileView.swift */; };
 		0F4062042A9B2C0300746054 /* EditField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4062032A9B2C0300746054 /* EditField.swift */; };
+		0F75AEB62ABF71830023E51E /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F75AEB52ABF71830023E51E /* Auth0.plist */; };
 		0F933F0F2ABD940100861EFE /* NoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F933F0E2ABD940100861EFE /* NoResultView.swift */; };
 		0F933F112ABDCB2300861EFE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F933F102ABDCB2300861EFE /* String+Extensions.swift */; };
 		0FA4203D2ABCBE0000858738 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4203C2ABCBE0000858738 /* APIHelper.swift */; };
@@ -106,6 +108,7 @@
 		0F4061FE2A9A8D8E00746054 /* ProductsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsList.swift; sourceTree = "<group>"; };
 		0F4062012A9B1F3600746054 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0F4062032A9B2C0300746054 /* EditField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditField.swift; sourceTree = "<group>"; };
+		0F75AEB52ABF71830023E51E /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		0F933F0E2ABD940100861EFE /* NoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultView.swift; sourceTree = "<group>"; };
 		0F933F102ABDCB2300861EFE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		0FA4203C2ABCBE0000858738 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F10D9D22ABF6237005C9FA0 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +255,7 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				0F75AEB52ABF71830023E51E /* Auth0.plist */,
 				0F10D9C72ABE1AB2005C9FA0 /* ViewModel */,
 				0FF5297F2A9B7529002461C8 /* Info.plist */,
 				0F4061E72A94AC3800746054 /* Model */,
@@ -528,6 +533,9 @@
 			dependencies = (
 			);
 			name = Skinatics;
+			packageProductDependencies = (
+				0F10D9D12ABF6237005C9FA0 /* Auth0 */,
+			);
 			productName = Skinatics;
 			productReference = 0FBE1D972A896A7C00E64231 /* Skinatics.app */;
 			productType = "com.apple.product-type.application";
@@ -600,6 +608,9 @@
 				Base,
 			);
 			mainGroup = 0FBE1D8E2A896A7C00E64231;
+			packageReferences = (
+				0F10D9D02ABF6237005C9FA0 /* XCRemoteSwiftPackageReference "Auth0" */,
+			);
 			productRefGroup = 0FBE1D982A896A7C00E64231 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -616,6 +627,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F75AEB62ABF71830023E51E /* Auth0.plist in Resources */,
 				0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */,
 				0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */,
 				0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */,
@@ -1035,6 +1047,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F10D9D02ABF6237005C9FA0 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F10D9D12ABF6237005C9FA0 /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F10D9D02ABF6237005C9FA0 /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0FBE1D8F2A896A7C00E64231 /* Project object */;
 }

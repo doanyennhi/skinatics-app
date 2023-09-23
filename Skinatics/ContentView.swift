@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
-
+ 
+// TODO: implement logout, user token, profile
 struct ContentView: View {
+    @State private var isAuthenticated: Bool = false
+
     var body: some View {
-        StartUpView()
+        if !isAuthenticated {
+            StartUpView(isAuthenticated: $isAuthenticated)
+        }  else {
+            MainView(user: users[1])
+        }
     }
         
 }
