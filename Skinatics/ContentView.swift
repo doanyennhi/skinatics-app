@@ -11,9 +11,10 @@ import Auth0
 class Authenticator: ObservableObject {
     @Published var isAuthenticated: Bool = false
     final let credentialsManager = CredentialsManager(authentication: authentication())
+    var user: Profile = Profile()
 }
  
-// TODO: implement logout, user token, profile
+// TODO: implement profile
 struct ContentView: View {
     @StateObject var authenticator = Authenticator()
     

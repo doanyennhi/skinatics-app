@@ -57,5 +57,13 @@ final class ScannerViewModel: ObservableObject {
         @unknown default:
             return
         }
+        
+        //    func display() {
+        //        var names = [Ingredient(name: "Niacinamide", description: "")]
+        //        let name = ingredients.filter { $0.name == search }
+        //        names.append(contentsOf: name)
+        //        print(names)
+        //    }
+
     }
 }

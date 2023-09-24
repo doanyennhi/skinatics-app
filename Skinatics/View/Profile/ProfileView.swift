@@ -33,6 +33,7 @@ struct ProfileView: View {
                     
                     if isCleared {
                         authenticator.isAuthenticated = false
+                        authenticator.user = Profile()
                     } else {
                         errorMessage = "There was an error while signing you out. Please try again."
                         showAlert = true
@@ -54,8 +55,8 @@ struct ProfileView: View {
                         .padding(.bottom, 60)
                     
                     // User info
-                    EditField(title: "Name", text: user.name)
-                    EditField(title: "Email", text: user.email)
+                    EditField(title: "Name", text: authenticator.user.name)
+                    EditField(title: "Email", text: authenticator.user.email)
 
                     
                     // Skin Info

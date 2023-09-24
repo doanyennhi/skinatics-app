@@ -204,9 +204,9 @@
 		0F4061E72A94AC3800746054 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0FF2718C2AA859E20092FD3C /* Ingredient.swift */,
 				0F4061F42A974FDC00746054 /* User.swift */,
 				0F4061FE2A9A8D8E00746054 /* ProductsList.swift */,
-				0FF2718C2AA859E20092FD3C /* Ingredient.swift */,
 				0FF271972AA8CE9D0092FD3C /* Store.swift */,
 				0FF271A72AACA9DC0092FD3C /* Review.swift */,
 				0FABD8072AB8D3510082DE61 /* Error.swift */,

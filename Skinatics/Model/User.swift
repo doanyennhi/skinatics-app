@@ -6,6 +6,43 @@
 //
 
 import Foundation
+import JWTDecode
+
+struct Profile {
+  
+  let id: String
+  let name: String
+  let email: String
+    
+    init() {
+        self.id = ""
+        self.name = ""
+        self.email = ""
+    }
+    
+    init(id: String, name: String, email: String) {
+        self.id = id
+        self.name = name
+        self.email = email
+    }
+    
+    static func from(_ idToken: String) -> Profile {
+        guard
+          let jwt = try? decode(jwt: idToken),
+          let id = jwt.subject,
+          let name = jwt.claim(name: "name").string,
+          let email = jwt.claim(name: "email").string
+        else {
+          return Profile()
+        }
+
+        return Profile(
+          id: id,
+          name: name,
+          email: email
+        )
+      }
+}
 
 /// Define model for user account
 struct User: Identifiable {

@@ -33,6 +33,7 @@ struct StartUpView: View {
                     let isStored = authenticator.credentialsManager.store(credentials: credentials)
                     if isStored {
                         self.authenticator.isAuthenticated = true
+                        self.authenticator.user = Profile.from(credentials.idToken)
                     } else {
                         self.authenticator.isAuthenticated = false
                         errorMessage = "Cannot sign you in. Please try again."
