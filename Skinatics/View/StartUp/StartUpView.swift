@@ -35,6 +35,7 @@ struct StartUpView: View {
                         self.authenticator.isAuthenticated = true
                     } else {
                         self.authenticator.isAuthenticated = false
+                        errorMessage = "Cannot sign you in. Please try again."
                         showAlert = true
                     }
                 }
@@ -64,13 +65,13 @@ struct StartUpView: View {
                         .buttonStyle(SecondaryButtonStyle())
                         .padding(.horizontal, 20)
                 }
-                // background color remain constant
                 .alert("Login Unsuccessful", isPresented: $showAlert, actions: {
                     Button("OK", role: .cancel) { }
                 }, message: {
                     Text("Error: \(errorMessage)")
                 })
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                // background color remain constant
                 .background(Color(red: 0.204, green: 0.306, blue: 0.255))
             }
     }

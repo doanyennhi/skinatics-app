@@ -6,14 +6,39 @@
 //
 
 import SwiftUI
+import Auth0
 
 /// Profile screen to show user info
 struct ProfileView: View {
     // Current user
+    @EnvironmentObject var authenticator: Authenticator
     @State private var user: User
+    @State private var showAlert = false
+    @State private var errorMessage = ""
     
     init(_ user: User) {
         _user = State(initialValue: user)
+    }
+    
+    func logout() {
+        Auth0
+              .webAuth()
+              .clearSession { result in
+                switch result {
+                  case .failure(let error):
+                    errorMessage = "Error: \(error.localizedDescription)"
+                    showAlert = true
+                  case .success:
+                    let isCleared = authenticator.credentialsManager.clear()
+                    
+                    if isCleared {
+                        authenticator.isAuthenticated = false
+                    } else {
+                        errorMessage = "There was an error while signing you out. Please try again."
+                        showAlert = true
+                    }
+                }
+              }
     }
     
     var body: some View {
@@ -47,9 +72,28 @@ struct ProfileView: View {
                     SkinInfo(title: "Skin Conditions", items: Array(user.skinConditions))
                     
                     SkinInfo(title: "I Need Help With...", items: Array(user.skinIssues))
+                    
+                    Button(action: {
+                        logout()
+                    }, label: {
+                        Text("Logout")
+                    })
+                        .bold()
+                        .padding(.vertical, 15)
+                        .padding(.horizontal, 50)
+                        .foregroundColor(Color("White"))
+                        .background(Color("Red"))
+                        .cornerRadius(15)
+                        .padding(.top, 60)
                 }
                 .padding(.vertical)
             }
+            .alert("Logout Unsuccessful", isPresented: $showAlert, actions: {
+                Button("OK", role: .cancel) {
+                }
+            }, message: {
+                Text(errorMessage)
+            })
             .modifier(ScreenModifier())
         }
 }
