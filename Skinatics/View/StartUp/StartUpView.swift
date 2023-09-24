@@ -12,21 +12,31 @@ let screenSize: CGRect = UIScreen.main.bounds
 let screenWidth = screenSize.width
 
 struct StartUpView: View {
-    @Binding var isAuthenticated: Bool
+    @EnvironmentObject var authenticator: Authenticator
+    @State private var showAlert = false
+    @State private var errorMessage = ""
     
     private func login() {
         Auth0
         // initiates Universal Login
               .webAuth()
         // show login dialog
-              .start { result in // 3
+              .start { result in
                 switch result {
-                  // 4
+                  // login failed
                   case .failure(let error):
-                    print("Failed with: \(error)")
-                  // 5
-                case .success(_):
-                    self.isAuthenticated = true
+                    errorMessage = error.localizedDescription
+                    showAlert = true
+                  // login success
+                case .success(let credentials):
+                    // store credentials
+                    let isStored = authenticator.credentialsManager.store(credentials: credentials)
+                    if isStored {
+                        self.authenticator.isAuthenticated = true
+                    } else {
+                        self.authenticator.isAuthenticated = false
+                        showAlert = true
+                    }
                 }
               }
     }
@@ -47,30 +57,27 @@ struct StartUpView: View {
                     Text("Your on-the-go skincare assistant.") // app description
                         .foregroundColor(.white)
                         .padding(.bottom, 60)
-                    VStack { // sign up and log in buttons
-                        NavigationLink(destination: SignUpView()) {
-                            Text("Sign Up")
+                        
+                        Button("Get Started") {
+                            login()
                         }
                         .buttonStyle(SecondaryButtonStyle())
                         .padding(.horizontal, 20)
-                        .padding(.bottom, 5)
-                        
-                        Button("Log In") {
-                            login()
-                        }
-                        .buttonStyle(PrimaryButtonStyle())
-                        .padding(.horizontal, 20)
-                    }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 // background color remain constant
+                .alert("Login Unsuccessful", isPresented: $showAlert, actions: {
+                    Button("OK", role: .cancel) { }
+                }, message: {
+                    Text("Error: \(errorMessage)")
+                })
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(red: 0.204, green: 0.306, blue: 0.255))
             }
     }
     
     struct StartUpView_Previews: PreviewProvider {
         static var previews: some View {
-            StartUpView(isAuthenticated: .constant(false))
+            StartUpView()
         }
     }
     

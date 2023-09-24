@@ -6,19 +6,27 @@
 //
 
 import SwiftUI
+import Auth0
+
+class Authenticator: ObservableObject {
+    @Published var isAuthenticated: Bool = false
+    final let credentialsManager = CredentialsManager(authentication: authentication())
+}
  
 // TODO: implement logout, user token, profile
 struct ContentView: View {
-    @State private var isAuthenticated: Bool = false
-
+    @StateObject var authenticator = Authenticator()
+    
     var body: some View {
-        if !isAuthenticated {
-            StartUpView(isAuthenticated: $isAuthenticated)
-        }  else {
-            MainView(user: users[1])
+        NavigationStack {
+            if !authenticator.isAuthenticated {
+                StartUpView()
+            }  else {
+                MainView(user: users[1])
+            }
         }
+        .environmentObject(authenticator)
     }
-        
 }
 
 struct ContentView_Previews: PreviewProvider {

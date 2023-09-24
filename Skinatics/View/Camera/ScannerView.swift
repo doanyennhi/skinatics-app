@@ -97,7 +97,7 @@ struct ScannerView: View {
                     showNextView = false
                 }
             }, message: {
-                Text("There is an error why searching for the item. Please try again.")
+                Text("There is an error while searching for the item. Please try again.")
             })
             .task {
                 viewModel.requestAccessStatus()
