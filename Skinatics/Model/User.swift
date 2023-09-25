@@ -8,11 +8,11 @@
 import Foundation
 import JWTDecode
 
-struct Profile {
+struct Profile: Codable {
   
   let id: String
-  let name: String
-  let email: String
+  var name: String
+  var email: String
     
     init() {
         self.id = ""

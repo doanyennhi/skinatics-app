@@ -12,29 +12,20 @@ var users = [User(name: "Itoshi Rin", email: "rin0909@gmail.com", password: "123
 
 
 struct SignUpView: View {
-    @State private var name: String = ""
-    @State var user: User = User()
+    @State private var fullName: String = ""
+    @EnvironmentObject var authenticator: Authenticator
     
     @State private var showNextView = false     // check if app should navigate to next screen
     @State private var isLoading = false       // check if funtion is running
-    
     // track if error messages are displayed
     @State var showError = false
 
-    /// Return true if pass all conditions, false otherwise
-    func validate() async -> Bool {
+    func updateName() -> Bool {
         // show error if name is invalid
-        if !isNameValid(name: name) {
-            showError = true
+        if !fullName.isNameValid() {
             return false
         } else {
-            showError = false
-            // loading time
-            try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
-            
-            // add new user
-            user.name = name
-            users.append(user)
+            authenticator.user.name = fullName
             return true
         }
     }
@@ -48,9 +39,9 @@ struct SignUpView: View {
                             .padding(.bottom, 30)
                         
                         // Error messages and fields for sign up
-                        ErrorText(show: $showError, text: "Please enter a valid name.")
+                        ErrorText(show: $showError, text: "Please enter a valid name")
                         
-                        TextField("Name", text: $name)
+                        TextField("Full Name", text: $fullName)
                             .textFieldStyle(CustomTextFieldStyle())
                         .padding(.bottom, 60)
                         
@@ -63,13 +54,15 @@ struct SignUpView: View {
                         .padding(.bottom)
                         // disable navigation when loading
                         Button (action: {
-                            // loading to run sign up function
+                            // loading to validate input
                             isLoading = true
-                                Task {
-                                    // navigate to next screen if sign up successful
-                                    showNextView = await validate()
-                                    isLoading = false
+                            let isUpdated = updateName()
+                            if isUpdated {
+                                showNextView = true
+                            } else {
+                                showError = true
                             }
+                            isLoading = false
                         }, label: {
                             if isLoading {
                                 ProgressView()
@@ -81,7 +74,7 @@ struct SignUpView: View {
                         .buttonStyle(PrimaryButtonStyle())
                         .disabled(isLoading)
                         .navigationDestination(isPresented: $showNextView, destination: {
-                            SkinQuizView(user: user)
+                            SkinQuizView()
                         })
                     }
                     .modifier(ScreenModifier())

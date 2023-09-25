@@ -15,18 +15,21 @@ struct CheckItem: View {
     var action: () -> Void       // action performed when item is tapped
 
     var body: some View {
-        HStack {
-            Text(content)
-            Spacer()
-            // Show green tick mark if selected
-            Image(systemName: isSelected ? "checkmark.circle.fill": "circle")
-                .foregroundColor(isSelected ? Color("Secondary Green") : .gray)
+        VStack {
+            HStack {
+                Text(content)
+                Spacer()
+                // Show green tick mark if selected
+                Image(systemName: isSelected ? "checkmark.circle.fill": "circle")
+                    .foregroundColor(isSelected ? Color("Secondary Green") : .gray)
+            }
+            .padding(.vertical, 30)
+            Divider()
         }
         // Highlight selected item
         .foregroundColor(isSelected ? Color("Secondary Green") : Color("Black"))
         .fontWeight(isSelected ? .bold : .regular)
-        
-        .padding(.vertical, 20)
+        .padding(.horizontal, 20)
         .contentShape(Rectangle())
         .onTapGesture {
             isSelected.toggle()

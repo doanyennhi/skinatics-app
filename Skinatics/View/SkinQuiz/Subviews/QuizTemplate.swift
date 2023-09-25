@@ -51,6 +51,7 @@ struct QuizTemplate<Content: View>: View {
                             Text(btnText)
                         }
                         .padding(.bottom, 20)
+                        // auto navigation if optional
                         // if quiz is required, disable navigation if no options selected
                         .disabled(selectionOptional ? false : selected.isEmpty)
                         .buttonStyle(PrimaryButtonStyle())

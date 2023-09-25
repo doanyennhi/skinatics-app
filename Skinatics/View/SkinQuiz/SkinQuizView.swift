@@ -16,42 +16,47 @@ struct SkinQuizView: View {
     @State var selectedTypes = Set<String>()
     // track if display error message
     @State var show: Bool = false
-    @State var user: User      // current user
+    @EnvironmentObject var authenticator: Authenticator
+    @State var user = User()
     
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .center) {
-                Text("What's your skin type?").largeTitle(multilineCenter: true)
-                ErrorText(show: $show, text: "Please select at least one item")
-                
-                // Checklist for skin types
-                    List(skinTypes, id: \.self) { skinType in
-                        CheckItem(content: skinType, isSelected: selectedTypes.contains(skinType)) {
-                            toggleItem(set: &selectedTypes, item: skinType)
-                            print(selectedTypes)
+        GeometryReader { geometry in
+            NavigationStack {
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .center) {
+                        Text("What's your skin type?").largeTitle(multilineCenter: true)
+                        ErrorText(show: $show, text: "Please select at least one item")
+                        
+                        // Checklist for skin types
+                            ForEach(skinTypes, id: \.self) { skinType in
+                                CheckItem(content: skinType, isSelected: selectedTypes.contains(skinType)) {
+                                    toggleItem(set: &selectedTypes, item: skinType)
+                                    print(selectedTypes)
+                                }
+                            }
+                        
+                        NavigationLink(destination: SkinIssuesView(user: user)) {
+                            Text("Next")
                         }
-                        .listRowBackground(Color("Floral White"))
-                }
-                    .listStyle(.plain)
-                
-                NavigationLink(destination: SkinIssuesView(user: user)) {
-                    Text("Next")
-                }
-                .buttonStyle(PrimaryButtonStyle())
-                // prevent navigation if no options selected
-                .disabled(selectedTypes.isEmpty)
-                .simultaneousGesture(TapGesture().onEnded {
-                    // show error message if no options selected
-                    if selectedTypes.isEmpty {
-                        show = true
-                    } else {
-                        show = false
-                        // add selected options to user data
-                        user.skinTypes = selectedTypes
+                        .buttonStyle(PrimaryButtonStyle())
+                        .padding(.top)
+                        // prevent navigation if no options selected
+                        .disabled(selectedTypes.isEmpty)
+                        .simultaneousGesture(TapGesture().onEnded {
+                            // show error message if no options selected
+                            if selectedTypes.isEmpty {
+                                show = true
+                            } else {
+                                show = false
+                                // add selected options to user data
+                                user.skinTypes = selectedTypes
+                            }
+                        })
                     }
-                })
+                    .frame(minHeight: geometry.size.height)
+                }
+                .modifier(ScreenModifier())
             }
-            .modifier(ScreenModifier())
         }
         
     }
