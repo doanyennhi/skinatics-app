@@ -11,4 +11,8 @@ extension String {
     func stripHTML() -> String {
         return self.replacing(/<[^>]+>/, with: "")
     }
+    
+    func isNameValid() -> Bool {
+        return !self.isEmpty && self.count >= 3
+    }
 }

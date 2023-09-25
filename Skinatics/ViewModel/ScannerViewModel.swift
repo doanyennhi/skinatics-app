@@ -22,6 +22,7 @@ enum ScannerAccessStatus {
     case notDetermined
 }
 
+// TODO: implement ingredient display
 @MainActor
 final class ScannerViewModel: ObservableObject {
     
@@ -81,7 +82,7 @@ final class ScannerViewModel: ObservableObject {
             
             do {
                 // get error message if request unsuccessful
-                if (400...499).contains(res.statusCode) {
+                if (400...599).contains(res.statusCode) {
                     let decodedData = try JSONDecoder().decode(Error.self, from: data)
                     DispatchQueue.main.async {
                         print(decodedData)

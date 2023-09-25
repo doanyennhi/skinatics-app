@@ -21,14 +21,14 @@ struct CameraView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) { }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
+        Coordinator(self)
     }
     
     // coordinate/ perform all camera-related actions
     final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         var parent: CameraView
         
-        init(parent: CameraView) {
+        init(_ parent: CameraView) {
             self.parent = parent
         }
         

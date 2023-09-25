@@ -34,6 +34,7 @@ struct ProfileView: View {
                     if isCleared {
                         authenticator.isAuthenticated = false
                         authenticator.user = Profile()
+                        showAlert = false
                     } else {
                         errorMessage = "There was an error while signing you out. Please try again."
                         showAlert = true
@@ -101,5 +102,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView(users[1])
+            .environmentObject(Authenticator())
     }
 }

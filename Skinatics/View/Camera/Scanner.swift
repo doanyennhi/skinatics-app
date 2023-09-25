@@ -35,13 +35,13 @@ struct Scanner: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(parent: self)
+        return Coordinator(self)
     }
     
     final class Coordinator: NSObject, DataScannerViewControllerDelegate {
         var parent: Scanner
         
-        init(parent: Scanner) {
+        init(_ parent: Scanner) {
             self.parent = parent
         }
         
