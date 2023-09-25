@@ -12,44 +12,11 @@ struct ScannerView: View {
     @State var startScanning = false
     @State var scannedItem: String = "602004138200"
     @State var scannerType: ScannerType
-    @State private var productId = ""
-    @State var isLoading = false
-    @State var showNextView = false
-    @State var showAlert = false
+    //@State private var productId = ""
+    //@State var isLoading = false
+//    @State var showNextView = false
+//    @State var showAlert = false
     @StateObject private var viewModel = ScannerViewModel()
-    
-    func getData() async {
-        isLoading = true
-        guard let request = setRequestHeader(link: "https://sephora.p.rapidapi.com/products/v2/search-by-barcode?upcs=\(scannedItem)&country=AU&language=en-AU") else { return }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let res = response as? HTTPURLResponse else { return }
-            guard let data = data else { return }
-            
-            do {
-                // get error message if request unsuccessful
-                if (400...499).contains(res.statusCode) {
-                    let decodedData = try JSONDecoder().decode(Error.self, from: data)
-                    print(decodedData)
-                    isLoading = false
-                    showAlert = true
-                } else {
-                    // decode data
-                    let decodedData = try JSONDecoder().decode(ProductSearch.self, from: data)
-                    
-                    // send task back to main thread
-                    DispatchQueue.main.async {
-                        self.productId = decodedData.data.attributes.productId
-                        print(productId)
-                        showNextView = !productId.isEmpty
-                        isLoading = false
-                    }
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
     
     var body: some View {
         NavigationStack {
@@ -64,10 +31,10 @@ struct ScannerView: View {
                     Button (action: {
                         // start running function
                         Task {
-                            // await getData()
+                            await viewModel.getProductByBarcode(scannedItem: scannedItem)
                         }
                     }, label: {
-                        if isLoading {
+                        if viewModel.isLoading {
                             ProgressView()
                                 .tint(Color("White"))
                         } else {
@@ -77,10 +44,10 @@ struct ScannerView: View {
                             }
                         }
                     })
-                    .disabled(isLoading)
+                    .disabled(viewModel.isLoading)
                     // go to skin quiz if user has not completed it, go to Home otherwise
-                    .navigationDestination(isPresented: $showNextView, destination: {
-                        ProductDetailView(productId: productId)})
+                    .navigationDestination(isPresented: $viewModel.showNextView, destination: {
+                        ProductDetailView(productId: viewModel.result)})
                     .padding(10)
                     .background(Color.accentColor)
                     .foregroundColor(Color("White"))
@@ -92,9 +59,9 @@ struct ScannerView: View {
                 .font(Font.custom("Avenir", size: 18, relativeTo: .body))
                 .background(Color("Floral White"))
             }
-            .alert("Error", isPresented: $showAlert, actions: {
+            .alert("Error", isPresented: $viewModel.showAlert, actions: {
                 Button("OK", role: .cancel) {
-                    showNextView = false
+                    viewModel.showNextView = false
                 }
             }, message: {
                 Text("There is an error while searching for the item. Please try again.")

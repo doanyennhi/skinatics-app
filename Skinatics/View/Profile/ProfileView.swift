@@ -58,7 +58,6 @@ struct ProfileView: View {
                     EditField(title: "Name", text: authenticator.user.name)
                     EditField(title: "Email", text: authenticator.user.email)
 
-                    
                     // Skin Info
                     HStack {
                         Text("My Skin").title()

@@ -27,6 +27,10 @@ final class ScannerViewModel: ObservableObject {
     
     @Published var scannerType: ScannerType = .text
     @Published var accessStatus: ScannerAccessStatus = .notDetermined
+    @Published var isLoading: Bool = false
+    @Published var showNextView: Bool = false
+    @Published var showAlert: Bool = false
+    @Published var result = ""
     
     var dataType: DataScannerViewController.RecognizedDataType {
         return scannerType == .text ? .text() : .barcode()
@@ -65,5 +69,40 @@ final class ScannerViewModel: ObservableObject {
         //        print(names)
         //    }
 
+    }
+    
+    func getProductByBarcode(scannedItem: String) async {
+        isLoading = true
+        guard let request = setRequestHeader(link: "https://sephora.p.rapidapi.com/products/v2/search-by-barcode?upcs=\(scannedItem)&country=AU&language=en-AU") else { return }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let res = response as? HTTPURLResponse else { return }
+            guard let data = data else { return }
+            
+            do {
+                // get error message if request unsuccessful
+                if (400...499).contains(res.statusCode) {
+                    let decodedData = try JSONDecoder().decode(Error.self, from: data)
+                    DispatchQueue.main.async {
+                        print(decodedData)
+                        self.isLoading = false
+                        self.showAlert = true
+                    }
+                } else {
+                    // decode data
+                    let decodedData = try JSONDecoder().decode(ProductSearch.self, from: data)
+                    
+                    // send task back to main thread
+                    DispatchQueue.main.async {
+                        self.result = decodedData.data.attributes.productId
+                        print(self.result)
+                        self.showNextView = !self.result.isEmpty
+                        self.isLoading = false
+                    }
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
     }
 }
