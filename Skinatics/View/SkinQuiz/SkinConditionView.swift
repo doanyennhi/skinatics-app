@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Auth0
 
 // skin condition options
 var conditions: [String] = ["Acne", "Rosacea", "Eczema", "Rash", "Melasma", "Hives", "Psoriasis", "Dermatitis"]
@@ -17,33 +18,35 @@ struct SkinConditionView: View {
     @EnvironmentObject var authenticator: Authenticator
     @State var errorMessage = ""
     
+    // TODO: get correct username and skin info
     func updateUserInfo() async {
-        var param: Data?
-        var profile = authenticator.user
-        do {
-            let userJson = try JSONEncoder().encode(profile)
-            param = String(data: userJson, encoding: .utf8)?.data(using: .utf8)
-        } catch {
-            errorMessage = "Error: \(error.localizedDescription)"
-            return
-        }
-        
-        var request = URLRequest(url: URL(
-            string: "https://login.auth0.com/api/v2/users/\(user.id)")!, timeoutInterval: Double.infinity)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        request.httpMethod = "PATCH"
-        request.httpBody = param
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                print(String(describing: error))
-                return
+        var credentials: Credentials?
+        authenticator.credentialsManager.credentials { result in
+            switch result {
+            case .success(let res):
+                credentials = res
+            case .failure(let error):
+                print("Failed with: \(error.localizedDescription)")
+                credentials = nil
             }
-            print(String(data: data, encoding: .utf8)!)
         }
-        task.resume()
+        
+        let attributes = UserPatchAttributes()
+            .username("Sae Itoshi", connection: "Username-Password-Authentication")
+            .userMetadata(["skin_condition": Array(selected), "last_name": "Appleseed"])
+            .appMetadata(["didFinishProfile": true])
+        
+        Auth0
+            .users(token: credentials?.accessToken ?? "")
+            .patch(authenticator.user.id, attributes: attributes)
+            .start { result in
+                switch result {
+                case .success(let user):
+                    print("Updated user: \(user)")
+                case .failure(let error):
+                    print("Failed with: \(error.localizedDescription)")
+                }
+            }
     }
  
     // add selected options to user data

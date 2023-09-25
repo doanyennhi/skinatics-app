@@ -11,7 +11,7 @@ import Auth0
 class Authenticator: ObservableObject {
     @Published var isAuthenticated: Bool = false
     final let credentialsManager = CredentialsManager(authentication: authentication())
-    var user: Profile = Profile()
+    @Published var user: Profile = Profile()
 }
  
 // TODO: implement profile
@@ -23,7 +23,7 @@ struct ContentView: View {
             if !authenticator.isAuthenticated {
                 StartUpView()
             }  else {
-                MainView(user: users[1])
+                SignUpView()
             }
         }
         .environmentObject(authenticator)
