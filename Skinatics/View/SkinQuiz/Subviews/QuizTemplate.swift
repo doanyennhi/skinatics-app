@@ -22,6 +22,8 @@ struct QuizTemplate<Content: View>: View {
     var btnText: String
     var selectionOptional: Bool     // state if this quiz section is optional
     var action: () -> Void          // action when button is tapped
+    @Binding var showUpdateError: Bool
+    @Binding var errorMessage: String
     
     
     var body: some View {
@@ -73,6 +75,12 @@ struct QuizTemplate<Content: View>: View {
                 }
                 .verticalFadeOut(topHeight: 30, bottomHeight: 20)
                 .modifier(ScreenModifier())
+                .alert("Cannot update your information", isPresented: $showUpdateError, actions: {
+                    Button("OK", role: .cancel) {
+                    }
+                }, message: {
+                    Text(errorMessage)
+                })
             }
         }
     }
@@ -80,6 +88,6 @@ struct QuizTemplate<Content: View>: View {
 
 struct QuizTemplate_Previews: PreviewProvider {
     static var previews: some View {
-        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: .constant(Set<String>()), screen: MainTabView(user: users[1]).navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {})
+        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: .constant(Set<String>()), screen: MainTabView(user: users[1]).navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {}, showUpdateError: .constant(false), errorMessage: .constant(""))
     }
 }

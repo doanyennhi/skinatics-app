@@ -8,7 +8,7 @@
 import SwiftUI
 
 // mock user data
-var users = [User(name: "Itoshi Rin", email: "rin0909@gmail.com", password: "123Rin", skinTypes: [], skinIssues: [], skinConditions: []), User(name: "Itoshi Sae", email: "sae10@gmail.com", password: "1010Itoshisae", skinTypes: ["Dry", "Acne-prone"], skinIssues: ["Dark spots", "Redness"], skinConditions: [])]
+var users = [User(name: "Itoshi Rin", email: "rin0909@gmail.com", password: "0909RinItoshi", skinTypes: [], skinIssues: [], skinConditions: []), User(name: "Itoshi Sae Nagiseishiro06", email: "sae10@gmail.com", password: "1010Itoshisae", skinTypes: ["Dry", "Acne-prone"], skinIssues: ["Dark spots", "Redness"], skinConditions: [])]
 
 
 struct SignUpView: View {
@@ -25,7 +25,7 @@ struct SignUpView: View {
         if !fullName.isNameValid() {
             return false
         } else {
-            authenticator.user.name = fullName
+            authenticator.user.userMetadata["name"] = fullName
             return true
         }
     }

@@ -48,8 +48,8 @@ struct SkinQuizView: View {
                                 show = true
                             } else {
                                 show = false
-                                // add selected options to user data
-                                user.skinTypes = selectedTypes
+                                // add selected options to user metadata
+                                authenticator.user.userMetadata["skinType"] = Array(selectedTypes)
                             }
                         })
                     }

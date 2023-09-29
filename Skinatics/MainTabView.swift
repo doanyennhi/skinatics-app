@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct MainTabView: View {
-    var user: User
     @State private var products: [Product]?
     @State var isLoading = false
     
@@ -46,7 +45,7 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            HomeView(user: user, products: $products, isLoading: $isLoading)
+            HomeView(products: $products, isLoading: $isLoading)
                 .tabItem({
                     Label("Home", systemImage: "house")
                 })
@@ -61,7 +60,7 @@ struct MainTabView: View {
                     Label("Camera", systemImage: "camera.circle.fill")
                 })
             
-            ProfileView(user)
+            ProfileView()
                 .tabItem({
                     Label("Profile", systemImage: "person.crop.circle")
                 })
@@ -78,6 +77,6 @@ struct MainTabView: View {
 
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
-        MainTabView(user: users[1])
+        MainTabView()
     }
 }

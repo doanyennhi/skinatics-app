@@ -27,7 +27,7 @@ struct MainView: View {
     func getMetadata(accessToken: String, userId: String) async {
         Auth0
                     .users(token: accessToken)
-                    .get(userId, fields: ["user_metadata", "app_metadata"])
+                    .get(userId, fields: ["user_metadata"])
                     .start { result in
                         switch result {
                         case .failure(let error):
@@ -38,7 +38,6 @@ struct MainView: View {
                             // Get user metadata
                             DispatchQueue.main.async {
                                 authenticator.user.userMetadata = metadata["user_metadata"] as? [String: Any] ?? [:]
-                                authenticator.user.appMetadata = metadata["app_metadata"] as? [String: Any] ?? [:]
                                 isLoading = false
                             }
                         }
@@ -47,7 +46,7 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack {
-            let didFinishSignUp = authenticator.user.appMetadata["didFinishSignUp"] as? Int ?? 0
+            let didFinishSignUp = authenticator.user.userMetadata["didFinishSignUp"] as? Int ?? 0
 
             if isLoading {
                 ProgressView()

@@ -98,7 +98,7 @@ struct LoginView: View {
                     if currentUser.skinTypes.isEmpty || currentUser.skinIssues.isEmpty {
                         SkinQuizView(user: currentUser).navigationBarBackButtonHidden()
                     } else {
-                        MainView(user: currentUser).navigationBarBackButtonHidden()
+                        MainTabView(user: currentUser).navigationBarBackButtonHidden()
                     }
                 })
                 
