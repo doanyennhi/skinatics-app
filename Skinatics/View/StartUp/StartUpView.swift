@@ -17,24 +17,21 @@ struct StartUpView: View {
     @State private var errorMessage = ""
     
     private func login() {
-        guard let domain = InfoPlistHandler.getValue(key: "Domain")
-            else {
-              return
-            }
+        guard let domain = PlistHandler.getValue(filename: "Auth0", key: "Domain")
+        else {
+            return
+        }
         
         Auth0
-        // initiates Universal Login
-              .webAuth()
-              .audience("https://\(domain)/api/v2/")
-              .scope("openid profile email read:current_user update:current_user_metadata")
-        // show login dialog
-              .start { result in
+            .webAuth()              // initiates Universal Login
+            .audience("https://\(domain)/api/v2/")
+            .scope("openid profile email read:current_user update:current_user_metadata")
+            .start { result in          // show login dialog
                 switch result {
-                  // login failed
-                  case .failure(let error):
+                case .failure(let error):        // login failed
                     errorMessage = error.localizedDescription
                     showAlert = true
-                  // login success
+                    // login success
                 case .success(let credentials):
                     // store credentials
                     let isStored = authenticator.credentialsManager.store(credentials: credentials)
@@ -47,41 +44,41 @@ struct StartUpView: View {
                         showAlert = true
                     }
                 }
-              }
+            }
     }
     
     var body: some View {
-            NavigationStack {
-                StartUpLayout {
-                    Image("logo-white") // logo
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: screenWidth)
-                        .padding(.bottom, 10)
-                    Text("Skinatics") // app name
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(.white)
-                        .padding(.vertical, 20)
-                    Text("Your on-the-go skincare assistant.") // app description
-                        .foregroundColor(.white)
-                        .padding(.bottom, 60)
-                        
-                        Button("Get Started") {
-                            login()
-                        }
-                        .buttonStyle(SecondaryButtonStyle())
-                        .padding(.horizontal, 20)
+        NavigationStack {
+            StartUpLayout {
+                Image("logo-white") // logo
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: screenWidth)
+                    .padding(.bottom, 10)
+                Text("Skinatics") // app name
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(.vertical, 20)
+                Text("Your on-the-go skincare assistant.") // app description
+                    .foregroundColor(.white)
+                    .padding(.bottom, 60)
+                
+                Button("Get Started") {
+                    login()
                 }
-                .alert("Login Unsuccessful", isPresented: $showAlert, actions: {
-                    Button("OK", role: .cancel) { }
-                }, message: {
-                    Text("Error: \(errorMessage)")
-                })
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                // background color remain constant
-                .background(Color(red: 0.204, green: 0.306, blue: 0.255))
+                .buttonStyle(SecondaryButtonStyle())
+                .padding(.horizontal, 20)
             }
+            .alert("Login Unsuccessful", isPresented: $showAlert, actions: {
+                Button("OK", role: .cancel) { }
+            }, message: {
+                Text("Error: \(errorMessage)")
+            })
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            // background color remain constant
+            .background(Color(red: 0.204, green: 0.306, blue: 0.255))
+        }
     }
 }
 
@@ -133,5 +130,3 @@ struct StartUpView_Previews: PreviewProvider {
         StartUpView()
     }
 }
-
-

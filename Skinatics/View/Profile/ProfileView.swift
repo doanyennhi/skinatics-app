@@ -15,9 +15,39 @@ struct ProfileView: View {
     @State private var user: User
     @State private var showAlert = false
     @State private var errorMessage = ""
+    @State var isLoading: Bool = false
     
     init(_ user: User) {
         _user = State(initialValue: user)
+    }
+    
+    func getMetadata() {
+        isLoading = true
+        authenticator.credentialsManager.credentials { result in
+        
+            switch result {
+            case .success(let credentials):
+                Auth0
+                    .users(token: credentials.accessToken)
+                    .get(authenticator.user.id, fields: ["user_metadata"])
+                    .start { result in
+                        switch result {
+                        case .failure(let error):
+                            print("Error: \(error.localizedDescription)")
+                        case .success(let metadata):
+                            // Get user metadata
+                            DispatchQueue.main.async {
+                                authenticator.user.userMetadata = metadata["user_metadata"] as? [String: Any] ?? [:]
+                                isLoading = false
+                            }
+                        }
+                    }
+                
+            case .failure(let error):
+                print("Failed with: \(error.localizedDescription)")
+                isLoading = false
+            }
+        }
     }
     
     func logout() {
@@ -30,7 +60,7 @@ struct ProfileView: View {
                     showAlert = true
                   case .success:
                     let isCleared = authenticator.credentialsManager.clear()
-                    
+
                     if isCleared {
                         authenticator.isAuthenticated = false
                         authenticator.user = Profile()
@@ -68,11 +98,13 @@ struct ProfileView: View {
                             .foregroundColor(Color("Secondary Green"))
                             .fontWeight(.semibold)
                     }
-                    SkinInfo(title: "Skin Type", items: Array(user.skinTypes))
                     
-                    SkinInfo(title: "Skin Conditions", items: Array(user.skinConditions))
                     
-                    SkinInfo(title: "I Need Help With...", items: Array(user.skinIssues))
+                    SkinInfo(title: "Skin Type", items: authenticator.user.userMetadata["skinType"] as? [String] ?? [""], isLoading: $isLoading)
+                    
+                    SkinInfo(title: "Skin Conditions", items: authenticator.user.userMetadata["skinConditions"] as? [String] ?? [""], isLoading: $isLoading)
+                    
+                    SkinInfo(title: "I Need Help With...", items: authenticator.user.userMetadata["skinIssues"] as? [String] ?? [""], isLoading: $isLoading)
                     
                     Button(action: {
                         logout()
@@ -96,6 +128,7 @@ struct ProfileView: View {
                 Text(errorMessage)
             })
             .modifier(ScreenModifier())
+            .onAppear(perform: getMetadata)
         }
 }
 
