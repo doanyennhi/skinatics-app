@@ -8,22 +8,28 @@
 import Foundation
 import JWTDecode
 
-struct Profile: Codable {
+struct Profile {
   
   let id: String
   var name: String
   var email: String
+    var userMetadata: [String: Any]
+    var appMetadata: [String: Any]
     
     init() {
         self.id = ""
         self.name = ""
         self.email = ""
+        userMetadata = [:]
+        appMetadata = [:]
     }
     
     init(id: String, name: String, email: String) {
         self.id = id
         self.name = name
         self.email = email
+        userMetadata = [:]
+        appMetadata = [:]
     }
     
     static func from(_ idToken: String) -> Profile {

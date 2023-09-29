@@ -2,77 +2,71 @@
 //  MainView.swift
 //  Skinatics
 //
-//  Created by Nhii on 12/9/2023.
+//  Created by Nhii on 29/9/2023.
 //
 
 import SwiftUI
-
+import Auth0
 
 struct MainView: View {
-    var user: User
-    @State private var products: [Product]?
+    @EnvironmentObject private var authenticator: Authenticator
     @State var isLoading = false
     
-    func getProducts() async {
-        guard let request = setRequestHeader(link: "https://sephora.p.rapidapi.com/products/v2/list?number=1&size=10&country=AU&language=en-AU&root_category=skincare") else {
-            return
+    func getCredentials() async {
+        isLoading = true
+        do {
+            let credentials = try await authenticator.credentialsManager.credentials()
+            self.authenticator.user = Profile.from(credentials.idToken)
+            await getMetadata(accessToken: credentials.accessToken, userId: authenticator.user.id)
+        } catch {
+            print("Failed with: \(error.localizedDescription)")
+            isLoading = false
         }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let res = response as? HTTPURLResponse else { return }
-            guard let data = data else { return }
-            
-            do {
-                // get error message if request unsuccessful
-                if (400...499).contains(res.statusCode) {
-                    let decodedData = try JSONDecoder().decode(Error.self, from: data)
-                    print(decodedData)
-                    self.products = nil
-                } else {
-                    // decode data
-                    let decodedData = try JSONDecoder().decode(ProductsList.self, from: data)
-                    
-                    // send task back to main thread
-                    DispatchQueue.main.async {
-                        self.products = decodedData.data
+    }
+    
+    func getMetadata(accessToken: String, userId: String) async {
+        Auth0
+                    .users(token: accessToken)
+                    .get(userId, fields: ["user_metadata", "app_metadata"])
+                    .start { result in
+                        switch result {
+                        case .failure(let error):
+                            print("Error: \(error.localizedDescription)")
+                            isLoading = false
+                            
+                        case .success(let metadata):
+                            // Get user metadata
+                            DispatchQueue.main.async {
+                                authenticator.user.userMetadata = metadata["user_metadata"] as? [String: Any] ?? [:]
+                                authenticator.user.appMetadata = metadata["app_metadata"] as? [String: Any] ?? [:]
+                                isLoading = false
+                            }
+                        }
                     }
-                }
-            } catch {
-                print(error.localizedDescription)
-                self.products = nil
-            }
-        }.resume()
     }
     
     var body: some View {
-        TabView {
-            HomeView(user: user, products: $products, isLoading: $isLoading)
-                .tabItem({
-                    Label("Home", systemImage: "house")
-                })
-            
-            SkinPhotoView()
-                .tabItem({
-                    Label("Camera", systemImage: "camera.circle.fill")
-                })
-            
-            ProfileView(user)
-                .tabItem({
-                    Label("Profile", systemImage: "person.crop.circle")
-                })
+        NavigationStack {
+            let didFinishSignUp = authenticator.user.appMetadata["didFinishSignUp"] as? Int ?? 0
+
+            if isLoading {
+                ProgressView()
+            } else {
+                if  didFinishSignUp == 1 {
+                    MainTabView(user: users[1])
+                } else {
+                    SignUpView()
+                }
+            }
         }
         .task {
-            if products == nil {
-                isLoading = true
-                // await getProducts()
-                isLoading = false
-            }
+            await getCredentials()
         }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(user: users[1])
+        MainView()
     }
 }

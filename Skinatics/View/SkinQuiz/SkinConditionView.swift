@@ -51,7 +51,7 @@ struct SkinConditionView: View {
  
     // add selected options to user data
     var body: some View {
-        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: $selected, screen: MainView(user: user).navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {user.skinConditions = selected})
+        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: $selected, screen: MainTabView(user: user).navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {user.skinConditions = selected})
     }
 }
 

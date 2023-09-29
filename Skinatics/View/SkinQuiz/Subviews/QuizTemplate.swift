@@ -80,6 +80,6 @@ struct QuizTemplate<Content: View>: View {
 
 struct QuizTemplate_Previews: PreviewProvider {
     static var previews: some View {
-        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: .constant(Set<String>()), screen: MainView(user: users[1]).navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {})
+        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: .constant(Set<String>()), screen: MainTabView(user: users[1]).navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {})
     }
 }

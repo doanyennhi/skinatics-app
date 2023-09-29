@@ -10,10 +10,10 @@ import Foundation
 func setRequestHeader(link: String) -> URLRequest? {
     let url = URL(string: link)!
     
-    guard let apiKey = InfoPlistHandler.getValue(key: "API_KEY") as? String else {
+    guard let apiKey = PlistHandler.getValue(filename: "Info", key: "API_HOST") as? String else {
         return nil
     }
-    guard let apiHost = InfoPlistHandler.getValue(key: "API_HOST") as? String else {
+    guard let apiHost = PlistHandler.getValue(filename: "Info", key: "API_HOST") as? String else {
         return nil
     }
     
