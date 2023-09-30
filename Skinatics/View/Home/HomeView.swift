@@ -25,12 +25,13 @@ var productsList: [Product] = [
 
 var banners = [
     BannerDetail(id: 0, title: "Take your quiz again", icon: "arrow.triangle.2.circlepath", view: AnyView(SkinQuizView())),
-    BannerDetail(id: 1, title: "Remember to do your routine", icon: "moon.fill", view: AnyView(RoutineView())),
-    BannerDetail(id: 2, title: "Do another skin analysis", icon: "faceid", view: AnyView(SkinPhotoView())),
+    BannerDetail(id: 1, title: "Remember to do your routine", icon: "moon.fill", view: AnyView(RoutineView()), tabItem: .search),
+    BannerDetail(id: 2, title: "Do another skin analysis", icon: "faceid", view: AnyView(SkinPhotoView()), tabItem: .camera),
 ]
 
 struct HomeView: View {
     @EnvironmentObject private var authenticator: Authenticator
+    @EnvironmentObject private var tabHandler: TabHandler
     @State private var index = 0       // banner item index
     @Binding var products: [Product]?
     @Binding var isLoading: Bool
@@ -42,13 +43,14 @@ struct HomeView: View {
                 HStack {
                     Text("Hi, \n\(authenticator.user.userMetadata["name"] as? String ?? "")").largeTitle(multilineCenter: false)
                     Spacer()
-                    NavigationLink(destination: ProfileView().navigationBarBackButtonHidden(true)) {
                         Image("profile")
                             .resizable()
                             .scaledToFit()
                             .clipShape(Circle())
                             .frame(width: 90)
-                    }
+                            .onTapGesture {
+                                tabHandler.currentTab = .profile
+                            }
                 }
                 .padding(.bottom, 10)
                 .padding(.horizontal, 10)
@@ -58,6 +60,11 @@ struct HomeView: View {
                     TabView(selection: $index) {
                         ForEach(banners, id: \.self.id) { banner in
                             BannerItem(detail: banner)
+                                .onTapGesture {
+                                        if let tabItem = banner.tabItem {
+                                            tabHandler.currentTab = tabItem
+                                        }
+                                }
                         }
                     }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                     

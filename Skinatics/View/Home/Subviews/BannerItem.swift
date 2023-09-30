@@ -12,6 +12,7 @@ struct BannerDetail: Identifiable {
     var title: String
     var icon: String
     var view: AnyView
+    var tabItem: TabItem?
 }
 
 struct BannerItem: View {
@@ -38,6 +39,7 @@ struct BannerItem: View {
                     .padding(.horizontal, 45)
             }
         }
+        .disabled((detail.tabItem != nil))
         }
 }
 

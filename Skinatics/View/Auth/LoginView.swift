@@ -96,7 +96,7 @@ struct LoginView: View {
                 // go to skin quiz if user has not completed it, go to Home otherwise
                 .navigationDestination(isPresented: $showNextView, destination: {
                     if currentUser.skinTypes.isEmpty || currentUser.skinIssues.isEmpty {
-                        SkinQuizView(user: currentUser).navigationBarBackButtonHidden()
+                        SkinQuizView().navigationBarBackButtonHidden()
                     } else {
                         MainTabView().navigationBarBackButtonHidden()
                     }

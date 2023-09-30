@@ -7,8 +7,20 @@
 
 import SwiftUI
 
+enum TabItem: String {
+    case home
+    case search
+    case camera
+    case routine
+    case profile
+}
+
+class TabHandler: ObservableObject {
+    @Published var currentTab: TabItem = .home
+}
 
 struct MainTabView: View {
+    @StateObject var tabHandler = TabHandler()
     @State private var products: [Product]?
     @State var isLoading = false
     
@@ -21,50 +33,53 @@ struct MainTabView: View {
             guard let res = response as? HTTPURLResponse else { return }
             guard let data = data else { return }
             
-            do {
-                // get error message if request unsuccessful
-                if (400...499).contains(res.statusCode) {
-                    let decodedData = try JSONDecoder().decode(Error.self, from: data)
-                    print(decodedData)
-                    self.products = nil
-                } else {
-                    // decode data
-                    let decodedData = try JSONDecoder().decode(ProductsList.self, from: data)
-                    
-                    // send task back to main thread
-                    DispatchQueue.main.async {
-                        self.products = decodedData.data
+            DispatchQueue.main.async {
+                do {
+                    // get error message if request unsuccessful
+                    if (400...499).contains(res.statusCode) {
+                        let decodedData = try JSONDecoder().decode(Error.self, from: data)
+                        print(decodedData)
+                        self.products = nil
+                    } else {
+                        // decode data
+                        let decodedData = try JSONDecoder().decode(ProductsList.self, from: data)
+                        
+                        // send task back to main thread
+                        DispatchQueue.main.async {
+                            self.products = decodedData.data
+                        }
                     }
+                } catch {
+                    print(error.localizedDescription)
+                    self.products = nil
                 }
-            } catch {
-                print(error.localizedDescription)
-                self.products = nil
             }
         }.resume()
     }
     
     var body: some View {
-        TabView {
+        TabView(selection: $tabHandler.currentTab) {
             HomeView(products: $products, isLoading: $isLoading)
                 .tabItem({
                     Label("Home", systemImage: "house")
-                })
+                }).tag(TabItem.home)
             
             SearchView()
                 .tabItem({
                     Label("Search", systemImage: "magnifyingglass")
-                })
+                }).tag(TabItem.search)
             
             SkinPhotoView()
                 .tabItem({
                     Label("Camera", systemImage: "camera.circle.fill")
-                })
+                }).tag(TabItem.camera)
             
             ProfileView()
                 .tabItem({
                     Label("Profile", systemImage: "person.crop.circle")
-                })
+                }).tag(TabItem.profile)
         }
+        .environmentObject(tabHandler)
         .task {
             if products == nil {
                 isLoading = true
@@ -78,5 +93,6 @@ struct MainTabView: View {
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
+            .environmentObject(TabHandler())
     }
 }
