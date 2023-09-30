@@ -22,12 +22,16 @@ var productsList: [Product] = [
     Product(id: "5", attributes: ProductAttributes(name: "Vitamin C + Peptide 24 Brightening Eye Cream", rating: 5.0, description: "Eye moisturizer that hydrates to brighten the delicate skin around your eyes.", ingredients: "WATER, GLYCERIN, DIMETHICONE, NIACINAMIDE*, PROPYLENE GLYCOL, BUTYLENE GLYCOL, 3-O-ETHYL ASCORBIC ACID**, PALMITOYL PENTAPEPTIDE-4***, PANTHENOL, ETHYLHEXYLGLYCERIN, HYDROXYACETOPHENONE, DIMETHICONOL, C13-14 ISOPARAFFIN, POLYSORBATE 20, LAURETH-4, LAURETH-7, DISODIUM EDTA, TAPIOCA STARCH, POLYACRYLAMIDE, ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER, AMINOMETHYL PROPANOL, POLYMETHYLSILSESQUIOXANE, PHENOXYETHANOL *Vitamin B3 , **Vitamin C, ***Peptides", benefits: "Yay", imageUrls: ["olay-vitamin-c-peptide-24-brightening-eye-cream"])),
 ]
 
+
+var banners = [
+    BannerDetail(id: 0, title: "Take your quiz again", icon: "arrow.triangle.2.circlepath", view: AnyView(SkinQuizView())),
+    BannerDetail(id: 1, title: "Remember to do your routine", icon: "moon.fill", view: AnyView(RoutineView())),
+    BannerDetail(id: 2, title: "Do another skin analysis", icon: "faceid", view: AnyView(SkinPhotoView())),
+]
+
 struct HomeView: View {
     @EnvironmentObject private var authenticator: Authenticator
     @State private var index = 0       // banner item index
-    // banner cards' content
-    var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
-    var cardIcons: [String] = ["arrow.triangle.2.circlepath", "moon.fill", "faceid"]
     @Binding var products: [Product]?
     @Binding var isLoading: Bool
     
@@ -52,14 +56,14 @@ struct HomeView: View {
                 // stack for carousel
                 VStack {
                     TabView(selection: $index) {
-                        ForEach((0..<3), id: \.self) { index in
-                            BannerItem(title: cardTitles[index], icon: cardIcons[index])
+                        ForEach(banners, id: \.self.id) { banner in
+                            BannerItem(detail: banner)
                         }
                     }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                     
                     // carousel indicators
                     HStack(spacing: 7) {
-                        ForEach((0..<3), id: \.self) { index in
+                        ForEach((0..<banners.count), id: \.self) { index in
                             Circle()
                                 .fill(index == self.index ? Color("AccentColor") : Color("Light Grey"))
                                 .frame(width: 7, height: 7)
@@ -127,5 +131,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(products: .constant(productsList), isLoading: .constant(false))
+            .environmentObject(Authenticator())
     }
 }

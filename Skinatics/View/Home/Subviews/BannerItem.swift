@@ -7,34 +7,42 @@
 
 import SwiftUI
 
+struct BannerDetail: Identifiable {
+    var id: Int
+    var title: String
+    var icon: String
+    var view: AnyView
+}
+
 struct BannerItem: View {
-    var title: String = "Hello world!"
-    var icon: String = "arrow.triangle.2.circlepath"
+    var detail: BannerDetail
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 15.0, style: .continuous)
-                .fill(Color("AccentColor"))
-                .frame(height: 125)
-                .padding()
-            HStack {
-                Text(title)
-                    .foregroundColor(.white)
-                    .font(Font.custom("Avenir", size: 24, relativeTo: .title))
-                    .bold()
-                Spacer()
-                Image(systemName: icon)
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .bold()
+        NavigationLink(destination: detail.view) {
+            ZStack {
+                    RoundedRectangle(cornerRadius: 15.0, style: .continuous)
+                        .fill(Color("AccentColor"))
+                        .frame(height: 125)
+                        .padding()
+                    HStack {
+                        Text(detail.title)
+                            .foregroundColor(.white)
+                            .font(Font.custom("Avenir", size: 24, relativeTo: .title))
+                            .bold()
+                        Spacer()
+                        Image(systemName: detail.icon)
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                    .padding(.horizontal, 45)
             }
-            .padding(.horizontal, 45)
         }
-    }
+        }
 }
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        BannerItem()
+        BannerItem(detail: banners[0])
     }
 }

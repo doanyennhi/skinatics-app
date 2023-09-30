@@ -17,7 +17,6 @@ struct SkinQuizView: View {
     // track if display error message
     @State var show: Bool = false
     @EnvironmentObject var authenticator: Authenticator
-    @State var user = User()
     
     var body: some View {
         GeometryReader { geometry in
@@ -64,6 +63,6 @@ struct SkinQuizView: View {
 
 struct SkinQuizView_Previews: PreviewProvider {
     static var previews: some View {
-        SkinQuizView(user: User())
+        SkinQuizView()
     }
 }
