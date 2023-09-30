@@ -34,8 +34,6 @@
 		0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9C2A896A7C00E64231 /* ContentView.swift */; };
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
 		0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */; };
-		0FCF56142AC5BB0E009203CF /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF56132AC5BB0E009203CF /* Metadata.swift */; };
-		0FCF56162AC6B061009203CF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF56152AC6B061009203CF /* MainView.swift */; };
 		0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB62442A8B51C1008B19F1 /* Avenir.ttc */; };
 		0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */; };
 		0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62512A8D026D008B19F1 /* Buttons.swift */; };
@@ -124,8 +122,6 @@
 		0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0FBE1DAC2A896A7D00E64231 /* SkinaticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FCF56132AC5BB0E009203CF /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
-		0FCF56152AC6B061009203CF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0FDB62442A8B51C1008B19F1 /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avenir.ttc; sourceTree = "<group>"; };
 		0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
 		0FDB62512A8D026D008B19F1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -213,7 +209,6 @@
 				0FF271A72AACA9DC0092FD3C /* Review.swift */,
 				0FABD8072AB8D3510082DE61 /* Error.swift */,
 				0FB0B00D2ABC80F500B808A9 /* ProductDetail.swift */,
-				0FCF56132AC5BB0E009203CF /* Metadata.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,7 +268,6 @@
 				0FBE1DA02A896A7D00E64231 /* Preview Content */,
 				0F34D37E2AB05D2700A095BB /* MainTabView.swift */,
 				49985F542ABBFEAE00446C62 /* Config.xcconfig */,
-				0FCF56152AC6B061009203CF /* MainView.swift */,
 			);
 			path = Skinatics;
 			sourceTree = "<group>";
@@ -674,7 +668,6 @@
 				0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */,
 				49AE659A2AB80B3300B595AB /* BannerItem.swift in Sources */,
 				0FDB626C2A8F6B4C008B19F1 /* SetHelper.swift in Sources */,
-				0FCF56142AC5BB0E009203CF /* Metadata.swift in Sources */,
 				0F34D3812AB37D9100A095BB /* ScannerView.swift in Sources */,
 				0FF5297C2A9B388E002461C8 /* InfoCapsule.swift in Sources */,
 				0FF2719E2AAB1C110092FD3C /* TabBarItem.swift in Sources */,
@@ -717,7 +710,6 @@
 				0F10D9CD2ABE2EAF005C9FA0 /* ScannerViewModel.swift in Sources */,
 				49AE659C2AB8151900B595AB /* RecommendedCard.swift in Sources */,
 				0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */,
-				0FCF56162AC6B061009203CF /* MainView.swift in Sources */,
 				498BC5852ABB51DF0084D9E5 /* CheckListItem.swift in Sources */,
 				0F10D9CB2ABE201D005C9FA0 /* CameraView.swift in Sources */,
 			);

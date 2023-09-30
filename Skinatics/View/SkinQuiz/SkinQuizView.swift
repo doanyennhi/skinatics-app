@@ -35,7 +35,7 @@ struct SkinQuizView: View {
                                 }
                             }
                         
-                        NavigationLink(destination: SkinIssuesView(user: user)) {
+                        NavigationLink(destination: SkinIssuesView()) {
                             Text("Next")
                         }
                         .buttonStyle(PrimaryButtonStyle())

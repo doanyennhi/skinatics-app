@@ -12,43 +12,9 @@ import Auth0
 struct ProfileView: View {
     // Current user
     @EnvironmentObject var authenticator: Authenticator
-    @State private var user: User
     @State private var showAlert = false
     @State private var errorMessage = ""
     @State var isLoading: Bool = false
-    
-    init(_ user: User) {
-        _user = State(initialValue: user)
-    }
-    
-    func getMetadata() {
-        isLoading = true
-        authenticator.credentialsManager.credentials { result in
-        
-            switch result {
-            case .success(let credentials):
-                Auth0
-                    .users(token: credentials.accessToken)
-                    .get(authenticator.user.id, fields: ["user_metadata"])
-                    .start { result in
-                        switch result {
-                        case .failure(let error):
-                            print("Error: \(error.localizedDescription)")
-                        case .success(let metadata):
-                            // Get user metadata
-                            DispatchQueue.main.async {
-                                authenticator.user.userMetadata = metadata["user_metadata"] as? [String: Any] ?? [:]
-                                isLoading = false
-                            }
-                        }
-                    }
-                
-            case .failure(let error):
-                print("Failed with: \(error.localizedDescription)")
-                isLoading = false
-            }
-        }
-    }
     
     func logout() {
         Auth0
@@ -86,7 +52,7 @@ struct ProfileView: View {
                         .padding(.bottom, 60)
                     
                     // User info
-                    EditField(title: "Name", text: authenticator.user.name)
+                    EditField(title: "Name", text: authenticator.user.userMetadata["name"] as? String ?? "")
                     EditField(title: "Email", text: authenticator.user.email)
 
                     // Skin Info
@@ -128,13 +94,12 @@ struct ProfileView: View {
                 Text(errorMessage)
             })
             .modifier(ScreenModifier())
-            .onAppear(perform: getMetadata)
         }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(users[1])
+        ProfileView()
             .environmentObject(Authenticator())
     }
 }

@@ -23,7 +23,7 @@ var productsList: [Product] = [
 ]
 
 struct HomeView: View {
-    var user: User
+    @EnvironmentObject private var authenticator: Authenticator
     @State private var index = 0       // banner item index
     // banner cards' content
     var cardTitles: [String] = ["Take your quiz again", "Do your night routine", "Do another skin analysis"]
@@ -36,9 +36,9 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 // stack for top introductory text
                 HStack {
-                    Text("Hi, \n\(user.name)").largeTitle(multilineCenter: false)
+                    Text("Hi, \n\(authenticator.user.userMetadata["name"] as? String ?? "")").largeTitle(multilineCenter: false)
                     Spacer()
-                    NavigationLink(destination: ProfileView(user).navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: ProfileView().navigationBarBackButtonHidden(true)) {
                         Image("profile")
                             .resizable()
                             .scaledToFit()
@@ -126,6 +126,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(user: users[1], products: .constant(productsList), isLoading: .constant(false))
+        HomeView(products: .constant(productsList), isLoading: .constant(false))
     }
 }

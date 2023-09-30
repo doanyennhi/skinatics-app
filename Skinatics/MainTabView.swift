@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  MainTabView.swift
 //  Skinatics
 //
 //  Created by Nhii on 12/9/2023.
@@ -52,7 +52,7 @@ struct MainTabView: View {
             
             SearchView()
                 .tabItem({
-                    Label("Search", systemImage: "magnifying.glass")
+                    Label("Search", systemImage: "magnifyingglass")
                 })
             
             SkinPhotoView()

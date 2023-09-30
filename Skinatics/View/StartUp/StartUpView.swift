@@ -16,6 +16,24 @@ struct StartUpView: View {
     @State private var showAlert = false
     @State private var errorMessage = ""
     
+    func getMetadata(accessToken: String, userId: String) {
+        Auth0
+                    .users(token: accessToken)
+                    .get(userId, fields: ["user_metadata"])
+                    .start { result in
+                        switch result {
+                        case .failure(let error):
+                            print("Error: \(error.localizedDescription)")
+                            
+                        case .success(let metadata):
+                            // Get user metadata
+                            DispatchQueue.main.async {
+                                authenticator.user.userMetadata = metadata["user_metadata"] as? [String: Any] ?? [:]
+                            }
+                        }
+                    }
+    }
+    
     private func login() {
         guard let domain = PlistHandler.getValue(filename: "Auth0", key: "Domain")
         else {
@@ -34,14 +52,17 @@ struct StartUpView: View {
                     // login success
                 case .success(let credentials):
                     // store credentials
-                    let isStored = authenticator.credentialsManager.store(credentials: credentials)
-                    if isStored {
-                        self.authenticator.isAuthenticated = true
-                        self.authenticator.user = Profile.from(credentials.idToken)
-                    } else {
-                        self.authenticator.isAuthenticated = false
-                        errorMessage = "Cannot sign you in. Please try again."
-                        showAlert = true
+                    DispatchQueue.main.async {
+                        let isStored = authenticator.credentialsManager.store(credentials: credentials)
+                        if isStored {
+                            self.authenticator.isAuthenticated = true
+                            self.authenticator.user = Profile.from(credentials.idToken)
+                            getMetadata(accessToken: credentials.accessToken, userId: authenticator.user.id)
+                        } else {
+                            self.authenticator.isAuthenticated = false
+                            errorMessage = "Cannot sign you in. Please try again."
+                            showAlert = true
+                        }
                     }
                 }
             }
@@ -56,7 +77,7 @@ struct StartUpView: View {
                     .frame(width: screenWidth)
                     .padding(.bottom, 10)
                 Text("Skinatics") // app name
-                    .font(.largeTitle)
+                    .font(Font.custom("Avenir", size: 32))
                     .bold()
                     .foregroundColor(.white)
                     .padding(.vertical, 20)
