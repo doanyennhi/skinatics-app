@@ -20,7 +20,7 @@ struct SkinConditionView: View {
     
     func updateUserInfo() {
         authenticator.user.userMetadata["skinConditions"] = Array(selected)
-        authenticator.user.userMetadata["didFinishSignUp"] = true
+        authenticator.user.userMetadata["didFinishSignUp"] = 1
         
         let attributes = UserPatchAttributes()
             .userMetadata(authenticator.user.userMetadata)
@@ -44,11 +44,11 @@ struct SkinConditionView: View {
             }
         }
     }
- 
-    // add selected options to user data
-    var body: some View {
-        QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: $selected, screen: ContentView().navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {updateUserInfo()}, showUpdateError: $showError, errorMessage: $errorMessage)
-    }
+        
+        // add selected options to user data
+        var body: some View {
+            QuizTemplate(title: "Any skin conditions?", subheading: "(Optional) Select any conditions you may have", show: false, options: conditions, selected: $selected, screen: AppView().navigationBarBackButtonHidden(), btnText: "Submit", selectionOptional: true, action: {updateUserInfo()}, showUpdateError: $showError, errorMessage: $errorMessage)
+        }
 }
 
 struct SkinConditionView_Previews: PreviewProvider {

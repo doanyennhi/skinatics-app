@@ -71,12 +71,17 @@ struct MainTabView: View {
             
             SkinPhotoView()
                 .tabItem({
-                    Label("Camera", systemImage: "camera.circle.fill")
+                    Label("Camera", systemImage: "camera")
                 }).tag(TabItem.camera)
+            
+            RoutineView()
+                .tabItem({
+                    Label("Routine", systemImage: "list.bullet.clipboard")
+                }).tag(TabItem.routine)
             
             ProfileView()
                 .tabItem({
-                    Label("Profile", systemImage: "person.crop.circle")
+                    Label("Profile", systemImage: "person")
                 }).tag(TabItem.profile)
         }
         .environmentObject(tabHandler)

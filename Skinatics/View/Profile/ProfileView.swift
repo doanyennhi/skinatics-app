@@ -49,22 +49,35 @@ struct ProfileView: View {
                         .scaledToFit()
                         .clipShape(Circle())
                         .frame(width: 150)
-                        .padding(.bottom, 60)
+                        .padding(.bottom, 40)
                     
-                    // User info
-                    EditField(title: "Name", text: authenticator.user.userMetadata["name"] as? String ?? "")
-                    EditField(title: "Email", text: authenticator.user.email)
+                    VStack(alignment: .leading) {
+                        Text("Name").title()
+                            .padding(.vertical, 5)
+                        Text(authenticator.user.userMetadata["name"] as? String ?? "Nhi")
+                        
+                        Text("Email").title()
+                            .padding(.vertical, 5)
+                        Text(authenticator.user.email)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+//                    // User info
+//                    EditField(title: "Name", text: authenticator.user.userMetadata["name"] as? String ?? "")
+//                    EditField(title: "Email", text: authenticator.user.email)
 
                     // Skin Info
-                    HStack {
+                    HStack(alignment: .firstTextBaseline) {
                         Text("My Skin").title()
+                            .padding(.top, 20)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Edit")
-                            .font(Font.custom("Avenir", size: 16))
-                            .foregroundColor(Color("Secondary Green"))
-                            .fontWeight(.semibold)
+                        
+                        NavigationLink(destination: SkinQuizView(), label: { Text("Edit")
+                                .font(Font.custom("Avenir", size: 16))
+                                .foregroundColor(Color("Secondary Green"))
+                                .fontWeight(.semibold)
+                        })
                     }
-                    
                     
                     SkinInfo(title: "Skin Type", items: authenticator.user.userMetadata["skinType"] as? [String] ?? [""], isLoading: $isLoading)
                     

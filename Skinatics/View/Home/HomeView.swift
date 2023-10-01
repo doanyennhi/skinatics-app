@@ -25,7 +25,7 @@ var productsList: [Product] = [
 
 var banners = [
     BannerDetail(id: 0, title: "Take your quiz again", icon: "arrow.triangle.2.circlepath", view: AnyView(SkinQuizView())),
-    BannerDetail(id: 1, title: "Remember to do your routine", icon: "moon.fill", view: AnyView(RoutineView()), tabItem: .search),
+    BannerDetail(id: 1, title: "Remember to do your routine", icon: "moon.fill", view: AnyView(RoutineView()), tabItem: .routine),
     BannerDetail(id: 2, title: "Do another skin analysis", icon: "faceid", view: AnyView(SkinPhotoView()), tabItem: .camera),
 ]
 

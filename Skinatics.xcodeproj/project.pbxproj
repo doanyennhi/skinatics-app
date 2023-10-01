@@ -34,6 +34,7 @@
 		0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9C2A896A7C00E64231 /* ContentView.swift */; };
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
 		0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */; };
+		0FCF56182AC9927F009203CF /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF56172AC9927F009203CF /* AppView.swift */; };
 		0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB62442A8B51C1008B19F1 /* Avenir.ttc */; };
 		0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */; };
 		0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62512A8D026D008B19F1 /* Buttons.swift */; };
@@ -122,6 +123,7 @@
 		0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0FBE1DAC2A896A7D00E64231 /* SkinaticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCF56172AC9927F009203CF /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		0FDB62442A8B51C1008B19F1 /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avenir.ttc; sourceTree = "<group>"; };
 		0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
 		0FDB62512A8D026D008B19F1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -266,7 +268,6 @@
 				0FBE1D9C2A896A7C00E64231 /* ContentView.swift */,
 				0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */,
 				0FBE1DA02A896A7D00E64231 /* Preview Content */,
-				0F34D37E2AB05D2700A095BB /* MainTabView.swift */,
 				49985F542ABBFEAE00446C62 /* Config.xcconfig */,
 			);
 			path = Skinatics;
@@ -313,6 +314,8 @@
 		0FDB62552A8E1180008B19F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0FCF56172AC9927F009203CF /* AppView.swift */,
+				0F34D37E2AB05D2700A095BB /* MainTabView.swift */,
 				49985F4A2ABBD96C00446C62 /* Search */,
 				498BC57C2ABB49EA0084D9E5 /* Routine */,
 				0FF271922AA871D10092FD3C /* ProductDetail */,
@@ -662,6 +665,7 @@
 				49985F4F2ABBDB7200446C62 /* IngredientsView.swift in Sources */,
 				0FDB625E2A8E14E1008B19F1 /* Checkbox.swift in Sources */,
 				49985F572ABC9A7600446C62 /* ListedProduct.swift in Sources */,
+				0FCF56182AC9927F009203CF /* AppView.swift in Sources */,
 				0FF271882AA720070092FD3C /* SkinPhotoView.swift in Sources */,
 				0FF2718F2AA85AF70092FD3C /* IngredientCard.swift in Sources */,
 				0F933F112ABDCB2300861EFE /* String+Extensions.swift in Sources */,

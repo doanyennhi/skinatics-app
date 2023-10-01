@@ -14,13 +14,12 @@ struct SkinInfo: View {
     @Binding var isLoading: Bool
     
     var body: some View {
-
             VStack(alignment: .leading, spacing: 10) {
                 // title of info
                 Text(title)
                     .font(Font.custom("Avenir", size: 22))
                     .italic()
-                    .padding(.top, 20)
+                    .padding(.top, 10)
                 
                 // list of skin info
                 if !items.isEmpty {
