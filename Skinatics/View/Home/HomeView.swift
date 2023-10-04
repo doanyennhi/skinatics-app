@@ -36,6 +36,17 @@ struct HomeView: View {
     @Binding var products: [Product]?
     @Binding var isLoading: Bool
     
+    func saveProductData(product: Product) {
+        if let userDefaults = UserDefaults(suiteName: "group.com.FaceCare.Skinatics") {
+            userDefaults.set(product.attributes.name, forKey: "productName")
+            userDefaults.set(product.attributes.imageUrls[0], forKey: "productImg")
+            userDefaults.set(product.attributes.rating, forKey: "productRating")
+            print("Save successful")
+        } else {
+            print("Cannot save")
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
@@ -121,6 +132,7 @@ struct HomeView: View {
                     if !isLoading {
                         if let product = products?.randomElement() {
                             ProductOfTheDay(product: product)
+                                .onAppear(perform: {saveProductData(product: product)})
                         } else {
                             Text("No product for today")
                                 .padding(.vertical)
