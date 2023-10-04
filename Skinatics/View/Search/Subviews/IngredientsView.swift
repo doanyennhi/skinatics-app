@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct IngredientsView: View {
+    @Binding var searchText: String
+    
     var ingredients: [Ingredient] = [
         Ingredient(name: "Adenosine", description: ""),
         Ingredient(name: "Algae Extract", description: "")
     ]
     
-    var body: some View {
-        List(ingredients) { ingredient in
-            Text(ingredient.name)
-                .listRowBackground(Color("Floral White"))
+    var searchResults: [Ingredient] {
+            if searchText.isEmpty {
+                return ingredients
+            } else {
+                return ingredients.filter { $0.name.contains(searchText) }
+            }
         }
+    
+    var body: some View {
+        List (searchResults) { ingredient in
+                Text(ingredient.name)
+            }
+        .listRowBackground(Color("Floral White"))
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
     }
@@ -25,6 +35,6 @@ struct IngredientsView: View {
 
 struct IngredientsView_Previews: PreviewProvider {
     static var previews: some View {
-        IngredientsView()
+        IngredientsView(searchText: .constant(""))
     }
 }

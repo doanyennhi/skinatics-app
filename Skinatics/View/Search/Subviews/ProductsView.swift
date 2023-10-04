@@ -9,9 +9,18 @@ import SwiftUI
 
 struct ProductsView: View {
     var products: [Product] = productsList
+    @Binding var searchText: String
+    
+    var searchResults: [Product] {
+            if searchText.isEmpty {
+                return products
+            } else {
+                return products.filter { $0.attributes.name.contains(searchText) }
+            }
+        }
     
     var body: some View {
-        List(products) { product in
+        List(searchResults) { product in
             ListedProduct(productBrand: "Brand", productImage: product.attributes.imageUrls[0], productName: product.attributes.name)
                 .listRowBackground(Color("Floral White"))
         }
@@ -22,6 +31,6 @@ struct ProductsView: View {
 
 struct ProductsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsView()
+        ProductsView(searchText: .constant(""))
     }
 }

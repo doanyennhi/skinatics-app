@@ -35,6 +35,13 @@
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
 		0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */; };
 		0FCF56182AC9927F009203CF /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF56172AC9927F009203CF /* AppView.swift */; };
+		0FCF56402ACC7C69009203CF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCF563F2ACC7C69009203CF /* WidgetKit.framework */; };
+		0FCF56422ACC7C69009203CF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCF56412ACC7C69009203CF /* SwiftUI.framework */; };
+		0FCF56452ACC7C69009203CF /* SkinaticsWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF56442ACC7C69009203CF /* SkinaticsWidgetBundle.swift */; };
+		0FCF56472ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF56462ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift */; };
+		0FCF56492ACC7C69009203CF /* SkinaticsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF56482ACC7C69009203CF /* SkinaticsWidget.swift */; };
+		0FCF564B2ACC7C6A009203CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCF564A2ACC7C6A009203CF /* Assets.xcassets */; };
+		0FCF564F2ACC7C6A009203CF /* SkinaticsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0FCF563D2ACC7C69009203CF /* SkinaticsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB62442A8B51C1008B19F1 /* Avenir.ttc */; };
 		0FDB624F2A8CAAFD008B19F1 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */; };
 		0FDB62522A8D026D008B19F1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB62512A8D026D008B19F1 /* Buttons.swift */; };
@@ -90,7 +97,28 @@
 			remoteGlobalIDString = 0FBE1D962A896A7C00E64231;
 			remoteInfo = Skinatics;
 		};
+		0FCF564D2ACC7C6A009203CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FBE1D8F2A896A7C00E64231 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FCF563C2ACC7C69009203CF;
+			remoteInfo = SkinaticsWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0FCF56502ACC7C6A009203CF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0FCF564F2ACC7C6A009203CF /* SkinaticsWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -124,6 +152,14 @@
 		0FBE1DAC2A896A7D00E64231 /* SkinaticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinaticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCF56172AC9927F009203CF /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		0FCF563D2ACC7C69009203CF /* SkinaticsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkinaticsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCF563F2ACC7C69009203CF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0FCF56412ACC7C69009203CF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		0FCF56442ACC7C69009203CF /* SkinaticsWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidgetBundle.swift; sourceTree = "<group>"; };
+		0FCF56462ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		0FCF56482ACC7C69009203CF /* SkinaticsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidget.swift; sourceTree = "<group>"; };
+		0FCF564A2ACC7C6A009203CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FCF564C2ACC7C6A009203CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FDB62442A8B51C1008B19F1 /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avenir.ttc; sourceTree = "<group>"; };
 		0FDB624E2A8CAAFD008B19F1 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
 		0FDB62512A8D026D008B19F1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -189,6 +225,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FCF563A2ACC7C69009203CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FCF56422ACC7C69009203CF /* SwiftUI.framework in Frameworks */,
+				0FCF56402ACC7C69009203CF /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -237,6 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				0FBE1D992A896A7C00E64231 /* Skinatics */,
+				0FCF56432ACC7C69009203CF /* SkinaticsWidget */,
+				0FCF563E2ACC7C69009203CF /* Frameworks */,
 				0FBE1D982A896A7C00E64231 /* Products */,
 				49985F552ABC99DF00446C62 /* Recovered References */,
 			);
@@ -248,6 +295,7 @@
 				0FBE1D972A896A7C00E64231 /* Skinatics.app */,
 				0FBE1DAC2A896A7D00E64231 /* SkinaticsTests.xctest */,
 				0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */,
+				0FCF563D2ACC7C69009203CF /* SkinaticsWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,6 +327,27 @@
 				0FBE1DA12A896A7D00E64231 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0FCF563E2ACC7C69009203CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FCF563F2ACC7C69009203CF /* WidgetKit.framework */,
+				0FCF56412ACC7C69009203CF /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0FCF56432ACC7C69009203CF /* SkinaticsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0FCF56442ACC7C69009203CF /* SkinaticsWidgetBundle.swift */,
+				0FCF56462ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift */,
+				0FCF56482ACC7C69009203CF /* SkinaticsWidget.swift */,
+				0FCF564A2ACC7C6A009203CF /* Assets.xcassets */,
+				0FCF564C2ACC7C6A009203CF /* Info.plist */,
+			);
+			path = SkinaticsWidget;
 			sourceTree = "<group>";
 		};
 		0FDB62422A8B5182008B19F1 /* Resources */ = {
@@ -527,10 +596,12 @@
 				0FBE1D932A896A7C00E64231 /* Sources */,
 				0FBE1D942A896A7C00E64231 /* Frameworks */,
 				0FBE1D952A896A7C00E64231 /* Resources */,
+				0FCF56502ACC7C6A009203CF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0FCF564E2ACC7C6A009203CF /* PBXTargetDependency */,
 			);
 			name = Skinatics;
 			packageProductDependencies = (
@@ -576,6 +647,23 @@
 			productReference = 0FBE1DB62A896A7E00E64231 /* SkinaticsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		0FCF563C2ACC7C69009203CF /* SkinaticsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FCF56532ACC7C6A009203CF /* Build configuration list for PBXNativeTarget "SkinaticsWidgetExtension" */;
+			buildPhases = (
+				0FCF56392ACC7C69009203CF /* Sources */,
+				0FCF563A2ACC7C69009203CF /* Frameworks */,
+				0FCF563B2ACC7C69009203CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkinaticsWidgetExtension;
+			productName = SkinaticsWidgetExtension;
+			productReference = 0FCF563D2ACC7C69009203CF /* SkinaticsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -596,6 +684,9 @@
 					0FBE1DB52A896A7E00E64231 = {
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 0FBE1D962A896A7C00E64231;
+					};
+					0FCF563C2ACC7C69009203CF = {
+						CreatedOnToolsVersion = 14.3;
 					};
 				};
 			};
@@ -618,6 +709,7 @@
 				0FBE1D962A896A7C00E64231 /* Skinatics */,
 				0FBE1DAB2A896A7D00E64231 /* SkinaticsTests */,
 				0FBE1DB52A896A7E00E64231 /* SkinaticsUITests */,
+				0FCF563C2ACC7C69009203CF /* SkinaticsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -645,6 +737,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FCF563B2ACC7C69009203CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FCF564B2ACC7C6A009203CF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +833,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FCF56392ACC7C69009203CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FCF56472ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift in Sources */,
+				0FCF56492ACC7C69009203CF /* SkinaticsWidget.swift in Sources */,
+				0FCF56452ACC7C69009203CF /* SkinaticsWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -745,6 +855,11 @@
 			isa = PBXTargetDependency;
 			target = 0FBE1D962A896A7C00E64231 /* Skinatics */;
 			targetProxy = 0FBE1DB72A896A7E00E64231 /* PBXContainerItemProxy */;
+		};
+		0FCF564E2ACC7C6A009203CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FCF563C2ACC7C69009203CF /* SkinaticsWidgetExtension */;
+			targetProxy = 0FCF564D2ACC7C6A009203CF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -868,6 +983,7 @@
 		0FBE1DC12A896A7E00E64231 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -903,6 +1019,7 @@
 		0FBE1DC22A896A7E00E64231 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1007,6 +1124,62 @@
 			};
 			name = Release;
 		};
+		0FCF56512ACC7C6A009203CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6V5MXK3VE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkinaticsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SkinaticsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FaceCare.Skinatics.SkinaticsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FCF56522ACC7C6A009203CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6V5MXK3VE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkinaticsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SkinaticsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FaceCare.Skinatics.SkinaticsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1042,6 +1215,15 @@
 			buildConfigurations = (
 				0FBE1DC72A896A7E00E64231 /* Debug */,
 				0FBE1DC82A896A7E00E64231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FCF56532ACC7C6A009203CF /* Build configuration list for PBXNativeTarget "SkinaticsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FCF56512ACC7C6A009203CF /* Debug */,
+				0FCF56522ACC7C6A009203CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

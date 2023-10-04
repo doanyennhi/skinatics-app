@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SearchView: View {
     @State var tabSelected: Int = 0
-    @State var searchText = ""
+    @State var searchIngredient = ""
+    @State var searchProduct = ""
     
     var body: some View {
         NavigationStack {
@@ -20,15 +21,17 @@ struct SearchView: View {
             VStack {
                 switch tabSelected {
                 case 0:
-                    IngredientsView()
+                    IngredientsView(searchText: $searchIngredient)
+                        .searchable(text: $searchIngredient, prompt: "Search")
                 case 1:
-                    ProductsView()
+                    ProductsView(searchText: $searchProduct)
+                        .searchable(text: $searchProduct, prompt: "Search")
                 default: EmptyView()
                 }
             }
             .background(Color("Floral White"))
         }
-        .searchable(text: $searchText, prompt: "Search")
+        //.searchable(text: $searchText)
         .modifier(ScreenModifier())
     }
 }

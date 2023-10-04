@@ -25,6 +25,7 @@ struct ListedProduct: View {
                     .subheading()
                     .padding(.bottom, -18)
                 Text(productName)
+                    .lineLimit(2)
             }
             .padding(.leading, 7)
         }
