@@ -80,6 +80,7 @@
 		49985F572ABC9A7600446C62 /* ListedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49985F562ABC9A7600446C62 /* ListedProduct.swift */; };
 		49AE659A2AB80B3300B595AB /* BannerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE65992AB80B3300B595AB /* BannerItem.swift */; };
 		49AE659C2AB8151900B595AB /* RecommendedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE659B2AB8151900B595AB /* RecommendedCard.swift */; };
+		49D6BF682ACD068800042CEC /* Ingredients.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49D6BF672ACD068800042CEC /* Ingredients.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,7 @@
 		49985F562ABC9A7600446C62 /* ListedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedProduct.swift; sourceTree = "<group>"; };
 		49AE65992AB80B3300B595AB /* BannerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerItem.swift; sourceTree = "<group>"; };
 		49AE659B2AB8151900B595AB /* RecommendedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedCard.swift; sourceTree = "<group>"; };
+		49D6BF672ACD068800042CEC /* Ingredients.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Ingredients.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,9 +305,10 @@
 		0FBE1D992A896A7C00E64231 /* Skinatics */ = {
 			isa = PBXGroup;
 			children = (
+				49D6BF672ACD068800042CEC /* Ingredients.plist */,
 				0F75AEB52ABF71830023E51E /* Auth0.plist */,
-				0F10D9C72ABE1AB2005C9FA0 /* ViewModel */,
 				0FF5297F2A9B7529002461C8 /* Info.plist */,
+				0F10D9C72ABE1AB2005C9FA0 /* ViewModel */,
 				0F4061E72A94AC3800746054 /* Model */,
 				0FDB626A2A8F6ACF008B19F1 /* Helper */,
 				0FDB62672A8F686C008B19F1 /* Extension */,
@@ -722,6 +725,7 @@
 				0F75AEB62ABF71830023E51E /* Auth0.plist in Resources */,
 				0FBE1DA22A896A7D00E64231 /* Preview Assets.xcassets in Resources */,
 				0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */,
+				49D6BF682ACD068800042CEC /* Ingredients.plist in Resources */,
 				0FDB62452A8B51C1008B19F1 /* Avenir.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
