@@ -1,0 +1,2706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Allantoin</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Sensitive</string>
+			<string>Acne-prone</string>
+			<string>Normal</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne scars</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Eczema</string>
+			<string>Rash</string>
+			<string>Hives</string>
+		</array>
+		<key>purpose</key>
+		<string>Soothes and promotes skin healing, often used in sensitive skin products. Also reduces irritation and redness.</string>
+	</dict>
+	<key>Aloe_Vera</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+			<string>Rash</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Known for its anti-inflammatory properties, it soothes, calms, and hydrates dry, irritated skin. This makes it suitable for sensitive and dry skin areas.</string>
+	</dict>
+	<key>Aloe_Vera_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Rash</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Soothes and calms irritated skin while providing hydration.</string>
+	</dict>
+	<key>Aloe_Vera_Gel</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Under-eye circles</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Rash</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Soothes and hydrates oily skin without adding oiliness, and helps with the under-eye area.</string>
+	</dict>
+	<key>Alpha_Arbutin</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Dullness</string>
+			<string>Under-eye circles</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Brightens the skin and fades hyperpigmentation. Also promotes a more even skin tone.</string>
+	</dict>
+	<key>Alpha_Hydroxy_Acids</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Oily</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Exfoliate the skin&apos;s surface, improves texture, minimizes the appearance of pores, and enhances skin tone. This helps fade hyperpigmentation and reveal a brighter complexion. Additionally, helps reduce oiliness and the appearance of fine lines. Improves the appearance of melasma by promoting cell turnover.</string>
+	</dict>
+	<key>Argan_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Dark spots</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+		</array>
+		<key>purpose</key>
+		<string>Rich in vitamins and fatty acids, it hydrates, softens, and repairs dry skin.</string>
+	</dict>
+	<key>Argireline</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+		</array>
+		<key>skinConditions</key>
+		<array/>
+		<key>purpose</key>
+		<string>A peptide that can temporarily relax facial muscles, reducing the appearance of fine lines.</string>
+	</dict>
+	<key>Arnica_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Under-eye circles</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+			<string>Hives</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Known for its anti-inflammatory properties, it can reduce redness, puffiness and improve skin tone.</string>
+	</dict>
+	<key>Ascorbic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Acne</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Brightens skin, fades dark spots, and reduces the appearance of dark circles by inhibiting melanin production. Promotes a radiant complexion. Benefits both dry and oily areas, and provides antioxidant protection. Improves the appearance of pores, wrinkles, and fine lines by boosting collagen production.</string>
+	</dict>
+	<key>Avobenzone</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A chemical sunscreen ingredient that primarily provides UVA protection.</string>
+	</dict>
+	<key>Avocado_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Acne scars</string>
+			<string>Redness</string>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Dermatitis</string>
+			<string>Acne</string>
+			<string>Psoriasis</string>
+		</array>
+		<key>purpose</key>
+		<string>Rich in vitamins and essential fatty acids, it nourishes and hydrates dry skin.</string>
+	</dict>
+	<key>Azelaic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Under-eye circles</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Helps treat dark spots, melasma, and post-inflammatory hyperpigmentation by inhibiting melanin production. Also unclogs pores.</string>
+	</dict>
+	<key>Bakuchiol</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+			<string>Dark spots</string>
+			<string>Acne</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A natural alternative to retinol that can improve skin texture and reduce the appearance of fine lines and wrinkles.</string>
+	</dict>
+	<key>Bearberry_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Under-eye circles</string>
+			<string>Acne scars</string>
+			<string>Dullness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains arbutin and other skin-lightening compounds that can help fade dark spots.</string>
+	</dict>
+	<key>Bentonite</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Enlarged pores</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Absorbs excess oil and purifies the skin, often found in masks and cleansers. Great for preventing and reducing blackheads and acne, as well as temporarily minimize the appearance of pores.</string>
+	</dict>
+	<key>Benzoyl_Peroxide</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>While primarily used for treating acne, benzoyl peroxide can also help prevent blackheads by eliminating the bacteria that contribute to their formation.</string>
+	</dict>
+	<key>Beta_Hydroxy_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>BHAs like betaine salicylate are effective in managing oily skin. It also exfoliates from within as it penetrates pores, helping to fade dark spots caused by acne and reduce the appearance of fine lines. Promotes a smoother and more radiant skin tone.</string>
+	</dict>
+	<key>Bisabolol</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Acne-prone</string>
+			<string>Oily</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Enlarged pores</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Hives</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>A natural compound derived from chamomile, bisabolol has anti-inflammatory and skin-soothing properties.</string>
+	</dict>
+	<key>Borage_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Acne scars</string>
+			<string>Redness</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+			<string>Eczema</string>
+		</array>
+		<key>purpose</key>
+		<string>Rich in gamma-linolenic acid (GLA), borage oil can help with skin inflammation.</string>
+	</dict>
+	<key>Bromelain</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Dullness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Dermatitis</string>
+			<string>Eczema</string>
+		</array>
+		<key>purpose</key>
+		<string>An exfoliating enzyme that helps break down dead skin cells, promoting a brighter complexion.</string>
+	</dict>
+	<key>Caffeine</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Under-eye circles</string>
+			<string>Redness</string>
+			<string>Enlarged pores</string>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array/>
+		<key>purpose</key>
+		<string>Helps constrict blood vessels and reduce puffiness, making dark circles appear less prominent.</string>
+	</dict>
+	<key>Calendula_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+			<string>Signs of aging</string>
+			<string>Acne</string>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Rash</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Calendula is a gentle, soothing ingredient that can help with sensitive or irritated skin, and reducing redness.</string>
+	</dict>
+	<key>Calendula_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne scars</string>
+			<string>Dark spots</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Often used to calm and soothe sensitive skin.</string>
+	</dict>
+	<key>Cica</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne scars</string>
+			<string>Acne</string>
+			<string>Redness</string>
+			<string>Signs of aging</string>
+			<string>Dark spots</string>
+			<string>Sun protection</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains compounds that can soothe and heal inflamed acne-prone skin, as well as reduce redness.</string>
+	</dict>
+	<key>Gotu_Kola_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Redness</string>
+			<string>Signs of aging</string>
+			<string>Dark spots</string>
+			<string>Sun protection</string>
+		</array>
+		<key>skinConditions</key>
+		<array/>
+		<key>purpose</key>
+		<string>Promotes skin healing and reduces inflammation.</string>
+	</dict>
+	<key>Ceramides</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Rash</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>These lipids help maintain, restore, and strengthen the skin&apos;s natural barrier, preventing and reducing moisture loss, as well as reduce fine lines. This makes the skin less prone to irritation and benefits both dry and oily areas.</string>
+	</dict>
+	<key>Chamomile_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Rash</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Chamomile is known for its anti-irritant and anti-inflammatory properties, making it suitable for sensitive skin. Soothes redness-prone skin, and calms the delicate skin around the eyes.</string>
+	</dict>
+	<key>Chamomile_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rash</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Can help reduce inflammation and calm sensitive skin. It&apos;s gentle and suitable for various skin types.</string>
+	</dict>
+	<key>Charcoal</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Absorbs excess oil and impurities, often found in masks and cleansers. Can help in blackhead formation.</string>
+	</dict>
+	<key>Cocoa_Butter</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Normal</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Signs of aging</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>An emollient, which maintains skin moisture and reduces dryness and scaling.</string>
+	</dict>
+	<key>Coconut_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Normal</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Rash</string>
+		</array>
+		<key>purpose</key>
+		<string>Provides moisture and can help reduce dryness and flakiness. Helps alleviate itching.</string>
+	</dict>
+	<key>Ubiquinone</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Normal</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Provides antioxidant protection and supports collagen production. Supports skin cell energy and can improve skin texture and tone, potentially reducing dark circles. Protects the skin from environmental damage and reduces the sign of aging and appearance of fine lines.</string>
+	</dict>
+	<key>Colloidal_Oatmeal</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Normal</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+		</array>
+		<key>purpose</key>
+		<string>Oatmeal is known for its anti-inflammatory properties. Soothes and calms irritated and sensitive skin. Also helps relieve itching and discomfort, and helps reduce redness.</string>
+	</dict>
+	<key>Copper_Peptides</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Normal</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Can promote collagen production and improve skin elasticity. Promotes wound-healing, which improves the overall health of the skin, including acne-prone areas.</string>
+	</dict>
+	<key>Cucumber_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Enlarged pores</string>
+			<string>Under-eye circles</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Has a cooling and soothing effect on the skin, reducing oiliness, inflammation, redness, puffiness and dark circles. This additionally helps reduce the appearance of pores.</string>
+	</dict>
+	<key>Dimethicone</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A silicone-based ingredient that can provide a smooth texture and act as a protective barrier on the skin. It locks moisture and reduces dryness.</string>
+	</dict>
+	<key>Dimethylaminoethanol</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dullness</string>
+			<string>Signs of aging</string>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array/>
+		<key>purpose</key>
+		<string>May help improve skin tone and firmness.</string>
+	</dict>
+	<key>Evening_Primrose_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains gamma-linolenic acid (GLA) that helps maintain hydration in eczema-prone skin.</string>
+	</dict>
+	<key>Yeast_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+			<string>Redness</string>
+			<string>Dullness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Improve skin texture and promote cell turnover.</string>
+	</dict>
+	<key>Ferulic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Dry</string>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Sun protection</string>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>An antioxidant that enhances the stability and effectiveness of other ingredients. Enhances the effectiveness of other skin-brightening ingredients like vitamin C. Also enhances the effectiveness of other sunscreen ingredients and provides additional protection against UV rays.</string>
+	</dict>
+	<key>Ginseng_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains antioxidants and anti-inflammatory properties that can improve skin tone and radiance, and reduce the appearance of fine lines.</string>
+	</dict>
+	<key>Glabridin</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Redness</string>
+			<string>Dark spots</string>
+			<string>Sun protection</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Glabridin is an antioxidant found in licorice root that can help inhibit tyrosinase activity, reducing melanin production.</string>
+	</dict>
+	<key>Glycerin</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+			<string>Hives</string>
+		</array>
+		<key>purpose</key>
+		<string>Attracts and retains moisture, keeping skin hydrated. A gentle, lightweight, and effective non-comedogenic humectant that draws water to the skin, preventing dehydration without clogging pores. Helps strengthen the skin&apos;s barrier, reducing redness and the appearance of fine lines.</string>
+	</dict>
+	<key>Glycolic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Glycolic acid exfoliates the skin&apos;s surface, helping to remove dead skin cells and promote cell turnover, which can reduce the formation of blackheads and reduce the appearance of pores and fine lines. Helps reveal a brighter complexion. Great for unclogging pores and treating acne.</string>
+	</dict>
+	<key>Glycyrrhizin</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Under-eye circles</string>
+			<string>Dullness</string>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Found in licorice root extract, it has skin-lightening properties, which can help reduce dullness and the appearance of dark circles.</string>
+	</dict>
+	<key>Grape_Seed_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dullness</string>
+			<string>Sun protection</string>
+			<string>Dark spots</string>
+			<string>Acne scars</string>
+			<string>Redness</string>
+			<string>Signs of aging</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains antioxidants that can control oiliness and protect the skin. Provides antioxidant protection and can promote a more radiant complexion.</string>
+	</dict>
+	<key>Grapefruit_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Dullness</string>
+			<string>Signs of aging</string>
+			<string>Acne</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains natural astringent properties and helps control oil production.</string>
+	</dict>
+	<key>Green_Tea_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Enlarged pores</string>
+			<string>Sun protection</string>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Acne</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+			<string>Rash</string>
+			<string>Melasma</string>
+			<string>Hives</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains antioxidants that soothe and protect the skin from UV damage, regulate sebum production, and support healthy skin aging. Has anti-inflammatory properties that can soothe sensitive skin and help with redness, puffiness, and dark circles. This also helps reduce acne redness. Its antioxidant properties help reduce skin pigmentation.</string>
+	</dict>
+	<key>Helioplex</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A patented technology that helps stabilize avobenzone for longer-lasting UVA protection.</string>
+	</dict>
+	<key>Hesperidin_Methyl_Chalcone</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Under-eye circles</string>
+			<string>Redness</string>
+			<string>Dullness</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Can strengthen capillaries and reduce dark circles caused by leaky blood vessels.</string>
+	</dict>
+	<key>Homosalate</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A chemical sunscreen ingredient that primarily absorbs UVB rays.</string>
+	</dict>
+	<key>Honey</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dullness</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>A natural humectant that retains moisture and has antibacterial properties. Great for dry patches. Can contribute to a dewy, glowing complexion. Helps with wound-healing.</string>
+	</dict>
+	<key>Hyaluronic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+			<string>Rash</string>
+			<string>Melasma</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+		</array>
+		<key>purpose</key>
+		<string>Provides lightweight hydration without making the skin feel greasy and adding excess oil, and thus, great for both dry and oily areas of the skin. Hydrates and plumps the skin by attracting and retaining moisture without causing irritation, making it suitable for sensitive skin. Can improve the overall skin texture and appearance of dark spots, and reduce redness and the appearance of fine lines and wrinkles. Promotes a smoother and more radiant skin appearance.</string>
+	</dict>
+	<key>Hydroquinone</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A potent skin-lightening agent that can significantly fade dark spots. It can be effective in reducing the appearance of melasma, but it should be used under the guidance of a dermatologist.</string>
+	</dict>
+	<key>Iron_Oxides</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>These colored pigments can provide some additional protection against visible light and can help even out skin tone.</string>
+	</dict>
+	<key>Jojoba_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Mimics skin&apos;s natural oils, providing deep hydration without clogging pores. Helps balance oil production. Soothes dry, sensitive skin.</string>
+	</dict>
+	<key>Kaolin</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Enlarged pores</string>
+			<string>Under-eye circles</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Absorbs excess oil and purifies the skin, often found in masks and cleansers. Helps reduce and prevent blackheads and acne, as well as temporarily reduce the size of pores.</string>
+	</dict>
+	<key>Kojic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Dullness</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A natural skin-lightening ingredient derived from mushrooms. Fades dark spots and hyperpigmentation, improving radiance. It inhibits the production of melanin.</string>
+	</dict>
+	<key>Lactic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A mild AHA that exfoliates and brightens the skin&apos;s surface, improving texture and hydration. Its exfoliating propertes improve overall skin texture and reduces the appearance of pores and fine lines. It also helps with acne marks. Promotes cell turnover and thus, improves the appearance of melasma.</string>
+	</dict>
+	<key>Licorice_Root_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Under-eye circles</string>
+			<string>Dullness</string>
+			<string>Acne scars</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array/>
+		<key>purpose</key>
+		<string>Helps to balance and soothe the skin, reducing oiliness. Calms redness and skin sensitivity, as well as brightens and evens out skin tone. Contains compounds that inhibit melanin production, making it effective for lightening dark spots and under-eye circles. Has anti-inflammatory properties that can help reduce itching and redness.</string>
+	</dict>
+	<key>Mandelic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+			<string>Rash</string>
+			<string>Melasma</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>A gentle AHA that can help fade hyperpigmentation without causing excessive irritation.</string>
+	</dict>
+	<key>Marula_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Redness</string>
+			<string>Dark spots</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+			<string>Sun protection</string>
+		</array>
+		<key>skinConditions</key>
+		<array/>
+		<key>purpose</key>
+		<string>Nourishes and moisturizes the skin, rich in antioxidants.</string>
+	</dict>
+	<key>Matrixyl</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+			<string>Dullness</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array/>
+		<key>purpose</key>
+		<string>A peptide complex that can improve skin firmness and reduce the appearance of wrinkles and fine lines. Promotes a smoother, more youthful and brighter complexion.</string>
+	</dict>
+	<key>Meroxyl_SX</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A chemical sunscreen ingredient that provides UVA protection.</string>
+	</dict>
+	<key>Mulberry_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains compounds that can help fade dark spots and even out skin tone by inhibiting melanin production.</string>
+	</dict>
+	<key>Niacinamide</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Sun protection</string>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+			<string>Acne</string>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+			<string>Hives</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Reduces the appearance of dark spots and improves overall skin tone. Regulates sebum production, reduces redness, minimizes pores, and improves skin texture. Strengthens the skin&apos;s barrier and improves moisture retention. It is well-tolerated by sensitive skin. Has anti-inflammatory properties and can enhance the effectiveness of sunscreens. Regulates pigmentation and thus, helps reduce dark circles. In addition, it helps improve skin elasticity, which helps reduce fine lines.</string>
+	</dict>
+	<key>Oat_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+			<string>Signs of aging</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Soothes and calms irritated, dry skin while providing hydration.</string>
+	</dict>
+	<key>Octinoxate</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A chemical sunscreen ingredient that primarily absorbs UVB rays.</string>
+	</dict>
+	<key>Octisalate</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A chemical sunscreen ingredient that mainly absorbs UVB rays.</string>
+	</dict>
+	<key>Octocrylene</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A chemical sunscreen ingredient that helps stabilize other UV filters and provides UVB protection.</string>
+	</dict>
+	<key>Olive_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Acne scars</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Psoriasis</string>
+		</array>
+		<key>purpose</key>
+		<string>A lightweight, non-comedogenic oil that hydrates and softens the skin.</string>
+	</dict>
+	<key>Omega_3</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Psoriasis</string>
+			<string>Acne</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Support the skin&apos;s lipid barrier and maintain moisture.</string>
+	</dict>
+	<key>Omega_6</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Psoriasis</string>
+			<string>Acne</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Support the skin&apos;s lipid barrier and maintain moisture.</string>
+	</dict>
+	<key>Oxybenzone</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>A chemical sunscreen ingredient that provides both UVA and UVB protection.</string>
+	</dict>
+	<key>Palmitoyl_Pentapeptide_4</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Fine lines</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array/>
+		<key>purpose</key>
+		<string>Can stimulate collagen production, improving skin elasticity and reducing the appearance of wrinkles and fine lines. Promotes a more youthful and brighter complexion.</string>
+	</dict>
+	<key>Panthenol</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Sensitive</string>
+			<string>Combination</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+			<string>Signs of aging</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Has anti-inflammatory properties. Hydrates and soothes irritated, dry skin while promoting healing and providing hydration.</string>
+	</dict>
+	<key>Papain</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dullness</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>An exfoliating enzyme that helps break down dead skin cells, promoting a brighter complexion.</string>
+	</dict>
+	<key>Peptides</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Stimulate collagen production, reducing the appearance of wrinkles and fine lines around the eyes. Can improve skin elasticity and overall texture, making pores less noticeable and promotes a more youthful complexion.</string>
+	</dict>
+	<key>Petrolatum</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Maintains skin moisture and reduces dryness and scaling.</string>
+	</dict>
+	<key>Probiotics</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Redness</string>
+			<string>Dullness</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+		</array>
+		<key>purpose</key>
+		<string>Balances the skin&apos;s microbiome and supports a healthy skin barrier. Reduces sensitivity and redness, as well as inflammation.</string>
+	</dict>
+	<key>Resveratrol</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Sun protection</string>
+			<string>Dullness</string>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>An antioxidant found in grapes and wine that can help protect the skin from UV damage, reduce the appearance of dark spots, and combat signs of aging and dullness. Improves skin firmess and helps reduce the appearance of fine lines.</string>
+	</dict>
+	<key>Retinaldehyde</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Dry</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Can stimulate collagen production, increase skin cell turnover, and reduce the appearance of wrinkles and fine lines.</string>
+	</dict>
+	<key>Retinol</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Under-eye circles</string>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Suitable for combination skin. Helps normalize skin cell turnover which can reduce the appearance of dark spots and under-eye circles, help reduce the appearance of pores, and reduce oiliness over time. Promotes collagen production, reduces wrinkles and fine lines, and enhances skin texture. Addresses signs of aging in both dry and oily areas.</string>
+	</dict>
+	<key>Rosehip_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Under-eye circles</string>
+			<string>Redness</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Rich in antioxidants and essential fatty acids, it helps repair and rejuvenate dry skin and under-eye area. Contains vitamin C that can improve the appearance of dark spots. Suitable for the entire face. Improves the overall health of the skin, and helps reduce redness.</string>
+	</dict>
+	<key>Rosemary_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Enlarged pores</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Helps to balance oil production and has antimicrobial properties. Has astringent properties that can help tighten the skin and reduce the visibility of pores.</string>
+	</dict>
+	<key>Salicylic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Dark spots</string>
+			<string>Enlarged pores</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Psoriasis</string>
+		</array>
+		<key>purpose</key>
+		<string>A beta-hydroxy acid (BHA) that exfoliates inside the pores, preventing clogs and reducing oiliness. Its exfoliating properties help to fade dark spots and the appearance of fine lines. Great for treating and preventing acne and blackheads, as well as managing breakouts. Promotes a smoother and more radiant skin tone. Can help soften and exfoliate psoriasis scales, making them easier to remove.</string>
+	</dict>
+	<key>Sea_Buckthorn_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>High in antioxidants and vitamins, it supports skin repair and hydration. Helps calm redness and promotes healthier skin.</string>
+	</dict>
+	<key>Sea_Salt</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+			<string>Dullness</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Eczema</string>
+			<string>Psoriasis</string>
+		</array>
+		<key>purpose</key>
+		<string>Exfoliates dead skin cells and promotes a healthy glow. Balances oil production while providing minerals to the skin.</string>
+	</dict>
+	<key>Seaweed_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Redness</string>
+			<string>Dullness</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Rich in minerals and vitamins, it can help balance oil production.</string>
+	</dict>
+	<key>Shea_Butter</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Redness</string>
+			<string>Signs of aging</string>
+			<string>Dark spots</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Rash</string>
+			<string>Hives</string>
+			<string>Psoriasis</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>Moisturizes and nourishes dry or damaged skin. A rich emollient that provides deep hydration and locks in moisture.</string>
+	</dict>
+	<key>Silica</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>An ingredient that can provide a matte finish and help absorb excess oil, often found in sunscreens for oily skin.</string>
+	</dict>
+	<key>Soy_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Signs of aging</string>
+			<string>Acne</string>
+			<string>Dullness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Soy extract contains soy isoflavones, which can help lighten dark spots and even out skin tone.</string>
+	</dict>
+	<key>Squalane</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Sensitive</string>
+			<string>Dry</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne</string>
+			<string>Acne scars</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+			<string>Hives</string>
+		</array>
+		<key>purpose</key>
+		<string>A non-comedogenic and non-irritating oil that is a great lightweight moisturizer as it mimics the skin&apos;s natural oils. Hydrates without making the skin feel heavy or greasy. This helps reduce the appearance of fine lines. In addition, it softens the skin, contributing to a healthy glow. It also calms redness-prone skin.</string>
+	</dict>
+	<key>Sulfur</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Enlarged pores</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Has antibacterial and oil-absorbing properties, making it useful for acne-prone, oily skin areas. In addition, has exfoliating properties. Great for addressing blackheads and minimizing the appearance of pores.</string>
+	</dict>
+	<key>Sunflower_Seed_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Combination</string>
+			<string>Normal</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Dark spots</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+		</array>
+		<key>purpose</key>
+		<string>Rich in fatty acids, it helps maintain the skin barrier and reduce moisture loss.</string>
+	</dict>
+	<key>Tea_Tree_Oil</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Acne</string>
+			<string>Blackheads</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rash</string>
+			<string>Psoriasis</string>
+		</array>
+		<key>purpose</key>
+		<string>Has antimicrobial properties and is used to treat acne and blemishes, and assists in reducing bacteria associated with blackheads and acne. Helps control acne and oil production. Also prevents infection.</string>
+	</dict>
+	<key>Tetrapeptide_30</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>An ingredient that helps protect the skin from UV damage by neutralizing free radicals.</string>
+	</dict>
+	<key>Tinosorb_M</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Chemical sunscreen filter that provides broad-spectrum protection.</string>
+	</dict>
+	<key>Tinosorb_S</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Chemical sunscreen filter that provides broad-spectrum protection.</string>
+	</dict>
+	<key>Titanium_Dioxide</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Enlarged pores</string>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+			<string>Hives</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>A physical sunscreen ingredient that provides UV protection. Protecting the skin from UV damage is important, as UV can worsen the appearance of pores over time.</string>
+	</dict>
+	<key>Tocopheryl_Acetate</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Sun protection</string>
+			<string>Signs of aging</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Acne scars</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+			<string>Rash</string>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>An antioxidant that helps repair and protect the skin&apos;s barrier. Can help soothe and protect sensitive skin from environmental damage and can provide additional protection against UV and free radical damage. Helps in maintaining a healthier complexion and reducing redness.</string>
+	</dict>
+	<key>Tranexamic_Acid</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Redness</string>
+			<string>Acne scars</string>
+			<string>Dullness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+		</array>
+		<key>purpose</key>
+		<string>Tranexamic acid can be used topically or orally to manage melasma by reducing melanin production.</string>
+	</dict>
+	<key>Tretinoin</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Signs of aging</string>
+			<string>Fine lines</string>
+			<string>Acne scars</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Melasma</string>
+			<string>Acne</string>
+		</array>
+		<key>purpose</key>
+		<string>Can stimulate collagen production, increase skin cell turnover, and reduce the appearance of wrinkles and fine lines.</string>
+	</dict>
+	<key>Turmeric_Extract</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dullness</string>
+			<string>Redness</string>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+			<string>Acne scars</string>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Acne</string>
+			<string>Psoriasis</string>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>Contains curcumin, which has anti-inflammatory and antioxidant properties that can help brighten the skin.</string>
+	</dict>
+	<key>Urea</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dullness</string>
+			<string>Redness</string>
+			<string>Acne</string>
+			<string>Signs of aging</string>
+			<string>Acne scars</string>
+			<string>Dark spots</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Eczema</string>
+			<string>Acne</string>
+			<string>Psoriasis</string>
+			<string>Rosacea</string>
+		</array>
+		<key>purpose</key>
+		<string>A humectant that exfoliates and hydrates dry, rough skin.</string>
+	</dict>
+	<key>Vitamin_K</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Dark spots</string>
+			<string>Under-eye circles</string>
+			<string>Dullness</string>
+			<string>Fine lines</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+		</array>
+		<key>purpose</key>
+		<string>May help reduce the appearance of dark circles and under-eye dark spots by improving blood circulation and reducing the pooling of blood under the eyes. Also helps reduce redness, the appearance of dullness and fine lines. Can strengthen capillaries.</string>
+	</dict>
+	<key>Witch_Hazel</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Enlarged pores</string>
+			<string>Acne</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rash</string>
+		</array>
+		<key>purpose</key>
+		<string>Acts as an astringent to tighten and tone the skin, and reduces excess oil. Helps control oil in the T-zone while being gentle enough for drier skin areas. Great for treating blackheads and reduce the likelihood of them. Helps reduce inflammation and thus, provides relief from itching.</string>
+	</dict>
+	<key>Zinc</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Blackheads</string>
+			<string>Enlarged pores</string>
+			<string>Acne</string>
+			<string>Redness</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Acne</string>
+			<string>Rosacea</string>
+			<string>Eczema</string>
+		</array>
+		<key>purpose</key>
+		<string>Regulates oil production and reduces inflammation in the skin. This helps with pore size, redness, and acne.</string>
+	</dict>
+	<key>Zinc_Oxide</key>
+	<dict>
+		<key>skinType</key>
+		<array>
+			<string>Normal</string>
+			<string>Combination</string>
+			<string>Oily</string>
+			<string>Acne-prone</string>
+			<string>Dry</string>
+			<string>Sensitive</string>
+		</array>
+		<key>skinConcerns</key>
+		<array>
+			<string>Enlarged pores</string>
+		</array>
+		<key>skinConditions</key>
+		<array>
+			<string>Hives</string>
+			<string>Dermatitis</string>
+		</array>
+		<key>purpose</key>
+		<string>A gentle physical sunscreen that provides broad-spectrum sun protection and soothes irritated skin. Protecting the skin from UV damage is important, as UV can worsen the appearance of pores over time. Provides a protective physical barrier.</string>
+	</dict>
+</dict>
+</plist>
