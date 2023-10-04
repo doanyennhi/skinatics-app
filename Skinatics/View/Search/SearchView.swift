@@ -33,6 +33,7 @@ struct SearchView: View {
         }
         //.searchable(text: $searchText)
         .modifier(ScreenModifier())
+        .onAppear(perform:{ ingredient() })
     }
 }
 

@@ -38,7 +38,7 @@ struct ProductOfTheDay: View {
     }
 }
 
-struct ProductOfTheDat_Previews: PreviewProvider {
+struct ProductOfTheDay_Previews: PreviewProvider {
     static var previews: some View {
         ProductOfTheDay(product: productsList[1])
     }

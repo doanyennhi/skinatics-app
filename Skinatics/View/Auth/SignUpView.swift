@@ -45,6 +45,7 @@ struct SignUpView: View {
                             .textFieldStyle(CustomTextFieldStyle())
                         .padding(.bottom, 60)
                         
+                        // TODO: link with actual screens
                         Text("By continuing, you agree to our")
                         HStack {
                             NavigationLink(destination: EmptyView(), label: {Text("Terms").bold()})

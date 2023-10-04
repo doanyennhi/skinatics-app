@@ -8,11 +8,7 @@
 import Foundation
 
 struct PlistHandler {
-    static private func getPlistDict(filename: String) -> [String: Any]? {
-//        guard let infoDict = Bundle.main.infoDictionary else {
-//            return nil
-//        }
-//        return infoDict
+    static func getPlistDict(filename: String) -> [String: Any]? {
         if let path = Bundle.main.url(forResource: filename, withExtension: "plist") {
             do {
                 let plistData = try Data(contentsOf: path)

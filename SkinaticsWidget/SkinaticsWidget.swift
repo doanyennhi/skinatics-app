@@ -46,10 +46,10 @@ struct SkinaticsWidgetEntryView : View {
     var entry: SkinaticsEntry
 
     var body: some View {
-        VStack {
+        ZStack {
+            Color("WidgetBackground")
             Text(entry.providerInfo)
         }
-        .background(Color("Floral White"))
     }
 }
 
