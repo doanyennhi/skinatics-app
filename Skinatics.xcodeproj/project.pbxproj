@@ -34,6 +34,8 @@
 		0FB8A29F2ACEACA300511450 /* SkinaticsWidgetSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A29E2ACEACA300511450 /* SkinaticsWidgetSmallView.swift */; };
 		0FB8A2A12ACEACED00511450 /* SkinaticsWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A2A02ACEACED00511450 /* SkinaticsWidgetMediumView.swift */; };
 		0FB8A2A32ACEAD2100511450 /* SkinaticsWidgetLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A2A22ACEAD2100511450 /* SkinaticsWidgetLargeView.swift */; };
+		0FB8A2A52ACEDDD700511450 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A2A42ACEDDD700511450 /* RemoteImage.swift */; };
+		0FB8A2A82ACEE3DF00511450 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A2A72ACEE3DF00511450 /* Image+Extensions.swift */; };
 		0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */; };
 		0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9C2A896A7C00E64231 /* ContentView.swift */; };
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
@@ -155,6 +157,8 @@
 		0FB8A29E2ACEACA300511450 /* SkinaticsWidgetSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidgetSmallView.swift; sourceTree = "<group>"; };
 		0FB8A2A02ACEACED00511450 /* SkinaticsWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidgetMediumView.swift; sourceTree = "<group>"; };
 		0FB8A2A22ACEAD2100511450 /* SkinaticsWidgetLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidgetLargeView.swift; sourceTree = "<group>"; };
+		0FB8A2A42ACEDDD700511450 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		0FB8A2A72ACEE3DF00511450 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		0FBE1D972A896A7C00E64231 /* Skinatics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skinatics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsApp.swift; sourceTree = "<group>"; };
 		0FBE1D9C2A896A7C00E64231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -295,8 +299,17 @@
 				0FB8A29E2ACEACA300511450 /* SkinaticsWidgetSmallView.swift */,
 				0FB8A2A02ACEACED00511450 /* SkinaticsWidgetMediumView.swift */,
 				0FB8A2A22ACEAD2100511450 /* SkinaticsWidgetLargeView.swift */,
+				0FB8A2A42ACEDDD700511450 /* RemoteImage.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0FB8A2A62ACEE3CA00511450 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0FB8A2A72ACEE3DF00511450 /* Image+Extensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		0FBE1D8E2A896A7C00E64231 = {
@@ -365,6 +378,7 @@
 		0FCF56432ACC7C69009203CF /* SkinaticsWidget */ = {
 			isa = PBXGroup;
 			children = (
+				0FB8A2A62ACEE3CA00511450 /* Extension */,
 				0FB8A29D2ACEAC8400511450 /* View */,
 				0FCF56442ACC7C69009203CF /* SkinaticsWidgetBundle.swift */,
 				0FCF56462ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift */,
@@ -864,6 +878,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB8A2A52ACEDDD700511450 /* RemoteImage.swift in Sources */,
+				0FB8A2A82ACEE3DF00511450 /* Image+Extensions.swift in Sources */,
 				0FCF56472ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift in Sources */,
 				0FCF56492ACC7C69009203CF /* SkinaticsWidget.swift in Sources */,
 				0F0EDDB72ACEA97E00761084 /* SkinaticsProvider.swift in Sources */,

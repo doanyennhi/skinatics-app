@@ -25,7 +25,9 @@ struct MainTabView: View {
     @State var isLoading = false
     
     func getProducts() async {
+        isLoading = true
         guard let request = setRequestHeader(link: "https://sephora.p.rapidapi.com/products/v2/list?number=1&size=10&country=AU&language=en-AU&root_category=skincare") else {
+            isLoading = false
             return
         }
         
@@ -45,13 +47,13 @@ struct MainTabView: View {
                         let decodedData = try JSONDecoder().decode(ProductsList.self, from: data)
                         
                         // send task back to main thread
-                        DispatchQueue.main.async {
                             self.products = decodedData.data
-                        }
                     }
+                    isLoading = false
                 } catch {
                     print(error.localizedDescription)
                     self.products = nil
+                    isLoading = false
                 }
             }
         }.resume()
@@ -87,9 +89,7 @@ struct MainTabView: View {
         .environmentObject(tabHandler)
         .task {
             if products == nil {
-                isLoading = true
-                // await getProducts()
-                isLoading = false
+                await getProducts()
             }
         }
     }

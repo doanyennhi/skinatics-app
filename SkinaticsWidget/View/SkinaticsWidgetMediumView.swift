@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct SkinaticsWidgetMediumView: View {
     var entry: SkinaticsEntry
@@ -17,26 +18,10 @@ struct SkinaticsWidgetMediumView: View {
             GeometryReader { geometry in
                 VStack() {
                     HStack() {
-                        AsyncImage(url: URL(string: entry.productImg)) { phase in
-                            if let img = phase.image {
-                                img.resizable()
-                                    .scaledToFill()
-                                    .frame(width: geometry.size.width * 0.45, height: .infinity)
-                                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                            } else if phase.error != nil {
-                                Image("placeholder")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: geometry.size.width * 0.45, height: .infinity)
-                                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                            } else {
-                                ProgressView()
-                                    .padding()
-                            }
-                        }
+                        RemoteImage(url: URL(string: entry.productImg), screenWidth: geometry.size.width)
 
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("Today's Product")
+                            Text("Product For You")
                                 .fontWeight(.semibold)
                             Text(entry.productName)
                                 .bold()
@@ -51,6 +36,7 @@ struct SkinaticsWidgetMediumView: View {
                         .padding(.horizontal, 10)
                     }
                 }
+                .foregroundColor(Color("Black"))
                 .font(Font.custom("Avenir", size: 20))
             }
         }
@@ -60,5 +46,6 @@ struct SkinaticsWidgetMediumView: View {
 struct SkinaticsWidgetMediumView_Previews: PreviewProvider {
     static var previews: some View {
         SkinaticsWidgetMediumView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

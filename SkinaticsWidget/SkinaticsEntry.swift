@@ -12,4 +12,5 @@ struct SkinaticsEntry: TimelineEntry {
     let productName: String
     let productImg: String
     let productRating: Double
+    let productDesc: String
 }

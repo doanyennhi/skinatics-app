@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct SkinaticsWidgetSmallView: View {
     var entry: SkinaticsEntry
@@ -30,24 +31,27 @@ struct SkinaticsWidgetSmallView: View {
 //                .padding(10)
             
             ZStack(alignment: .bottom) {
-                AsyncImage(url: URL(string: entry.productImg)) { phase in
-                    if let img = phase.image {
-                        img.resizable()
-                            .scaledToFit()
-                    } else if phase.error != nil {
-                        Image("placeholder")
-                            .resizable()
-                            .scaledToFit()
-                    } else {
-                        ProgressView()
-                            .padding()
-                    }
-                }
+                RemoteImage(url: URL(string: entry.productImg))
+                
+//                AsyncImage(url: URL(string: entry.productImg)) { phase in
+//                    if let img = phase.image {
+//                        img.resizable()
+//                            .scaledToFit()
+//                    } else if phase.error != nil {
+//                        Image("placeholder")
+//                            .resizable()
+//                            .scaledToFit()
+//                    } else {
+//                        ProgressView()
+//                            .padding()
+//                    }
+//                }
                         
                     Text(entry.productName)
                         .padding(10)
                        .background(Color("Green").opacity(0.8))
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("White"))
+                        .font(Font.custom("Avenir", size: 16))
                         .bold()
                         .cornerRadius(15)
                         .lineLimit(1)
@@ -60,5 +64,6 @@ struct SkinaticsWidgetSmallView: View {
 struct SkinaticsWidgetSmallView_Previews: PreviewProvider {
     static var previews: some View {
         SkinaticsWidgetSmallView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

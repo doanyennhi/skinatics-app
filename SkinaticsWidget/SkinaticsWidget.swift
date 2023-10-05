@@ -11,7 +11,7 @@ import SwiftUI
 
 struct SkinaticsWidgetEntryView : View {
     var entry: SkinaticsEntry
-
+    
     @Environment(\.widgetFamily) var widgetFamily: WidgetFamily
     @ViewBuilder
     var body: some View {
@@ -36,7 +36,7 @@ struct SkinaticsWidget: Widget {
             SkinaticsWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Skinatics Widget")
-        .description("This is a widget to display one skincare product of the day.")
+        .description("Recommending you a skincare product for the day.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
@@ -44,6 +44,6 @@ struct SkinaticsWidget: Widget {
 struct SkinaticsWidget_Previews: PreviewProvider {
     static var previews: some View {
         SkinaticsWidgetEntryView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
