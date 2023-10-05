@@ -98,28 +98,33 @@ struct SkinaticsWidgetMediumView: View {
         ZStack {
             Color("WidgetBackground")
             
-            VStack() {
-                Text("Today's Product")
-                HStack() {
-                    Image(entry.productImg)
-                        .resizable()
-                        .aspectRatio(CGSize(width: 5, height: 4), contentMode: .fit)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
+            GeometryReader { geometry in
+                VStack() {
+                    HStack() {
+                        Image(entry.productImg)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: geometry.size.width * 0.45, height: .infinity)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
 
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(entry.productName)
-                            .bold()
-                            .foregroundColor(Color("Green"))
-                        HStack {
-                            Text("\(entry.productRating.formatted())")
-                            Image(systemName: "star.fill")
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Today's Product")
+                                .fontWeight(.semibold)
+                            Text(entry.productName)
+                                .bold()
+                                .foregroundColor(Color("Green"))
+                                .lineLimit(2)
+                            HStack(alignment: .firstTextBaseline) {
+                                Text("\(entry.productRating.formatted())")
+                                Image(systemName: "star.fill")
+                            }
+                            .font(Font.custom("Avenir", size: 18))
                         }
+                        .padding(.horizontal, 10)
                     }
-                    .padding(.leading, 10)
                 }
+                .font(Font.custom("Avenir", size: 20))
             }
-            .padding(.horizontal, 2)
-            .padding(.vertical, 10)
         }
         }
 }
@@ -131,25 +136,30 @@ struct SkinaticsWidgetLargeView: View {
         ZStack {
             Color("WidgetBackground")
             VStack() {
-                ZStack(alignment: .bottom) {
+               Text("Today's Product")
+                    .fontWeight(.semibold)
                     Image(entry.productImg)
                         .resizable()
+                        .aspectRatio(CGSize(width: 5, height: 4), contentMode: .fit)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
 
-                    Text(entry.productName)
-                        .padding(10)
-                        .background(Color("Green").opacity(0.8))
-                        .foregroundColor(.white)
-                        .bold()
-                        .cornerRadius(10)
-                        .lineLimit(1)
-
-                    HStack {
+                HStack(alignment: .top) {
+                        Text(entry.productName)
+                            .bold()
+                            .foregroundColor(Color("Green"))
+                            .lineLimit(2)
+                        Spacer()
+                    
+                    HStack(alignment: .firstTextBaseline) {
                         Text("\(entry.productRating.formatted())")
                         Image(systemName: "star.fill")
                     }
-                }
+                    .font(Font.custom("Avenir", size: 18))
+                    }
             }
-            .padding(.top, 5)
+            .font(Font.custom("Avenir", size: 20))
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
         }
         }
 }
@@ -189,7 +199,7 @@ struct SkinaticsWidget: Widget {
 
 struct SkinaticsWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SkinaticsWidgetEntryView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "the-ordinary-hyaluronic-acid-style", productRating: 4.2))
+        SkinaticsWidgetEntryView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5 and we also like to eat prodcuts", productImg: "the-ordinary-hyaluronic-acid-style", productRating: 4.2))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
