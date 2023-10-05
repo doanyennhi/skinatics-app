@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0EDDB72ACEA97E00761084 /* SkinaticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EDDB62ACEA97E00761084 /* SkinaticsProvider.swift */; };
 		0F10D9C92ABE1AC5005C9FA0 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */; };
 		0F10D9CB2ABE201D005C9FA0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */; };
 		0F10D9CD2ABE2EAF005C9FA0 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D9CC2ABE2EAF005C9FA0 /* ScannerViewModel.swift */; };
@@ -29,6 +30,10 @@
 		0FABD8062AB8A5050082DE61 /* PlistHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABD8052AB8A5050082DE61 /* PlistHandler.swift */; };
 		0FABD8082AB8D3510082DE61 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABD8072AB8D3510082DE61 /* Error.swift */; };
 		0FB0B00E2ABC80F500B808A9 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0B00D2ABC80F500B808A9 /* ProductDetail.swift */; };
+		0FB8A29C2ACEABBC00511450 /* SkinaticsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A29B2ACEABBC00511450 /* SkinaticsEntry.swift */; };
+		0FB8A29F2ACEACA300511450 /* SkinaticsWidgetSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A29E2ACEACA300511450 /* SkinaticsWidgetSmallView.swift */; };
+		0FB8A2A12ACEACED00511450 /* SkinaticsWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A2A02ACEACED00511450 /* SkinaticsWidgetMediumView.swift */; };
+		0FB8A2A32ACEAD2100511450 /* SkinaticsWidgetLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8A2A22ACEAD2100511450 /* SkinaticsWidgetLargeView.swift */; };
 		0FBE1D9B2A896A7C00E64231 /* SkinaticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */; };
 		0FBE1D9D2A896A7C00E64231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9C2A896A7C00E64231 /* ContentView.swift */; };
 		0FBE1D9F2A896A7D00E64231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBE1D9E2A896A7D00E64231 /* Assets.xcassets */; };
@@ -121,6 +126,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F0EDDB62ACEA97E00761084 /* SkinaticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsProvider.swift; sourceTree = "<group>"; };
 		0F10D9C82ABE1AC5005C9FA0 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		0F10D9CA2ABE201D005C9FA0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		0F10D9CC2ABE2EAF005C9FA0 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		0F4061FA2A97D5F800746054 /* ErrorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
 		0F4062012A9B1F3600746054 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0F4062032A9B2C0300746054 /* EditField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditField.swift; sourceTree = "<group>"; };
+		0F5A87BC2ACEAB1500887BE6 /* SkinaticsWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkinaticsWidgetExtension.entitlements; sourceTree = "<group>"; };
 		0F75AEB52ABF71830023E51E /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		0F8F48F32ACD45E700DA0EA5 /* ProductOfTheDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductOfTheDay.swift; sourceTree = "<group>"; };
 		0F8F48F52ACD464800DA0EA5 /* ProductsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsList.swift; sourceTree = "<group>"; };
@@ -144,6 +151,10 @@
 		0FABD8052AB8A5050082DE61 /* PlistHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistHandler.swift; sourceTree = "<group>"; };
 		0FABD8072AB8D3510082DE61 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		0FB0B00D2ABC80F500B808A9 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		0FB8A29B2ACEABBC00511450 /* SkinaticsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsEntry.swift; sourceTree = "<group>"; };
+		0FB8A29E2ACEACA300511450 /* SkinaticsWidgetSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidgetSmallView.swift; sourceTree = "<group>"; };
+		0FB8A2A02ACEACED00511450 /* SkinaticsWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidgetMediumView.swift; sourceTree = "<group>"; };
+		0FB8A2A22ACEAD2100511450 /* SkinaticsWidgetLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsWidgetLargeView.swift; sourceTree = "<group>"; };
 		0FBE1D972A896A7C00E64231 /* Skinatics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skinatics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBE1D9A2A896A7C00E64231 /* SkinaticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinaticsApp.swift; sourceTree = "<group>"; };
 		0FBE1D9C2A896A7C00E64231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -278,9 +289,20 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		0FB8A29D2ACEAC8400511450 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FB8A29E2ACEACA300511450 /* SkinaticsWidgetSmallView.swift */,
+				0FB8A2A02ACEACED00511450 /* SkinaticsWidgetMediumView.swift */,
+				0FB8A2A22ACEAD2100511450 /* SkinaticsWidgetLargeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0FBE1D8E2A896A7C00E64231 = {
 			isa = PBXGroup;
 			children = (
+				0F5A87BC2ACEAB1500887BE6 /* SkinaticsWidgetExtension.entitlements */,
 				0FBE1D992A896A7C00E64231 /* Skinatics */,
 				0FCF56432ACC7C69009203CF /* SkinaticsWidget */,
 				0FCF563E2ACC7C69009203CF /* Frameworks */,
@@ -343,11 +365,14 @@
 		0FCF56432ACC7C69009203CF /* SkinaticsWidget */ = {
 			isa = PBXGroup;
 			children = (
+				0FB8A29D2ACEAC8400511450 /* View */,
 				0FCF56442ACC7C69009203CF /* SkinaticsWidgetBundle.swift */,
 				0FCF56462ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift */,
 				0FCF56482ACC7C69009203CF /* SkinaticsWidget.swift */,
 				0FCF564A2ACC7C6A009203CF /* Assets.xcassets */,
 				0FCF564C2ACC7C6A009203CF /* Info.plist */,
+				0F0EDDB62ACEA97E00761084 /* SkinaticsProvider.swift */,
+				0FB8A29B2ACEABBC00511450 /* SkinaticsEntry.swift */,
 			);
 			path = SkinaticsWidget;
 			sourceTree = "<group>";
@@ -841,6 +866,11 @@
 			files = (
 				0FCF56472ACC7C69009203CF /* SkinaticsWidgetLiveActivity.swift in Sources */,
 				0FCF56492ACC7C69009203CF /* SkinaticsWidget.swift in Sources */,
+				0F0EDDB72ACEA97E00761084 /* SkinaticsProvider.swift in Sources */,
+				0FB8A29C2ACEABBC00511450 /* SkinaticsEntry.swift in Sources */,
+				0FB8A2A32ACEAD2100511450 /* SkinaticsWidgetLargeView.swift in Sources */,
+				0FB8A29F2ACEACA300511450 /* SkinaticsWidgetSmallView.swift in Sources */,
+				0FB8A2A12ACEACED00511450 /* SkinaticsWidgetMediumView.swift in Sources */,
 				0FCF56452ACC7C69009203CF /* SkinaticsWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1134,6 +1164,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SkinaticsWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1162,6 +1193,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SkinaticsWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
