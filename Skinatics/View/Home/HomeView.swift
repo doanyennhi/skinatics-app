@@ -41,6 +41,7 @@ struct HomeView: View {
             userDefaults.set(product.attributes.name, forKey: "productName")
             userDefaults.set(product.attributes.imageUrls[0], forKey: "productImg")
             userDefaults.set(product.attributes.rating, forKey: "productRating")
+            userDefaults.set(product.attributes.description, forKey: "productDesc")
             print("Save successful")
         } else {
             print("Cannot save")
@@ -132,7 +133,10 @@ struct HomeView: View {
                     if !isLoading {
                         if let product = products?.randomElement() {
                             ProductOfTheDay(product: product)
-                                .onAppear(perform: {saveProductData(product: product)})
+                                .onAppear(perform: {
+                                    saveProductData(product: product)
+                                    print("Home Image: \(product.attributes.imageUrls[0])")
+                                })
                         } else {
                             Text("No product for today")
                                 .padding(.vertical)

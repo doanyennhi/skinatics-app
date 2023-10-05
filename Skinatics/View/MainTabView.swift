@@ -89,7 +89,7 @@ struct MainTabView: View {
         .environmentObject(tabHandler)
         .task {
             if products == nil {
-                await getProducts()
+                // await getProducts()
             }
         }
     }

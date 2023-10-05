@@ -43,7 +43,7 @@ struct SkinaticsWidget: Widget {
 
 struct SkinaticsWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SkinaticsWidgetEntryView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2))
+        SkinaticsWidgetEntryView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2, productDesc: "Our #1 product worldwide + cult favorite, this clinically proven gentle leave-on exfoliant with salicylic acid quickly unclogs pores, smooths wrinkles & evens skin tone."))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

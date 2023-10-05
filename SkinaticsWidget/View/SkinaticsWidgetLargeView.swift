@@ -34,7 +34,8 @@ struct SkinaticsWidgetLargeView: View {
                     }
                 .frame(alignment: .leading)
                 .padding(.bottom, 5)
-                Text("Our #1 product worldwide + cult favorite, this clinically proven gentle leave-on exfoliant with salicylic acid quickly unclogs pores, smooths wrinkles & evens skin tone.")
+                
+                Text(entry.productDesc)
                     .font(Font.custom("Avenir", size: 16))
                     .lineLimit(3)
             }
@@ -48,7 +49,7 @@ struct SkinaticsWidgetLargeView: View {
 
 struct SkinaticsWidgetLargeView_Previews: PreviewProvider {
     static var previews: some View {
-        SkinaticsWidgetLargeView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2))
+        SkinaticsWidgetLargeView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2, productDesc: "Our #1 product worldwide + cult favorite, this clinically proven gentle leave-on exfoliant with salicylic acid quickly unclogs pores, smooths wrinkles & evens skin tone."))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

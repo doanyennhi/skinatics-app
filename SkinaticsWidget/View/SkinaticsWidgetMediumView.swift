@@ -31,13 +31,13 @@ struct SkinaticsWidgetMediumView: View {
                                 Text("\(entry.productRating.formatted())")
                                 Image(systemName: "star.fill")
                             }
-                            .font(Font.custom("Avenir", size: 18))
+                            .font(Font.custom("Avenir", size: 16))
                         }
                         .padding(.horizontal, 10)
                     }
                 }
                 .foregroundColor(Color("Black"))
-                .font(Font.custom("Avenir", size: 20))
+                .font(Font.custom("Avenir", size: 18))
             }
         }
         }
@@ -45,7 +45,7 @@ struct SkinaticsWidgetMediumView: View {
 
 struct SkinaticsWidgetMediumView_Previews: PreviewProvider {
     static var previews: some View {
-        SkinaticsWidgetMediumView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2))
+        SkinaticsWidgetMediumView(entry: SkinaticsEntry(date: Date(), productName: "Hyaluronic Acid 2% + B5", productImg: "", productRating: 4.2, productDesc: "Our #1 product worldwide + cult favorite, this clinically proven gentle leave-on exfoliant with salicylic acid quickly unclogs pores, smooths wrinkles & evens skin tone."))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
